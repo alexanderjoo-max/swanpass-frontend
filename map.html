@@ -11,9 +11,10 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;height:100vh;overflow:hidden;display:flex;flex-direction:column;}
 header{background:var(--black);border-bottom:1px solid var(--border);padding:0 16px;flex-shrink:0;}
+.logo-img{height:28px;display:block;}
 .header-inner{display:flex;align-items:center;gap:12px;height:52px;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:4px;}
+.logo-img{height:28px;display:block;}
+
 .filter-bar{background:var(--black2);border-bottom:1px solid var(--border);padding:8px 16px;flex-shrink:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;align-items:center;}
 .filter-bar::-webkit-scrollbar{display:none;}
 .filter-pill{display:flex;align-items:center;gap:4px;background:var(--white10);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;color:var(--white70);}
@@ -79,12 +80,27 @@ header{background:var(--black);border-bottom:1px solid var(--border);padding:0 1
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html" class="back-btn">← Back</a>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
-    <div style="flex:1"></div>
-    <span style="font-size:11px;color:var(--white40)">🗺️ Map View</span>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-menu">☰</button>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab active">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
 <div class="filter-bar">
   <div class="filter-search"><span style="font-size:12px;color:var(--white40)">🔍</span><input type="text" placeholder="Search shops..." id="searchInput" oninput="renderMarkers()"></div>
   <div class="filter-divider"></div>
