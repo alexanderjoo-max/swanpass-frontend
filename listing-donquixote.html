@@ -211,12 +211,13 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="listing-meta">
     <span>📍 Sukhumvit Soi 26, Bangkok</span>
     <span>·</span>
-    <span>2:00 PM – 2:00 AM</span>
+    <span>Open 24 hours</span>
     <span>·</span>
-    <span class="rating-row"><span class="stars">★★★★★</span> <span class="rating-num">4.7</span> <span class="review-count">(31 reviews)</span></span>
+    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">4.3</span> <span class="review-count">(34 reviews)</span></span>
   </div>
   <div class="action-row">
-    <a href="tel:+6662456789" class="btn btn-primary">📞 Call Now</a>
+    <a href="tel:0889474986" class="btn btn-primary">📞 Call Now</a>
+    <a href="https://www.donquixotemassage.com/" target="_blank" class="btn btn-outline">🌐 Website</a>
     <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
   </div>
 
@@ -224,7 +225,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
     <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
-    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (31)</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (34)</button>
     <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
     <button class="tab-btn" onclick="switchTab('location')">Location</button>
   </div>
@@ -271,15 +272,21 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-prices">
     <div class="section-title">Price List</div>
     <div class="collapsible open" onclick="toggleCollapsible(this)">
-      <div class="collapsible-header">Massage Services <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-header">Full Service — Regular Room <span class="collapsible-arrow">▼</span></div>
       <div class="collapsible-body">
         <table class="price-table">
-          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
-          <tr><td>Thai Massage</td><td>60 min</td><td>฿450</td></tr>
-          <tr><td>Oil Massage</td><td>60 min</td><td>฿650</td></tr>
-          <tr><td>Body Massage</td><td>90 min</td><td>฿950</td></tr>
-          <tr><td>Special Package</td><td>120 min</td><td>฿1,500</td></tr>
-          <tr><td>Short Time</td><td>—</td><td>฿2,200</td></tr>
+          <tr><td>Full Service 45 min</td><td>2,100 THB</td></tr>
+          <tr><td>Full Service 65 min</td><td>2,400 THB</td></tr>
+          <tr><td>Full Service 90 min</td><td>2,700 THB</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="collapsible" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Full Service — Large Room <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr><td>Full Service 60 min</td><td>2,500 THB</td></tr>
+          <tr><td>Full Service 90 min</td><td>2,800 THB</td></tr>
         </table>
       </div>
     </div>
@@ -289,9 +296,9 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-reviews">
     <div class="review-summary">
       <div>
-        <div class="review-big-num">4.7</div>
-        <div class="review-stars-big">★★★★★</div>
-        <div style="font-size:12px;color:var(--white40);margin-top:4px;">31 Reviews</div>
+        <div class="review-big-num">4.3</div>
+        <div class="review-stars-big">★★★★☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">34 Reviews</div>
       </div>
       <div style="flex:1">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">5 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
@@ -320,13 +327,21 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     <div class="contact-list">
       <div class="contact-item">
         <div class="contact-icon phone">📞</div>
-        <a href="tel:+6662456789">+66 62 456 7890</a>
+        <a href="tel:0889474986">088-947-4986</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon ig">📸</div>
+        <a href="https://www.instagram.com/donshop26" target="_blank">@donshop26 (Instagram)</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon web">🌐</div>
+        <a href="https://www.donquixotemassage.com/" target="_blank">donquixotemassage.com</a>
       </div>
     </div>
     <div style="height:20px"></div>
     <div class="section-title">Business Hours</div>
     <div class="hours-grid">
-      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">2:00 PM – 2:00 AM</span></div>
+      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">Open 24 Hours</span></div>
     </div>
   </div>
 
@@ -382,7 +397,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a href="tel:+6662456789" class="btn btn-primary">📞 Call</a>
+  <a href="tel:0889474986" class="btn btn-primary">📞 Call</a>
   <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
 </div>
 <div style="height:80px"></div>

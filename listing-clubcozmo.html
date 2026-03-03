@@ -212,12 +212,12 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="listing-meta">
     <span>📍 Taniya Road, Bangkok</span>
     <span>·</span>
-    <span>8:00 PM – 3:00 AM</span>
+    <span>7:00 PM – 12:00 AM</span>
     <span>·</span>
-    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">4.5</span> <span class="review-count">(44 reviews)</span></span>
+    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">4.0</span> <span class="review-count">(44 reviews)</span></span>
   </div>
   <div class="action-row">
-    <a href="tel:+6666890123" class="btn btn-primary">📞 Call Now</a>
+    <span class="btn btn-primary">📞 Contact for details</span>
     <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
   </div>
   <div style="background:linear-gradient(135deg,#1a0008,#4a000f);border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);padding:14px 16px;margin:14px 0;display:flex;align-items:center;justify-content:space-between;">
@@ -276,15 +276,23 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-prices">
     <div class="section-title">Price List</div>
     <div class="collapsible open" onclick="toggleCollapsible(this)">
-      <div class="collapsible-header">Club Services <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-header">Drinks & VIP <span class="collapsible-arrow">▼</span></div>
       <div class="collapsible-body">
         <table class="price-table">
-          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
-          <tr><td>Weekday Entry</td><td>—</td><td>฿300</td></tr>
-          <tr><td>Weekend Entry</td><td>—</td><td>Free</td></tr>
-          <tr><td>Lady Drink</td><td>—</td><td>฿250</td></tr>
-          <tr><td>Table Package</td><td>2 hrs</td><td>฿2,500</td></tr>
-          <tr><td>Barfine</td><td>—</td><td>From ฿1,500</td></tr>
+          <tr><td>All You Can Drink (1 hour)</td><td>800 THB</td></tr>
+          <tr><td>Lady Drink</td><td>200 THB</td></tr>
+          <tr><td>VIP Room (Small)</td><td>500 THB</td></tr>
+          <tr><td>VIP Room (Big)</td><td>1,000 THB</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="collapsible" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Full Service <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr><td>Bar Fine</td><td>1,000 THB</td></tr>
+          <tr><td>Full Service Short Time</td><td>3,500 THB</td></tr>
+          <tr><td>Full Service Long Time</td><td>4,500 THB</td></tr>
         </table>
       </div>
     </div>
@@ -294,7 +302,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-reviews">
     <div class="review-summary">
       <div>
-        <div class="review-big-num">4.5</div>
+        <div class="review-big-num">4.0</div>
         <div class="review-stars-big">★★★★☆</div>
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">44 Reviews</div>
       </div>
@@ -325,13 +333,13 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     <div class="contact-list">
       <div class="contact-item">
         <div class="contact-icon phone">📞</div>
-        <a href="tel:+6666890123">+66 66 890 1234</a>
+        <span>Contact via visit or social media</span>
       </div>
     </div>
     <div style="height:20px"></div>
     <div class="section-title">Business Hours</div>
     <div class="hours-grid">
-      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">8:00 PM – 3:00 AM</span></div>
+      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">7:00 PM – 12:00 AM</span></div>
     </div>
   </div>
 
@@ -387,7 +395,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a href="tel:+6666890123" class="btn btn-primary">📞 Call</a>
+  <span class="btn btn-primary">📞 Contact for details</span>
   <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
 </div>
 <div style="height:80px"></div>

@@ -211,12 +211,12 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="listing-meta">
     <span>📍 Sukhumvit Soi 77, Bangkok</span>
     <span>·</span>
-    <span>11:00 AM – 12:00 AM</span>
+    <span>1:00 PM – 1:00 AM</span>
     <span>·</span>
-    <span class="rating-row"><span class="stars">★★★★★</span> <span class="rating-num">4.9</span> <span class="review-count">(6 reviews)</span></span>
+    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">4.2</span> <span class="review-count">(58 reviews)</span></span>
   </div>
   <div class="action-row">
-    <a href="tel:+6661234567" class="btn btn-primary">📞 Call Now</a>
+    <a href="tel:0813743400" class="btn btn-primary">📞 Call Now</a>
     <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
   </div>
 
@@ -224,7 +224,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
     <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
-    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (6)</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (58)</button>
     <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
     <button class="tab-btn" onclick="switchTab('location')">Location</button>
   </div>
@@ -271,15 +271,26 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-prices">
     <div class="section-title">Price List</div>
     <div class="collapsible open" onclick="toggleCollapsible(this)">
-      <div class="collapsible-header">Massage Services <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-header">Oil Massage <span class="collapsible-arrow">▼</span></div>
       <div class="collapsible-body">
         <table class="price-table">
-          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
-          <tr><td>Thai Massage</td><td>60 min</td><td>฿450</td></tr>
-          <tr><td>Oil Massage</td><td>60 min</td><td>฿650</td></tr>
-          <tr><td>Full Body</td><td>90 min</td><td>฿1,000</td></tr>
-          <tr><td>Signature Course</td><td>60 min</td><td>฿1,300</td></tr>
-          <tr><td>Signature Course</td><td>90 min</td><td>฿1,800</td></tr>
+          <tr><td>Handjob 30 min</td><td>1,000 THB</td></tr>
+          <tr><td>Handjob 60 min</td><td>1,500 THB</td></tr>
+          <tr><td>Body to Body + HJ 40 min</td><td>1,600 THB</td></tr>
+          <tr><td>Body to Body + HJ 60 min</td><td>1,800 THB</td></tr>
+          <tr><td>Body to Body + Special 40 min</td><td>2,200 THB</td></tr>
+          <tr><td>Body to Body + Special 60 min</td><td>2,500 THB</td></tr>
+          <tr><td>Body to Body + Special 90 min</td><td>3,200 THB</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="collapsible" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Extras <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr><td class="price-extra">Extra Shot</td><td>+1,000 THB</td></tr>
+          <tr><td class="price-extra">Cosplay</td><td>+500 THB</td></tr>
+          <tr><td class="price-extra">Stockings</td><td>+200 THB</td></tr>
         </table>
       </div>
     </div>
@@ -289,9 +300,9 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="tab-content" id="tab-reviews">
     <div class="review-summary">
       <div>
-        <div class="review-big-num">4.9</div>
-        <div class="review-stars-big">★★★★★</div>
-        <div style="font-size:12px;color:var(--white40);margin-top:4px;">6 Reviews</div>
+        <div class="review-big-num">4.2</div>
+        <div class="review-stars-big">★★★★☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">58 Reviews</div>
       </div>
       <div style="flex:1">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">5 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
@@ -310,7 +321,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
       <p class="review-text">Riviere 77 is a revelation. Stunning interior, professional staff, amazing experience. Can't believe it just opened. Already a Bangkok must-visit.</p>
     </div>
     <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/riviere-77" target="_blank" class="btn btn-outline">View all 6 reviews →</a>
+      <a href="https://swanpass.com/listing/riviere-77-bangkok" target="_blank" class="btn btn-outline">View all 58 reviews →</a>
     </div>
   </div>
 
@@ -320,13 +331,21 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     <div class="contact-list">
       <div class="contact-item">
         <div class="contact-icon phone">📞</div>
-        <a href="tel:+6661234567">+66 61 234 5678</a>
+        <a href="tel:0813743400">081-374-3400</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon line">💬</div>
+        <a href="https://lin.ee/DCJ2hBv" target="_blank">LINE: Riviere 77</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon web">🌐</div>
+        <a href="https://www.facebook.com/Riviere77massage" target="_blank">Facebook: Riviere77massage</a>
       </div>
     </div>
     <div style="height:20px"></div>
     <div class="section-title">Business Hours</div>
     <div class="hours-grid">
-      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">11:00 AM – 12:00 AM</span></div>
+      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">1:00 PM – 1:00 AM</span></div>
     </div>
   </div>
 
@@ -382,7 +401,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a href="tel:+6661234567" class="btn btn-primary">📞 Call</a>
+  <a href="tel:0813743400" class="btn btn-primary">📞 Call</a>
   <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
 </div>
 <div style="height:80px"></div>
