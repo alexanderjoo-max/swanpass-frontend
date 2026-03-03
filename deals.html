@@ -159,6 +159,41 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <div class="ctab" onclick="setCityTab(this)">🏖️ Phuket</div>
 </div>
 
+<style>
+.redeem-banner{background:linear-gradient(135deg,#1a0a00 0%,#2a1400 50%,#1a0a00 100%);border-top:3px solid var(--red);border-bottom:3px solid var(--red);padding:18px 16px;text-align:center;}
+.redeem-inner{max-width:640px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.redeem-eyebrow{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--red);}
+.redeem-headline{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1.5px;line-height:1;color:var(--white);}
+.redeem-body{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.redeem-keyword{display:inline-block;background:var(--red);color:var(--white);font-weight:800;font-size:15px;padding:3px 12px;border-radius:6px;letter-spacing:.5px;}
+.redeem-or{font-size:12px;color:rgba(255,255,255,0.4);font-weight:500;}
+.redeem-show{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);}
+.redeem-show span{font-size:16px;}
+@media(min-width:768px){
+  .redeem-banner{padding:22px 24px;}
+  .redeem-headline{font-size:34px;}
+  .redeem-inner{flex-direction:row;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .redeem-text-col{text-align:left;}
+}
+</style>
+
+<!-- HOW TO REDEEM -->
+<div class="redeem-banner">
+  <div class="redeem-inner">
+    <div style="font-size:36px">🎟️</div>
+    <div class="redeem-text-col">
+      <div class="redeem-eyebrow">How to redeem your deal</div>
+      <div class="redeem-headline">GO TO THE SHOP &amp; SAY</div>
+      <div class="redeem-body">
+        <span class="redeem-keyword">"SwanPass"</span>
+        &nbsp;<span class="redeem-or">or</span>&nbsp;
+        <span class="redeem-show"><span>📱</span> Show this screen</span>
+        <br><span style="font-size:12px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">That's it — no codes, no printouts, no sign-up required.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="content">
 
 <!-- FLASH DEALS -->
