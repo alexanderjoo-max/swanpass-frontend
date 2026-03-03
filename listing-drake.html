@@ -1,163 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DRAKE Luxury Lounge — Swanpass</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAKE Luxury Lounge — Swanpass Thailand</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
-*{margin:0;padding:0;box-sizing:border-box;}body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
-.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.hi img{height:26px;display:block;}
-.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
-.bl{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;height:300px;max-width:1200px;margin:0 auto;}
-.gallery img{width:100%;height:100%;object-fit:cover;background:var(--black3);}
-.gallery img:first-child{grid-row:1/3;}
-.gmore{position:relative;}.gmb{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.75);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;color:var(--white);font-size:11px;font-weight:600;cursor:pointer;}
-.pl{display:flex;gap:24px;max-width:1200px;margin:0 auto;padding:20px 16px;}
-.pm{flex:1;min-width:0;}.ps{width:290px;flex-shrink:0;}
-.badge{display:inline-flex;padding:3px 9px;border-radius:5px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-right:4px;}
-.bsp{background:rgba(212,168,71,.2);color:var(--gold);border:1px solid rgba(212,168,71,.4);}
-.bft{background:rgba(232,20,42,.2);color:var(--red);border:1px solid rgba(232,20,42,.4);}
-.bdl{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.4);}
-.bnw{background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.4);}
-.cp{background:var(--white10);border:1px solid var(--border);border-radius:12px;padding:3px 10px;font-size:11px;color:var(--white70);display:inline-flex;margin-right:5px;margin-bottom:6px;}
-.ln{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;line-height:1;margin-bottom:10px;}
-.rr{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-.bs{font-size:22px;color:var(--gold);letter-spacing:2px;}.rn{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);}
-.rs{font-size:11px;color:var(--white40);}
-.sb{display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;}
-.si{flex:1;padding:12px 8px;text-align:center;border-right:1px solid var(--border);}
-.si:last-child{border-right:none;}
-.sv{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.5px;margin-bottom:2px;}.sl{font-size:9px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
-.db{background:linear-gradient(135deg,#0e1a08,#1a3a0e);border:1px solid rgba(34,197,94,.25);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
-.dt{background:var(--green);color:#000;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:2px 6px;border-radius:3px;margin-bottom:4px;display:inline-block;}
-.dn{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.5px;}.ds{font-size:11px;color:var(--white70);}
-.dp{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--green);line-height:1;letter-spacing:-1px;}
-.st{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-.desc{font-size:14px;line-height:1.7;color:var(--white70);margin-bottom:24px;}
-.it{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;}
-.ir{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;}
-.ir:last-child{border-bottom:none;}
-.ii{font-size:15px;flex-shrink:0;width:20px;}.il{color:var(--white40);font-size:11px;width:68px;flex-shrink:0;margin-top:1px;}.iv{flex:1;line-height:1.4;}.iv a{color:var(--red);text-decoration:none;}
-.pt{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;}
-.pr{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;}
-.pr:last-child{border-bottom:none;}
-.ps2{flex:1;font-weight:500;}.pd{color:var(--white40);font-size:11px;margin-right:14px;}.pa{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);letter-spacing:.5px;}
-.rc{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;}
-.rh{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.ra{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.ru{font-weight:600;font-size:13px;}.rd{font-size:11px;color:var(--white40);margin-left:auto;}
-.rs2{color:var(--gold);font-size:12px;margin-bottom:6px;}
-.rt{font-size:13px;color:var(--white70);line-height:1.5;}
-.ng{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.nc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
-.nc:hover{border-color:rgba(232,20,42,.4);}
-.ni{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--black3);}
-.nb{padding:6px 8px;}.nn{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.nm{font-size:10px;color:var(--white40);}
-.sc{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;position:sticky;top:72px;}
-.si2{width:100%;height:160px;object-fit:cover;background:var(--black3);}
-.sb2{padding:16px;}.sn{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:3px;}.sm{font-size:12px;color:var(--white40);margin-bottom:14px;}
-.bc{width:100%;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;display:block;text-align:center;text-decoration:none;}
-.bse{width:100%;background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;display:block;text-align:center;text-decoration:none;}
-.sd{height:1px;background:var(--border);margin:12px 0;}
-.sri{display:flex;gap:8px;font-size:12px;padding:4px 0;color:var(--white70);}
-.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
-.bi.active{color:var(--red);}
-.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bsp2{height:70px;}
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dk:#b80f20;--white:#fff;--w70:rgba(255,255,255,.7);--w40:rgba(255,255,255,.4);--w10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--r:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
+a{color:inherit;}
 
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 14px;}
+.header-inner{display:flex;align-items:center;gap:10px;height:52px;max-width:1200px;margin:0 auto;}
+.logo img{height:26px;display:block;}
+.back-btn{background:var(--w10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 12px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
 
-.mcta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:91;background:#111;border-top:2px solid rgba(255,255,255,.08);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;}.mcta .bc{flex:1;background:#e8142a;color:#fff;border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:700;font-family:"DM Sans",sans-serif;cursor:pointer;text-decoration:none;text-align:center;}.mcta .bs{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:13px 16px;font-size:20px;cursor:pointer;text-decoration:none;}@media(max-width:767px){.mcta{display:flex!important;}.ps{display:none!important;}.bsp2{height:130px!important;}.gallery{height:220px;grid-template-columns:1fr!important;grid-template-rows:auto!important;}.gallery img:first-child{grid-row:auto!important;height:220px;}.gallery img:nth-child(n+2){display:none;}}@media(min-width:768px){.bot,.bsp2,.mcta{display:none!important;}}.logo-img{height:28px;display:block;}
+.gallery{display:grid;grid-template-columns:2fr 1fr;gap:3px;height:200px;}
+.gal-main{position:relative;overflow:hidden;}
+.gal-main img{width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);}
+.gal-side{display:flex;flex-direction:column;gap:3px;}
+.gal-side img{flex:1;width:100%;object-fit:cover;background:linear-gradient(135deg,#1a1a2a,#0a0a1a);}
+.gal-btn{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px;font-size:11px;font-weight:600;color:var(--white);cursor:pointer;}
+
+.listing-body{padding:16px 14px;max-width:1200px;margin:0 auto;}
+.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;line-height:1;margin-bottom:6px;}
+.listing-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+.listing-cat{font-size:13px;color:var(--w70);}
+.listing-city{font-size:13px;color:var(--w70);}
+.badge{display:inline-flex;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+.b-sp{background:rgba(212,168,71,.9);color:#000;}.b-ft{background:rgba(232,20,42,.9);color:#fff;}.b-nw{background:rgba(99,102,241,.9);color:#fff;}
+
+.rating-row{display:flex;align-items:center;gap:16px;margin-bottom:14px;padding:12px;background:var(--black2);border-radius:8px;flex-wrap:wrap;}
+.stars-big{color:var(--gold);font-size:18px;letter-spacing:2px;}
+.rating-val{font-size:20px;font-weight:700;}
+.rating-sub{font-size:11px;color:var(--w40);}
+.stat-item{text-align:center;}
+.stat-val{font-size:16px;font-weight:700;display:block;}
+.stat-lbl{font-size:10px;color:var(--w40);}
+
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;}
+
+.info-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.info-row{display:flex;align-items:flex-start;gap:12px;padding:12px;background:var(--black2);border-radius:8px;}
+.info-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.info-label{font-size:11px;color:var(--w40);margin-bottom:2px;}
+.info-value{font-size:13px;font-weight:500;}
+
+.price-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+.price-table th{text-align:left;font-size:11px;font-weight:600;color:var(--w40);text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid var(--border);}
+.price-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;}
+.price-table tr:last-child td{border-bottom:none;}
+.price-table td:last-child{text-align:right;font-weight:700;color:var(--gold);}
+
+.mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);padding:12px 14px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;}
+.btn-call{flex:1;background:var(--red);color:var(--white);border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.btn-save{background:var(--w10);border:1px solid var(--border);color:var(--white);border-radius:10px;padding:13px 16px;font-size:18px;cursor:pointer;}
+.cta-spacer{height:80px;}
+
+@media(min-width:768px){
+  .mobile-cta,.cta-spacer{display:none!important;}
+  header{padding:0 24px;}
+  .gallery{height:340px;}
+  .listing-body{padding:28px 24px;display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start;}
+  .listing-sidebar{background:var(--black2);border:1px solid var(--border);border-radius:12px;padding:20px;position:sticky;top:72px;}
+  .sidebar-name{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .sidebar-rating{display:flex;align-items:center;gap:6px;margin-bottom:16px;}
+  .btn-call-desk{display:block;background:var(--red);color:var(--white);border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;width:100%;text-align:center;margin-bottom:8px;text-decoration:none;}
+  .btn-map-desk{display:block;background:var(--w10);border:1px solid var(--border);color:var(--white);border-radius:10px;padding:12px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;width:100%;text-align:center;text-decoration:none;}
+  .sidebar-info{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+  .sidebar-row{font-size:12px;color:var(--w70);display:flex;gap:8px;}
+  .sidebar-row strong{color:var(--white);}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="hi">
-    <a href="listings.html" class="bk">← Listings</a>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
-    <button class="bl">Login</button>
+    <a href="city-bangkok.html" class="back-btn">← Bangkok</a>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
+
 <div class="gallery">
-  <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="DRAKE Luxury Lounge">
-  <img src="https://swanpass.com/wp-content/uploads/2023/05/room07-3.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="DRAKE Luxury Lounge">
-  <div class="gmore"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="DRAKE Luxury Lounge"><button class="gmb">📷 More photos</button></div>
-</div>
-<div class="pl">
-  <div class="pm">
-    <div style="margin-bottom:6px"><span class="cp">💃 Gentlemen's Club · 👄 Massage</span><span class="cp">📍 Bangkok</span></div>
-    <div class="ln">DRAKE Luxury Lounge</div>
-    <div style="margin-bottom:10px"><span class="badge bsp">★ Sponsored</span> <span class="badge bnw">🆕 New</span></div>
-    <div class="rr"><div class="bs">★★★★★</div><div class="rn">4.2</div><div class="rs">/ 5.0<br>(4 reviews)</div></div>
-    <div class="sb">
-      <div class="si"><div class="sv" style="color:var(--gold)">4.2</div><div class="sl">Rating</div></div>
-      <div class="si"><div class="sv">4</div><div class="sl">Reviews</div></div>
-      <div class="si"><div class="sv" style="color:var(--red)">100+</div><div class="sl">Visits</div></div>
-      <div class="si"><div class="sv">✓</div><div class="sl">Verified</div></div>
-    </div>
-    <div class="db">
-      <div style="flex:1"><div class="dt">🏷️ Current Deal</div><div class="dn">Grand Opening — New Venue on Soi 33</div><div class="ds">Book now to lock in this rate</div></div>
-      <div class="dp">-20%</div>
-    </div>
-    <div class="st">About</div>
-    <p class="desc">DRAKE Luxury Lounge is Bangkok's newest ultra-premium gentleman's club and massage lounge, bringing a completely new level of luxury to the iconic Sukhumvit Soi 33 strip. With lavish interiors, top-shelf drinks, and an exceptional host team, DRAKE is setting a new standard for what a Bangkok lounge experience can be. New opening — limited time introductory pricing.</p>
-    <div class="st">Details</div>
-    <div class="it">
-      <div class="ir"><span class="ii">📍</span><span class="il">Address</span><span class="iv">12/16 Soi Sukhumvit 33, Khlong Tan Nuea, Watthana, Bangkok</span></div>
-      <div class="ir"><span class="ii">📞</span><span class="il">Phone</span><span class="iv"><a href="tel:081-392-9998">081-392-9998</a></span></div>
-      <div class="ir"><span class="ii">🕐</span><span class="il">Hours</span><span class="iv">Daily 7:00 PM – 4:00 AM</span></div>
-      <div class="ir"><span class="ii">🏷️</span><span class="il">Category</span><span class="iv">💃 Gentlemen's Club · 👄 Massage</span></div>
-      <div class="ir"><span class="ii">🗺️</span><span class="il">Map</span><span class="iv"><a href="map.html">View on Map →</a></span></div>
-    </div>
-    <div class="st">Pricing</div>
-    <div class="pt">
-      <div class="pr"><span class="ps2">Entry</span><span class="pd">60 min</span><span class="pa">฿500</span></div>
-      <div class="pr"><span class="ps2">Bottle Service</span><span class="pd">60 min</span><span class="pa">฿5,000+</span></div>
-      <div class="pr"><span class="ps2">Private VIP Suite</span><span class="pd">90 min</span><span class="pa">฿15,000+</span></div>
-    </div>
-    <div class="st">Reviews (4)</div>
-    <div class="rc"><div class="rh"><div class="ra">🧑</div><div><div class="ru">BangkokReg2025</div></div><div class="rd">Feb 2026</div></div><div class="rs2">★★★★★</div><div class="rt">One of the best experiences I've had in Bangkok. Professional staff, clean facilities and great value. Highly recommended to anyone visiting.</div></div>
-    <div class="rc"><div class="rh"><div class="ra">👤</div><div><div class="ru">ExpatsChoice</div></div><div class="rd">Jan 2026</div></div><div class="rs2">★★★★★</div><div class="rt">Always come here when I'm in town. Consistently excellent. The staff remember regulars and the quality never drops.</div></div>
-    <div class="rc"><div class="rh"><div class="ra">🙂</div><div><div class="ru">FirstTimerTim</div></div><div class="rd">Jan 2026</div></div><div class="rs2">★★★★☆</div><div class="rt">Great spot, a little busy on weekends but worth the wait. Fair prices and friendly atmosphere. Will return.</div></div>
-    <div class="st" style="margin-top:24px">Nearby Shops</div>
-    <div class="ng">
-      <a href="listing-clubcozmo.html" class="nc"><img class="ni" src="https://swanpass.com/wp-content/uploads/2023/05/room07-3.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="nb"><div class="nn">Club Cozmo</div><div class="nm">💃 Bangkok · ★ 4.5</div></div></a>
-      <a href="listing-taki.html" class="nc"><img class="ni" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="nb"><div class="nn">Taki</div><div class="nm">💃 Bangkok · ★ 4.4</div></div></a>
-      <a href="listing-chairman-nuru.html" class="nc"><img class="ni" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="nb"><div class="nn">Chairman Nuru</div><div class="nm">👄 Bangkok · ★ 4.9</div></div></a>
-      <a href="listing-g2g.html" class="nc"><img class="ni" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="nb"><div class="nn">G2G Massage</div><div class="nm">👄 Bangkok · ★ 4.9</div></div></a>
-    </div>
+  <div class="gal-main">
+    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='linear-gradient(135deg,#1a1200,#3a2a00)';this.removeAttribute('src')" alt="">
+    <span class="gal-btn">📷 View Photos</span>
   </div>
-  <div class="ps">
-    <div class="sc">
-      <img class="si2" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="sb2">
-        <div class="sn">DRAKE Luxury Lounge</div>
-        <div class="sm">💃 Gentlemen's Club · 👄 Massage · 📍 Bangkok</div>
-        <a href="tel:081-392-9998" class="bc">📞 Call Now</a>
-        <a href="#" class="bse">♡ Save to Favorites</a>
-        <a href="map.html" class="bse">🗺️ View on Map</a>
-        <div class="sd"></div>
-        <div class="sri"><span>📞</span><span>081-392-9998</span></div>
-        <div class="sri"><span>🕐</span><span>Daily 7:00 PM – 4:00 AM</span></div>
-        <div class="sri"><span>📍</span><span style="font-size:11px">12/16 Soi Sukhumvit 33, Khlong Tan Nuea, Watthana, Bangkok</span></div>
-      </div>
-    </div>
+  <div class="gal-side">
+    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='linear-gradient(135deg,#1a1a2a,#0a0a2a)';this.removeAttribute('src')" alt="">
+    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" onerror="this.style.background='linear-gradient(135deg,#1a2a1a,#0a1a0a)';this.removeAttribute('src')" alt="">
   </div>
 </div>
-<div class="mcta"><a href="tel:081-392-9998" class="bc">📞 Call Now</a><a href="#" class="bs">♡</a><a href="map.html" class="bs">🗺️</a></div>
-<div class="bsp2"></div>
-<nav class="bot">
-  <a href="index.html" class="bi"><span class="bic">🏠</span><span class="bil">Home</span></a>
-  <a href="map.html" class="bi"><span class="bic">🗺️</span><span class="bil">Map</span></a>
-  <a href="deals.html" class="bi"><span class="bic">🏷️</span><span class="bil">Deals</span></a>
-  <a href="listings.html" class="bi active"><span class="bic">🔍</span><span class="bil">Browse</span></a>
-  <a href="admin.html" class="bi"><span class="bic">⚙️</span><span class="bil">Admin</span></a>
-</nav>
+
+<div class="listing-body">
+<div class="listing-main">
+  <div class="listing-name">DRAKE Luxury Lounge</div>
+  <div class="listing-meta">
+    <span class="badge b-sp">★ Sponsored</span><span class="badge b-nw">🆕 New</span>
+    <span class="listing-cat">Gentlemen's Club</span>
+    <span class="listing-city">📍 Sukhumvit 33, Bangkok</span>
+  </div>
+
+  <div class="rating-row">
+    <div><div class="stars-big">★★★★</div><div style="display:flex;align-items:baseline;gap:6px;margin-top:2px"><span class="rating-val">4.2</span><span class="rating-sub">/ 5.0 (5 reviews)</span></div></div>
+    <div class="stat-item"><span class="stat-val">&lt;100</span><span class="stat-lbl">Visits</span></div>
+    <div class="stat-item"><span class="stat-val" style="color:var(--green)">✓</span><span class="stat-lbl">Verified</span></div>
+  </div>
+
+  <div class="section-title"><span class="dot"></span>Business Details</div>
+  <div class="info-list">
+    <div class="info-row"><span class="info-icon">📍</span><div><div class="info-label">Address</div><div class="info-value">33/10 Soi Sukhumvit 33, Watthana, Bangkok</div></div></div>
+    <div class="info-row"><span class="info-icon">📞</span><div><div class="info-label">Phone</div><div class="info-value"><a href="tel:+6665789012" style="color:var(--red)">+66 65 789 0123</a></div></div></div>
+    <div class="info-row"><span class="info-icon">🕐</span><div><div class="info-label">Hours</div><div class="info-value">Daily 7:00 PM – 4:00 AM</div></div></div>
+    <div class="info-row"><span class="info-icon">🌐</span><div><div class="info-label">Category</div><div class="info-value">Gentlemen's Club</div></div></div>
+  </div>
+
+  <div class="section-title"><span class="dot"></span>Pricing</div>
+  <table class="price-table">
+    <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
+    <tbody>
+<tr><td>Entry</td><td>—</td><td>Free</td></tr>
+<tr><td>House Drinks</td><td>per drink</td><td>฿350+</td></tr>
+<tr><td>Table Minimum</td><td>per night</td><td>฿2,000</td></tr>
+<tr><td>VIP Table</td><td>per night</td><td>฿5,000+</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="listing-sidebar">
+  <div class="sidebar-name">DRAKE Luxury Lounge</div>
+  <div class="sidebar-rating"><span style="color:var(--gold)">★★★★</span> <strong>4.2</strong> <span style="font-size:11px;color:var(--w40)">(5)</span></div>
+  <a class="btn-call-desk" href="tel:+6665789012">📞 Call Now</a>
+  <a class="btn-map-desk" href="map.html">🗺️ View on Map</a>
+  <div class="sidebar-info">
+    <div class="sidebar-row">📍 <div><strong>Address</strong><br>33/10 Soi Sukhumvit 33, Watthana, Bangkok</div></div>
+    <div class="sidebar-row">🕐 <div><strong>Hours</strong><br>Daily 7:00 PM – 4:00 AM</div></div>
+  </div>
+</div>
+</div>
+
+<div class="cta-spacer"></div>
+<div class="mobile-cta">
+  <button class="btn-call" onclick="window.location='tel:+6665789012'">📞 Call Now</button>
+  <button class="btn-save">🔖</button>
+</div>
 </body>
 </html>

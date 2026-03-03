@@ -3,265 +3,644 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swanpass — More Bang For Your Baht</title>
+<title>Swanpass Thailand — More Bang For Your Baht</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+/* ═══════════════════════════════════════════════════════════════
+   SHARED DESIGN TOKENS  (used by both mobile + desktop code)
+═══════════════════════════════════════════════════════════════ */
 :root {
-  --black:#0a0a0a; --black2:#111111; --black3:#1a1a1a; --card-bg:#161616;
-  --red:#e8142a; --red-dark:#b80f20; --white:#ffffff;
-  --white70:rgba(255,255,255,0.7); --white40:rgba(255,255,255,0.4);
-  --white10:rgba(255,255,255,0.08); --gold:#d4a847; --green:#22c55e;
-  --border:rgba(255,255,255,0.08); --radius:10px; --radius-sm:6px;
+  --black:   #0a0a0a;
+  --black2:  #111111;
+  --black3:  #1a1a1a;
+  --card-bg: #161616;
+  --red:     #e8142a;
+  --red-dk:  #b80f20;
+  --white:   #ffffff;
+  --w70:     rgba(255,255,255,0.70);
+  --w40:     rgba(255,255,255,0.40);
+  --w10:     rgba(255,255,255,0.08);
+  --gold:    #d4a847;
+  --green:   #22c55e;
+  --border:  rgba(255,255,255,0.08);
+  --r:       10px;
+  --r-sm:    6px;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
-
-/* HEADER */
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
-.logo-img{height:28px;display:block;}
-.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:28px;display:block;}
-.header-search{flex:1;display:flex;align-items:center;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:36px;gap:8px;cursor:pointer;transition:border-color .2s;}
-.header-search:hover{border-color:var(--red);}
-.header-search input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;flex:1;}
-.header-search input::placeholder{color:var(--white40);}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s;}
-.btn-login:hover{background:var(--red-dark);}
-.btn-menu{background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:16px;cursor:pointer;}
-
-/* NAV TABS */
-.nav-tabs{background:var(--black2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
-.nav-tabs::-webkit-scrollbar{display:none;}
-.nav-tabs-inner{display:flex;padding:0 16px;max-width:1200px;margin:0 auto;gap:4px;white-space:nowrap;}
-.nav-tab{padding:10px 14px;font-size:12px;font-weight:500;color:var(--white70);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0;text-decoration:none;}
-.nav-tab:hover{color:var(--white);}
-.nav-tab.active{color:var(--red);border-bottom-color:var(--red);}
-
-/* HERO */
-.hero{background:linear-gradient(180deg,#1a0305 0%,var(--black) 100%);padding:24px 16px 20px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(232,20,42,.2) 0%,transparent 70%);pointer-events:none;}
-.hero-tagline{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--red);text-align:center;margin-bottom:6px;}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:2px;text-align:center;margin-bottom:16px;line-height:1;}
-.hero-title span{color:var(--red);}
-.search-box{background:var(--white);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;max-width:600px;margin:0 auto;}
-.search-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #e5e5e5;}
-.search-row:last-child{border-bottom:none;}
-.search-row label{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;width:60px;flex-shrink:0;}
-.search-row select,.search-row input{flex:1;border:none;outline:none;background:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#111;cursor:pointer;}
-.search-bottom{display:flex;align-items:center;padding:10px 14px;gap:10px;}
-.search-bottom select{flex:1;border:none;outline:none;background:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#111;cursor:pointer;}
-.btn-search{background:var(--red);color:var(--white);border:none;border-radius:8px;padding:10px 24px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
-
-/* CATEGORY PILLS */
-.categories{display:flex;gap:8px;overflow-x:auto;padding:14px 16px;scrollbar-width:none;background:var(--black2);}
-.categories::-webkit-scrollbar{display:none;}
-.cat-pill{display:flex;align-items:center;gap:6px;background:var(--white10);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;color:var(--white70);}
-.cat-pill:hover,.cat-pill.active{background:var(--red);border-color:var(--red);color:var(--white);}
-.cat-pill .emoji{font-size:16px;}
-
-/* SECTION */
-.section{padding:20px 16px;max-width:1200px;margin:0 auto;}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
-.section-title .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
-.see-all{font-size:12px;color:var(--red);text-decoration:none;font-weight:600;}
-.see-all:hover{text-decoration:underline;}
-
-/* BANNER AD SLIDER */
-.ad-slider-wrap{padding:0 16px 4px;max-width:1200px;margin:0 auto;}
-.ad-slider{position:relative;border-radius:var(--radius);overflow:hidden;height:120px;}
-.ad-slide{position:absolute;inset:0;display:flex;align-items:center;padding:20px;opacity:0;transition:opacity .5s;gap:16px;}
-.ad-slide.active{opacity:1;}
-.ad-slide-1{background:linear-gradient(135deg,#1a0008,#6b0015);}
-.ad-slide-2{background:linear-gradient(135deg,#0a1628,#1a3a6b);}
-.ad-slide-3{background:linear-gradient(135deg,#1a1200,#5c3d00);}
-.ad-slide-img{width:80px;height:80px;border-radius:8px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,0.15);}
-.ad-content{flex:1;min-width:0;}
-.ad-tag{display:inline-block;background:var(--red);color:var(--white);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:2px 6px;border-radius:3px;margin-bottom:5px;}
-.ad-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;line-height:1;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.ad-sub{font-size:11px;color:var(--white70);}
-.ad-cta{background:var(--white);color:var(--black);border:none;border-radius:6px;padding:8px 14px;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;white-space:nowrap;}
-.ad-dots{position:absolute;bottom:8px;right:12px;display:flex;gap:4px;}
-.ad-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .2s;}
-.ad-dot.active{background:var(--white);width:14px;border-radius:3px;}
-
-/* CARDS GRID */
-.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.shop-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;}
-.shop-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
-.card-badges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
-.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.badge-sponsored{background:rgba(212,168,71,.9);color:#000;}
-.badge-featured{background:rgba(232,20,42,.9);color:#fff;}
-.badge-deal{background:rgba(34,197,94,.9);color:#000;}
-.badge-new{background:rgba(99,102,241,.9);color:#fff;}
-.card-body{padding:8px 10px 10px;}
-.card-cat{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--white40);margin-bottom:3px;}
-.card-name{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.card-location{font-size:11px;color:var(--white40);margin-bottom:6px;}
-.card-footer{display:flex;align-items:center;justify-content:space-between;}
-.card-rating{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
-.card-rating .stars{color:var(--gold);font-size:10px;}
-.card-visits{font-size:10px;color:var(--white40);background:var(--white10);padding:2px 6px;border-radius:10px;}
-.card-deal-strip{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
-.deal-pct{font-family:'Bebas Neue',sans-serif;font-size:14px;}
-
-/* WIDE CARDS */
-.cards-grid-wide{display:grid;grid-template-columns:1fr;gap:10px;}
-.shop-card-wide{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;display:flex;position:relative;}
-.shop-card-wide:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.wide-img{width:100px;flex-shrink:0;object-fit:cover;display:block;background:var(--black3);}
-.wide-body{padding:10px 12px;flex:1;min-width:0;}
-.wide-name{font-size:14px;font-weight:700;margin-bottom:3px;line-height:1.2;}
-.wide-meta{font-size:11px;color:var(--white40);margin-bottom:6px;display:flex;gap:8px;flex-wrap:wrap;}
-.wide-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.wide-badges{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;}
-
-/* CITY GRID */
-.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.city-card{border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#2a1a1a);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--border);transition:border-color .2s;}
-.city-card:hover{border-color:var(--red);}
-.city-emoji{font-size:28px;margin-bottom:4px;}
-.city-name{font-size:11px;font-weight:700;text-align:center;}
-.city-count{font-size:10px;color:var(--white40);}
-
-/* DEALS SCROLL */
-.deals-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
-.deals-scroll::-webkit-scrollbar{display:none;}
-.deal-card{flex-shrink:0;width:150px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:border-color .2s;}
-.deal-card:hover{border-color:var(--red);}
-.deal-card-img{height:90px;object-fit:cover;width:100%;display:block;background:var(--black3);}
-.deal-card-body{padding:8px 10px;}
-.deal-card-tag{display:inline-block;background:var(--red);color:var(--white);font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 5px;border-radius:3px;margin-bottom:4px;}
-.deal-card-name{font-size:12px;font-weight:600;line-height:1.2;margin-bottom:4px;}
-.deal-card-price{display:flex;align-items:baseline;gap:4px;}
-.deal-price-new{font-size:13px;font-weight:700;color:var(--green);}
-.deal-price-old{font-size:10px;color:var(--white40);text-decoration:line-through;}
-
-/* DIVIDER */
-.section-divider{height:1px;background:var(--border);margin:4px 16px;}
-
-/* FOOTER */
-footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 16px;margin-top:20px;text-align:center;}
-.footer-logo img{height:32px;margin:0 auto 12px;display:block;}
-.footer-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
-.footer-links a{font-size:12px;color:var(--white40);text-decoration:none;}
-.footer-links a:hover{color:var(--white);}
-.footer-disclaimer{font-size:10px;color:var(--white40);line-height:1.6;max-width:480px;margin:0 auto;}
-.footer-copy{font-size:11px;color:var(--white40);margin-top:12px;}
-
-/* AGE GATE */
-.age-gate{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;padding:24px;}
-.age-gate-box{background:var(--black2);border:1px solid var(--border);border-radius:16px;padding:32px 24px;max-width:360px;width:100%;text-align:center;}
-.age-gate-logo img{height:40px;margin:0 auto 16px;display:block;}
-.age-gate-icon{font-size:48px;margin-bottom:16px;}
-.age-gate-title{font-size:20px;font-weight:700;margin-bottom:8px;}
-.age-gate-text{font-size:13px;color:var(--white70);margin-bottom:24px;line-height:1.6;}
-.age-gate-btns{display:flex;gap:10px;}
-.btn-age-yes{flex:1;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-age-no{flex:1;background:var(--white10);color:var(--white70);border:1px solid var(--border);border-radius:8px;padding:13px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
-
-/* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
-.bnav-item.active{color:var(--red);}
-.bnav-icon{font-size:20px;}
-.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bottom-nav-spacer{height:70px;}
-
-/* DESKTOP */
-@media(max-width:479px){
-  .btn-login{font-size:11px;padding:6px 10px;}
-  .header-search{max-width:140px;}
-  .hero-title{font-size:28px;}
-  .cards-grid{grid-template-columns:1fr 1fr;}
-  .city-grid{grid-template-columns:repeat(3,1fr);}
-  .ad-title{font-size:16px;}
-  .wide-img{width:80px;}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-x: hidden;
 }
-@media(max-width:767px){
-  .cards-grid{grid-template-columns:1fr 1fr;}
-  .city-grid{grid-template-columns:repeat(3,1fr);}
-  .section{padding:16px 12px;}
-  .nav-tabs-inner{padding:0 12px;}
+a { color: inherit; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE LAYOUT CODE  — primary experience  (base / no query)
+═══════════════════════════════════════════════════════════════ */
+
+/* --- Age Gate --- */
+.age-gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,0.97);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
 }
-@media(min-width:768px){
-  .bottom-nav{display:none;}
-  .bottom-nav-spacer{display:none;}
-  .cards-grid{grid-template-columns:repeat(4,1fr);}
-  .city-grid{grid-template-columns:repeat(6,1fr);}
-  .hero-title{font-size:48px;}
-  .search-box{flex-direction:row;}
-  .search-box .search-row{flex:1;border-bottom:none;border-right:1px solid #e5e5e5;}
-  .search-box .search-bottom{border-top:none;}
-  .ad-slider{height:150px;}
-  .ad-title{font-size:24px;}
-  .cards-grid-wide{grid-template-columns:1fr 1fr;}
+.age-box {
+  background: var(--black2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px 24px;
+  max-width: 340px; width: 100%;
+  text-align: center;
 }
-@media(min-width:1024px){
-  .cards-grid{grid-template-columns:repeat(6,1fr);}
+.age-box img  { height: 36px; margin: 0 auto 18px; display: block; }
+.age-icon     { font-size: 46px; margin-bottom: 14px; }
+.age-title    { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.age-text     { font-size: 13px; color: var(--w70); margin-bottom: 24px; line-height: 1.6; }
+.age-btns     { display: flex; gap: 10px; }
+.btn-yes {
+  flex:1; background: var(--red); color: var(--white);
+  border: none; border-radius: 10px; padding: 14px;
+  font-size: 14px; font-weight: 700; font-family: 'DM Sans',sans-serif; cursor: pointer;
+  transition: background .2s;
+}
+.btn-yes:hover { background: var(--red-dk); }
+.btn-no  {
+  flex:1; background: var(--w10); color: var(--w70);
+  border: 1px solid var(--border); border-radius: 10px; padding: 14px;
+  font-size: 14px; font-weight: 600; font-family: 'DM Sans',sans-serif; cursor: pointer;
+}
+
+/* --- Header --- */
+header {
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 14px;
+}
+.header-inner {
+  display: flex; align-items: center; gap: 10px;
+  height: 52px; max-width: 1200px; margin: 0 auto;
+}
+.logo { flex-shrink: 0; }
+.logo img { height: 26px; display: block; }
+.header-search {
+  flex: 1;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--w10); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0 12px; height: 36px;
+  cursor: pointer; transition: border-color .2s;
+}
+.header-search:hover { border-color: var(--red); }
+.header-search input {
+  background: none; border: none; outline: none;
+  color: var(--white); font-family: 'DM Sans',sans-serif;
+  font-size: 13px; flex: 1; min-width: 0;
+}
+.header-search input::placeholder { color: var(--w40); }
+.btn-login {
+  background: var(--red); color: var(--white);
+  border: none; border-radius: 6px; padding: 7px 12px;
+  font-size: 12px; font-weight: 700; font-family: 'DM Sans',sans-serif;
+  cursor: pointer; white-space: nowrap; transition: background .2s; flex-shrink: 0;
+}
+.btn-login:hover { background: var(--red-dk); }
+
+/* --- Nav tabs (horizontal scroll) --- */
+.nav-tabs {
+  background: var(--black2);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tabs-inner {
+  display: flex; padding: 0 14px;
+  max-width: 1200px; margin: 0 auto;
+  gap: 2px; white-space: nowrap;
+}
+.nav-tab {
+  padding: 10px 12px; font-size: 12px; font-weight: 500;
+  color: var(--w70); cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .2s; flex-shrink: 0;
+  text-decoration: none; display: block;
+}
+.nav-tab:hover { color: var(--white); }
+.nav-tab.active { color: var(--red); border-bottom-color: var(--red); }
+
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(180deg, #1a0305 0%, var(--black) 100%);
+  padding: 22px 16px 20px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+  width: 360px; height: 180px;
+  background: radial-gradient(ellipse, rgba(232,20,42,.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-country {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-bottom: 6px;
+}
+.hero-flag { font-size: 20px; }
+.hero-tagline {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--red);
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 2px;
+  text-align: center; margin-bottom: 16px; line-height: 1;
+}
+.hero-title span { color: var(--red); }
+.search-box {
+  background: var(--white); border-radius: 12px;
+  overflow: hidden; max-width: 580px; margin: 0 auto;
+}
+.search-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-bottom: 1px solid #e8e8e8;
+}
+.search-row:last-child { border-bottom: none; }
+.search-row label {
+  font-size: 10px; font-weight: 700; color: #999;
+  text-transform: uppercase; letter-spacing: .5px;
+  width: 56px; flex-shrink: 0;
+}
+.search-row select {
+  flex: 1; border: none; outline: none;
+  background: none; font-family: 'DM Sans',sans-serif;
+  font-size: 14px; font-weight: 500; color: #111; cursor: pointer;
+}
+.search-bottom {
+  display: flex; align-items: center; padding: 10px 14px; gap: 10px;
+}
+.search-bottom select {
+  flex: 1; border: none; outline: none; background: none;
+  font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 500;
+  color: #111; cursor: pointer;
+}
+.btn-search {
+  background: var(--red); color: var(--white); border: none;
+  border-radius: 8px; padding: 10px 20px;
+  font-size: 14px; font-weight: 700; font-family: 'DM Sans',sans-serif;
+  cursor: pointer; flex-shrink: 0;
+}
+
+/* --- Category pills --- */
+.categories {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding: 12px 14px; scrollbar-width: none;
+  background: var(--black2); border-bottom: 1px solid var(--border);
+}
+.categories::-webkit-scrollbar { display: none; }
+.cat-pill {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--w10); border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 13px;
+  font-size: 12px; font-weight: 500;
+  white-space: nowrap; cursor: pointer;
+  transition: all .2s; flex-shrink: 0; color: var(--w70);
+  text-decoration: none;
+}
+.cat-pill:hover, .cat-pill.active {
+  background: var(--red); border-color: var(--red); color: var(--white);
+}
+.cat-pill .e { font-size: 15px; }
+
+/* --- Section layout --- */
+.section {
+  padding: 18px 14px;
+  max-width: 1200px; margin: 0 auto;
+}
+.section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--red); flex-shrink: 0;
+}
+.see-all {
+  font-size: 12px; color: var(--red);
+  text-decoration: none; font-weight: 600;
+}
+.see-all:hover { text-decoration: underline; }
+.divider { height: 1px; background: var(--border); margin: 0 14px; }
+
+/* --- Sponsored shops: MOBILE = horizontal scroll row --- */
+.sponsored-scroll {
+  display: flex; gap: 10px; overflow-x: auto;
+  padding-bottom: 4px; scrollbar-width: none;
+}
+.sponsored-scroll::-webkit-scrollbar { display: none; }
+.sp-card {
+  flex-shrink: 0; width: 200px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; cursor: pointer;
+  transition: transform .2s, border-color .2s;
+  text-decoration: none; color: inherit; display: block;
+  position: relative;
+}
+.sp-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4); }
+.sp-img {
+  width: 100%; height: 130px;
+  object-fit: cover; display: block;
+  background: linear-gradient(135deg,#2a1a1a,#1a0f0f);
+}
+.sp-badges {
+  position: absolute; top: 6px; left: 6px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.sp-body { padding: 9px 10px 10px; }
+.sp-name {
+  font-size: 13px; font-weight: 700;
+  line-height: 1.2; margin-bottom: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sp-meta { font-size: 11px; color: var(--w40); margin-bottom: 6px; }
+.sp-foot {
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Badges --- */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 2px 7px; border-radius: 4px;
+  font-size: 9px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .5px;
+  backdrop-filter: blur(4px); line-height: 1.4;
+}
+.b-sp  { background: rgba(212,168,71,.92); color: #000; }
+.b-ft  { background: rgba(232,20,42,.92);  color: #fff; }
+.b-dl  { background: rgba(34,197,94,.92);  color: #000; }
+.b-nw  { background: rgba(99,102,241,.92); color: #fff; }
+
+/* --- Rating / visits --- */
+.rating {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 11px; font-weight: 600;
+}
+.stars { color: var(--gold); font-size: 10px; }
+.visits {
+  font-size: 10px; color: var(--w40);
+  background: var(--w10); padding: 2px 6px; border-radius: 10px;
+}
+
+/* --- Banner ad slider --- */
+.ad-wrap { padding: 0 14px 4px; max-width: 1200px; margin: 0 auto; }
+.ad-slider {
+  position: relative; border-radius: var(--r); overflow: hidden; height: 118px;
+}
+.ad-slide {
+  position: absolute; inset: 0;
+  display: flex; align-items: center;
+  padding: 18px 16px; opacity: 0; transition: opacity .5s; gap: 14px;
+}
+.ad-slide.active { opacity: 1; }
+.ad-s1 { background: linear-gradient(135deg,#1a0008,#6b0015); }
+.ad-s2 { background: linear-gradient(135deg,#0a1628,#1a3a6b); }
+.ad-s3 { background: linear-gradient(135deg,#1a1200,#5c3d00); }
+.ad-img {
+  width: 76px; height: 76px; border-radius: 8px;
+  object-fit: cover; flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,.15);
+  background: #2a1a1a;
+}
+.ad-content { flex: 1; min-width: 0; }
+.ad-tag {
+  display: inline-block; background: var(--red); color: var(--white);
+  font-size: 9px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1px; padding: 2px 6px; border-radius: 3px; margin-bottom: 4px;
+}
+.ad-title {
+  font-family: 'Bebas Neue',sans-serif; font-size: 18px;
+  letter-spacing: 1px; line-height: 1; margin-bottom: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ad-sub { font-size: 11px; color: var(--w70); }
+.ad-cta {
+  background: var(--white); color: var(--black);
+  border: none; border-radius: 6px; padding: 8px 12px;
+  font-size: 11px; font-weight: 700; font-family: 'DM Sans',sans-serif;
+  cursor: pointer; flex-shrink: 0; white-space: nowrap;
+}
+.ad-dots {
+  position: absolute; bottom: 8px; right: 10px;
+  display: flex; gap: 4px;
+}
+.ad-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,.3); cursor: pointer; transition: all .2s;
+}
+.ad-dot.active { background: var(--white); width: 14px; border-radius: 3px; }
+
+/* --- Featured shops: MOBILE = 2-col grid --- */
+.cards-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.shop-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; cursor: pointer;
+  transition: transform .2s, border-color .2s;
+  position: relative; text-decoration: none; color: inherit; display: block;
+}
+.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4); }
+.card-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  background: linear-gradient(135deg,#2a1a1a,#1a0f0f);
+}
+.card-badges {
+  position: absolute; top: 6px; left: 6px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.card-body { padding: 8px 10px 10px; }
+.card-cat  { font-size: 10px; color: var(--w40); margin-bottom: 2px; }
+.card-name {
+  font-size: 12px; font-weight: 700; line-height: 1.2; margin-bottom: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-loc  { font-size: 10px; color: var(--w40); margin-bottom: 6px; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; }
+.deal-strip {
+  background: linear-gradient(90deg,var(--red),#ff4d6d);
+  padding: 4px 10px; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.deal-pct { font-family: 'Bebas Neue',sans-serif; font-size: 14px; }
+
+/* --- Deals horizontal scroll --- */
+.deals-scroll {
+  display: flex; gap: 10px; overflow-x: auto;
+  padding-bottom: 4px; scrollbar-width: none;
+}
+.deals-scroll::-webkit-scrollbar { display: none; }
+.deal-card {
+  flex-shrink: 0; width: 148px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; cursor: pointer;
+  transition: border-color .2s; text-decoration: none; color: inherit; display: block;
+}
+.deal-card:hover { border-color: var(--red); }
+.deal-img  { height: 88px; object-fit: cover; width: 100%; display: block; background: #2a1a1a; }
+.deal-body { padding: 8px 10px; }
+.deal-tag  {
+  display: inline-block; background: var(--red); color: var(--white);
+  font-size: 8px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .5px; padding: 2px 5px; border-radius: 3px; margin-bottom: 4px;
+}
+.deal-name { font-size: 12px; font-weight: 600; line-height: 1.2; margin-bottom: 4px; }
+.deal-price { display: flex; align-items: baseline; gap: 4px; }
+.price-new  { font-size: 13px; font-weight: 700; color: var(--green); }
+.price-old  { font-size: 10px; color: var(--w40); text-decoration: line-through; }
+
+/* --- City grid: MOBILE = 3 cols --- */
+.city-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;
+}
+.city-card {
+  border-radius: var(--r-sm); overflow: hidden;
+  cursor: pointer; position: relative; aspect-ratio: 1;
+  background: linear-gradient(135deg,#1a1a1a,#2a1a1a);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 1px solid var(--border); transition: border-color .2s;
+  text-decoration: none; color: inherit;
+}
+.city-card:hover { border-color: var(--red); }
+.city-emoji { font-size: 26px; margin-bottom: 4px; }
+.city-name  { font-size: 11px; font-weight: 700; text-align: center; }
+.city-count { font-size: 10px; color: var(--w40); }
+
+/* --- All listings grid (filterable, MOBILE = 2 col) --- */
+.listings-filter {
+  display: flex; gap: 6px; overflow-x: auto;
+  padding: 0 0 12px; scrollbar-width: none; flex-wrap: nowrap;
+}
+.listings-filter::-webkit-scrollbar { display: none; }
+.lf-btn {
+  background: var(--w10); border: 1px solid var(--border);
+  border-radius: 16px; padding: 5px 12px;
+  font-size: 11px; font-weight: 500; color: var(--w70);
+  white-space: nowrap; cursor: pointer; transition: all .2s; flex-shrink: 0;
+}
+.lf-btn.active { background: var(--red); border-color: var(--red); color: var(--white); }
+
+/* --- Footer --- */
+footer {
+  background: var(--black2); border-top: 1px solid var(--border);
+  padding: 24px 16px; margin-top: 16px; text-align: center;
+}
+footer img { height: 30px; margin: 0 auto 14px; display: block; }
+.footer-links {
+  display: flex; gap: 14px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 14px;
+}
+.footer-links a { font-size: 12px; color: var(--w40); text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+.footer-disc {
+  font-size: 10px; color: var(--w40); line-height: 1.6;
+  max-width: 460px; margin: 0 auto;
+}
+.footer-copy { font-size: 11px; color: var(--w40); margin-top: 12px; }
+
+/* --- Bottom nav (MOBILE only) --- */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+  background: var(--black2); border-top: 1px solid var(--border);
+  display: flex; padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+}
+.bnav-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  gap: 2px; cursor: pointer; color: var(--w40);
+  text-decoration: none; transition: color .2s;
+}
+.bnav-item.active { color: var(--red); }
+.bi { font-size: 20px; }
+.bl { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+.bn-spacer { height: 70px; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT CODE  — secondary experience  (≥ 768px)
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  /* Hide mobile-only elements */
+  .bottom-nav, .bn-spacer { display: none !important; }
+
+  /* Header */
+  header { padding: 0 24px; }
+  .header-inner { height: 58px; gap: 16px; }
+  .logo img { height: 30px; }
+
+  /* Nav tabs */
+  .nav-tabs { padding: 0; }
+  .nav-tabs-inner { padding: 0 24px; }
+  .nav-tab { padding: 11px 16px; font-size: 13px; }
+
+  /* Hero */
+  .hero { padding: 36px 24px 32px; }
+  .hero-title { font-size: 52px; }
+  .hero-tagline { font-size: 12px; }
+
+  /* Search box: 3-column row on desktop */
+  .search-box {
+    flex-direction: row;
+    max-width: 720px;
+  }
+  .search-box .search-row {
+    flex: 1; border-bottom: none; border-right: 1px solid #e8e8e8;
+  }
+  .search-box .search-bottom { border-top: none; flex-shrink: 0; min-width: 180px; }
+
+  /* Categories */
+  .categories { padding: 14px 24px; gap: 10px; }
+  .cat-pill { font-size: 13px; padding: 7px 16px; }
+
+  /* Section */
+  .section { padding: 24px 24px; }
+  .divider { margin: 0 24px; }
+  .section-title { font-size: 22px; }
+
+  /* Sponsored shops: DESKTOP = 2-col wide cards grid */
+  .sponsored-scroll {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    overflow: visible;
+  }
+  .sp-card {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  .sp-img {
+    width: 110px; height: auto;
+    flex-shrink: 0; aspect-ratio: unset;
+  }
+  .sp-body { flex: 1; padding: 12px 14px; }
+  .sp-name { font-size: 14px; white-space: normal; }
+  .sp-meta { font-size: 12px; }
+
+  /* Featured grid: DESKTOP = 4 cols */
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .card-name { font-size: 13px; }
+
+  /* All-listings grid: DESKTOP = 5 cols */
+  .all-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+
+  /* City grid: DESKTOP = 5 cols */
+  .city-grid { grid-template-columns: repeat(5,1fr); gap: 10px; }
+  .city-emoji { font-size: 32px; }
+  .city-name  { font-size: 13px; }
+
+  /* Ad slider */
+  .ad-slider { height: 148px; }
+  .ad-title { font-size: 22px; }
+
+  /* Deals scroll: wider cards on desktop */
+  .deal-card { width: 180px; }
+  .deal-img  { height: 110px; }
+
+  /* Footer */
+  footer { padding: 32px 24px; }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(5, 1fr); }
+  .all-grid   { grid-template-columns: repeat(6, 1fr) !important; }
+  .city-grid  { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 479px) {
+  .hero-title { font-size: 28px; }
+  .header-search { max-width: 130px; }
+  .btn-login { padding: 6px 10px; font-size: 11px; }
 }
 </style>
 </head>
 <body>
 
-<!-- AGE GATE -->
+<!-- ══ AGE GATE ══════════════════════════════════════════════ -->
 <div class="age-gate" id="ageGate">
-  <div class="age-gate-box">
-    <div class="age-gate-logo"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></div>
-    <div class="age-gate-icon">🔞</div>
-    <div class="age-gate-title">Adults Only</div>
-    <div class="age-gate-text">This website contains adult content suitable only for those 18 years and older. Please confirm your age to continue.</div>
-    <div class="age-gate-btns">
-      <button class="btn-age-yes" onclick="closeAgeGate()">I'm 18 or older</button>
-      <button class="btn-age-no" onclick="window.location='https://google.com'">Exit</button>
+  <div class="age-box">
+    <img src="./swanpass_logo_rev.png" alt="Swanpass">
+    <div class="age-icon">🔞</div>
+    <div class="age-title">Adults Only</div>
+    <div class="age-text">This website contains adult content suitable only for those 18 years and older. By entering you confirm you are of legal age.</div>
+    <div class="age-btns">
+      <button class="btn-yes" onclick="closeAgeGate()">I'm 18 or older</button>
+      <button class="btn-no"  onclick="window.location='https://google.com'">Exit</button>
     </div>
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- ══ HEADER ════════════════════════════════════════════════ -->
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" style="height:28px;display:block;"></a>
-    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
-      <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    <a href="index.html" class="logo">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass">
+    </a>
+    <div class="header-search" onclick="this.querySelector('input').focus()">
+      <span style="color:var(--w40);font-size:14px">🔍</span>
+      <input type="text" placeholder="Search Thailand shops..."
+        onkeydown="if(event.key==='Enter')window.location='listings.html?q='+encodeURIComponent(this.value)">
     </div>
-    <button class="btn-menu">☰</button>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 
-<!-- NAV TABS -->
+<!-- ══ NAV TABS ══════════════════════════════════════════════ -->
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab active">🏠 Home</a>
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="index.html"       class="nav-tab active">🏠 Home</a>
+    <a href="map.html"         class="nav-tab">🗺️ Map</a>
+    <a href="deals.html"       class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html"    class="nav-tab">🔍 Browse</a>
+    <a href="cities.html"      class="nav-tab">📍 Cities</a>
+    <a href="search.html"      class="nav-tab">🔎 Search</a>
     <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="admin.html"       class="nav-tab">⚙️ Admin</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
 <div class="hero">
-  <div class="hero-tagline">More Bang For Your Baht</div>
-  <div class="hero-title">FIND YOUR <span>PERFECT</span> ESCAPE</div>
+  <div class="hero-country">
+    <span class="hero-flag">🇹🇭</span>
+    <span class="hero-tagline">Thailand's #1 Adult Entertainment Directory</span>
+  </div>
+  <div class="hero-title">MORE <span>BANG</span> FOR YOUR BAHT</div>
   <div class="search-box">
     <div class="search-row">
-      <label>Where</label>
-      <select>
-        <option>All Cities</option>
-        <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option>
-        <option>Phuket</option><option>Ho Chi Minh City</option><option>Hanoi</option>
-        <option>Bali</option><option>Jakarta</option><option>Singapore</option>
-        <option>Kuala Lumpur</option><option>Phnom Penh</option>
+      <label>City</label>
+      <select onchange="if(this.value)window.location=this.value">
+        <option value="">All Thailand</option>
+        <option value="city-bangkok.html">Bangkok</option>
+        <option value="city-pattaya.html">Pattaya</option>
+        <option value="city-chiangmai.html">Chiang Mai</option>
+        <option value="city-phuket.html">Phuket</option>
+        <option value="city-huahin.html">Hua Hin</option>
       </select>
     </div>
     <div class="search-row">
@@ -277,57 +656,73 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
       </select>
     </div>
     <div class="search-bottom">
-      <select style="flex:1">
-        <option>Sort: Top Rated</option>
-        <option>Sort: Most Visited</option>
-        <option>Sort: Newest</option>
-        <option>Sort: Has Deals</option>
+      <select>
+        <option>Top Rated</option>
+        <option>Most Visited</option>
+        <option>Newest</option>
+        <option>Has Deals</option>
       </select>
-      <button class="btn-search">Search</button>
+      <button class="btn-search" onclick="window.location='listings.html'">Search</button>
     </div>
   </div>
 </div>
 
-<!-- CATEGORY PILLS -->
-<div class="categories">
-  <div class="cat-pill active"><span class="emoji">🔥</span> All</div>
-  <div class="cat-pill"><span class="emoji">👄</span> Massage</div>
-  <div class="cat-pill"><span class="emoji">🛁</span> Soapy</div>
-  <div class="cat-pill"><span class="emoji">💃</span> Gentlemen's Club</div>
-  <div class="cat-pill"><span class="emoji">👯</span> Go-Go Bars</div>
-  <div class="cat-pill"><span class="emoji">❤️‍🔥</span> Freelancers</div>
-  <div class="cat-pill"><span class="emoji">📍</span> Red Light</div>
+<!-- ══ CATEGORY PILLS ════════════════════════════════════════ -->
+<div class="categories" id="catBar">
+  <span class="cat-pill active" data-cat="all"><span class="e">🔥</span> All</span>
+  <span class="cat-pill" data-cat="massage"><span class="e">👄</span> Massage</span>
+  <span class="cat-pill" data-cat="soapy"><span class="e">🛁</span> Soapy</span>
+  <span class="cat-pill" data-cat="club"><span class="e">💃</span> Gentlemen's Club</span>
+  <span class="cat-pill" data-cat="gogo"><span class="e">👯</span> Go-Go Bars</span>
+  <span class="cat-pill" data-cat="freelancer"><span class="e">❤️‍🔥</span> Freelancers</span>
+  <span class="cat-pill" data-cat="redlight"><span class="e">📍</span> Red Light</span>
 </div>
 
-<!-- BANNER AD SLIDER -->
-<div class="ad-slider-wrap">
+<!-- ══ SPONSORED SHOPS ═══════════════════════════════════════ -->
+<div class="section" id="sponsored">
+  <div class="section-header">
+    <div class="section-title"><span class="dot"></span>📣 Sponsored Shops</div>
+    <a href="listings.html?tag=sponsored" class="see-all">See all →</a>
+  </div>
+  <div class="sponsored-scroll" id="sponsoredGrid">
+    <!-- Injected by JS -->
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ BANNER AD SLIDER ══════════════════════════════════════ -->
+<div class="ad-wrap">
   <div class="ad-slider" id="adSlider">
-    <div class="ad-slide active ad-slide-1">
-      <img class="ad-slide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="Chairman Nuru" onerror="this.style.display='none'">
+    <div class="ad-slide active ad-s1">
+      <img class="ad-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg"
+           onerror="this.style.display='none'" alt="">
       <div class="ad-content">
         <div class="ad-tag">📣 Sponsored</div>
         <div class="ad-title">Chairman Nuru Massage</div>
         <div class="ad-sub">Sukhumvit Soi 33 · Bangkok · ⭐ 4.9 · 9K+ visits</div>
       </div>
-      <button class="ad-cta">View Now</button>
+      <button class="ad-cta" onclick="window.location='listing-chairman-nuru.html'">View Now</button>
     </div>
-    <div class="ad-slide ad-slide-2">
-      <img class="ad-slide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot" onerror="this.style.display='none'">
+    <div class="ad-slide ad-s2">
+      <img class="ad-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg"
+           onerror="this.style.display='none'" alt="">
       <div class="ad-content">
         <div class="ad-tag">🏷️ Deal — 20% OFF</div>
         <div class="ad-title">JSpot Massage</div>
         <div class="ad-sub">Sukhumvit Soi 33 · Bangkok · Limited Time Offer</div>
       </div>
-      <button class="ad-cta">View Deal</button>
+      <button class="ad-cta" onclick="window.location='listing-jspot.html'">View Deal</button>
     </div>
-    <div class="ad-slide ad-slide-3">
-      <img class="ad-slide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" alt="Drake" onerror="this.style.display='none'">
+    <div class="ad-slide ad-s3">
+      <img class="ad-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp"
+           onerror="this.style.display='none'" alt="">
       <div class="ad-content">
-        <div class="ad-tag">⭐ Featured</div>
+        <div class="ad-tag">⭐ Sponsored · New</div>
         <div class="ad-title">DRAKE Luxury Lounge</div>
-        <div class="ad-sub">Sukhumvit Soi 33 · Bangkok · New Opening</div>
+        <div class="ad-sub">Sukhumvit Soi 33 · Bangkok · Grand Opening</div>
       </div>
-      <button class="ad-cta">Explore</button>
+      <button class="ad-cta" onclick="window.location='listing-drake.html'">Explore</button>
     </div>
     <div class="ad-dots">
       <div class="ad-dot active" onclick="goSlide(0)"></div>
@@ -337,355 +732,408 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
   </div>
 </div>
 
-<!-- SPONSORED SHOPS -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>📣 Sponsored Shops</div>
-    <a href="#" class="see-all">See all →</a>
-  </div>
-  <div class="cards-grid-wide">
-    <div class="shop-card-wide">
-      <img class="wide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="Chairman Nuru" onerror="this.style.background='#2a1a1a';this.style.minHeight='100px';">
-      <div class="wide-body">
-        <div class="wide-badges"><span class="badge badge-sponsored">★ Sponsored</span><span class="badge badge-deal">🏷️ -15%</span></div>
-        <div class="wide-name">Chairman Nuru Massage</div>
-        <div class="wide-meta"><span>👄 Massage · 🛁 Soapy</span><span>📍 Bangkok</span></div>
-        <div class="wide-footer">
-          <span class="card-rating"><span class="stars">★★★★★</span> 4.9</span>
-          <span class="card-visits">9K+ visits</span>
-        </div>
-      </div>
-    </div>
-    <div class="shop-card-wide">
-      <img class="wide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="G2G" onerror="this.style.background='#2a1a1a';this.style.minHeight='100px';">
-      <div class="wide-body">
-        <div class="wide-badges"><span class="badge badge-sponsored">★ Sponsored</span></div>
-        <div class="wide-name">G2G Massage</div>
-        <div class="wide-meta"><span>👄 Massage · 🛁 Soapy</span><span>📍 Bangkok</span></div>
-        <div class="wide-footer">
-          <span class="card-rating"><span class="stars">★★★★★</span> 4.9</span>
-          <span class="card-visits">8K+ visits</span>
-        </div>
-      </div>
-    </div>
-    <div class="shop-card-wide">
-      <img class="wide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" alt="666 Class" onerror="this.style.background='#2a1a1a';this.style.minHeight='100px';">
-      <div class="wide-body">
-        <div class="wide-badges"><span class="badge badge-sponsored">★ Sponsored</span></div>
-        <div class="wide-name">666 Class</div>
-        <div class="wide-meta"><span>👄 Massage · 🛁 Soapy</span><span>📍 Bangkok</span></div>
-        <div class="wide-footer">
-          <span class="card-rating"><span class="stars">★★★★★</span> 4.8</span>
-          <span class="card-visits">3K+ visits</span>
-        </div>
-      </div>
-    </div>
-    <div class="shop-card-wide">
-      <img class="wide-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" alt="Drake" onerror="this.style.background='#2a1a1a';this.style.minHeight='100px';">
-      <div class="wide-body">
-        <div class="wide-badges"><span class="badge badge-sponsored">★ Sponsored</span><span class="badge badge-new">🆕 New</span></div>
-        <div class="wide-name">DRAKE Luxury Lounge</div>
-        <div class="wide-meta"><span>💃 Gentlemen's Club</span><span>📍 Bangkok</span></div>
-        <div class="wide-footer">
-          <span class="card-rating"><span class="stars">★★★★</span> 4.2</span>
-          <span class="card-visits">&lt;100 visits</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="divider" style="margin-top:16px"></div>
 
-<div class="section-divider"></div>
-
-<!-- DEALS -->
-<div class="section" id="deals">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🏷️ Deals & Promotions</div>
-    <a href="#" class="see-all">See all →</a>
-  </div>
-  <div class="deals-scroll">
-    <div class="deal-card">
-      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="G2G">
-      <div class="deal-card-body">
-        <span class="deal-card-tag">🔥 Flash Deal</span>
-        <div class="deal-card-name">G2G Massage</div>
-        <div class="deal-card-price"><span class="deal-price-new">฿800</span><span class="deal-price-old">฿1,200</span></div>
-      </div>
-    </div>
-    <div class="deal-card">
-      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot">
-      <div class="deal-card-body">
-        <span class="deal-card-tag">20% OFF</span>
-        <div class="deal-card-name">JSpot Massage</div>
-        <div class="deal-card-price"><span class="deal-price-new">฿1,600</span><span class="deal-price-old">฿2,000</span></div>
-      </div>
-    </div>
-    <div class="deal-card">
-      <img class="deal-card-img" src="https://swanpass.com/wp-content/uploads/2023/05/room07-3.jpg" alt="Club Cozmo">
-      <div class="deal-card-body">
-        <span class="deal-card-tag">📅 Weekend Only</span>
-        <div class="deal-card-name">Club Cozmo</div>
-        <div class="deal-card-price"><span class="deal-price-new">Free Entry</span><span class="deal-price-old">฿500</span></div>
-      </div>
-    </div>
-    <div class="deal-card">
-      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" alt="Flame Spa">
-      <div class="deal-card-body">
-        <span class="deal-card-tag">🌴 Bali Special</span>
-        <div class="deal-card-name">Flame Spa Seminyak</div>
-        <div class="deal-card-price"><span class="deal-price-new">Rp180K</span><span class="deal-price-old">Rp250K</span></div>
-      </div>
-    </div>
-    <div class="deal-card">
-      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" alt="Lunar Nuru">
-      <div class="deal-card-body">
-        <span class="deal-card-tag">🆕 Opening -40%</span>
-        <div class="deal-card-name">Lunar Nuru</div>
-        <div class="deal-card-price"><span class="deal-price-new">฿900</span><span class="deal-price-old">฿1,500</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section-divider"></div>
-
-<!-- FEATURED SHOPS -->
+<!-- ══ FEATURED SHOPS ════════════════════════════════════════ -->
 <div class="section" id="featured">
   <div class="section-header">
     <div class="section-title"><span class="dot"></span>⭐ Featured Shops</div>
-    <a href="#" class="see-all">See all →</a>
+    <a href="listings.html?tag=featured" class="see-all">See all →</a>
   </div>
-  <div class="cards-grid">
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="G2G">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">G2G Massage</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.9</div><div class="card-visits">8K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="The333">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span><span class="badge badge-deal">-20%</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">The333</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.8</div><div class="card-visits">2K+</div></div>
-      </div>
-      <div class="card-deal-strip"><span>Weekend Deal</span><span class="deal-pct">-20%</span></div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://swanpass.com/wp-content/uploads/2023/01/image09.jpg" alt="Don Quixote">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Don Quixote</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.7</div><div class="card-visits">7K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">AMOR888</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.8</div><div class="card-visits">2K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg" alt="Galaxy">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span></div>
-      <div class="card-body">
-        <div class="card-cat">👯 Go-Go · ❤️‍🔥 Freelancers</div>
-        <div class="card-name">Galaxy Walking St</div>
-        <div class="card-location">📍 Pattaya</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★</span> 4.5</div><div class="card-visits">3K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" alt="Flame Spa">
-      <div class="card-badges"><span class="badge badge-featured">⭐ Featured</span><span class="badge badge-deal">-28%</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Flame Spa Seminyak</div>
-        <div class="card-location">📍 Bali</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.8</div><div class="card-visits">2K+</div></div>
-      </div>
-      <div class="card-deal-strip"><span>Bali Special</span><span class="deal-pct">-28%</span></div>
-    </div>
+  <div class="cards-grid" id="featuredGrid">
+    <!-- Injected by JS -->
   </div>
 </div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<!-- LOCATIONS -->
-<div class="section" id="locations">
+<!-- ══ DEALS & PROMOTIONS ════════════════════════════════════ -->
+<div class="section" id="deals">
   <div class="section-header">
-    <div class="section-title"><span class="dot"></span>📍 Browse by Location</div>
-    <a href="map.html" class="see-all">Map →</a>
+    <div class="section-title"><span class="dot"></span>🏷️ Deals &amp; Promotions</div>
+    <a href="deals.html" class="see-all">See all →</a>
   </div>
-  <div class="city-grid">
-    <div class="city-card"><div class="city-emoji">🏙️</div><div class="city-name">Bangkok</div><div class="city-count">301</div></div>
-    <div class="city-card"><div class="city-emoji">🌴</div><div class="city-name">Pattaya</div><div class="city-count">42</div></div>
-    <div class="city-card"><div class="city-emoji">⛩️</div><div class="city-name">Chiang Mai</div><div class="city-count">38</div></div>
-    <div class="city-card"><div class="city-emoji">🏖️</div><div class="city-name">Phuket</div><div class="city-count">22</div></div>
-    <div class="city-card"><div class="city-emoji">🛵</div><div class="city-name">Ho Chi Minh</div><div class="city-count">124</div></div>
-    <div class="city-card"><div class="city-emoji">🏛️</div><div class="city-name">Hanoi</div><div class="city-count">34</div></div>
-    <div class="city-card"><div class="city-emoji">🌺</div><div class="city-name">Bali</div><div class="city-count">28</div></div>
-    <div class="city-card"><div class="city-emoji">🏢</div><div class="city-name">Jakarta</div><div class="city-count">30</div></div>
-    <div class="city-card"><div class="city-emoji">🦁</div><div class="city-name">Singapore</div><div class="city-count">20</div></div>
-    <div class="city-card"><div class="city-emoji">🗼</div><div class="city-name">Kuala Lumpur</div><div class="city-count">12</div></div>
-    <div class="city-card"><div class="city-emoji">🏯</div><div class="city-name">Phnom Penh</div><div class="city-count">25</div></div>
-    <div class="city-card"><div class="city-emoji">🗺️</div><div class="city-name">More Cities</div><div class="city-count">+150</div></div>
+  <div class="deals-scroll" id="dealsRow">
+    <!-- Injected by JS -->
   </div>
 </div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<!-- RECENTLY UPDATED -->
+<!-- ══ BROWSE BY CITY ════════════════════════════════════════ -->
 <div class="section">
   <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🔄 Recently Updated</div>
-    <a href="#" class="see-all">See all →</a>
+    <div class="section-title"><span class="dot"></span>📍 Browse by City</div>
+    <a href="cities.html" class="see-all">All cities →</a>
   </div>
-  <div class="cards-grid">
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg" alt="Suwon">
-      <div class="card-badges"><span class="badge badge-new">Updated</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Suwon Man's Spa</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★</span> 4.3</div><div class="card-visits">7K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" alt="Exotic">
-      <div class="card-badges"><span class="badge badge-new">Updated</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Exotic Massage BKK</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.8</div><div class="card-visits">9K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg" alt="Taki">
-      <div class="card-badges"><span class="badge badge-new">Updated</span></div>
-      <div class="card-body">
-        <div class="card-cat">💃 Gentlemen's Club</div>
-        <div class="card-name">Taki</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★</span> 4.4</div><div class="card-visits">3K+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg" alt="Ibiza">
-      <div class="card-badges"><span class="badge badge-new">Updated</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Ibiza Spa</div>
-        <div class="card-location">📍 Bali</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★</span> 4.6</div><div class="card-visits">1K+</div></div>
-      </div>
-    </div>
+  <div class="city-grid">
+    <a href="city-bangkok.html"  class="city-card"><div class="city-emoji">🏙️</div><div class="city-name">Bangkok</div><div class="city-count">15 listings</div></a>
+    <a href="city-pattaya.html"  class="city-card"><div class="city-emoji">🌴</div><div class="city-name">Pattaya</div><div class="city-count">3 listings</div></a>
+    <a href="city-chiangmai.html"class="city-card"><div class="city-emoji">⛩️</div><div class="city-name">Chiang Mai</div><div class="city-count">Coming soon</div></a>
+    <a href="city-phuket.html"   class="city-card"><div class="city-emoji">🏖️</div><div class="city-name">Phuket</div><div class="city-count">Coming soon</div></a>
+    <a href="city-huahin.html"   class="city-card"><div class="city-emoji">🌊</div><div class="city-name">Hua Hin</div><div class="city-count">Coming soon</div></a>
   </div>
 </div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
-<!-- NEWLY ADDED -->
-<div class="section" id="new">
+<!-- ══ ALL THAILAND LISTINGS ═════════════════════════════════ -->
+<div class="section" id="all">
   <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🆕 Newly Added</div>
-    <a href="#" class="see-all">See all →</a>
+    <div class="section-title"><span class="dot"></span>🇹🇭 All Thailand Listings</div>
+    <span style="font-size:12px;color:var(--w40)" id="listCount"></span>
   </div>
-  <div class="cards-grid">
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" alt="Drake">
-      <div class="card-badges"><span class="badge badge-new">🆕 New</span></div>
-      <div class="card-body">
-        <div class="card-cat">💃 Gentlemen's Club</div>
-        <div class="card-name">DRAKE Luxury Lounge</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★</span> 4.2</div><div class="card-visits">&lt;100</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" alt="Lunar Nuru">
-      <div class="card-badges"><span class="badge badge-new">🆕 New</span><span class="badge badge-deal">-40%</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Lunar Nuru</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.9</div><div class="card-visits">100+</div></div>
-      </div>
-      <div class="card-deal-strip"><span>Opening Special</span><span class="deal-pct">-40%</span></div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg" alt="Dragon Lady">
-      <div class="card-badges"><span class="badge badge-new">🆕 New</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage · 🛁 Soapy</div>
-        <div class="card-name">Dragon Lady BKK</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★</span> 3.8</div><div class="card-visits">100+</div></div>
-      </div>
-    </div>
-    <div class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg" alt="Riviere 77">
-      <div class="card-badges"><span class="badge badge-new">🆕 New</span></div>
-      <div class="card-body">
-        <div class="card-cat">👄 Massage</div>
-        <div class="card-name">Riviere 77</div>
-        <div class="card-location">📍 Bangkok</div>
-        <div class="card-footer"><div class="card-rating"><span class="stars">★★★★★</span> 4.9</div><div class="card-visits">100+</div></div>
-      </div>
-    </div>
+  <div class="listings-filter" id="listFilter">
+    <span class="lf-btn active" data-f="all">All</span>
+    <span class="lf-btn" data-f="Bangkok">Bangkok</span>
+    <span class="lf-btn" data-f="Pattaya">Pattaya</span>
+    <span class="lf-btn" data-f="massage">Massage</span>
+    <span class="lf-btn" data-f="soapy">Soapy</span>
+    <span class="lf-btn" data-f="club">Clubs</span>
+    <span class="lf-btn" data-f="gogo">Go-Go</span>
+  </div>
+  <div class="cards-grid all-grid" id="allGrid">
+    <!-- Injected by JS -->
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo"><img src="./swanpass_logo_padded.png" alt="Swanpass" class="logo-img"></div>
+  <img src="./swanpass_logo_padded.png" alt="Swanpass">
   <div class="footer-links">
-    <a href="index.html">Home</a><a href="map.html">Map</a><a href="deals.html">Deals</a><a href="listings.html">Browse</a><a href="cities.html">Cities</a><a href="search.html">Search</a><a href="add-listing.html">Add Listing</a><a href="login.html">Login</a><a href="profile.html">My Profile</a><a href="about.html">About</a><a href="admin.html">Admin</a>
-    <a href="#">Add Listing</a><a href="#">Advertise</a>
-    <a href="#">Privacy Policy</a><a href="#">Terms</a>
+    <a href="index.html">Home</a>
+    <a href="city-bangkok.html">Bangkok</a>
+    <a href="city-pattaya.html">Pattaya</a>
+    <a href="city-chiangmai.html">Chiang Mai</a>
+    <a href="city-phuket.html">Phuket</a>
+    <a href="deals.html">Deals</a>
+    <a href="listings.html">Browse</a>
+    <a href="map.html">Map</a>
+    <a href="search.html">Search</a>
+    <a href="add-listing.html">Add Listing</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
   </div>
-  <div class="footer-disclaimer">The information in this directory is provided by listed businesses and is not verified or endorsed by Swanpass.com. Adult content warning: must be 18+ to access.</div>
+  <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
   <div class="footer-copy">© 2026 Swanpass. All rights reserved.</div>
 </footer>
 
-<div class="bottom-nav-spacer"></div>
+<div class="bn-spacer"></div>
 
-<!-- BOTTOM NAV -->
+<!-- ══ BOTTOM NAV (mobile) ═══════════════════════════════════ -->
 <nav class="bottom-nav">
-  <a href="index.html" class="bnav-item active"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
-  <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
-  <a href="#deals" class="bnav-item"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
-  <a href="#" class="bnav-item"><span class="bnav-icon">🔍</span><span class="bnav-label">Search</span></a>
-  <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
+  <a href="index.html"    class="bnav-item active"><span class="bi">🏠</span><span class="bl">Home</span></a>
+  <a href="map.html"      class="bnav-item"><span class="bi">🗺️</span><span class="bl">Map</span></a>
+  <a href="deals.html"    class="bnav-item"><span class="bi">🏷️</span><span class="bl">Deals</span></a>
+  <a href="listings.html" class="bnav-item"><span class="bi">🔍</span><span class="bl">Browse</span></a>
+  <a href="search.html"   class="bnav-item"><span class="bi">🔎</span><span class="bl">Search</span></a>
 </nav>
 
 <script>
-function closeAgeGate(){document.getElementById('ageGate').style.display='none';sessionStorage.setItem('ageVerified','1');}
-if(sessionStorage.getItem('ageVerified'))document.getElementById('ageGate').style.display='none';
+/* ─── THAILAND LISTINGS DATA ─────────────────────────────────────────────── */
+const SHOPS = [
+  // ── BANGKOK ──────────────────────────────────────────────────────────────
+  {
+    id:'chairman-nuru', name:'Chairman Nuru Massage',
+    cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
+    rating:4.9, visits:'9K+',
+    tags:['sponsored','featured'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
+    page:'listing-chairman-nuru.html', deal:null
+  },
+  {
+    id:'g2g', name:'G2G Massage',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
+    rating:4.9, visits:'8K+',
+    tags:['featured'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
+    page:'listing-g2g.html', deal:'฿800 (was ฿1,200)', dealPct:'-33%'
+  },
+  {
+    id:'jspot', name:'JSpot Massage',
+    cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
+    rating:4.7, visits:'5K+',
+    tags:['sponsored','deal'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
+    page:'listing-jspot.html', deal:'20% OFF', dealPct:'-20%'
+  },
+  {
+    id:'amor888', name:'AMOR888',
+    cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 18',
+    rating:4.8, visits:'2K+',
+    tags:['sponsored'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
+    page:'listing-amor888.html', deal:null
+  },
+  {
+    id:'the333', name:'The333',
+    cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
+    rating:4.8, visits:'2K+',
+    tags:['featured','deal'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
+    page:'listing-the333.html', deal:'Weekend Deal', dealPct:'-20%'
+  },
+  {
+    id:'donquixote', name:'Don Quixote',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 26',
+    rating:4.7, visits:'7K+',
+    tags:['featured'],
+    img:null,
+    page:'listing-donquixote.html', deal:null
+  },
+  {
+    id:'666class', name:'666 Class',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit',
+    rating:4.8, visits:'3K+',
+    tags:['sponsored'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
+    page:'listing-666class.html', deal:null
+  },
+  {
+    id:'suwon', name:"Suwon Man's Spa",
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit',
+    rating:4.3, visits:'7K+',
+    tags:['sponsored'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
+    page:'listing-suwon.html', deal:null
+  },
+  {
+    id:'drake', name:'DRAKE Luxury Lounge',
+    cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Sukhumvit 33',
+    rating:4.2, visits:'<100',
+    tags:['sponsored','new'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
+    page:'listing-drake.html', deal:null
+  },
+  {
+    id:'clubcozmo', name:'Club Cozmo',
+    cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Taniya',
+    rating:4.5, visits:'4K+',
+    tags:['featured'],
+    img:null,
+    page:'listing-clubcozmo.html', deal:'Free Entry Weekend'
+  },
+  {
+    id:'taki', name:'Taki',
+    cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Pridi Banomyong',
+    rating:4.4, visits:'3K+',
+    tags:[],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg',
+    page:'listing-taki.html', deal:null
+  },
+  {
+    id:'exotic', name:'Exotic Massage BKK',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Khlong Toei',
+    rating:4.8, visits:'9K+',
+    tags:[],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',
+    page:'listing-exotic.html', deal:null
+  },
+  {
+    id:'lunarnuru', name:'Lunar Nuru',
+    cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 30',
+    rating:4.9, visits:'100+',
+    tags:['new','deal'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg',
+    page:'listing-lunarnuru.html', deal:'Opening -40%', dealPct:'-40%'
+  },
+  {
+    id:'dragonlady', name:'Dragon Lady BKK',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Ekkamai',
+    rating:3.8, visits:'100+',
+    tags:['new'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg',
+    page:'listing-dragonlady.html', deal:null
+  },
+  {
+    id:'riviere77', name:'Riviere 77',
+    cat:'massage', catLabel:'Massage', city:'Bangkok', area:'Sukhumvit 77',
+    rating:4.9, visits:'100+',
+    tags:['new'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg',
+    page:'listing-riviere77.html', deal:null
+  },
 
-let cur=0;
-const slides=document.querySelectorAll('.ad-slide');
-const dots=document.querySelectorAll('.ad-dot');
-function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
-setInterval(()=>goSlide((cur+1)%slides.length),4000);
+  // ── PATTAYA ──────────────────────────────────────────────────────────────
+  {
+    id:'galaxy', name:'Galaxy Walking St',
+    cat:'gogo', catLabel:'Go-Go · Freelancers', city:'Pattaya', area:'Walking Street',
+    rating:4.5, visits:'3K+',
+    tags:['featured'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg',
+    page:'listing-galaxy.html', deal:null
+  },
+  {
+    id:'tokimeki', name:'Tokimeki Thonglor',
+    cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Thonglor',
+    rating:4.2, visits:'3K+',
+    tags:[],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4815/shop01b.jpg',
+    page:'listing-tokimeki.html', deal:null
+  }
+];
 
-document.querySelectorAll('.cat-pill').forEach(p=>{
-  p.addEventListener('click',()=>{document.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');});
+/* ─── HELPERS ────────────────────────────────────────────────────────────── */
+function starsHTML(r) {
+  const full = Math.round(r);
+  return '★'.repeat(full) + '☆'.repeat(Math.max(0, 5 - full));
+}
+
+function badgeHTML(tags) {
+  const map = {
+    sponsored: '<span class="badge b-sp">★ Sponsored</span>',
+    featured:  '<span class="badge b-ft">⭐ Featured</span>',
+    deal:      '<span class="badge b-dl">🏷️ Deal</span>',
+    new:       '<span class="badge b-nw">🆕 New</span>',
+  };
+  return tags.filter(t => map[t]).map(t => map[t]).join('');
+}
+
+function imgSrc(shop) {
+  return shop.img || '';
+}
+
+function imgErr() {
+  return `onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')"`;
+}
+
+/* ─── RENDER: SPONSORED GRID ─────────────────────────────────────────────── */
+function renderSponsored() {
+  const el = document.getElementById('sponsoredGrid');
+  const list = SHOPS.filter(s => s.tags.includes('sponsored'));
+  el.innerHTML = list.map(s => `
+    <a href="${s.page}" class="sp-card">
+      <img class="sp-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
+      <div class="sp-badges">${badgeHTML(s.tags)}</div>
+      <div class="sp-body">
+        <div class="sp-name">${s.name}</div>
+        <div class="sp-meta">${s.catLabel} · 📍 ${s.city}</div>
+        <div class="sp-foot">
+          <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating}</div>
+          <span class="visits">${s.visits}</span>
+        </div>
+        ${s.deal ? `<div style="margin-top:6px;font-size:11px;color:var(--green);font-weight:600">🏷️ ${s.deal}</div>` : ''}
+      </div>
+    </a>`).join('');
+}
+
+/* ─── RENDER: FEATURED GRID ──────────────────────────────────────────────── */
+function renderFeatured() {
+  const el = document.getElementById('featuredGrid');
+  const list = SHOPS.filter(s => s.tags.includes('featured'));
+  el.innerHTML = list.map(s => `
+    <a href="${s.page}" class="shop-card">
+      <img class="card-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
+      <div class="card-badges">${badgeHTML(s.tags)}</div>
+      <div class="card-body">
+        <div class="card-cat">${s.catLabel}</div>
+        <div class="card-name">${s.name}</div>
+        <div class="card-loc">📍 ${s.area}, ${s.city}</div>
+        <div class="card-foot">
+          <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating}</div>
+          <span class="visits">${s.visits}</span>
+        </div>
+      </div>
+      ${s.deal ? `<div class="deal-strip"><span>${s.deal}</span><span class="deal-pct">${s.dealPct||''}</span></div>` : ''}
+    </a>`).join('');
+}
+
+/* ─── RENDER: DEALS ROW ──────────────────────────────────────────────────── */
+function renderDeals() {
+  const el = document.getElementById('dealsRow');
+  const list = SHOPS.filter(s => s.tags.includes('deal') || s.deal);
+  el.innerHTML = list.map(s => `
+    <a href="${s.page}" class="deal-card">
+      <img class="deal-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
+      <div class="deal-body">
+        <span class="deal-tag">🔥 ${s.deal || 'Deal'}</span>
+        <div class="deal-name">${s.name}</div>
+        <div class="deal-price">
+          <span class="price-new">${s.dealPct ? s.dealPct + ' OFF' : 'Special'}</span>
+          <span class="price-old" style="color:var(--w40)">📍 ${s.city}</span>
+        </div>
+      </div>
+    </a>`).join('');
+}
+
+/* ─── RENDER: ALL LISTINGS GRID ──────────────────────────────────────────── */
+function renderAll(filter) {
+  const el = document.getElementById('allGrid');
+  const cityFilters = ['Bangkok', 'Pattaya', 'Chiang Mai', 'Phuket'];
+  let list;
+  if (!filter || filter === 'all') {
+    list = SHOPS;
+  } else if (cityFilters.includes(filter)) {
+    list = SHOPS.filter(s => s.city === filter);
+  } else {
+    list = SHOPS.filter(s => s.cat === filter);
+  }
+  document.getElementById('listCount').textContent = list.length + ' listings';
+  el.innerHTML = list.map(s => `
+    <a href="${s.page}" class="shop-card">
+      <img class="card-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
+      <div class="card-badges">${badgeHTML(s.tags)}</div>
+      <div class="card-body">
+        <div class="card-cat">${s.catLabel}</div>
+        <div class="card-name">${s.name}</div>
+        <div class="card-loc">📍 ${s.area}</div>
+        <div class="card-foot">
+          <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating}</div>
+          <span class="visits">${s.visits}</span>
+        </div>
+      </div>
+      ${s.deal ? `<div class="deal-strip"><span>${s.deal}</span>${s.dealPct ? `<span class="deal-pct">${s.dealPct}</span>` : ''}</div>` : ''}
+    </a>`).join('');
+}
+
+/* ─── FILTER BUTTONS ─────────────────────────────────────────────────────── */
+document.getElementById('listFilter').addEventListener('click', e => {
+  const btn = e.target.closest('.lf-btn');
+  if (!btn) return;
+  document.querySelectorAll('.lf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAll(btn.dataset.f);
 });
+
+/* Category pills */
+document.getElementById('catBar').addEventListener('click', e => {
+  const pill = e.target.closest('.cat-pill');
+  if (!pill) return;
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  const cat = pill.dataset.cat;
+  // Scroll to all section and filter
+  document.getElementById('all').scrollIntoView({behavior:'smooth', block:'start'});
+  const btn = [...document.querySelectorAll('.lf-btn')].find(b => b.dataset.f === cat);
+  if (btn) { document.querySelectorAll('.lf-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+  renderAll(cat === 'all' ? 'all' : cat);
+});
+
+/* ─── AGE GATE ───────────────────────────────────────────────────────────── */
+function closeAgeGate() {
+  document.getElementById('ageGate').style.display = 'none';
+  sessionStorage.setItem('ageOk', '1');
+}
+if (sessionStorage.getItem('ageOk')) document.getElementById('ageGate').style.display = 'none';
+
+/* ─── AD SLIDER ──────────────────────────────────────────────────────────── */
+let cur = 0;
+const slides = document.querySelectorAll('.ad-slide');
+const dots   = document.querySelectorAll('.ad-dot');
+function goSlide(n) {
+  slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active'); dots[cur].classList.add('active');
+}
+setInterval(() => goSlide((cur + 1) % slides.length), 4000);
+
+/* ─── INIT ───────────────────────────────────────────────────────────────── */
+renderSponsored();
+renderFeatured();
+renderDeals();
+renderAll('all');
 </script>
 </body>
 </html>
