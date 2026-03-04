@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Madame Claude — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-madame-claude.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Madame Claude</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">71</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">58</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">13</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(40, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(41, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(42, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(43, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(44, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(45, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(46, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(47, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(48, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(49, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(50, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(51, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(52, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(53, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(54, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(55, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(56, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(57, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(58, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(59, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(60, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(61, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(62, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(63, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(64, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(65, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(66, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(67, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(68, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(69, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(70, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg" alt="Madame Claude" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

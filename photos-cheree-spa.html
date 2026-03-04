@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Cheree Spa — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-cheree-spa.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Cheree Spa</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">25</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">22</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">3</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3723/492.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3725/498ff7c8aaea111d40d.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3724/94vT522195.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3727/494.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3726/495.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3729/679.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3728/500bbeaad19abb85593.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3730/680.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3731/677.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3732/720.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3734/722.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3733/723.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3735/681.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3736/739.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3737/738.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3738/4953cff5e518076ec86.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3741/36960.png" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3739/36961.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3740/36958.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3742/67895e20cb306b511c1.md.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3743/lQoZ522273.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3748/LINE_ALBUM__230806_2.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3749/LINE_ALBUM__230806_7.jpg" alt="Cheree Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3723/492.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3725/498ff7c8aaea111d40d.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3724/94vT522195.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3727/494.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3726/495.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3729/679.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3728/500bbeaad19abb85593.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3730/680.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3731/677.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3732/720.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3734/722.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3733/723.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3735/681.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3736/739.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3737/738.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3738/4953cff5e518076ec86.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3741/36960.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3739/36961.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3740/36958.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3742/67895e20cb306b511c1.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3743/lQoZ522273.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3748/LINE_ALBUM__230806_2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3749/LINE_ALBUM__230806_7.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3723/492.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3725/498ff7c8aaea111d40d.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3724/94vT522195.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3727/494.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3726/495.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3729/679.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3728/500bbeaad19abb85593.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3730/680.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3731/677.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3732/720.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3734/722.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3733/723.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3735/681.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3736/739.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3737/738.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3738/4953cff5e518076ec86.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3741/36960.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3739/36961.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3740/36958.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3742/67895e20cb306b511c1.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3743/lQoZ522273.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3745/xQL0522194.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3748/LINE_ALBUM__230806_2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3749/LINE_ALBUM__230806_7.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

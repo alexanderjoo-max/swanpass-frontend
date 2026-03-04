@@ -249,6 +249,7 @@ function generatePage(listing, allListings) {
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
+${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slug}.html" class="gallery-view-all">📷 View all ${listing.photos.length} photos →</a>` : ''}
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -363,6 +364,159 @@ function toggleCollapsible(el) {
 </html>`;
 }
 
+function generatePhotosPage(listing) {
+  const photos = listing.photos || [];
+  if (photos.length === 0) return null;
+
+  const talentPhotos = photos.filter(p => p.category === 'talent');
+  const shopPhotos = photos.filter(p => p.category === 'shop' || p.category === 'featured');
+  const allCount = photos.length;
+  const talentCount = talentPhotos.length;
+  const shopCount = shopPhotos.length;
+
+  function photoGrid(list) {
+    return list.map((p, i) => {
+      const url = p.url;
+      return `<div class="photo-thumb" data-cat="${p.category}" onclick="openLightbox(${i}, this.parentNode)">
+        <img src="${url}" alt="${escapeHtml(listing.name)}" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>`;
+    }).join('\n      ');
+  }
+
+  // Build JSON array of all photo URLs for lightbox (per tab)
+  const allUrls = photos.map(p => p.url);
+  const talentUrls = talentPhotos.map(p => p.url);
+  const shopUrls = shopPhotos.map(p => p.url);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — ${escapeHtml(listing.name)} — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-${listing.slug}.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for ${escapeHtml(listing.name)}</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">${allCount}</span></button>
+  ${talentCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">${talentCount}</span></button>` : ''}
+  ${shopCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">${shopCount}</span></button>` : ''}
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  ${photoGrid(photos)}
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ${JSON.stringify(allUrls)},
+  talent: ${JSON.stringify(talentUrls)},
+  shop: ${JSON.stringify(shopUrls)}
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>`;
+}
+
 function main() {
   console.log('=== SwanPass Page Generator ===');
 
@@ -379,18 +533,33 @@ function main() {
   }
 
   let generated = 0;
+  let photosGenerated = 0;
 
   listings.forEach((listing, i) => {
+    // Generate listing page
     const filename = `listing-${listing.slug}.html`;
     const filepath = path.join(OUTPUT_DIR, filename);
     const html = generatePage(listing, allListings);
     fs.writeFileSync(filepath, html);
     generated++;
-    console.log(`  [${i + 1}/${listings.length}] Generated: ${filename}`);
+
+    // Generate photos page
+    const photosHtml = generatePhotosPage(listing);
+    if (photosHtml) {
+      const photosFilename = `photos-${listing.slug}.html`;
+      const photosFilepath = path.join(OUTPUT_DIR, photosFilename);
+      fs.writeFileSync(photosFilepath, photosHtml);
+      photosGenerated++;
+    }
+
+    if ((i + 1) % 50 === 0 || i === listings.length - 1) {
+      console.log(`  [${i + 1}/${listings.length}] Generated listing + photos pages`);
+    }
   });
 
   console.log(`\n=== Summary ===`);
-  console.log(`Generated: ${generated} listing pages`);
+  console.log(`Listing pages: ${generated}`);
+  console.log(`Photos pages:  ${photosGenerated}`);
 }
 
 main();

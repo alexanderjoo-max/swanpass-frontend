@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Lollipop — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-lollipop.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Lollipop</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">21</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">20</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">1</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/110/294903006_421821329967730_2268620102663685848_n_1_.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/112/343043830_994961261493569_716283771907544034_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/114/342628210_1268059480483393_3562478663707194945_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/111/340908512_771120091306663_1770720864762738457_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/113/341514113_1349516355780089_2737079286858121838_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/115/342204485_247719134327664_8884809692372496809_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/116/344323729_206695988806089_7701579822795174416_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/118/344561052_1481674672596805_8331407029391429027_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/119/344368844_3063953797233766_6807229344980437548_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/117/344165736_624446149588317_5369324620206014221_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/120/345672362_155981610576593_9075089160347922558_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/121/342170286_3464456843871927_161035809117347119_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/122/343725344_760280438805944_8758306002218492361_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/123/342030845_1444868542987683_3156007402867006510_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/124/343638694_247742404429253_8617324533950884805_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/125/342177541_763536712069749_1104642294684722302_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/128/345238356_245113361435696_3154220929104879224_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/126/343927800_1162435617783752_5917831154329408037_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/127/345623220_627358542646783_6965565983396839111_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/129/346972294_185396177378231_1307816009582218604_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/130/345923249_762443535364939_4210786626466691092_n.jpg" alt="Lollipop" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/110/294903006_421821329967730_2268620102663685848_n_1_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/112/343043830_994961261493569_716283771907544034_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/114/342628210_1268059480483393_3562478663707194945_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/111/340908512_771120091306663_1770720864762738457_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/113/341514113_1349516355780089_2737079286858121838_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/115/342204485_247719134327664_8884809692372496809_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/116/344323729_206695988806089_7701579822795174416_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/118/344561052_1481674672596805_8331407029391429027_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/119/344368844_3063953797233766_6807229344980437548_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/117/344165736_624446149588317_5369324620206014221_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/120/345672362_155981610576593_9075089160347922558_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/121/342170286_3464456843871927_161035809117347119_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/122/343725344_760280438805944_8758306002218492361_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/123/342030845_1444868542987683_3156007402867006510_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/124/343638694_247742404429253_8617324533950884805_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/125/342177541_763536712069749_1104642294684722302_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/128/345238356_245113361435696_3154220929104879224_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/126/343927800_1162435617783752_5917831154329408037_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/127/345623220_627358542646783_6965565983396839111_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/129/346972294_185396177378231_1307816009582218604_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/130/345923249_762443535364939_4210786626466691092_n.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/112/343043830_994961261493569_716283771907544034_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/114/342628210_1268059480483393_3562478663707194945_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/111/340908512_771120091306663_1770720864762738457_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/113/341514113_1349516355780089_2737079286858121838_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/115/342204485_247719134327664_8884809692372496809_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/116/344323729_206695988806089_7701579822795174416_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/118/344561052_1481674672596805_8331407029391429027_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/119/344368844_3063953797233766_6807229344980437548_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/117/344165736_624446149588317_5369324620206014221_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/120/345672362_155981610576593_9075089160347922558_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/121/342170286_3464456843871927_161035809117347119_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/122/343725344_760280438805944_8758306002218492361_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/123/342030845_1444868542987683_3156007402867006510_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/124/343638694_247742404429253_8617324533950884805_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/125/342177541_763536712069749_1104642294684722302_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/128/345238356_245113361435696_3154220929104879224_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/126/343927800_1162435617783752_5917831154329408037_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/127/345623220_627358542646783_6965565983396839111_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/129/346972294_185396177378231_1307816009582218604_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/130/345923249_762443535364939_4210786626466691092_n.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/110/294903006_421821329967730_2268620102663685848_n_1_.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

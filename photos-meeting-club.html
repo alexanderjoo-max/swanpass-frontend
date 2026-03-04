@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Meeting Club — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-meeting-club.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Meeting Club</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">53</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">49</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">4</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6439/d0S3W0Z.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6441/d00C8r1.md.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6445/ddc89Qk-1.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6446/ddc89Qk.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6447/ddgjgrf.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6444/ddctyAl.md.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6448/ddgjt3y.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6450/ddJKoQe.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6449/ddiAsr9.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6452/ddL82Zt.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6451/ddJKP0k.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6453/ddnbVqe.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6455/ddpq8LE.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6456/ddpqvzS.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6454/ddnOBWD.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6457/ddtT1wu.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6459/ddtT3Yz.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6460/ddtT9i8.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6461/ddtTaXa.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6463/ddVdaOz-1.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6462/ddtTAXg.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6464/ddVdaOz.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6466/ddVdGzR.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6465/ddVdpX8.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6467/ddVnOEW-1.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6468/ddVnOEW.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6470/dW8WvXl.md.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6469/ddVnRIV.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6471/ddyjn0k.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6472/dWnAeDW.md.jpeg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6473/eZ17vq.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6475/JarUUa.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6474/Jarq8q.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6476/JarRvb.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6477/JHm0ED.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6480/JHm7X9.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6481/JHm46f.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6482/JHmYYJ.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6483/JHmzRb.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(40, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6484/JI0QY0.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(41, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6486/JJAm61.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(42, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6485/JJAI1D.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(43, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6489/JpLBZI.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(44, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6488/JpL0p8.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(45, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6491/JVaymy-1.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(46, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6490/JVams1.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(47, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6493/Ld8tGQ.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(48, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6494/LNptAQ.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(49, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6487/JM2MHy.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(50, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(51, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6497/Screenshot_2023-11-19_at_7.12.50_PM.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(52, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6495/mEi54u.md.jpg" alt="Meeting Club" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6439/d0S3W0Z.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6441/d00C8r1.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6445/ddc89Qk-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6446/ddc89Qk.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6447/ddgjgrf.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6444/ddctyAl.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6448/ddgjt3y.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6450/ddJKoQe.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6449/ddiAsr9.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6452/ddL82Zt.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6451/ddJKP0k.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6453/ddnbVqe.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6455/ddpq8LE.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6456/ddpqvzS.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6454/ddnOBWD.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6457/ddtT1wu.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6459/ddtT3Yz.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6460/ddtT9i8.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6461/ddtTaXa.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6463/ddVdaOz-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6462/ddtTAXg.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6464/ddVdaOz.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6466/ddVdGzR.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6465/ddVdpX8.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6467/ddVnOEW-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6468/ddVnOEW.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6470/dW8WvXl.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6469/ddVnRIV.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6471/ddyjn0k.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6472/dWnAeDW.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6473/eZ17vq.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6475/JarUUa.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6474/Jarq8q.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6476/JarRvb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6477/JHm0ED.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6480/JHm7X9.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6481/JHm46f.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6482/JHmYYJ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6483/JHmzRb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6484/JI0QY0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6486/JJAm61.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6485/JJAI1D.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6489/JpLBZI.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6488/JpL0p8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6491/JVaymy-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6490/JVams1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6493/Ld8tGQ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6494/LNptAQ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6487/JM2MHy.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6497/Screenshot_2023-11-19_at_7.12.50_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6495/mEi54u.md.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6439/d0S3W0Z.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6441/d00C8r1.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6445/ddc89Qk-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6446/ddc89Qk.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6447/ddgjgrf.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6444/ddctyAl.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6448/ddgjt3y.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6450/ddJKoQe.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6449/ddiAsr9.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6452/ddL82Zt.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6451/ddJKP0k.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6453/ddnbVqe.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6455/ddpq8LE.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6456/ddpqvzS.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6454/ddnOBWD.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6457/ddtT1wu.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6459/ddtT3Yz.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6460/ddtT9i8.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6461/ddtTaXa.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6463/ddVdaOz-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6462/ddtTAXg.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6464/ddVdaOz.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6466/ddVdGzR.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6465/ddVdpX8.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6467/ddVnOEW-1.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6468/ddVnOEW.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6470/dW8WvXl.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6469/ddVnRIV.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6471/ddyjn0k.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6472/dWnAeDW.md.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6473/eZ17vq.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6475/JarUUa.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6474/Jarq8q.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6476/JarRvb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6477/JHm0ED.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6480/JHm7X9.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6481/JHm46f.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6482/JHmYYJ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6483/JHmzRb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6484/JI0QY0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6486/JJAm61.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6485/JJAI1D.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6489/JpLBZI.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6488/JpL0p8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6491/JVaymy-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6490/JVams1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6493/Ld8tGQ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6494/LNptAQ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6487/JM2MHy.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6496/Screenshot_2023-11-19_at_7.12.43_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6497/Screenshot_2023-11-19_at_7.12.50_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6495/mEi54u.md.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

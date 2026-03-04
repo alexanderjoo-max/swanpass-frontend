@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Nuanchan Spa — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-nuanchan-spa.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Nuanchan Spa</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">35</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">26</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">9</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6097/298741298_169895732276041_9027231040410460260_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6100/298591576_169895775609370_5723808914293997396_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6099/298665133_169895785609369_490134759136676513_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6101/298358171_169904368941844_5478587390670424772_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6098/298701014_169895828942698_98403239001900737_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6102/298790340_169895885609359_2696853093044386946_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6103/299081154_170541345544813_4133457462237073356_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6106/Picsart-23-09-05-15-05-11-360.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6104/Picsart-23-09-04-12-23-45-948.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6105/Picsart-23-09-03-13-58-18-840.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6107/Picsart-23-09-04-15-42-22-578.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6108/Picsart-23-09-06-12-49-44-774.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6109/Picsart-23-09-06-15-02-36-414.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6110/Picsart-23-09-09-14-21-42-049-1.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6111/Picsart-23-09-09-14-21-42-049.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6112/Picsart-23-09-09-14-32-28-404.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6113/Picsart-23-09-09-14-32-28-404-1.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6115/Picsart-23-09-11-13-19-10-153.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6114/Picsart-23-09-11-13-19-10-153-1.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6117/Picsart-23-09-12-15-23-29-417.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6116/Picsart-23-09-12-13-48-33-199.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6119/Picsart-23-09-18-13-08-59-821-1.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6118/Picsart-23-09-15-22-59-52-190.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6120/Picsart-23-09-18-13-08-59-821.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6121/Picsart-23-09-27-01-10-17-190.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6122/Picsart-23-09-28-13-53-42-171.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6123/279304824_141025158496432_2271602110161686658_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6124/278649843_141560738442874_3589284662301494619_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6125/279446223_141533955112219_1345111598370763004_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6126/278970716_141560765109538_3157920198635551835_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6127/279049253_141560751776206_2213011984541551446_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6128/285842116_152714070660874_2521420360716830355_n.jpg" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6129/ct1_p2.1.jpg_thumb.png" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png" alt="Nuanchan Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6097/298741298_169895732276041_9027231040410460260_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6100/298591576_169895775609370_5723808914293997396_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6099/298665133_169895785609369_490134759136676513_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6101/298358171_169904368941844_5478587390670424772_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6098/298701014_169895828942698_98403239001900737_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6102/298790340_169895885609359_2696853093044386946_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6103/299081154_170541345544813_4133457462237073356_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6106/Picsart-23-09-05-15-05-11-360.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6104/Picsart-23-09-04-12-23-45-948.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6105/Picsart-23-09-03-13-58-18-840.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6107/Picsart-23-09-04-15-42-22-578.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6108/Picsart-23-09-06-12-49-44-774.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6109/Picsart-23-09-06-15-02-36-414.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6110/Picsart-23-09-09-14-21-42-049-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6111/Picsart-23-09-09-14-21-42-049.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6112/Picsart-23-09-09-14-32-28-404.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6113/Picsart-23-09-09-14-32-28-404-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6115/Picsart-23-09-11-13-19-10-153.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6114/Picsart-23-09-11-13-19-10-153-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6117/Picsart-23-09-12-15-23-29-417.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6116/Picsart-23-09-12-13-48-33-199.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6119/Picsart-23-09-18-13-08-59-821-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6118/Picsart-23-09-15-22-59-52-190.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6120/Picsart-23-09-18-13-08-59-821.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6121/Picsart-23-09-27-01-10-17-190.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6122/Picsart-23-09-28-13-53-42-171.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6123/279304824_141025158496432_2271602110161686658_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6124/278649843_141560738442874_3589284662301494619_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6125/279446223_141533955112219_1345111598370763004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6126/278970716_141560765109538_3157920198635551835_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6127/279049253_141560751776206_2213011984541551446_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6128/285842116_152714070660874_2521420360716830355_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6129/ct1_p2.1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6097/298741298_169895732276041_9027231040410460260_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6100/298591576_169895775609370_5723808914293997396_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6099/298665133_169895785609369_490134759136676513_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6101/298358171_169904368941844_5478587390670424772_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6098/298701014_169895828942698_98403239001900737_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6102/298790340_169895885609359_2696853093044386946_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6103/299081154_170541345544813_4133457462237073356_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6106/Picsart-23-09-05-15-05-11-360.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6104/Picsart-23-09-04-12-23-45-948.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6105/Picsart-23-09-03-13-58-18-840.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6107/Picsart-23-09-04-15-42-22-578.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6108/Picsart-23-09-06-12-49-44-774.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6109/Picsart-23-09-06-15-02-36-414.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6110/Picsart-23-09-09-14-21-42-049-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6111/Picsart-23-09-09-14-21-42-049.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6112/Picsart-23-09-09-14-32-28-404.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6113/Picsart-23-09-09-14-32-28-404-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6115/Picsart-23-09-11-13-19-10-153.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6114/Picsart-23-09-11-13-19-10-153-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6117/Picsart-23-09-12-15-23-29-417.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6116/Picsart-23-09-12-13-48-33-199.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6119/Picsart-23-09-18-13-08-59-821-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6118/Picsart-23-09-15-22-59-52-190.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6120/Picsart-23-09-18-13-08-59-821.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6121/Picsart-23-09-27-01-10-17-190.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6122/Picsart-23-09-28-13-53-42-171.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6123/279304824_141025158496432_2271602110161686658_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6124/278649843_141560738442874_3589284662301494619_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6125/279446223_141533955112219_1345111598370763004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6126/278970716_141560765109538_3157920198635551835_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6127/279049253_141560751776206_2213011984541551446_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6128/285842116_152714070660874_2521420360716830355_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6129/ct1_p2.1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6130/ct1_p2.2.jpg_thumb.png"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

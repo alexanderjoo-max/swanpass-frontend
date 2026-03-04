@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Unreal Bar — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-unreal-bar.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Unreal Bar</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">42</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">39</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">3</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1712/199126180_966316067520564_7224469466352532577_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1711/199541337_846949856199149_5338822769040192930_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1714/206107490_163279699190189_7460793405745802264_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1713/199851968_193897859178073_5617669246084939426_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1715/200615776_4247280558627172_7994762121092292608_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1716/207420807_323643672787657_2421702162935791453_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1717/354852685_270187432182221_3550828867617544449_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1718/354242913_269682655566032_8616958200261095279_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1719/354419887_270692978798333_9048805452415446249_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1720/355105489_271159545418343_928670194675565428_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1721/355260433_272681205266177_2508843832692640209_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1722/355336780_271818512019113_5734127916143357645_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1723/356022602_273161528551478_3094230159365722476_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1724/355469766_272177938649837_1108991977238827281_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1725/356194492_273705771830387_652389790471787161_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1726/356381186_274211515113146_5848042910195878870_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1729/357021719_277077211493243_3137448947839963331_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1727/356412539_275886581612306_925378634976318452_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1728/356987484_276542421546722_576962456157588994_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1732/358065489_279953797872251_3438275468937153609_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1734/357736063_280572917810339_3861403836339432603_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1733/358036015_278842621316702_845655966639778591_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1731/357444298_278312818036349_5083662885490765369_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1735/358107449_283481597519471_7505716080891275631_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1737/358708276_284513274082970_8339139732356359193_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1736/358127926_282936097574021_2947954602124604199_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1738/358565587_281226471078317_6631216879107412884_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1739/359330292_281771104357187_8808945283820272735_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1740/358352114_279431961257768_3453373794511688511_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1741/359432251_282411244293173_7534573017510644745_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1742/361090108_285003590700605_2798051914668720627_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1743/361097540_286109400590024_2701271911625202179_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1744/361611061_286686507198980_8199732443262215516_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1745/361193635_285523540648610_7147475999599882185_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1747/361854484_287692077098423_7844241083593437654_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1746/361641805_287110987156532_5985868024376044992_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1748/361920120_288130077054623_7767086173802116607_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1749/362290315_288597250341239_4987242928835377053_n.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(40, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1750/602989.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(41, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1751/unreal.jpg" alt="Unreal Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1712/199126180_966316067520564_7224469466352532577_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1711/199541337_846949856199149_5338822769040192930_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1714/206107490_163279699190189_7460793405745802264_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1713/199851968_193897859178073_5617669246084939426_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1715/200615776_4247280558627172_7994762121092292608_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1716/207420807_323643672787657_2421702162935791453_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1717/354852685_270187432182221_3550828867617544449_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1718/354242913_269682655566032_8616958200261095279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1719/354419887_270692978798333_9048805452415446249_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1720/355105489_271159545418343_928670194675565428_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1721/355260433_272681205266177_2508843832692640209_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1722/355336780_271818512019113_5734127916143357645_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1723/356022602_273161528551478_3094230159365722476_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1724/355469766_272177938649837_1108991977238827281_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1725/356194492_273705771830387_652389790471787161_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1726/356381186_274211515113146_5848042910195878870_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1729/357021719_277077211493243_3137448947839963331_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1727/356412539_275886581612306_925378634976318452_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1728/356987484_276542421546722_576962456157588994_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1732/358065489_279953797872251_3438275468937153609_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1734/357736063_280572917810339_3861403836339432603_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1733/358036015_278842621316702_845655966639778591_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1731/357444298_278312818036349_5083662885490765369_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1735/358107449_283481597519471_7505716080891275631_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1737/358708276_284513274082970_8339139732356359193_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1736/358127926_282936097574021_2947954602124604199_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1738/358565587_281226471078317_6631216879107412884_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1739/359330292_281771104357187_8808945283820272735_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1740/358352114_279431961257768_3453373794511688511_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1741/359432251_282411244293173_7534573017510644745_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1742/361090108_285003590700605_2798051914668720627_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1743/361097540_286109400590024_2701271911625202179_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1744/361611061_286686507198980_8199732443262215516_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1745/361193635_285523540648610_7147475999599882185_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1747/361854484_287692077098423_7844241083593437654_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1746/361641805_287110987156532_5985868024376044992_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1748/361920120_288130077054623_7767086173802116607_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1749/362290315_288597250341239_4987242928835377053_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1750/602989.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1751/unreal.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1712/199126180_966316067520564_7224469466352532577_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1711/199541337_846949856199149_5338822769040192930_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1714/206107490_163279699190189_7460793405745802264_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1713/199851968_193897859178073_5617669246084939426_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1715/200615776_4247280558627172_7994762121092292608_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1716/207420807_323643672787657_2421702162935791453_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1717/354852685_270187432182221_3550828867617544449_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1718/354242913_269682655566032_8616958200261095279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1719/354419887_270692978798333_9048805452415446249_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1720/355105489_271159545418343_928670194675565428_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1721/355260433_272681205266177_2508843832692640209_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1722/355336780_271818512019113_5734127916143357645_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1723/356022602_273161528551478_3094230159365722476_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1724/355469766_272177938649837_1108991977238827281_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1725/356194492_273705771830387_652389790471787161_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1726/356381186_274211515113146_5848042910195878870_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1729/357021719_277077211493243_3137448947839963331_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1727/356412539_275886581612306_925378634976318452_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1728/356987484_276542421546722_576962456157588994_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1732/358065489_279953797872251_3438275468937153609_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1734/357736063_280572917810339_3861403836339432603_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1733/358036015_278842621316702_845655966639778591_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1731/357444298_278312818036349_5083662885490765369_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1735/358107449_283481597519471_7505716080891275631_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1737/358708276_284513274082970_8339139732356359193_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1736/358127926_282936097574021_2947954602124604199_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1738/358565587_281226471078317_6631216879107412884_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1739/359330292_281771104357187_8808945283820272735_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1740/358352114_279431961257768_3453373794511688511_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1741/359432251_282411244293173_7534573017510644745_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1742/361090108_285003590700605_2798051914668720627_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1743/361097540_286109400590024_2701271911625202179_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1744/361611061_286686507198980_8199732443262215516_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1745/361193635_285523540648610_7147475999599882185_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1747/361854484_287692077098423_7844241083593437654_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1746/361641805_287110987156532_5985868024376044992_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1748/361920120_288130077054623_7767086173802116607_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1749/362290315_288597250341239_4987242928835377053_n.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1730/357362067_277678534766444_3030188608285604522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1750/602989.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1751/unreal.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

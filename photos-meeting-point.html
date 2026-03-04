@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Meeting Point — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-meeting-point.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Meeting Point</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">19</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">16</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">3</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3064/1526607_238258023016431_1434112170_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3065/1002043_242735295902037_741811873_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3067/1238882_196402077202026_1109520388_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3066/1524706_242735395902027_1264399562_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3068/1082677_1457463234477563_410722327_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3069/1545824_242734519235448_1637343083_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3070/1601492_242734599235440_2051304936_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3071/1604781_242734895902077_435709548_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3073/1779650_1457463414477545_579345903_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3074/1781376_1457463251144228_1591248085_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3075/16002913_737623049718418_527487596017091661_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3076/16105494_737123493101707_7060912240205218738_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3077/17424752_774361389377917_1622449289533525400_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3078/17424797_774361396044583_4224121935988699284_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3079/20882813_860253307455391_123782678978983149_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3080/1146536_196402323868668_54986625_n.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3081/19693805_837523829728339_1265418091507940898_o.jpg" alt="Meeting Point" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3064/1526607_238258023016431_1434112170_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3065/1002043_242735295902037_741811873_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3067/1238882_196402077202026_1109520388_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3066/1524706_242735395902027_1264399562_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3068/1082677_1457463234477563_410722327_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3069/1545824_242734519235448_1637343083_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3070/1601492_242734599235440_2051304936_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3071/1604781_242734895902077_435709548_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3073/1779650_1457463414477545_579345903_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3074/1781376_1457463251144228_1591248085_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3075/16002913_737623049718418_527487596017091661_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3076/16105494_737123493101707_7060912240205218738_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3077/17424752_774361389377917_1622449289533525400_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3078/17424797_774361396044583_4224121935988699284_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3079/20882813_860253307455391_123782678978983149_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3080/1146536_196402323868668_54986625_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3081/19693805_837523829728339_1265418091507940898_o.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3064/1526607_238258023016431_1434112170_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3065/1002043_242735295902037_741811873_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3067/1238882_196402077202026_1109520388_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3066/1524706_242735395902027_1264399562_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3068/1082677_1457463234477563_410722327_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3069/1545824_242734519235448_1637343083_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3070/1601492_242734599235440_2051304936_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3071/1604781_242734895902077_435709548_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3073/1779650_1457463414477545_579345903_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3074/1781376_1457463251144228_1591248085_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3075/16002913_737623049718418_527487596017091661_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3076/16105494_737123493101707_7060912240205218738_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3077/17424752_774361389377917_1622449289533525400_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3078/17424797_774361396044583_4224121935988699284_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3079/20882813_860253307455391_123782678978983149_n.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3072/1779588_1457191967838023_779992487_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3080/1146536_196402323868668_54986625_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3081/19693805_837523829728339_1265418091507940898_o.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

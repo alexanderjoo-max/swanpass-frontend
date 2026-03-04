@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Helicopter Bar — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-helicopter-bar.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Helicopter Bar</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">25</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">22</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">3</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/532/332002653_547471020817498_987924229147972995_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/534/337509325_530860695895493_4859271199788271835_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/533/335657830_523474006385684_3239243945741854272_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/535/333247051_525897736347193_915491836232084917_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/536/338203300_127736073489820_2331339037940743657_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/539/339361430_885977072707969_8488826702606216469_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/538/338603866_2276746799194491_7020675309376187598_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/537/338212425_761630418724781_1234553568736885856_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/540/339336500_883868679537028_1106143639510638026_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/541/345825146_752040916460467_2667750487787617037_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/542/345615304_1407733166713118_5369571616694104940_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/544/345199049_170596089284098_4942077253307468436_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/545/346664432_197537753114346_8925556150528402675_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/546/347191313_1499705037503686_3514567877855767774_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/547/348596608_1295729084686395_8861323044808253420_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/548/348876139_265564436133374_2325530077244506786_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/549/348847848_1666177237152163_6326711459225130478_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/550/349065396_23957233930542147_217832593387992924_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/553/349531728_910771490027010_8802383956107152334_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/554/349227839_1911121812577951_1247284926065242400_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/555/349587676_566633185382673_7339882869014290107_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/556/350472233_1563088270880849_1378238733904203804_n.webp" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/552/2022-11-19-1.jpg" alt="Helicopter Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/532/332002653_547471020817498_987924229147972995_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/534/337509325_530860695895493_4859271199788271835_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/533/335657830_523474006385684_3239243945741854272_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/535/333247051_525897736347193_915491836232084917_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/536/338203300_127736073489820_2331339037940743657_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/539/339361430_885977072707969_8488826702606216469_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/538/338603866_2276746799194491_7020675309376187598_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/537/338212425_761630418724781_1234553568736885856_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/540/339336500_883868679537028_1106143639510638026_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/541/345825146_752040916460467_2667750487787617037_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/542/345615304_1407733166713118_5369571616694104940_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/544/345199049_170596089284098_4942077253307468436_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/545/346664432_197537753114346_8925556150528402675_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/546/347191313_1499705037503686_3514567877855767774_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/547/348596608_1295729084686395_8861323044808253420_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/548/348876139_265564436133374_2325530077244506786_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/549/348847848_1666177237152163_6326711459225130478_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/550/349065396_23957233930542147_217832593387992924_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/553/349531728_910771490027010_8802383956107152334_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/554/349227839_1911121812577951_1247284926065242400_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/555/349587676_566633185382673_7339882869014290107_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/556/350472233_1563088270880849_1378238733904203804_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/552/2022-11-19-1.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/532/332002653_547471020817498_987924229147972995_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/534/337509325_530860695895493_4859271199788271835_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/533/335657830_523474006385684_3239243945741854272_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/535/333247051_525897736347193_915491836232084917_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/536/338203300_127736073489820_2331339037940743657_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/539/339361430_885977072707969_8488826702606216469_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/538/338603866_2276746799194491_7020675309376187598_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/537/338212425_761630418724781_1234553568736885856_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/540/339336500_883868679537028_1106143639510638026_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/541/345825146_752040916460467_2667750487787617037_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/542/345615304_1407733166713118_5369571616694104940_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/544/345199049_170596089284098_4942077253307468436_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/545/346664432_197537753114346_8925556150528402675_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/546/347191313_1499705037503686_3514567877855767774_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/547/348596608_1295729084686395_8861323044808253420_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/548/348876139_265564436133374_2325530077244506786_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/549/348847848_1666177237152163_6326711459225130478_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/550/349065396_23957233930542147_217832593387992924_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/553/349531728_910771490027010_8802383956107152334_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/554/349227839_1911121812577951_1247284926065242400_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/555/349587676_566633185382673_7339882869014290107_n.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/556/350472233_1563088270880849_1378238733904203804_n.webp"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/551/2022-11-19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/552/2022-11-19-1.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — In Love — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-in-love.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for In Love</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">60</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">56</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">4</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6852/2A9320ED-DF7D-428A-9974-270042A7D1CA.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6854/2FAC6675-67BF-4896-A179-5BCDBF62E91D.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6855/491BA57A-AB37-44B9-832E-1F165795A66C.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6857/093C915C-F40A-467B-ACFB-5AB4229E46C7.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6856/58D38DB2-D4ED-4573-9FAD-F399F825373D.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6858/95770FD5-FCBC-4580-98B7-B714A3FAE261.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6859/382BD534-2578-49B4-B23B-C6A3DAD037F3.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6860/A0AB53AD-C173-42A0-9140-8CB7422D4EE0.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6861/A21BEA07-F55A-4D2C-8A5D-F0469B3AFE1C.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6862/A39E21EE-9D48-4E6B-A0F5-FE3D227DD834.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6866/Fhf0F4XUUAEh7y8.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6863/CEE68E71-632B-46D6-BCA3-06AE2449E825.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6864/EC839D9F-1513-4B2D-B45F-8C1FBB6EEC43.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6865/D555061D-7A4C-4E3A-855D-A503BD54EBD9.jpeg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6867/Fhf0H3WVUAAgQ-E.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6868/Fhf0Kd1VQAAt8M0.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6869/FhVog8rVsAAqDBl.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6872/FjCA_Y_VUAcNGh1.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6870/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_6.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6871/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_8.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6873/Fid61khVIAAtlJH.jpg" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6874/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_12.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6875/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_15.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6876/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18-1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6879/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6877/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6878/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16-1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6880/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19-1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6881/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6883/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6882/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22-1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6886/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_30.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6884/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_27.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6885/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_38.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6887/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_44.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6888/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_40.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6889/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_53.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6890/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_45.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6891/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_63.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(40, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6892/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_64.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(41, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6893/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_66.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(42, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6894/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_67.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(43, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6895/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_70.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(44, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6896/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73-1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(45, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6897/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(46, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6898/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(47, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6899/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%92%E0%B9%93.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(48, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6900/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(49, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6901/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98_0.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(50, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6902/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(51, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6903/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%91%E0%B9%90_1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(52, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6904/S__29843694.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(53, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6906/S__29524013.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(54, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6907/S__30220493.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(55, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6908/S__29991206.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(56, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6905/S__29524011.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(57, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(58, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6910/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_1.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(59, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6909/line_oa_chat_230303_134953__1_.jpg_thumb.png" alt="In Love" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6852/2A9320ED-DF7D-428A-9974-270042A7D1CA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6854/2FAC6675-67BF-4896-A179-5BCDBF62E91D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6855/491BA57A-AB37-44B9-832E-1F165795A66C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6857/093C915C-F40A-467B-ACFB-5AB4229E46C7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6856/58D38DB2-D4ED-4573-9FAD-F399F825373D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6858/95770FD5-FCBC-4580-98B7-B714A3FAE261.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6859/382BD534-2578-49B4-B23B-C6A3DAD037F3.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6860/A0AB53AD-C173-42A0-9140-8CB7422D4EE0.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6861/A21BEA07-F55A-4D2C-8A5D-F0469B3AFE1C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6862/A39E21EE-9D48-4E6B-A0F5-FE3D227DD834.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6866/Fhf0F4XUUAEh7y8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6863/CEE68E71-632B-46D6-BCA3-06AE2449E825.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6864/EC839D9F-1513-4B2D-B45F-8C1FBB6EEC43.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6865/D555061D-7A4C-4E3A-855D-A503BD54EBD9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6867/Fhf0H3WVUAAgQ-E.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6868/Fhf0Kd1VQAAt8M0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6869/FhVog8rVsAAqDBl.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6872/FjCA_Y_VUAcNGh1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6870/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_6.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6871/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_8.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6873/Fid61khVIAAtlJH.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6874/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_12.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6875/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_15.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6876/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6879/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6877/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6878/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6880/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6881/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6883/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6882/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6886/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_30.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6884/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_27.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6885/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_38.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6887/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_44.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6888/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_40.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6889/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_53.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6890/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_45.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6891/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_63.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6892/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_64.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6893/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_66.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6894/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_67.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6895/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_70.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6896/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6897/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6898/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6899/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%92%E0%B9%93.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6900/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6901/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98_0.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6902/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6903/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%91%E0%B9%90_1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6904/S__29843694.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6906/S__29524013.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6907/S__30220493.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6908/S__29991206.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6905/S__29524011.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6910/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6909/line_oa_chat_230303_134953__1_.jpg_thumb.png"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6852/2A9320ED-DF7D-428A-9974-270042A7D1CA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6854/2FAC6675-67BF-4896-A179-5BCDBF62E91D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6855/491BA57A-AB37-44B9-832E-1F165795A66C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6857/093C915C-F40A-467B-ACFB-5AB4229E46C7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6856/58D38DB2-D4ED-4573-9FAD-F399F825373D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6858/95770FD5-FCBC-4580-98B7-B714A3FAE261.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6859/382BD534-2578-49B4-B23B-C6A3DAD037F3.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6860/A0AB53AD-C173-42A0-9140-8CB7422D4EE0.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6861/A21BEA07-F55A-4D2C-8A5D-F0469B3AFE1C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6862/A39E21EE-9D48-4E6B-A0F5-FE3D227DD834.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6866/Fhf0F4XUUAEh7y8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6863/CEE68E71-632B-46D6-BCA3-06AE2449E825.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6864/EC839D9F-1513-4B2D-B45F-8C1FBB6EEC43.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6865/D555061D-7A4C-4E3A-855D-A503BD54EBD9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6867/Fhf0H3WVUAAgQ-E.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6868/Fhf0Kd1VQAAt8M0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6869/FhVog8rVsAAqDBl.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6872/FjCA_Y_VUAcNGh1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6870/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_6.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6871/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_8.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6873/Fid61khVIAAtlJH.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6874/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_12.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6875/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_15.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6876/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6879/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_18.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6877/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6878/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_16-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6880/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6881/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_19.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6883/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6882/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_22-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6886/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_30.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6884/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_27.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6885/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_38.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6887/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_44.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6888/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_40.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6889/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_53.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6890/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_45.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6891/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_63.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6892/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_64.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6893/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_66.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6894/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_67.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6895/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_70.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6896/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73-1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6897/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_73.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6898/LINE_ALBUM_Vv_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6899/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%92%E0%B9%93.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6900/LINE_ALBUM_%E0%B8%94%E0%B8%94%E0%B8%AA%E0%B8%99_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%92%E0%B9%92%E0%B9%95.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6901/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98_0.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6902/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%90%E0%B9%98.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6903/LINE_ALBUM_%E0%B8%A1%E0%B8%84_%E0%B9%92%E0%B9%93%E0%B9%90%E0%B9%91%E0%B9%91%E0%B9%90_1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6904/S__29843694.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6906/S__29524013.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6907/S__30220493.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6908/S__29991206.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6905/S__29524011.jpg_thumb.png"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6911/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_2.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6910/LINE_ALBUM_%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99_%E0%B9%92%E0%B9%92%E0%B9%91%E0%B9%92%E0%B9%90%E0%B9%92_1.jpg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6909/line_oa_chat_230303_134953__1_.jpg_thumb.png"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

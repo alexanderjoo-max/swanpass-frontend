@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Ten Percent — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-ten-percent-bangkok.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Ten Percent</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">26</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">18</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">8</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13641/tenpercent-model-1.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13642/tenpercent-model-3.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13643/tenpercent-model-2.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13644/tenpercent-model-4.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13645/tenpercent-model-5.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13646/tenpercent-model-8.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13647/tenpercent-model-9.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13649/tenpercent-model-11.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13648/tenpercent-model-10.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13650/tenpercent-model-12.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13651/ten-tenpercent-bangkok-girl-8.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13653/ten-tenpercent-bangkok-girl-4.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13655/ten-tenpercent-bangkok-girl-9.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13652/ten-tenpercent-bangkok-girl-7.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13654/ten-tenpercent-bangkok-girl-2.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13656/tenpercent-model-6.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13657/ten-tenpercent-bangkok-girl.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13658/tenpercent-model-7.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13659/tenpercen-gallery2.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13660/tenpercen-gallery1.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13661/tenpercen-gallery3.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13662/449713930_390130374175276_2834531557590054845_n.jpg" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13663/ten-tenpercent-member-menu-bangkok.png" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13664/tenpercen-gallery4.webp" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png" alt="Ten Percent" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13641/tenpercent-model-1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13642/tenpercent-model-3.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13643/tenpercent-model-2.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13644/tenpercent-model-4.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13645/tenpercent-model-5.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13646/tenpercent-model-8.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13647/tenpercent-model-9.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13649/tenpercent-model-11.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13648/tenpercent-model-10.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13650/tenpercent-model-12.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13651/ten-tenpercent-bangkok-girl-8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13653/ten-tenpercent-bangkok-girl-4.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13655/ten-tenpercent-bangkok-girl-9.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13652/ten-tenpercent-bangkok-girl-7.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13654/ten-tenpercent-bangkok-girl-2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13656/tenpercent-model-6.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13657/ten-tenpercent-bangkok-girl.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13658/tenpercent-model-7.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13659/tenpercen-gallery2.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13660/tenpercen-gallery1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13661/tenpercen-gallery3.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13662/449713930_390130374175276_2834531557590054845_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13663/ten-tenpercent-member-menu-bangkok.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13664/tenpercen-gallery4.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13641/tenpercent-model-1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13642/tenpercent-model-3.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13643/tenpercent-model-2.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13644/tenpercent-model-4.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13645/tenpercent-model-5.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13646/tenpercent-model-8.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13647/tenpercent-model-9.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13649/tenpercent-model-11.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13648/tenpercent-model-10.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13650/tenpercent-model-12.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13651/ten-tenpercent-bangkok-girl-8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13653/ten-tenpercent-bangkok-girl-4.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13655/ten-tenpercent-bangkok-girl-9.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13652/ten-tenpercent-bangkok-girl-7.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13654/ten-tenpercent-bangkok-girl-2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13656/tenpercent-model-6.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13657/ten-tenpercent-bangkok-girl.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13658/tenpercent-model-7.webp"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13659/tenpercen-gallery2.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13660/tenpercen-gallery1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13661/tenpercen-gallery3.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13662/449713930_390130374175276_2834531557590054845_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13663/ten-tenpercent-member-menu-bangkok.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13664/tenpercen-gallery4.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13665/2024-02-02.png"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

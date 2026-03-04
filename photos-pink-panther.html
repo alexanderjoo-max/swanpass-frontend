@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Pink Panther — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-pink-panther.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Pink Panther</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">30</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">28</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">2</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/934/ppanther1a-1.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/904/FfTHEWgUcAEM4ux.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/905/0753D501-6233-4368-9F13-D56EFD5E4098-L0-001.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/906/FfTdFDWaUAEIF73.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/907/EpRGAenVoAEIhsO-scaled.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/908/EmebEP7UcAAvSgV-scaled.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/909/FfTHtYBVsAAIEAg.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/910/Fg75dKlaAAAGCJ8.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/911/Fg7-dieaEAARvTh.jpeg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/912/Fg75-GrakAE6sxP.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/913/Fg75P2yaAAAnxeF.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/915/Fg77afRaAAUSV9A.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/916/Fg77IYjakAEgwR5.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/914/Fg76kZ9aYAEn2fT.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/917/Fg77mQDaAAAY3YA.jpeg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/918/Fg77mQDaAAAY3YA.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/919/Fg78i-PaAAAnWem.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/921/Fg78HzoagAAY5vG.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/923/Fg79CDKakAAJgdC.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/922/Fg78wVKagAcgjHF.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/925/Fg79QZzagAAYG3G.jpeg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/924/Fg79cT_aAAEQWRk.jpeg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/926/Fg769JCacAAFuUO.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/928/Fg773QHaEAAhkTW.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/927/Fg79sVEaUAIY0Au.jpeg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/930/Fgd5QMTaYAAdhtb.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/931/Fgd5Z7naYAECxC5.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/932/FSdMKavaQAAJwgq-scaled.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/933/FSdMFppagAEh14S-scaled.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/935/pinkpantherpatpongmenu-2048x1371.jpg" alt="Pink Panther" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/934/ppanther1a-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/904/FfTHEWgUcAEM4ux.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/905/0753D501-6233-4368-9F13-D56EFD5E4098-L0-001.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/906/FfTdFDWaUAEIF73.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/907/EpRGAenVoAEIhsO-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/908/EmebEP7UcAAvSgV-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/909/FfTHtYBVsAAIEAg.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/910/Fg75dKlaAAAGCJ8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/911/Fg7-dieaEAARvTh.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/912/Fg75-GrakAE6sxP.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/913/Fg75P2yaAAAnxeF.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/915/Fg77afRaAAUSV9A.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/916/Fg77IYjakAEgwR5.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/914/Fg76kZ9aYAEn2fT.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/917/Fg77mQDaAAAY3YA.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/918/Fg77mQDaAAAY3YA.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/919/Fg78i-PaAAAnWem.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/921/Fg78HzoagAAY5vG.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/923/Fg79CDKakAAJgdC.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/922/Fg78wVKagAcgjHF.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/925/Fg79QZzagAAYG3G.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/924/Fg79cT_aAAEQWRk.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/926/Fg769JCacAAFuUO.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/928/Fg773QHaEAAhkTW.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/927/Fg79sVEaUAIY0Au.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/930/Fgd5QMTaYAAdhtb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/931/Fgd5Z7naYAECxC5.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/932/FSdMKavaQAAJwgq-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/933/FSdMFppagAEh14S-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/935/pinkpantherpatpongmenu-2048x1371.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/904/FfTHEWgUcAEM4ux.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/905/0753D501-6233-4368-9F13-D56EFD5E4098-L0-001.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/906/FfTdFDWaUAEIF73.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/907/EpRGAenVoAEIhsO-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/908/EmebEP7UcAAvSgV-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/909/FfTHtYBVsAAIEAg.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/910/Fg75dKlaAAAGCJ8.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/911/Fg7-dieaEAARvTh.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/912/Fg75-GrakAE6sxP.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/913/Fg75P2yaAAAnxeF.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/915/Fg77afRaAAUSV9A.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/916/Fg77IYjakAEgwR5.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/914/Fg76kZ9aYAEn2fT.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/917/Fg77mQDaAAAY3YA.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/918/Fg77mQDaAAAY3YA.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/919/Fg78i-PaAAAnWem.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/921/Fg78HzoagAAY5vG.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/923/Fg79CDKakAAJgdC.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/922/Fg78wVKagAcgjHF.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/925/Fg79QZzagAAYG3G.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/924/Fg79cT_aAAEQWRk.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/926/Fg769JCacAAFuUO.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/928/Fg773QHaEAAhkTW.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/927/Fg79sVEaUAIY0Au.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/930/Fgd5QMTaYAAdhtb.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/931/Fgd5Z7naYAECxC5.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/932/FSdMKavaQAAJwgq-scaled.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/933/FSdMFppagAEh14S-scaled.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/934/ppanther1a-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/935/pinkpantherpatpongmenu-2048x1371.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

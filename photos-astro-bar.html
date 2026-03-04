@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Astro Bar — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-astro-bar.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Astro Bar</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">26</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">22</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">4</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1555/348967037_258043010090980_3925690681634798947_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1537/330473195_589482196400909_3786441846969955557_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1538/330377426_150248804596176_8854924214143877202_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1539/330195083_740056837714469_689130141105444321_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1540/329784839_709236227277738_2694065049045086601_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1541/330548080_1195568154409216_7508145182395690322_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1543/334216353_630644505537715_2107052672760448511_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1542/333253931_1387105018742132_4583391225754969454_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1544/334546461_236194258746554_5197764632697649746_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1547/336642026_683279813546436_1227863122794874414_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1546/336381708_878970319848254_5891647201758873313_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1545/335472046_887059762370001_531374693683558516_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1548/337099734_210775504932511_591843110634861328_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1550/337284470_733814158240469_5353815646181033315_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1549/337171694_178908481606063_1888678594117562658_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1551/338577596_476236024628819_2288927052482937003_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1552/340434536_213996517912902_7923541677179724853_n-1.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1553/348661655_5764625793641977_2991652270066748985_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1554/348712699_933777597874377_789284197042973354_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1557/356211772_594936952747794_876395700056063995_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1556/353428893_588107143430775_1012298225145440073_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1558/356224656_594936956081127_1937008559500498746_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1559/359445158_605683111673178_8234241177635631679_n.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1561/2022-04-16.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1562/IMG_20221004_175741_349.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1564/20220505_164950.jpg" alt="Astro Bar" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1555/348967037_258043010090980_3925690681634798947_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1537/330473195_589482196400909_3786441846969955557_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1538/330377426_150248804596176_8854924214143877202_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1539/330195083_740056837714469_689130141105444321_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1540/329784839_709236227277738_2694065049045086601_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1541/330548080_1195568154409216_7508145182395690322_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1543/334216353_630644505537715_2107052672760448511_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1542/333253931_1387105018742132_4583391225754969454_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1544/334546461_236194258746554_5197764632697649746_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1547/336642026_683279813546436_1227863122794874414_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1546/336381708_878970319848254_5891647201758873313_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1545/335472046_887059762370001_531374693683558516_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1548/337099734_210775504932511_591843110634861328_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1550/337284470_733814158240469_5353815646181033315_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1549/337171694_178908481606063_1888678594117562658_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1551/338577596_476236024628819_2288927052482937003_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1552/340434536_213996517912902_7923541677179724853_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1553/348661655_5764625793641977_2991652270066748985_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1554/348712699_933777597874377_789284197042973354_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1557/356211772_594936952747794_876395700056063995_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1556/353428893_588107143430775_1012298225145440073_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1558/356224656_594936956081127_1937008559500498746_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1559/359445158_605683111673178_8234241177635631679_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1561/2022-04-16.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1562/IMG_20221004_175741_349.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1564/20220505_164950.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1537/330473195_589482196400909_3786441846969955557_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1538/330377426_150248804596176_8854924214143877202_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1539/330195083_740056837714469_689130141105444321_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1540/329784839_709236227277738_2694065049045086601_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1541/330548080_1195568154409216_7508145182395690322_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1543/334216353_630644505537715_2107052672760448511_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1542/333253931_1387105018742132_4583391225754969454_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1544/334546461_236194258746554_5197764632697649746_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1547/336642026_683279813546436_1227863122794874414_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1546/336381708_878970319848254_5891647201758873313_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1545/335472046_887059762370001_531374693683558516_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1548/337099734_210775504932511_591843110634861328_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1550/337284470_733814158240469_5353815646181033315_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1549/337171694_178908481606063_1888678594117562658_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1551/338577596_476236024628819_2288927052482937003_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1552/340434536_213996517912902_7923541677179724853_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1553/348661655_5764625793641977_2991652270066748985_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1554/348712699_933777597874377_789284197042973354_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1557/356211772_594936952747794_876395700056063995_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1556/353428893_588107143430775_1012298225145440073_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1558/356224656_594936956081127_1937008559500498746_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1559/359445158_605683111673178_8234241177635631679_n.jpg"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1555/348967037_258043010090980_3925690681634798947_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1561/2022-04-16.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1562/IMG_20221004_175741_349.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1564/20220505_164950.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

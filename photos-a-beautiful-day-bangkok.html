@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — A Beautiful Day — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-a-beautiful-day-bangkok.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for A Beautiful Day</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">40</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">34</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">6</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11787/GR3qu82acAAbLsx.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11786/GR3EdgJbcAAawd3.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11789/GR3EdgHasAESrh6.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11790/GR9QYBLbsAAqGRw.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11792/GRJODRtbUAAQez_.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11791/GR38jsha8AAnfNp.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11793/GRzAX7FbsAA1p3N.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11794/GSBhox3bcAAYjjw.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11795/GSB7K06aAAAugk_.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11796/GSCm0juaMAAo4FD.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11803/clara1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11802/anna1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13787/clara1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13790/emma1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13789/alice1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13788/asta1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13791/kate1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13793/marie1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13795/lemon1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13794/natasha1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13796/natsu1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13797/ria1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13798/neko1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13800/yume1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13799/robin1.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14291/IMG_0178.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14293/IMG_0180.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14292/IMG_0177.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14294/IMG_0179.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14295/IMG_0181.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14296/IMG_0183.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14297/IMG_0185.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14298/IMG_0184.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14299/IMG_0182.JPG" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11799/GRPFJA6boAA_jjs.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11797/GRPFJA5bEAATIsD.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11798/GRPFJA2bQAA0O1h.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11800/GRPFJA3bYAA-lwT.jpg" alt="A Beautiful Day" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11787/GR3qu82acAAbLsx.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11786/GR3EdgJbcAAawd3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11789/GR3EdgHasAESrh6.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11790/GR9QYBLbsAAqGRw.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11792/GRJODRtbUAAQez_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11791/GR38jsha8AAnfNp.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11793/GRzAX7FbsAA1p3N.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11794/GSBhox3bcAAYjjw.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11795/GSB7K06aAAAugk_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11796/GSCm0juaMAAo4FD.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11803/clara1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11802/anna1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13787/clara1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13790/emma1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13789/alice1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13788/asta1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13791/kate1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13793/marie1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13795/lemon1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13794/natasha1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13796/natsu1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13797/ria1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13798/neko1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13800/yume1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13799/robin1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14291/IMG_0178.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14293/IMG_0180.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14292/IMG_0177.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14294/IMG_0179.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14295/IMG_0181.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14296/IMG_0183.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14297/IMG_0185.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14298/IMG_0184.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14299/IMG_0182.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11799/GRPFJA6boAA_jjs.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11797/GRPFJA5bEAATIsD.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11798/GRPFJA2bQAA0O1h.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11800/GRPFJA3bYAA-lwT.jpg"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11787/GR3qu82acAAbLsx.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11786/GR3EdgJbcAAawd3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11789/GR3EdgHasAESrh6.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11790/GR9QYBLbsAAqGRw.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11792/GRJODRtbUAAQez_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11791/GR38jsha8AAnfNp.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11793/GRzAX7FbsAA1p3N.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11794/GSBhox3bcAAYjjw.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11795/GSB7K06aAAAugk_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11796/GSCm0juaMAAo4FD.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11803/clara1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11802/anna1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13787/clara1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13790/emma1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13789/alice1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13788/asta1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13791/kate1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13793/marie1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13795/lemon1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13794/natasha1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13796/natsu1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13797/ria1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13798/neko1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13800/yume1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13799/robin1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14291/IMG_0178.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14293/IMG_0180.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14292/IMG_0177.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14294/IMG_0179.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14295/IMG_0181.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14296/IMG_0183.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14297/IMG_0185.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14298/IMG_0184.JPG","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14299/IMG_0182.JPG"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11799/GRPFJA6boAA_jjs.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11797/GRPFJA5bEAATIsD.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11798/GRPFJA2bQAA0O1h.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11800/GRPFJA3bYAA-lwT.jpg"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

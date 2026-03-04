@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Aiei Spa — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="photos-header">
+  <a href="listing-aiei-spa.html" class="photos-back">←</a>
+  <div class="photos-title">Photos for Aiei Spa</div>
+</div>
+
+<div class="photos-tab-bar">
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">66</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">64</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">2</span></button>
+</div>
+
+<div class="photos-grid" id="photosGrid">
+  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8017/1D6E97AA-3356-44DF-B66D-BB09AC60A44A.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8018/2BA3E901-0800-46E2-9DA0-2DBCA17505DF.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8019/0A48C7C7-FE7C-4348-A6F5-F05DB2ACB290.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8020/0F3C987F-5A59-4AE1-B5DD-FEB54EBE5803.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8021/0F2E96AC-DD4A-4678-84D4-9CD71EAAF1B1.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8022/03A518D8-C652-4CB7-823F-F2EF25B2E979.jpeg" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8023/2EFDCEC8-9AFD-4696-9616-8F80DFE84FA7.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8024/3B6D52EA-3DDC-48A6-9C84-1FFC97D1E939.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8025/3CAB0ABE-5A52-4786-9E43-8DB91D23540B.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8026/4A70C2BD-00DF-4C45-985A-A4D5610898D9.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8028/4DE970BE-68DA-4388-B32D-D32052F6013D.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8027/4B501157-8980-4A68-A1A6-45D61E9EAFAB.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8029/5B0D543B-E260-4510-BCB2-446097787993.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8030/6A234676-03B7-4662-B2A3-C46A7C4315BB.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8033/8D085B77-C288-4EC1-814D-8A8042DE7299.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8031/6CF00065-ECA0-4BCF-9C05-CB07864A1801.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8032/8C4F7A00-6EB6-4556-88E1-A04048A33E84.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8034/7DCC102C-C15D-4E96-8478-9D227D5C64B4.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8035/9F69F332-C6EE-467B-9698-C9B852C4DC4C.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8036/12F18BC3-1579-4183-9FA9-8DBB220F116B.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8037/16FBF775-B9A2-47B2-9C41-CCAE8989BA46.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8038/18E2AC56-BD11-4F6E-ABE6-393092FAD4D7.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8039/022AE656-5ABC-4196-88A0-E2FE7CB7A667.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8040/27B27D2F-06CC-41BA-B24C-7041CBFEB5D1.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8041/35A210B5-C97E-49A6-A9C6-16FA3FEB84A1.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8042/30A231F6-AF40-437F-AA03-1FCAEB5B15F2.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8043/54C32933-440B-4E98-945F-A8C5D7738096.jpeg" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8045/43F11F2D-977A-40B0-8E5E-C323ECB25669.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8044/41F7C31F-BD21-4521-B0FD-F993F63A2231.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8047/85F74E5F-F83B-4D2B-87C7-9DBBEFA8ED4C.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8046/75FF1FD5-1705-4196-8C0D-67F4A860E352.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8048/98A54AD3-481C-430E-B618-1268731A0AFC.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8049/86F6E2F6-40E3-4256-A555-F9C347841A27.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8050/207D2CC7-3094-4D93-A741-EBF793C4A236.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8052/508BAD3E-74F4-40A3-B9D3-453DBFB8BF5D.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8051/543D8CE8-78A7-417C-97FD-DEC244B1A84C.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8053/895DE978-B66F-4E7B-A702-A9D4943D666D.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8054/938A47BC-A3DD-437E-A54F-B10C9C5C2ACB.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8055/1533DE06-3BE0-4DCF-AC97-AE83CC05E9F8.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(40, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8056/2720A6B6-6525-48A9-9725-AB49C24BBCFA.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(41, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8058/7336C598-77CC-4D3C-ACF6-ED18640CBB34.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(42, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8057/03683E54-0322-4516-BADC-757415CFB58F.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(43, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8059/7962FF17-3E75-467A-9231-317A26B91F99.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(44, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8060/84269A60-0DB0-49A7-A375-D0CD03BE0B85.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(45, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8061/A3A243AB-E2EA-4F26-B4C8-0C2D376870EC.jpeg" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(46, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8062/6525811E-53CF-4714-9FC2-A4878FD2AF1D.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(47, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8063/73668215-6BC8-4FE2-A0CD-881A143D5FC1.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(48, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8064/42634339-813A-4610-B96D-960C3647F7FA.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(49, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8065/AC5D4DEE-A2C9-4351-B2A3-232793280A00.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(50, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8066/B49B93E4-8963-431D-A707-4E8545F65E6C.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(51, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8067/C33A9143-CEB4-4157-89A8-6D73DFFEA1C1.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(52, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8068/C167D839-75A0-49C5-ABF0-5AAD4CB6B50B.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(53, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8069/C64A92F5-8F49-49F9-94E1-52B6946C480F.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(54, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8070/D990CF9B-36F9-4BA1-BED5-F2A9842FC98B.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(55, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8071/D1D5C2B7-19B4-464B-8E9E-6BEE58757B1C.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(56, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8074/E2B4AEE8-02B2-4594-B3AA-E3396BF38B5B.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(57, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8073/DD697D5E-4A0C-4858-8AF3-397CCAC914B7.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(58, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8072/C489ACE9-8825-4939-AD14-C115D774AA56.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(59, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8075/E032E4B4-8876-40AC-A118-D65F9DD75B63.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(60, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8076/EC78B00F-2A6D-4E22-A484-C30861E614FC.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(61, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8077/F05C66FE-C619-458E-9E85-93A40B717527.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(62, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8078/F5695197-4D2B-4805-92F2-A5EFF295FDAB.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(63, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8080/F8B9D656-E284-4446-A7AB-D8EFD5D060C9.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(64, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8079/FE9F018E-DA65-46FA-BF44-BB45B3A7CFED.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(65, this.parentNode)">
+        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png" alt="Aiei Spa" loading="lazy" onerror="this.parentNode.style.display='none'">
+      </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+const photoSets = {
+  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8017/1D6E97AA-3356-44DF-B66D-BB09AC60A44A.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8018/2BA3E901-0800-46E2-9DA0-2DBCA17505DF.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8019/0A48C7C7-FE7C-4348-A6F5-F05DB2ACB290.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8020/0F3C987F-5A59-4AE1-B5DD-FEB54EBE5803.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8021/0F2E96AC-DD4A-4678-84D4-9CD71EAAF1B1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8022/03A518D8-C652-4CB7-823F-F2EF25B2E979.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8023/2EFDCEC8-9AFD-4696-9616-8F80DFE84FA7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8024/3B6D52EA-3DDC-48A6-9C84-1FFC97D1E939.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8025/3CAB0ABE-5A52-4786-9E43-8DB91D23540B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8026/4A70C2BD-00DF-4C45-985A-A4D5610898D9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8028/4DE970BE-68DA-4388-B32D-D32052F6013D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8027/4B501157-8980-4A68-A1A6-45D61E9EAFAB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8029/5B0D543B-E260-4510-BCB2-446097787993.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8030/6A234676-03B7-4662-B2A3-C46A7C4315BB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8033/8D085B77-C288-4EC1-814D-8A8042DE7299.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8031/6CF00065-ECA0-4BCF-9C05-CB07864A1801.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8032/8C4F7A00-6EB6-4556-88E1-A04048A33E84.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8034/7DCC102C-C15D-4E96-8478-9D227D5C64B4.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8035/9F69F332-C6EE-467B-9698-C9B852C4DC4C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8036/12F18BC3-1579-4183-9FA9-8DBB220F116B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8037/16FBF775-B9A2-47B2-9C41-CCAE8989BA46.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8038/18E2AC56-BD11-4F6E-ABE6-393092FAD4D7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8039/022AE656-5ABC-4196-88A0-E2FE7CB7A667.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8040/27B27D2F-06CC-41BA-B24C-7041CBFEB5D1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8041/35A210B5-C97E-49A6-A9C6-16FA3FEB84A1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8042/30A231F6-AF40-437F-AA03-1FCAEB5B15F2.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8043/54C32933-440B-4E98-945F-A8C5D7738096.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8045/43F11F2D-977A-40B0-8E5E-C323ECB25669.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8044/41F7C31F-BD21-4521-B0FD-F993F63A2231.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8047/85F74E5F-F83B-4D2B-87C7-9DBBEFA8ED4C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8046/75FF1FD5-1705-4196-8C0D-67F4A860E352.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8048/98A54AD3-481C-430E-B618-1268731A0AFC.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8049/86F6E2F6-40E3-4256-A555-F9C347841A27.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8050/207D2CC7-3094-4D93-A741-EBF793C4A236.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8052/508BAD3E-74F4-40A3-B9D3-453DBFB8BF5D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8051/543D8CE8-78A7-417C-97FD-DEC244B1A84C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8053/895DE978-B66F-4E7B-A702-A9D4943D666D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8054/938A47BC-A3DD-437E-A54F-B10C9C5C2ACB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8055/1533DE06-3BE0-4DCF-AC97-AE83CC05E9F8.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8056/2720A6B6-6525-48A9-9725-AB49C24BBCFA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8058/7336C598-77CC-4D3C-ACF6-ED18640CBB34.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8057/03683E54-0322-4516-BADC-757415CFB58F.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8059/7962FF17-3E75-467A-9231-317A26B91F99.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8060/84269A60-0DB0-49A7-A375-D0CD03BE0B85.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8061/A3A243AB-E2EA-4F26-B4C8-0C2D376870EC.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8062/6525811E-53CF-4714-9FC2-A4878FD2AF1D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8063/73668215-6BC8-4FE2-A0CD-881A143D5FC1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8064/42634339-813A-4610-B96D-960C3647F7FA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8065/AC5D4DEE-A2C9-4351-B2A3-232793280A00.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8066/B49B93E4-8963-431D-A707-4E8545F65E6C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8067/C33A9143-CEB4-4157-89A8-6D73DFFEA1C1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8068/C167D839-75A0-49C5-ABF0-5AAD4CB6B50B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8069/C64A92F5-8F49-49F9-94E1-52B6946C480F.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8070/D990CF9B-36F9-4BA1-BED5-F2A9842FC98B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8071/D1D5C2B7-19B4-464B-8E9E-6BEE58757B1C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8074/E2B4AEE8-02B2-4594-B3AA-E3396BF38B5B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8073/DD697D5E-4A0C-4858-8AF3-397CCAC914B7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8072/C489ACE9-8825-4939-AD14-C115D774AA56.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8075/E032E4B4-8876-40AC-A118-D65F9DD75B63.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8076/EC78B00F-2A6D-4E22-A484-C30861E614FC.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8077/F05C66FE-C619-458E-9E85-93A40B717527.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8078/F5695197-4D2B-4805-92F2-A5EFF295FDAB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8080/F8B9D656-E284-4446-A7AB-D8EFD5D060C9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8079/FE9F018E-DA65-46FA-BF44-BB45B3A7CFED.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png"],
+  talent: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8017/1D6E97AA-3356-44DF-B66D-BB09AC60A44A.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8018/2BA3E901-0800-46E2-9DA0-2DBCA17505DF.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8019/0A48C7C7-FE7C-4348-A6F5-F05DB2ACB290.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8020/0F3C987F-5A59-4AE1-B5DD-FEB54EBE5803.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8021/0F2E96AC-DD4A-4678-84D4-9CD71EAAF1B1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8022/03A518D8-C652-4CB7-823F-F2EF25B2E979.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8023/2EFDCEC8-9AFD-4696-9616-8F80DFE84FA7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8024/3B6D52EA-3DDC-48A6-9C84-1FFC97D1E939.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8025/3CAB0ABE-5A52-4786-9E43-8DB91D23540B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8026/4A70C2BD-00DF-4C45-985A-A4D5610898D9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8028/4DE970BE-68DA-4388-B32D-D32052F6013D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8027/4B501157-8980-4A68-A1A6-45D61E9EAFAB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8029/5B0D543B-E260-4510-BCB2-446097787993.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8030/6A234676-03B7-4662-B2A3-C46A7C4315BB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8033/8D085B77-C288-4EC1-814D-8A8042DE7299.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8031/6CF00065-ECA0-4BCF-9C05-CB07864A1801.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8032/8C4F7A00-6EB6-4556-88E1-A04048A33E84.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8034/7DCC102C-C15D-4E96-8478-9D227D5C64B4.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8035/9F69F332-C6EE-467B-9698-C9B852C4DC4C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8036/12F18BC3-1579-4183-9FA9-8DBB220F116B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8037/16FBF775-B9A2-47B2-9C41-CCAE8989BA46.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8038/18E2AC56-BD11-4F6E-ABE6-393092FAD4D7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8039/022AE656-5ABC-4196-88A0-E2FE7CB7A667.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8040/27B27D2F-06CC-41BA-B24C-7041CBFEB5D1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8041/35A210B5-C97E-49A6-A9C6-16FA3FEB84A1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8042/30A231F6-AF40-437F-AA03-1FCAEB5B15F2.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8043/54C32933-440B-4E98-945F-A8C5D7738096.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8045/43F11F2D-977A-40B0-8E5E-C323ECB25669.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8044/41F7C31F-BD21-4521-B0FD-F993F63A2231.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8047/85F74E5F-F83B-4D2B-87C7-9DBBEFA8ED4C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8046/75FF1FD5-1705-4196-8C0D-67F4A860E352.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8048/98A54AD3-481C-430E-B618-1268731A0AFC.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8049/86F6E2F6-40E3-4256-A555-F9C347841A27.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8050/207D2CC7-3094-4D93-A741-EBF793C4A236.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8052/508BAD3E-74F4-40A3-B9D3-453DBFB8BF5D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8051/543D8CE8-78A7-417C-97FD-DEC244B1A84C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8053/895DE978-B66F-4E7B-A702-A9D4943D666D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8054/938A47BC-A3DD-437E-A54F-B10C9C5C2ACB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8055/1533DE06-3BE0-4DCF-AC97-AE83CC05E9F8.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8056/2720A6B6-6525-48A9-9725-AB49C24BBCFA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8058/7336C598-77CC-4D3C-ACF6-ED18640CBB34.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8057/03683E54-0322-4516-BADC-757415CFB58F.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8059/7962FF17-3E75-467A-9231-317A26B91F99.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8060/84269A60-0DB0-49A7-A375-D0CD03BE0B85.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8061/A3A243AB-E2EA-4F26-B4C8-0C2D376870EC.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8062/6525811E-53CF-4714-9FC2-A4878FD2AF1D.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8063/73668215-6BC8-4FE2-A0CD-881A143D5FC1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8064/42634339-813A-4610-B96D-960C3647F7FA.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8065/AC5D4DEE-A2C9-4351-B2A3-232793280A00.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8066/B49B93E4-8963-431D-A707-4E8545F65E6C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8067/C33A9143-CEB4-4157-89A8-6D73DFFEA1C1.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8068/C167D839-75A0-49C5-ABF0-5AAD4CB6B50B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8069/C64A92F5-8F49-49F9-94E1-52B6946C480F.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8070/D990CF9B-36F9-4BA1-BED5-F2A9842FC98B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8071/D1D5C2B7-19B4-464B-8E9E-6BEE58757B1C.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8074/E2B4AEE8-02B2-4594-B3AA-E3396BF38B5B.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8073/DD697D5E-4A0C-4858-8AF3-397CCAC914B7.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8072/C489ACE9-8825-4939-AD14-C115D774AA56.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8075/E032E4B4-8876-40AC-A118-D65F9DD75B63.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8076/EC78B00F-2A6D-4E22-A484-C30861E614FC.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8077/F05C66FE-C619-458E-9E85-93A40B717527.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8078/F5695197-4D2B-4805-92F2-A5EFF295FDAB.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8080/F8B9D656-E284-4446-A7AB-D8EFD5D060C9.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8079/FE9F018E-DA65-46FA-BF44-BB45B3A7CFED.jpeg_thumb.png"],
+  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8081/EBCC101B-2BF3-4543-8672-21649945C541.jpeg_thumb.png"]
+};
+let currentSet = 'all';
+let lbIndex = 0;
+
+function filterPhotos(cat, btn) {
+  currentSet = cat;
+  document.querySelectorAll('.photos-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-thumb').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else if (cat === 'shop') {
+      el.style.display = (el.dataset.cat === 'shop' || el.dataset.cat === 'featured') ? '' : 'none';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+
+function openLightbox(idx, grid) {
+  // Build URL list from visible thumbs
+  const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
+  const url = visible[idx]?.querySelector('img')?.src;
+  if (!url) return;
+  // Find index in current set
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = urls.indexOf(url);
+  if (lbIndex === -1) lbIndex = 0;
+  showLightbox(urls, lbIndex);
+}
+
+function showLightbox(urls, idx) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  img.src = urls[idx];
+  counter.textContent = (idx + 1) + ' / ' + urls.length;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navLightbox(dir) {
+  const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
+  lbIndex = (lbIndex + dir + urls.length) % urls.length;
+  document.getElementById('lightboxImg').src = urls[lbIndex];
+  document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+// Touch swipe for mobile lightbox
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>
