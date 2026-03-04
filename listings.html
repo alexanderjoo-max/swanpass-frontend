@@ -140,7 +140,16 @@ fetch('data/listings.json')
       address: l.address || '',
       rating: l.rating || 0,
       reviews: l.review_count || 0,
-      img: (l.images && l.images[0]) || (l.image_urls && l.image_urls[0]) || '',
+      img: (() => {
+        // Prefer photos with valid IDs (categorized data), sorted: featured > shop > talent
+        const validPhotos = (l.photos || []).filter(p => p.id !== null && p.url);
+        if (validPhotos.length > 0) {
+          const order = { featured: 0, shop: 1, talent: 2 };
+          validPhotos.sort((a, b) => (order[a.category] ?? 1) - (order[b.category] ?? 1) || (a.sort_order || 0) - (b.sort_order || 0));
+          return validPhotos[0].url;
+        }
+        return '';
+      })(),
       page: 'listing-' + l.slug + '.html',
     }));
     filterShops();
