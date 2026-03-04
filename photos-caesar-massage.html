@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-caesar-massage.html" class="photos-back">←</a>
@@ -146,9 +189,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3063/Khon-Kaen-Sex-Massage-500.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3028/12036603_768162696639380_7482636334688141212_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3029/81294400_2537475759708056_9087871290454310912_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3030/12642813_820826051373044_8472908031170336980_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3031/67330192_2132710820184554_1542948622922940416_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3032/15137481_1033199993468981_7222144326806304016_o.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3033/119204191_3202309273224698_3977922702846838127_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3034/119375822_3199248123530813_2649940209533966336_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3035/283142116_4990529137736027_3957729338266967330_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3036/283936915_4984054408383500_7010168689731411140_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3038/283952243_4984054491716825_5040866652551018103_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3037/283943344_4984054738383467_77143037556993437_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3041/287090669_5029445433844397_7412122751409250720_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3039/284059601_4984054628383478_287669822919706949_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3040/286801353_5023792144409726_174973172196435234_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3042/289090756_5051278114994462_7305918297353930277_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3043/291601522_5092894670832806_7964940924642684970_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3044/293291519_5115521905236749_2887853848156195037_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3045/293646246_5136851643103775_8580094010312500324_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3046/306272601_5295954883860116_2308820970842172888_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3047/306758831_5293398650782406_6303259113648797737_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3050/308069619_517769787023258_5549171014256824137_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3048/304870632_5271724029616535_5226413600891247650_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3049/307330444_518439420289628_3455846331497552667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3051/310304205_531096075690629_939656645689490745_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3052/321701945_852396119364809_5969358823461220969_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3054/321927870_856464152351887_8914888984050221666_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3055/322017256_1156184971685399_100090886063784772_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3053/321491235_1198217007797323_1295158121482131082_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3056/285110348_4998879423567665_314005331950815193_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3057/285114995_4998876750234599_3277013039851173762_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3060/285066043_4998877586901182_7760980877206102845_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3059/284994615_4998878556901085_8820044579980679840_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3061/286284020_5018399231615684_3694989526012511730_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3062/366063169_777916797675221_3362396649236360596_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3063/Khon-Kaen-Sex-Massage-500.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3058/285001409_4998878313567776_4794388351681033500_n.jpg"],

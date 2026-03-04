@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-darin-club.html" class="photos-back">←</a>
@@ -110,9 +153,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2463/919a2S__137134082.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2446/3fc77LmW3at.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2447/5ac85218218.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2448/2b29b217417.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2449/3a0c5S__151937050.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2450/004e4S__147144709.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2451/75161230219.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2452/6092eS__130179117.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2453/a4bbd215650.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2456/dcdbb218220.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2455/d2c0eS__152543241.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2457/e80bc266262.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2454/bd064211571.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2458/e3858S__130490373.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2459/f30ecS__152535055.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2464/chiang-mai-darin-club-17875.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2465/chiang-mai-darin-club-17874.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2466/chiang-mai-darin-club-17876.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2467/chiang-mai-darin-club-17877.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2460/1503664958419.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2461/adef4S__137134084.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2462/c2600S__137134085.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2463/919a2S__137134082.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2468/chiang-mai-darin-club-19317.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2469/chiang-mai-darin-club-17873.jpg"],

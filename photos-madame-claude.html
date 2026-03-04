@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-madame-claude.html" class="photos-back">←</a>
@@ -248,9 +291,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/25/313476294_803414297600259_7299704630995321881_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/24/311092517_807027507279889_7846677208408712218_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/23/313490188_162126613125329_2741336475092709409_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/22/312492211_132430599362771_6663487134951557522_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/21/312595839_978773536243916_1785247213879512389_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/30/317365666_1195643944357574_5179498680656387799_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/29/313844342_836786154412510_1983780753584297902_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/28/314514398_671760661330270_5255137931125531447_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/27/317221869_515067103870060_8469321029634764064_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/26/315010672_823562782401860_8141082354060512709_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/35/336961501_738368271326387_4159900849388670345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/34/318426301_967332247560132_5051702843284844279_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/33/333126419_1316271945772297_2248014466869504971_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/32/324694488_858369518733156_2333754648608209016_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/31/327782813_701744278233165_686184108305124887_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/40/337667704_179570821510789_6267396732254533508_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/39/339667682_259842439718568_5226984601529047004_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/38/338420604_230787769459585_4411818761194041984_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/37/338785177_244379864702834_5236846923471633097_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/36/338311577_760805365620495_8462595530906525667_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/45/340016976_956690035768836_1952727275516921102_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/44/343577573_793637752188473_7813460625127832183_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/43/340675277_691338496129100_7317699130092335530_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/42/343055811_226836216702039_2687820235441702163_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/41/339985149_1403603440405157_7135831182709600395_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/49/345518188_781616803303929_8120722439348061821_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/48/350703006_1694481750997283_3394254447692716600_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/47/345636212_740645087849066_471633194419155955_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/46/348720654_1625404317956991_1272068868621688189_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/54/photo_2022-10-05_13.16.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/53/photo_2022-10-05_13.21.19.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/52/Madame-Claude-BJ-Bar-Menu.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/51/Madame-Claude-BJ-Bar-Menu-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/50/photo_2022-10-05_13.21.37.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg"],

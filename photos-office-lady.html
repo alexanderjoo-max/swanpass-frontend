@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-office-lady.html" class="photos-back">←</a>
@@ -113,9 +156,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2395/chiang-mai-office-lady-b2b-18587.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2382/chiang-mai-office-lady-b2b-18585.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2383/chiang-mai-office-lady-b2b-18583.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2385/130211.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2384/65453.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2386/12345679527867.bmp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2387/chiang-mai-office-lady-b2b-18586.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2388/S__8093718.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2389/S__14663685.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2390/S__117137424.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2391/S__14671877.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2398/66dec2353.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2399/9a12eS__60531294.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2400/4ffa014963.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2401/d5adaS__1843364.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2402/603c5S__1294351.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2404/e1fe4S__60547224.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2403/efV7qD.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2405/efVRte.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2406/e7a38S__1949704.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2393/5c7a0S__125853701.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2392/69092qD9JLE.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2394/12cb0pngtree-mobile-phone-mockup-transparent-background-png-image_2778946.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2395/chiang-mai-office-lady-b2b-18587.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2396/1f395175356946a04fca207871313aebcb332.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2397/S__125591554.png"],

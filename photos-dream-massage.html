@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-dream-massage.html" class="photos-back">←</a>
@@ -107,9 +150,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2250/senz-by-aunyong-massage-chiangmai-3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2227/aunyong-massage-chiangmai-girl-sep-2020-a2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2228/FD6CgaPVIAMs22M.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2231/FB-XCFXVIAIs_LT.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2230/FD_NcPzVcAQpKQT.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2229/FD6CQOkUcAAxKDS.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2233/FDQt4CIVgAQsA6y.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2235/FDV3RKXVEAYPvN-.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2234/FDV3fOLVQAI_G6Y.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2236/FDV3CIcVgAABuuQ.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2237/FDV354hVQAciJko.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2238/FDQtpx7VIAI_qW6.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2239/FDvu0NvUcAYakPX.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2241/FDvwH0xVQAILegr.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2243/senz-by-aunyong-kitty-dec-25-2020.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2244/senz-by-aunyong-girls-namtan-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2242/FDvvMZTVUAAa1HL.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2245/FDvvnICUUAIws9t.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2232/FD6CxlXVUAUQALH.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2246/dream-massage-chiangmai-logo-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2249/dream-massage-chiangmai-new-rooms-2023-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2248/dream-massage-chiangmai-new-rooms-2023-2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2250/senz-by-aunyong-massage-chiangmai-3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2247/dream-massage-chiangmai-new-rooms-2023-3.jpg"],

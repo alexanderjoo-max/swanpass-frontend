@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-td-spa-vip-the-dormitory.html" class="photos-back">←</a>
@@ -182,9 +225,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5126/FB_IMG_1678216485099.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5081/2023-08-01-06-49-22-306.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5082/2023-08-01-06-48-21-482.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5083/2023-06-26-03-35-42-815.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5084/2023-06-26-03-37-42-037.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5085/1678811770142.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5086/1678811772979.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5087/1678811775558.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5088/1683095291157.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5089/1686907323792.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5090/1683095328304.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5091/1686907322602.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5092/1686776197730.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5093/1686907393949.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5094/1688758131783.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5095/1686907395172.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5096/1689099919253.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5097/1689099917809.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5098/1689189696446.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5099/1689189697922.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5100/1696144943718.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5101/1696144945641.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5102/1696320167160.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5103/1696320168698.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5104/1696461092848.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5105/1696461061302.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5106/1696713822572.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5107/1697175400416.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5108/1697175447243.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5109/1697175396701.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5110/1697334519060.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5112/1697334517755.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5111/1697175531544.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5113/1697520676133.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5114/1697520677302.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5115/1697641469467.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5116/1698265427806.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5117/1698265404914.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5118/1698265406086.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5120/1698265495585.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5119/1698265428852.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5121/1698844925965.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5122/1698265496591.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5123/1698844927104.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5124/1698988921259.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5127/Screenshot_2023-11-11_at_5.00.27_AM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5128/Screenshot_2023-11-11_at_5.00.11_AM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5125/FB_IMG_1678216489760.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5126/FB_IMG_1678216485099.png"],

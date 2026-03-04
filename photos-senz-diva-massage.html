@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-senz-diva-massage.html" class="photos-back">←</a>
@@ -89,9 +132,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2221/chiang-mai-senz-diva-massage-chiang-mai-18668.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2205/366804017_314518064284199_7367523330556279306_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2207/365455280_311964837872855_7573340882494044345_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2206/366806731_314518507617488_4474350176651840336_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2209/364785668_309995788069760_1109954499864524635_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2208/366800094_314518980950774_4094544992914425197_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2210/367446850_316071667462172_1518620947069282187_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2211/367055677_316072174128788_1035145774530336197_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2213/367714544_317157320686940_192676362591330045_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2214/367720222_317157687353570_2811103581583405868_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2215/367725274_317676780634994_1474525202451452634_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2218/tantra-yoni-massage-chiangmai-by-female-therapist-2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2216/367726785_317676920634980_3604979745310915130_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2217/367728890_317677063968299_6599485161964977620_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2212/367718703_317157477353591_4902072694196371086_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2219/senz-diva-massage-chiangmai-logo-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2220/1664611329bNZ.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2221/chiang-mai-senz-diva-massage-chiang-mai-18668.jpg"],

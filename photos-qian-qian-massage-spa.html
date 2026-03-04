@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-qian-qian-massage-spa.html" class="photos-back">←</a>
@@ -104,9 +147,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3661/IMG_8119.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3655/1677216339265.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3654/chiang-mai-be-rich-spa-18643.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3656/IMG_7848.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3657/IMG_7934.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3658/IMG_7733.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3659/IMG_8050.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3660/IMG_8068.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3661/IMG_8119.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3662/IMG_8366.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3663/IMG_8297.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3664/IMG_8609.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3665/IMG_8454.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3666/IMG_8610.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3667/IMG_8853.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3668/IMG_8717.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3669/IMG_8865.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3670/IMG_8910.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3672/IMG20230520160558.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3671/MJKnnN.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3673/MLQjzt.md.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3674/S__43376653.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3675/chiang-mai-be-rich-spa-18641.jpg"],

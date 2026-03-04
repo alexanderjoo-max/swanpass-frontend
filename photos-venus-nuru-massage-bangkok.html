@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-venus-nuru-massage-bangkok.html" class="photos-back">←</a>
@@ -146,9 +189,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14566/15DE8A46-ABB7-44ED-BBE9-9D89ED87B0DE-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14541/751426_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14540/751431_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14542/751430_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14543/751427_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14544/751428_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14545/751433_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14546/751435_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14547/751436_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14549/751438_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14548/751437_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14550/751440_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14551/751441_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14552/751443_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14553/751444_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14554/751445_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14555/751445_0-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14556/751450_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14557/751451_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14558/751452_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14559/751457.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14560/AWA.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14561/nuru-21.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14562/S__28426275.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14563/S__28426276.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14564/S__28655707.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14565/S__28951285_0.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14567/IMG_0834.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14566/15DE8A46-ABB7-44ED-BBE9-9D89ED87B0DE-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14568/IMG_0836.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14570/IMG_0837.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14569/IMG_0935.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14571/IMG_0937.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14572/IMG_0938.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14573/IMG_0940-768x576.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14574/IMG_0941-768x576.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14575/S__19153351.jpg"],

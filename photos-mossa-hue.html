@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-mossa-hue.html" class="photos-back">←</a>
@@ -95,9 +138,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2286/logo_2_mossa_2_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2273/325938344_553531296694272_7912443016514875235_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2274/325933324_697146638619935_1614770538797288156_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2275/325935240_535426175029129_8145098849968838418_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2276/325659005_1617116375410857_23984235247256210_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2277/325788503_3802637776732740_7067639996221956921_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2278/325948967_476106061402866_3777354748138420543_n-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2279/325984834_679343250639080_7777990908456167008_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2280/325948967_476106061402866_3777354748138420543_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2281/326257683_708897060720744_842597029412668182_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2282/326058090_850995449319737_696886676979320460_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2283/326362328_954188175933198_3299905036108180554_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2284/326542856_1542099246280077_2186660941181814034_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2287/326566525_1221786775414294_1808286812164195646_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2286/logo_2_mossa_2_.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2285/326559220_565774558748712_218149541949877367_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2289/chiang-mai-mossa-hue-spa-16213.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2290/chiang-mai-mossa-hue-spa-16212.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2291/chiang-mai-mossa-hue-spa-16217.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2288/366718880_311564768050970_5509542859006991411_n.jpg"],

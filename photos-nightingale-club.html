@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-nightingale-club.html" class="photos-back">←</a>
@@ -125,9 +168,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2380/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-4.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2351/1-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2350/2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2355/3.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2356/4.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2357/5-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2358/4-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2359/5.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2360/chiang-mai-nightingale-club-19484.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2362/6.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2361/6-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2363/chiang-mai-nightingale-club-19485.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2364/IMG_7048.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2365/IMG_7071.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2366/IMG-7001.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2367/IMG-7002.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2368/IMG-7003.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2369/Lucky-9-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2370/Lucky-8.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2371/Miss-u-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2372/Lucky-9.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2373/Miss-u-2.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2374/Miss-u-3.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2375/Yellow_Gold_Black_Aesthetic_Page_Border_A4_Document.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2376/5-1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2379/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2377/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2378/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2380/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-4.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2381/nightingale-club-b2b-erotic-massage-chiangmai-shop-facilities-5.jpg"],

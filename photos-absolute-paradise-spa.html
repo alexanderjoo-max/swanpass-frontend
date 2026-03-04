@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-absolute-paradise-spa.html" class="photos-back">←</a>
@@ -170,9 +213,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2183/482800_499053023463364_1552829362_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2167/chiang-mai-absolute-paradise-spa-16499.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2170/chiang-mai-absolute-paradise-spa-16496.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2169/chiang-mai-absolute-paradise-spa-16497.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2171/chiang-mai-absolute-paradise-spa-16498.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2172/chiang-mai-absolute-paradise-spa-16500.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2173/74459_499055653463101_876675018_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2175/65421_499056563463010_11376042_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2174/269282_499055706796429_538339515_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2181/582367_499056516796348_303582012_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2182/559687_499056536796346_151291187_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2179/578206_499036633465003_1834632283_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2176/66487_499055650129768_1651684324_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2178/482385_499053636796636_74180177_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6326/45591.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6327/45486.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6330/45588.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6328/45485.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6329/45589.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6331/45592.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6332/45958.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6333/173125.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6334/173126.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6335/173127.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6336/173128.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6337/47484.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6338/173128n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6340/223131.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6339/223130.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6341/228086.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6342/248302.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6343/65424893_552343211445939829_5882125207006408_n.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6344/127190155_758438034743845_2317701725304268261_n.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6345/65602853_1205152819662637_5285986207338070016_n.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6346/1689057386-0089.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6347/1689057389-3326.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6348/1659417727240.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6349/IMG_25630820_103245.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6350/IMG_25630820_103044.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6351/IMG_25631019_102009.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6352/IMG_25631019_102059.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2183/482800_499053023463364_1552829362_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2185/chiang-mai-absolute-paradise-spa-18714.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2184/absolute-paradise-spa-logo-april-11-2022-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2186/chiang-mai-absolute-paradise-spa-18713.jpg"],

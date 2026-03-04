@@ -9,9 +9,14 @@ const path = require('path');
 
 const DATA_FILE = path.join(__dirname, '..', 'data', 'listings.json');
 const OUTPUT_DIR = path.join(__dirname, '..');
+const PARTIALS_DIR = path.join(__dirname, '..', 'partials');
 
 const limitIdx = process.argv.indexOf('--limit');
 const LIMIT = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : Infinity;
+
+// Read shared partials once at build time (inlined into every page)
+const HEADER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'header.html'), 'utf-8');
+const FOOTER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'footer.html'), 'utf-8');
 
 function escapeHtml(str) {
   if (!str) return '';
@@ -240,7 +245,7 @@ function generatePage(listing, allListings) {
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+${HEADER_HTML}
 
 <!-- GALLERY -->
 <div class="gallery">
@@ -341,9 +346,8 @@ ${stickyButtons.length > 0 ? `
 </div>
 <div style="height:80px"></div>` : ''}
 
-<div data-include="partials/footer.html"></div>
+${FOOTER_HTML}
 
-<script src="js/include.js"></script>
 <script>
 ${generateGalleryScript(listing)}
 
@@ -400,7 +404,7 @@ function generatePhotosPage(listing) {
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+${HEADER_HTML}
 
 <div class="photos-header">
   <a href="listing-${listing.slug}.html" class="photos-back">←</a>
@@ -426,9 +430,8 @@ function generatePhotosPage(listing) {
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+${FOOTER_HTML}
 
-<script src="js/include.js"></script>
 <script>
 const photoSets = {
   all: ${JSON.stringify(allUrls)},

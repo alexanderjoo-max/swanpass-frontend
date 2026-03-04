@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-suzy-wong-s-3.html" class="photos-back">←</a>
@@ -77,9 +120,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/637/17200884_1826725817352946_3282322158074475394_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/636/17155687_1826725810686280_6209697978126965229_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/638/14712869_1583053578386839_6768175097700358673_o.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/639/12310003_1283746398317560_7063401736795307229_o.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/640/51513495_3052789278079921_3013659568124198912_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/641/78991900_3933238080035032_3821329375022809088_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/643/80070664_3965566876802152_4389347153630199808_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/644/80540022_3978759252149581_8718791341821132800_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/645/80692688_4021881337837372_1788082631506657280_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/642/79387215_3972052276153612_7473238151532642304_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/647/suzy-wongs-3-bangla-copy.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/648/suzy-wongs-3-phuket-1.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg"],

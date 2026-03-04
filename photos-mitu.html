@@ -10,7 +10,50 @@
 </head>
 <body>
 
-<div data-include="partials/header.html"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      tabs[i].classList.add('active');
+    }
+    // City pages → highlight Cities tab
+    if (page.indexOf('city-') === 0 && href === 'cities.html') {
+      tabs[i].classList.add('active');
+    }
+    // Listing pages → highlight Browse tab
+    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+      tabs[i].classList.add('active');
+    }
+  }
+})();
+</script>
+
 
 <div class="photos-header">
   <a href="listing-mitu.html" class="photos-back">←</a>
@@ -122,9 +165,27 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
 </div>
 
-<div data-include="partials/footer.html"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html">Browse</a>
+      <a href="cities.html">Cities</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="add-listing.html">List Your Business</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
+    </div>
+  </div>
+</footer>
 
-<script src="js/include.js"></script>
+
 <script>
 const photoSets = {
   all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/869/marni_1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5/bedroom.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4/bangkok-08-678x381.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6/IMG-20190420-WA0000-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7/IMG-20190420-WA0001-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8/IMG-20190420-WA0002-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8/IMG-20190420-WA0002-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6/IMG-20190420-WA0000-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7/IMG-20190420-WA0001-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13/IMG-20190420-WA0008-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12/MITU-Girl.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11/IMG-20190420-WA0003-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10/IMG-20190420-WA0005-768x1024.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9/marni_1.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14/pino-at-mitu.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14/pino-at-mitu.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5/bedroom.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15/Mitu-Massage-Rooms-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/17/Mitu-Massage-Reception-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/18/Mitu-Massage-Waiting-Area-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/16/Mitu-Massage-Reception-Entrance-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/19/Mitu-Massage-Shop-Location-1024x987.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/19/Mitu-Massage-Shop-Location-1024x987.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/18/Mitu-Massage-Waiting-Area-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/17/Mitu-Massage-Reception-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15/Mitu-Massage-Rooms-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/16/Mitu-Massage-Reception-Entrance-1024x768.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/20/1B51FC5E-150C-42FD-89CF-3FA35596A8C1.png","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/20/1B51FC5E-150C-42FD-89CF-3FA35596A8C1.png"],
