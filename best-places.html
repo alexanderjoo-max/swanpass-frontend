@@ -236,8 +236,7 @@ header {
   text-transform: uppercase; letter-spacing: .5px;
   backdrop-filter: blur(4px); line-height: 1.5;
 }
-.b-sp  { background: rgba(212,168,71,.92); color: #000; }
-.b-ft  { background: rgba(232,20,42,.92);  color: #fff; }
+.b-sp  { background: linear-gradient(135deg, #d4a847, #f5d784, #d4a847); color: #1a1000; text-shadow: 0 1px 0 rgba(255,255,255,.25); box-shadow: 0 1px 4px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3); }
 .b-dl  { background: rgba(34,197,94,.92);  color: #000; }
 .b-nw  { background: rgba(99,102,241,.92); color: #fff; }
 
@@ -340,33 +339,6 @@ header {
 }
 .btn-view-listing:hover { background: var(--red-dk); }
 
-/* ─── COMPACT CARD (for additional picks, not top-ranked) ─── */
-.compact-list { display: flex; flex-direction: column; gap: 10px; }
-.compact-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden;
-  display: flex; transition: border-color .2s; color: inherit;
-}
-.compact-card:hover { border-color: rgba(212,168,71,.4); }
-.compact-img {
-  width: 88px; flex-shrink: 0; object-fit: cover; display: block;
-  background: linear-gradient(135deg,#2a1a1a,#1a0a0a);
-}
-.compact-body { padding: 10px 12px; flex: 1; min-width: 0; }
-.compact-name {
-  font-size: 13px; font-weight: 700; margin-bottom: 3px;
-  line-height: 1.2;
-}
-.compact-tagline {
-  font-size: 11px; color: var(--w70); line-height: 1.4;
-  margin-bottom: 6px;
-  display: -webkit-box; -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; overflow: hidden;
-}
-.compact-meta { font-size: 10px; color: var(--w40); margin-bottom: 4px; }
-.compact-foot { display: flex; align-items: center; gap: 8px; }
-.compact-rating { display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 600; }
-
 /* Bottom nav */
 .bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
@@ -432,14 +404,6 @@ header {
   .edit-card { margin-bottom: 0; }
   .edit-card-img { height: 220px; }
   .edit-name { font-size: 22px; }
-
-  /* Compact: 2-col on desktop */
-  .compact-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .compact-img { width: 100px; }
 }
 
 @media (min-width: 1024px) {
@@ -499,20 +463,20 @@ header {
   </div>
 </div>
 
-<!-- ══ SPONSORED ═════════════════════════════════════════ -->
+<!-- ══ FEATURED ═══════════════════════════════════════════ -->
 <div class="section">
   <div class="section-header">
     <div class="section-title">
-      <span class="dot dot-red"></span>📣 Sponsored Shops
+      <span class="dot dot-red"></span>⭐ Featured Shops
     </div>
-    <a href="listings.html?tag=sponsored" class="see-all">See all →</a>
+    <a href="listings.html" class="see-all">See all →</a>
   </div>
   <div class="sponsored-scroll">
 
     <a href="listing-666class.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg"
         onerror="this.style.background='linear-gradient(135deg,#2a0000,#1a0000)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span></div>
       <div class="sp-body">
         <div class="sp-name">666 Class</div>
         <div class="sp-meta">👄 Massage · Soapy · 📍 Sukhumvit 33</div>
@@ -526,7 +490,7 @@ header {
     <a href="listing-the333.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg"
         onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span><span class="badge b-dl">🏷️ -20%</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span><span class="badge b-dl">🏷️ -20%</span></div>
       <div class="sp-body">
         <div class="sp-name">The333</div>
         <div class="sp-meta">🛁 Soapy · 📍 Sukhumvit 33</div>
@@ -540,7 +504,7 @@ header {
     <a href="listing-chairman-nuru.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg"
         onerror="this.style.background='linear-gradient(135deg,#1a0a00,#2a1500)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span></div>
       <div class="sp-body">
         <div class="sp-name">Chairman Nuru</div>
         <div class="sp-meta">👄 Massage · 📍 Sukhumvit 33</div>
@@ -554,7 +518,7 @@ header {
     <a href="listing-g2g.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg"
         onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a1a)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span></div>
       <div class="sp-body">
         <div class="sp-name">G2G Massage</div>
         <div class="sp-meta">👄 Massage · 📍 Sukhumvit 33</div>
@@ -568,7 +532,7 @@ header {
     <a href="listing-jspot.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg"
         onerror="this.style.background='linear-gradient(135deg,#1a0a1a,#2a1a2a)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span><span class="badge b-dl">-20% OFF</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span><span class="badge b-dl">-20% OFF</span></div>
       <div class="sp-body">
         <div class="sp-name">JSpot Massage</div>
         <div class="sp-meta">🛁 Soapy · 📍 Sukhumvit 33</div>
@@ -582,7 +546,7 @@ header {
     <a href="listing-amor888.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg"
         onerror="this.style.background='linear-gradient(135deg,#1a0010,#2a001a)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span></div>
       <div class="sp-body">
         <div class="sp-name">AMOR888</div>
         <div class="sp-meta">🛁 Soapy · 📍 Sukhumvit 18</div>
@@ -596,7 +560,7 @@ header {
     <a href="listing-suwon.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg"
         onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a2a3a)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span></div>
       <div class="sp-body">
         <div class="sp-name">Suwon Man's Spa</div>
         <div class="sp-meta">👄 Massage · 📍 Sukhumvit 16</div>
@@ -610,7 +574,7 @@ header {
     <a href="listing-drake.html" class="sp-card">
       <img class="sp-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp"
         onerror="this.style.background='linear-gradient(135deg,#1a1200,#3a2800)';this.removeAttribute('src')" alt="">
-      <div class="sp-badge-row"><span class="badge b-sp">★ Sponsored</span><span class="badge b-nw">🆕 New</span></div>
+      <div class="sp-badge-row"><span class="badge b-sp">★ Featured</span><span class="badge b-nw">🆕 New</span></div>
       <div class="sp-body">
         <div class="sp-name">DRAKE Luxury Lounge</div>
         <div class="sp-meta">💃 Gentlemen's Club · 📍 Sukhumvit 33</div>
@@ -639,41 +603,187 @@ header {
   <!-- TOP RANKED EDITORIAL CARDS -->
   <div class="edit-cards-grid">
 
-    <!-- #1 BEST SOAPY -->
+    <!-- #1 SENTO BANGKOK -->
     <div>
       <div class="award-wrap">
-        <span class="award-label">🥇 #1 Best Soapy — Bangkok</span>
+        <span class="award-label">🥇 Best Upscale Nuru</span>
+      </div>
+      <a href="listings.html?city=Bangkok" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#1a0a20,#2a1530)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#1a0a20,#2a1530)">
+          <span class="edit-rank">#1</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">Sento Bangkok</div>
+          <div class="edit-tagline">"Premium upscale nuru experience with exceptional service and beautiful facilities in the heart of Ekkamai."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>582/25-26, Thanon Ekkamai, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66642537196" style="color:var(--red)">+66 64 253 7196</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <span class="edit-rev">(55 reviews)</span>
+            <span class="edit-vis">600+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #2 AMOR888 -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label">🥇 Best Variety Soapy</span>
+      </div>
+      <a href="listing-amor888.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg"
+            onerror="this.style.background='linear-gradient(135deg,#1a0010,#2a001a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank">#2</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
+          <div class="edit-cat">🛁 Soapy</div>
+          <div class="edit-name">AMOR888</div>
+          <div class="edit-tagline">"Super high-quality girls and service in a convenient location on Sukhumvit 18. One of the best variety soapy experiences in Bangkok."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>390/35 Soi Sukhumvit 18, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66612138000" style="color:var(--red)">+66 61 213 8000</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <span class="edit-rev">(40 reviews)</span>
+            <span class="edit-vis">2K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #3 EXOTIC MASSAGE BANGKOK -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label silver">🆕 Best New Place</span>
+      </div>
+      <a href="listing-exotic.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg"
+            onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank" style="color:var(--silver)">#3</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">Exotic Massage Bangkok</div>
+          <div class="edit-tagline">"The hottest massage place in Bangkok. Beautiful girls, great rooms — one of the most visited establishments on Swanpass."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>392 Khlong Toei, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66996124363" style="color:var(--red)">+66 99 612 4363</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <span class="edit-rev">(2 reviews)</span>
+            <span class="edit-vis">8K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #4 BODY BLISS -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label editor">⭐ Best Outcall</span>
+      </div>
+      <a href="listings.html?city=Bangkok" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#0a1a28,#1a2a40)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#0a1a28,#1a2a40)">
+          <span class="edit-rank" style="color:#ff6b8a">#4</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">👄 Massage · 📞 Outcall</div>
+          <div class="edit-name">Body Bliss (Outcall Only)</div>
+          <div class="edit-tagline">"Top-rated outcall massage service in the Phrom Phong area. Comes to your hotel or condo for a premium experience."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>Phrom Phong Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66973482622" style="color:var(--red)">+66 97 348 2622</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
+            <span class="edit-rev">(1 review)</span>
+            <span class="edit-vis">1K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #5 AWESOME999 -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label silver">🆕 Best New Soapy</span>
+      </div>
+      <a href="listings.html?city=Bangkok" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#1a1a00,#2a2a10)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#1a1a00,#2a2a10)">
+          <span class="edit-rank" style="color:var(--silver)">#5</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">🛁 Soapy</div>
+          <div class="edit-name">Awesome999</div>
+          <div class="edit-tagline">"A fast-rising newcomer in the soapy scene. Great lineup of girls, premium rooms, and strong word-of-mouth reviews."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>116/10 Soi Prasanmit, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66931426999" style="color:var(--red)">+66 93 142 6999</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <span class="edit-rev">(43 reviews)</span>
+            <span class="edit-vis">1K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #6 CHAIRMAN NURU MASSAGE -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label">🏆 Best Nuru</span>
       </div>
       <a href="listing-chairman-nuru.html" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img"
             src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg"
             onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="">
-          <span class="edit-rank">#1</span>
+          <span class="edit-rank">#6</span>
         </div>
         <div class="edit-card-body">
           <div class="edit-card-badges">
-            <span class="badge b-sp">★ Sponsored</span>
-            <span class="badge b-ft">⭐ Featured</span>
+            <span class="badge b-sp">★ Featured</span>
           </div>
           <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
           <div class="edit-name">Chairman Nuru Massage</div>
           <div class="edit-tagline">"These girls are trained to service Japanese clients, so you'll be getting the best service that Bangkok has to offer."</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Soi Sukhumvit 33, Khlong Tan Nuea, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📍</span>12, 4 Soi Sukhumvit 33, Bangkok</div>
             <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0922718989" style="color:var(--red)">092-271-8989</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>11:30 AM – 2:00 AM daily</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.9</div>
             <span class="edit-rev">(38 reviews)</span>
-            <span class="edit-vis">9K+ visits</span>
+            <span class="edit-vis">8K+ visits</span>
           </div>
         </div>
       </a>
     </div>
 
-    <!-- #2 BEST OVERALL -->
+    <!-- #7 DON QUIXOTE -->
     <div>
       <div class="award-wrap">
         <span class="award-label">🥇 Best Overall Massage</span>
@@ -683,143 +793,235 @@ header {
           <img class="edit-card-img" src=""
             onerror="this.style.background='linear-gradient(135deg,#1a0015,#3a0030)';this.removeAttribute('src')"
             alt="" style="background:linear-gradient(135deg,#1a0015,#3a0030)">
-          <span class="edit-rank">#2</span>
+          <span class="edit-rank">#7</span>
         </div>
         <div class="edit-card-body">
-          <div class="edit-card-badges"><span class="badge b-ft">⭐ Featured</span></div>
           <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
           <div class="edit-name">Don Quixote</div>
           <div class="edit-tagline">"Super hot girls, and managers that speak Chinese, Korean, English, and Thai. Very well organized. All service includes Nuru!"</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Soi Sukhumvit 26, Khlong Tan, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📍</span>Soi Sukhumvit 26, Bangkok</div>
             <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0889474986" style="color:var(--red)">088-947-4986</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>Open 24 Hours daily</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
             <span class="edit-rev">(34 reviews)</span>
-            <span class="edit-vis">7K+ visits</span>
+            <span class="edit-vis">6K+ visits</span>
           </div>
         </div>
       </a>
     </div>
 
-    <!-- #3 BEST GO-GO -->
+    <!-- #8 666 CLASS -->
     <div>
       <div class="award-wrap">
-        <span class="award-label">🏆 Best Gentlemen's Club</span>
-      </div>
-      <a href="listing-clubcozmo.html" class="edit-card">
-        <div class="edit-card-img-wrap">
-          <img class="edit-card-img" src=""
-            onerror="this.style.background='linear-gradient(135deg,#0d1a2e,#1a3a5c)';this.removeAttribute('src')"
-            alt="" style="background:linear-gradient(135deg,#0d1a2e,#1a3a5c)">
-          <span class="edit-rank">#3</span>
-        </div>
-        <div class="edit-card-body">
-          <div class="edit-card-badges"><span class="badge b-ft">⭐ Featured</span></div>
-          <div class="edit-cat">💃 Gentlemen's Club</div>
-          <div class="edit-name">Club Cozmo</div>
-          <div class="edit-tagline">"Today, Club Cozmo is Bangkok's No. 1 gentlemen's club — voted year-after-year the best in the city by both guests and nightlife reviewers."</div>
-          <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Taniya Road, Silom, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">🕐</span>7:00 PM – 12:00 AM daily</div>
-          </div>
-          <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★★</span> 4.0</div>
-            <span class="edit-rev">(74 reviews)</span>
-            <span class="edit-vis">4K+ visits</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- #4 BEST NEW OPENING -->
-    <div>
-      <div class="award-wrap">
-        <span class="award-label silver">🆕 Best New Opening</span>
-      </div>
-      <a href="listing-lunarnuru.html" class="edit-card">
-        <div class="edit-card-img-wrap">
-          <img class="edit-card-img"
-            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg"
-            onerror="this.style.background='linear-gradient(135deg,#0a0a1a,#1a1a3a)';this.removeAttribute('src')" alt="">
-          <span class="edit-rank" style="color:var(--silver)">#4</span>
-        </div>
-        <div class="edit-card-body">
-          <div class="edit-card-badges"><span class="badge b-nw">🆕 New</span><span class="badge b-dl">-40%</span></div>
-          <div class="edit-cat">🛁 Soapy</div>
-          <div class="edit-name">Lunar Nuru</div>
-          <div class="edit-tagline">"The hottest new opening on Sukhumvit 30 — impeccable rooms, premium staff, and an opening deal you can't miss."</div>
-          <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Soi Sukhumvit 30, Khlong Toei, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+660910165498" style="color:var(--red)">+66 091-016-5498</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>1:00 PM – 2:00 AM daily</div>
-          </div>
-          <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★★★</span> 4.9</div>
-            <span class="edit-rev">(8 reviews)</span>
-            <span class="edit-vis">100+ visits</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- #5 EDITOR'S PICK: EXOTIC -->
-    <div>
-      <div class="award-wrap">
-        <span class="award-label editor">⭐ Editor's Pick — Most Visited</span>
-      </div>
-      <a href="listing-exotic.html" class="edit-card">
-        <div class="edit-card-img-wrap">
-          <img class="edit-card-img"
-            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg"
-            onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="">
-        </div>
-        <div class="edit-card-body">
-          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
-          <div class="edit-name">Exotic Massage BKK</div>
-          <div class="edit-tagline">"The hottest massage place in Bangkok. Beautiful girls, great rooms — one of the most visited establishments on Swanpass."</div>
-          <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>392 Khlong Toei, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66996124363" style="color:var(--red)">+66 99 612 4363</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>11:00 AM – 2:00 AM daily</div>
-          </div>
-          <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
-            <span class="edit-rev">(22 reviews)</span>
-            <span class="edit-vis">9K+ visits</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- #6 BEST SOAPY (Runners Up) -->
-    <div>
-      <div class="award-wrap">
-        <span class="award-label silver">🥈 Best Soapy — Runner Up</span>
+        <span class="award-label silver">🥈 Most Professional</span>
       </div>
       <a href="listing-666class.html" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img"
             src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg"
             onerror="this.style.background='linear-gradient(135deg,#2a0000,#1a0000)';this.removeAttribute('src')" alt="">
-          <span class="edit-rank" style="color:var(--silver)">#6</span>
+          <span class="edit-rank" style="color:var(--silver)">#8</span>
         </div>
         <div class="edit-card-body">
-          <div class="edit-card-badges"><span class="badge b-sp">★ Sponsored</span></div>
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
           <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
           <div class="edit-name">666 Class</div>
           <div class="edit-tagline">"High-quality, Japanese-style soapy with a great line-up of girls and impeccable service standards."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Sukhumvit 33 Alley, Bangkok</div>
             <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0648070932" style="color:var(--red)">064-807-0932</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>1:00 PM – 3:00 AM daily</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
             <span class="edit-rev">(274 reviews)</span>
-            <span class="edit-vis">3K+ visits</span>
+            <span class="edit-vis">2K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #9 SUWON MEN'S SPA -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label bronze">🥉 Best Men's Spa</span>
+      </div>
+      <a href="listing-suwon.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg"
+            onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a2a3a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank" style="color:var(--bronze)">#9</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">Suwon Men's Spa</div>
+          <div class="edit-tagline">"All the service of a spa, with all the service of a soapy. A fan favourite on Sukhumvit."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>186/3-4 Soi Sukhumvit 16, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0836182695" style="color:var(--red)">083-618-2695</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
+            <span class="edit-rev">(1 review)</span>
+            <span class="edit-vis">6K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #10 G2G MASSAGE -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label editor">⭐ Newest Soapy</span>
+      </div>
+      <a href="listing-g2g.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg"
+            onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a1a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank" style="color:#ff6b8a">#10</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">G2G Massage</div>
+          <div class="edit-tagline">"The newest soapy making a splash in Bangkok! Guaranteed to become a classic."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>12/30 Sukhumvit 33 Soi 4, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0825161958" style="color:var(--red)">082-516-1958</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.9</div>
+            <span class="edit-rev">(55 reviews)</span>
+            <span class="edit-vis">7K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #11 THE 333 -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label">🔥 Hottest Girls</span>
+      </div>
+      <a href="listing-the333.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg"
+            onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank">#11</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
+          <div class="edit-cat">🛁 Soapy</div>
+          <div class="edit-name">The 333</div>
+          <div class="edit-tagline">"Beautiful selection of girls that you can't find — or get — at home. Get them here!"</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>12, 34 Soi Sukhumvit 33, Bangkok</div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <span class="edit-rev">(52 reviews)</span>
+            <span class="edit-vis">2K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #12 BILLBOARD -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label">🏆 Hottest Girls at Nana Go-Go</span>
+      </div>
+      <a href="listings.html?city=Bangkok" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#1a000a,#2a0015)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#1a000a,#2a0015)">
+          <span class="edit-rank">#12</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">💃 Gentlemen's Club</div>
+          <div class="edit-name">Billboard</div>
+          <div class="edit-tagline">"The hottest girls at Nana Plaza go-go. A legendary Bangkok nightlife institution."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>Nana Plaza, Sukhumvit 4 Alley, Bangkok</div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
+            <span class="edit-rev">(74 reviews)</span>
+            <span class="edit-vis">1K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #13 BKK VICE -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label editor">⭐ Best Rooms and Service</span>
+      </div>
+      <a href="listings.html?city=Bangkok" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#0d1a2e,#1a3050)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#0d1a2e,#1a3050)">
+          <span class="edit-rank" style="color:#ff6b8a">#13</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">BKK Vice</div>
+          <div class="edit-tagline">"Exceptional rooms and top-tier service on Sukhumvit 39. A refined experience for the discerning visitor."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>20/1, 20/2 Sukhumvit Soi 39, Bangkok</div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★</span> 4.0</div>
+            <span class="edit-rev">(0 reviews)</span>
+            <span class="edit-vis">1K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #14 JSPOT -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label bronze">🥉 Best Prostate</span>
+      </div>
+      <a href="listing-jspot.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img"
+            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg"
+            onerror="this.style.background='linear-gradient(135deg,#1a0a1a,#2a1a2a)';this.removeAttribute('src')" alt="">
+          <span class="edit-rank" style="color:var(--bronze)">#14</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-card-badges">
+            <span class="badge b-sp">★ Featured</span>
+          </div>
+          <div class="edit-cat">🛁 Soapy</div>
+          <div class="edit-name">JSpot</div>
+          <div class="edit-tagline">"Wide range of prostate massages for a new experience. The best prostate specialist in Bangkok."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>12/5 Soi Sukhumvit 33, Bangkok</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0630943888" style="color:var(--red)">063-094-3888</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
+            <span class="edit-rev">(1 review)</span>
+            <span class="edit-vis">4K+ visits</span>
           </div>
         </div>
       </a>
@@ -827,105 +1029,7 @@ header {
 
   </div><!-- /edit-cards-grid -->
 
-  <!-- ADDITIONAL PICKS (compact cards) -->
-  <div style="margin-top:20px">
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;color:var(--w70)">
-      More Bangkok Picks
-    </div>
-    <div class="compact-list">
-
-      <a href="listing-g2g.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">G2G Massage</div>
-          <div class="compact-tagline">"The newest soapy making a splash in Bangkok! Guaranteed to become a classic."</div>
-          <div class="compact-meta">👄 Massage · 📍 Sukhumvit 33 Soi 4 · 📞 082-516-1958</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★★</span> 4.9</div>
-            <span class="visits">8K+</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="listing-amor888.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">AMOR888</div>
-          <div class="compact-tagline">"Super high-quality girls and service in a convenient location on Sukhumvit 18."</div>
-          <div class="compact-meta">🛁 Soapy · 📍 Soi Sukhumvit 18 · 📞 +66 61 213 8000</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★★</span> 4.8</div>
-            <span class="visits">2K+</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="listing-the333.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">The333</div>
-          <div class="compact-tagline">"Beautiful selection of girls that you can't find — or get — at home. Get them here!"</div>
-          <div class="compact-meta">🛁 Soapy · 📍 Soi Sukhumvit 33 · 📞 +66 64 984 5333</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★★</span> 4.8</div>
-            <span class="visits">2K+</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="listing-jspot.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">JSpot Massage</div>
-          <div class="compact-tagline">"Wide range of prostate massages for a new experience. 20% off this week."</div>
-          <div class="compact-meta">🛁 Soapy · 📍 Soi Sukhumvit 33 · 📞 063-094-3888</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★★</span> 4.7</div>
-            <span class="visits">5K+</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="listing-suwon.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">Suwon Man's Spa</div>
-          <div class="compact-tagline">"All the service of a spa, with all the service of a soapy. 😈 A fan favourite on Sukhumvit."</div>
-          <div class="compact-meta">👄 Massage · 📍 Soi Sukhumvit 16 · 📞 083-618-2695</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★</span> 4.3</div>
-            <span class="visits">7K+</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="listing-taki.html" class="compact-card">
-        <img class="compact-img"
-          src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg"
-          onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-        <div class="compact-body">
-          <div class="compact-name">Taki</div>
-          <div class="compact-tagline">"Consistently rated as the best ambiance and high quality service in the city."</div>
-          <div class="compact-meta">💃 Club · 📍 Pridi Banomyong, Bangkok</div>
-          <div class="compact-foot">
-            <div class="compact-rating"><span class="stars">★★★★</span> 4.4</div>
-            <span class="visits">3K+</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
+  <div style="text-align:center;margin-top:20px"><a href="listings.html?city=Bangkok" class="btn-view-listing">See All Bangkok →</a></div>
 </div>
 
 <div class="divider"></div>
@@ -942,36 +1046,35 @@ header {
 
   <div class="edit-cards-grid">
 
+    <!-- #1 PIN-UP A GO GO -->
     <div>
       <div class="award-wrap">
-        <span class="award-label">🥇 #1 Best Go-Go Bar</span>
+        <span class="award-label">🥇 #1 Best Go-Go</span>
       </div>
-      <a href="listing-galaxy.html" class="edit-card">
+      <a href="listings.html?city=Pattaya" class="edit-card">
         <div class="edit-card-img-wrap">
-          <img class="edit-card-img"
-            src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg"
-            onerror="this.style.background='linear-gradient(135deg,#1a0a1a,#2a1a2a)';this.removeAttribute('src')" alt="">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#1a000a,#2a0015)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#1a000a,#2a0015)">
           <span class="edit-rank">#1</span>
         </div>
         <div class="edit-card-body">
-          <div class="edit-card-badges"><span class="badge b-ft">⭐ Featured</span></div>
-          <div class="edit-cat">👯 Go-Go · ❤️‍🔥 Freelancers</div>
-          <div class="edit-name">Galaxy Walking St</div>
-          <div class="edit-tagline">"Looking for some fun in the best area of Pattaya? Galaxy on Walking Street has the best lineup of gogo girls and party atmosphere."</div>
+          <div class="edit-cat">👯 Go-Go · Strip</div>
+          <div class="edit-name">Pin-Up A GO GO</div>
+          <div class="edit-tagline">"Looking for some fun on Walking Street? Pin-Up has a party atmosphere and the best lineup of gogo girls in Pattaya."</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Walking Street, Pattaya</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0880606070" style="color:var(--red)">088-060-6070</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>8:00 PM – 3:00 AM daily</div>
+            <div class="edit-info-row"><span class="ico">📍</span>Walking Street, Pattaya City</div>
           </div>
           <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★☆☆</span> 2.7</div>
-            <span class="edit-rev">(19 reviews)</span>
+            <div class="edit-rating"><span class="stars">★★★★</span> 4.4</div>
+            <span class="edit-rev">(1 review)</span>
             <span class="edit-vis">3K+ visits</span>
           </div>
         </div>
       </a>
     </div>
 
+    <!-- #2 HONEY2 BODY MASSAGE -->
     <div>
       <div class="award-wrap">
         <span class="award-label silver">🥈 Best Soapy — Pattaya</span>
@@ -988,9 +1091,8 @@ header {
           <div class="edit-name">Honey2 Body Massage</div>
           <div class="edit-tagline">"Bangkok quality soapy right in Pattaya. The best of the best girls work here — a must-visit."</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Pattaya Sai Song Road, Pattaya</div>
+            <div class="edit-info-row"><span class="ico">📍</span>Pattaya Sai Song Road, Pattaya City</div>
             <div class="edit-info-row"><span class="ico">📞</span><a href="tel:038421666" style="color:var(--red)">038-421-666</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>12:00 PM – 2:00 AM daily</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.6</div>
@@ -1001,9 +1103,10 @@ header {
       </a>
     </div>
 
+    <!-- #3 MCLUB -->
     <div>
       <div class="award-wrap">
-        <span class="award-label bronze">🥉 Best Bar — Pattaya</span>
+        <span class="award-label bronze">🥉 Best for Freelancers</span>
       </div>
       <a href="listings.html?city=Pattaya" class="edit-card">
         <div class="edit-card-img-wrap">
@@ -1014,12 +1117,11 @@ header {
         </div>
         <div class="edit-card-body">
           <div class="edit-cat">❤️‍🔥 Freelancers</div>
-          <div class="edit-name">MClub Pattaya</div>
+          <div class="edit-name">MClub</div>
           <div class="edit-tagline">"A friendly neighbourhood bar offering a warm, safe, and relaxing atmosphere for everyone — regulars and new guests alike."</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Pattaya Sai 3, Soi 14, Pattaya</div>
+            <div class="edit-info-row"><span class="ico">📍</span>444/48 Pattaya Sai 3, soi 14, Pattaya</div>
             <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0614466300" style="color:var(--red)">061-446-6300</a></div>
-            <div class="edit-info-row"><span class="ico">🕐</span>6:00 PM – 3:00 AM daily</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
@@ -1030,34 +1132,9 @@ header {
       </a>
     </div>
 
-    <div>
-      <div class="award-wrap">
-        <span class="award-label editor">⭐ Editor's Pick</span>
-      </div>
-      <a href="listings.html?city=Pattaya" class="edit-card">
-        <div class="edit-card-img-wrap">
-          <img class="edit-card-img" src=""
-            onerror="this.style.background='linear-gradient(135deg,#1a000a,#2a0015)';this.removeAttribute('src')"
-            alt="" style="background:linear-gradient(135deg,#1a000a,#2a0015)">
-        </div>
-        <div class="edit-card-body">
-          <div class="edit-cat">👯 Go-Go · Strip</div>
-          <div class="edit-name">Pin-Up A GO GO</div>
-          <div class="edit-tagline">"Looking for some fun on Walking Street? Pin-Up has a party atmosphere and the best lineup of gogo girls in Pattaya."</div>
-          <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Walking Street, Pattaya</div>
-            <div class="edit-info-row"><span class="ico">🕐</span>9:00 PM – 4:00 AM daily</div>
-          </div>
-          <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★★</span> 4.4</div>
-            <span class="edit-rev">(1 review)</span>
-            <span class="edit-vis">3K+ visits</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
   </div>
+
+  <div style="text-align:center;margin-top:20px"><a href="listings.html?city=Pattaya" class="btn-view-listing">See All Pattaya →</a></div>
 </div>
 
 <div class="divider"></div>
@@ -1074,6 +1151,7 @@ header {
 
   <div class="edit-cards-grid">
 
+    <!-- #1 ICHA ICHA -->
     <div>
       <div class="award-wrap">
         <span class="award-label">🥇 #1 Best Massage</span>
@@ -1081,41 +1159,13 @@ header {
       <a href="city-chiangmai.html" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img" src=""
-            onerror="this.style.background='linear-gradient(135deg,#0a1a0a,#1a3a1a)';this.removeAttribute('src')"
-            alt="" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a)">
+            onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a1a)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#1a1a0a,#2a2a1a)">
           <span class="edit-rank">#1</span>
         </div>
         <div class="edit-card-body">
           <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
-          <div class="edit-name">Aloha Massage</div>
-          <div class="edit-tagline">"One of the oldest and most respected massage places in Chiang Mai — a long-standing local favourite with an excellent reputation."</div>
-          <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Road Suriyawong, Chiang Mai</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0952386661" style="color:var(--red)">095-238-6661</a></div>
-          </div>
-          <div class="edit-foot">
-            <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
-            <span class="edit-rev">(76 reviews)</span>
-            <span class="edit-vis">8K+ visits</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div>
-      <div class="award-wrap">
-        <span class="award-label silver">🥈 Best Girl Selection</span>
-      </div>
-      <a href="city-chiangmai.html" class="edit-card">
-        <div class="edit-card-img-wrap">
-          <img class="edit-card-img" src=""
-            onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a1a)';this.removeAttribute('src')"
-            alt="" style="background:linear-gradient(135deg,#1a1a0a,#2a2a1a)">
-          <span class="edit-rank" style="color:var(--silver)">#2</span>
-        </div>
-        <div class="edit-card-body">
-          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
-          <div class="edit-name">Icha Icha Massage</div>
+          <div class="edit-name">Icha Icha</div>
           <div class="edit-tagline">"Enjoy with the best attractive young local amateur girls in Chiang Mai. A unique experience you won't find in Bangkok."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Charoen Prathet Road, Chiang Mai</div>
@@ -1130,9 +1180,39 @@ header {
       </a>
     </div>
 
+    <!-- #2 ALOHA MASSAGE -->
     <div>
       <div class="award-wrap">
-        <span class="award-label bronze">🥉 Best Experience</span>
+        <span class="award-label silver">🥈 Oldest Massage</span>
+      </div>
+      <a href="city-chiangmai.html" class="edit-card">
+        <div class="edit-card-img-wrap">
+          <img class="edit-card-img" src=""
+            onerror="this.style.background='linear-gradient(135deg,#0a1a0a,#1a3a1a)';this.removeAttribute('src')"
+            alt="" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a)">
+          <span class="edit-rank" style="color:var(--silver)">#2</span>
+        </div>
+        <div class="edit-card-body">
+          <div class="edit-cat">👄 Massage · 🛁 Soapy</div>
+          <div class="edit-name">Aloha Massage Chiang Mai</div>
+          <div class="edit-tagline">"One of the oldest and most respected massage places in Chiang Mai — a long-standing local favourite with an excellent reputation."</div>
+          <div class="edit-info">
+            <div class="edit-info-row"><span class="ico">📍</span>49/8 Road Suriyawong, Chiang Mai</div>
+            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0952386661" style="color:var(--red)">095-238-6661</a></div>
+          </div>
+          <div class="edit-foot">
+            <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
+            <span class="edit-rev">(76 reviews)</span>
+            <span class="edit-vis">8K+ visits</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- #3 CELEB SHOWER MASSAGE -->
+    <div>
+      <div class="award-wrap">
+        <span class="award-label bronze">🥉 Best Soapy</span>
       </div>
       <a href="city-chiangmai.html" class="edit-card">
         <div class="edit-card-img-wrap">
@@ -1146,7 +1226,7 @@ header {
           <div class="edit-name">Celeb Shower Massage</div>
           <div class="edit-tagline">"The closest soapy that Chiang Mai has to Bangkok. A great experience for those who want something different in the north."</div>
           <div class="edit-info">
-            <div class="edit-info-row"><span class="ico">📍</span>Charoen Prathet Road, Chiang Mai</div>
+            <div class="edit-info-row"><span class="ico">📍</span>10-11 Charoen Prathet Road, Chiang Mai</div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.2</div>
@@ -1158,6 +1238,8 @@ header {
     </div>
 
   </div>
+
+  <div style="text-align:center;margin-top:20px"><a href="listings.html?city=Chiang+Mai" class="btn-view-listing">See All Chiang Mai →</a></div>
 </div>
 
 <div class="divider"></div>
@@ -1174,11 +1256,12 @@ header {
 
   <div class="edit-cards-grid">
 
+    <!-- #1 SUZY WONG'S -->
     <div>
       <div class="award-wrap">
-        <span class="award-label">🥇 #1 Best Go-Go Bar</span>
+        <span class="award-label">🥇 Best Overall Go-Go</span>
       </div>
-      <a href="city-phuket.html" class="edit-card">
+      <a href="listings.html?city=Phuket" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img" src=""
             onerror="this.style.background='linear-gradient(135deg,#1a0015,#2a0028)';this.removeAttribute('src')"
@@ -1202,11 +1285,12 @@ header {
       </a>
     </div>
 
+    <!-- #2 HAREM -->
     <div>
       <div class="award-wrap">
-        <span class="award-label silver">🥈 Best Luxury Experience</span>
+        <span class="award-label silver">🥈 Best High-End Go-Go</span>
       </div>
-      <a href="city-phuket.html" class="edit-card">
+      <a href="listings.html?city=Phuket" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img" src=""
             onerror="this.style.background='linear-gradient(135deg,#0a1628,#1a3a6b)';this.removeAttribute('src')"
@@ -1230,11 +1314,12 @@ header {
       </a>
     </div>
 
+    <!-- #3 ANGEL MASSAGE -->
     <div>
       <div class="award-wrap">
         <span class="award-label bronze">🥉 Best Soapy — Phuket</span>
       </div>
-      <a href="city-phuket.html" class="edit-card">
+      <a href="listings.html?city=Phuket" class="edit-card">
         <div class="edit-card-img-wrap">
           <img class="edit-card-img" src=""
             onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a0a)';this.removeAttribute('src')"
@@ -1259,6 +1344,8 @@ header {
     </div>
 
   </div>
+
+  <div style="text-align:center;margin-top:20px"><a href="listings.html?city=Phuket" class="btn-view-listing">See All Phuket →</a></div>
 </div>
 
 <!-- ══ FOOTER ════════════════════════════════════════════ -->
