@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -165,8 +166,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">11 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/the-queen-club#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Kevin PWY</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 16, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Girls quality average and not trained for B2B. For 2300baht FS, better spend elsewhere.<br>Bedsheet is not changed after my session.<br>Reception guy not greet me when I'm leaving, just busy playing on his phone.<br>He was not around when I visited, just one of the girl attended to me and tried her best to speak English.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Sarunya Jumpu</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 18, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">มา นพ</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 11, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">ร้านสะอาด นวดดี บริการดีมาก</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">oil oillie</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 11, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">i love B2B she bb</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">ศรัญญา จุมปูสิงสา</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 11, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good B2B pretty girls</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">ING THANAPOL</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 11, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good massage</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Dany Nguyen</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 9, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">I fell in love with Mea. She is perfect and take really good care of you.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Данила Милёхин</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 1, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">kumyee noodumdang</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 19, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Place is good but girls are not. Try 2 times and still feel bad. And be careful Eth*r is a scammer. You will lost a lot of money.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">PeeMai City</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 29, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/the-queen-club#reviews" target="_blank" class="btn btn-outline">View all 11 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -229,11 +310,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -155,8 +156,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">25 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/kawaii-bar#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Jean Gabin</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 15, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Misleading high average stars because the reviews are mostly 3 or 4 years old. Now, Kawaii Bar is not good. Avoid. Details will be added soon. Avoid all Nightwish bars. Kawaii is not open 24 hours. The enemy of my enemy is my friend. One of them is Illuzion.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Micky</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 3, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">I had only one experience here and at the beginning was all good. However the girl was really rough upstairs, and was sick on intimate parts, really bad smelling... I would expect managers to have medical check on the girls working here, otherwise there are many cheaper freelancers.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">akash gupta</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 4, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">It’s a very good place to hangout, very well organized and managed by the manager Brandon and George both of them are awesome and pretty chill guys.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Mike Thai</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 11, 2021</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Raoongdao Phimpha</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 28, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">dan bea</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 15, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Got along with the girls there even had a day out with them on beach jet ski and shisha bar<br><br>Good place</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">조동현</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 15, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Juergen Schneider</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 27, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">War nicht gut</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Timothy Smith</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 2, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Steven Baseley</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 29, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/kawaii-bar#reviews" target="_blank" class="btn btn-outline">View all 25 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -219,11 +300,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -129,8 +130,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">40 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/foxy-lady-go-go#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Dale Eustice</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 1, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">I visit in February 2020 with my Thai lady friend. I bought at drink for a lovely lady that<br><br>danced Very  friendly . Enjoyed myself.  Recommend danced</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">จินตนา ลีเมน</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 7, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">kaptuure “kaptuure”</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 19, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Guan Wang</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 19, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Aisha Chapman</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 19, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Stephen Hardenstine</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 17, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Okay all these people that are trying to tell you &quot;to stay away&quot; that &quot;its awful&quot; &quot;do not go&quot; honestly it's not that bad. it's just extremely overpriced. the drinks are expensive, the bar fine is expensive and the take-home service is expensive. for what you pay for girl here you can get three at your local beer bar or 2 soapy massages girls. if it wasn't for the fact that I had the hottest girl in the club. I would've paid the price to took in her home.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">New Pang Noona</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 1, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Song Sabai</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 5, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">A genuine pit of despair. Beware!!<br>Chiang Mai is not cut out for this kind of action.<br>If you really need this kind of action, best fill your pockets full of Baht and park your brain at the door.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">梁池秀介</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 12, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">600バーツでかなり楽しめた<br>番号札を着けていない子は今日が初めてとか体験入店らしいのでオススメです</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Alex Kid</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 19, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Poor gogo bar, nothing to compare with the one in BKK or Pattaya. Drink pretty expensive.</div>
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/foxy-lady-go-go#reviews" target="_blank" class="btn btn-outline">View all 40 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -191,11 +272,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

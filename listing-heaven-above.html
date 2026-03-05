@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -254,8 +255,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">149 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/heaven-above#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Erin Dagle</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 21, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Danny Ferligoj</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 16, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Well gentlemen this is one place where you can enjoy 😉 the ladies as l did on this occasion 😀 and I'm sure l will be back later in the year 😀 😉</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Steve Miller</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 14, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Very nice. Lovely ladies! Great owner.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">William Ronaldchampion</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 9, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Traveller</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 9, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Nice place , music not too loud ( which I love ) ladies are not pushing ( too ) much for drinks . Reasonable prices . And .... except for one Asian smoking a vaper I did not see  anybody smoking ....  Fantastic .<br>Clean toilets ...Lovely .<br>Enjoyed myself but I got my change ( almost 200 baht ) in bills of 20 and coins  ...<br>They are not the only place doing this but I always leave a tip and I would like to be the one deciding  ... The owner who is foreign and who is present at the club would also not appreciate getting his change presented like that ... Treat your customers like you like to be treated yourself .<br>But .... it is a nice place that I can recommend... definately .</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Didier Treutenaere</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 9, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Don Rey</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 5, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">The women are pretty but my experience was a starfish. Hope others have a better time.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김영준</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 2, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">편안히 놀수있는곳 자리가 넓고 아무생각없이 누나들보면서 맥주 빨기 좋음 ㅋㅋㅋㅋㅋ</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Shaun johnson</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 22, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Tony (Tony)</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 22, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">A must visit</div>
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/heaven-above#reviews" target="_blank" class="btn btn-outline">View all 149 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -318,11 +399,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

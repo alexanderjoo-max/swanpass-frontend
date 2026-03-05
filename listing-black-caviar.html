@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -118,8 +119,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">21 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/black-caviar#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Kingman C</div>
+        <div style="font-size:12px;color:var(--white40);">May 29, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">三年前，非常棒<br>三年后，一言难尽<br>希望老板好好经营</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">SK K</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 16, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">茶カレー</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 21, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">土曜日の夕方17時に来店したらクオリティの高い女の子が待機していました。XLクラス8000バーツでルックス最高、サービスもめちゃくちゃ良かったです。特に日本人の方にこのお店をオススメしたいですね。日本語が少し話せる女の子で楽しい時間を過ごせました。2019年に出来たばかりの新店でコロナの影響もあったはずなのに、赤字を取り返そうというガツガツさもなくて非常に余裕のある雰囲気と接客で帰る時には女の子がミーティング？OJTをしていて勉強熱心な店だと感じました。また来たいです。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">First Last</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 22, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Great decorations. Beautiful girls (though expensive). But expect the same service as at a local market. 50-something y.o. illiterate Isaan mamasan will certainly have a bout and act just as she would at her village without any reason. It's just what she does all her life, she doesn't care that an hour may cost more than a typical monthly wage. A peasant, not gonna change.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">yotsawat Thawisinrungwilai</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 5, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">มัมี สน (Mommy Son)</div>
+        <div style="font-size:12px;color:var(--white40);">Sep 6, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">더 로드가 코로나로 문 닫은 후 새로 열었다고 합니다. 솔직한 심정으로 한번 체험해 보실 분들은 가시고, 그냥 다른데 추천 합니다. Moo 를 찾으세요.<br><br>검색이 너무 많아요. ㅎㅎ 관심이 뜨겁군요. 제가 비추천하는 이유는 너무 비싸요. 방콕에서 물집으로는 제일 비싼듯. 쓸만하면 만밧이 넘네요. 그냥 다른데 두세명하고 노는게 낫겠어요.<br><br>한국 푸차이들 즐겁게 노시길 ㅎㅎ<br><br>너무들 많이 봐서 ,,, 가셔도 놀지도 못하실텐데 ,,, 같은 돈으로 다른데 가세요 ,, 콜론제 나 유토피아나 ,,, 너무 비싸요 ㅎㅎㅎㅎ 너무 많이들 관심 가지셔서 수정합니다 ~<br><br>5000뷰 돌파 ㅋㅋ, 푸차이들 글 너무 많이 봐요. ㅋㅋ<br><br>너무 글에 대한 관심이 뜨겁네요. ㅎㅎㅎ 진짜 비싸요. 한번 멋있게 노실때는 추천드립니다.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Treethip Hancherngka</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 4, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">ที่สุดของยุคนี้ครับ ต้องมาลอง<br>สิบปากว่าไม่เท่าตาเห็น<br>สิบตาเห็นไม่เท่าสัมผัสเอง😍😍😍</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">chai Kc</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 2, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Caviar Executive Club Ratchada soi 7</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 18, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">The Best package in Bangkok by Black Caviar</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">BELL Ly</div>
+        <div style="font-size:12px;color:var(--white40);">Sep 27, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/black-caviar#reviews" target="_blank" class="btn btn-outline">View all 21 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -162,7 +243,7 @@
         <div class="nearby-body"><div class="nearby-name">Suwon Man's spa</div><div class="nearby-meta">Massage · Soapy · ★ 5.0</div></div>
       </a>
       <a href="listing-baccara.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://swanpass.com/wp-content/uploads/2023/03/DJCYez0VwAInQKv-640x427.jpg" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Baccara</div><div class="nearby-meta">Gentlemen’s Clubs · ★ 3.4</div></div>
       </a>
       <a href="listing-aqua-entertainment.html" class="nearby-card">
@@ -183,11 +264,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

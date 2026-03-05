@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -144,8 +145,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">75 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/101-premier-massage#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">akira phillip</div>
+        <div style="font-size:12px;color:var(--white40);">May 15, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">パネルでしか選べないと言われ、パネルで選びましたが、パネマジが結構有り・・サービスも普通。値段は他店より安いけど、近くに顔を見て選べるところがあるので、少しケチってこちらに行くならならそっちに行くべき</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Andreas Niederer</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 16, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Ich bin Arbeitsbedingt oft in Bangkok und kenne viele Massage Salon's. Zwecks der guten Reviews dachte ich, ich probiere mal was neues. Ich hatte in Bangkok noch nie eine schlechtere Massage. Die Massage war eine absolute Katastrophe! Zuerst war sie ständig am Handy beschäftigt, danach ging sie während der Massage sogar noch auf Toilette.. Ich hätte besser 90min im Mcdonald ein Kaffee getrunken. In Bangkok gibt es viele bessere Etablisments. Analisa massage, Aya massage, Daisy dream and so on.. einmal und niemehr wieder. Ist das Geld und vorallem die Zeit nicht Wert. Bei dieser vernichtenden Bewertung will ich den Namen der Masseuse nicht nennen, jedoch soll sie besser zurück in die Landwirtschaft, in dieser Branche ist sie au jeden Fall &quot;fehl am Platz&quot;.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">関信之</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 17, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">前払い制度で、安心して全身をマッサージしていただけました。<br>最初にコース料金表を見せてもらえます。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">mira michel</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 10, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">女の子を実際に見て選んだほうがいい<br>可愛い子は多い<br>平日の15:30頃行ったが、10人ちょっとはいた<br>可愛い子とイチャイチャできます</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">gako sa</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 9, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">曼谷最有性价比的地方，技师温柔有耐心</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">アベベ晋三Abebe Shinzo</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 27, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">何となくで行ってみましたが、なかなか良かったです。部屋にはバスタブがあり、そこそこ清潔でした。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">chris stive</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 8, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">服務過程還是很不錯的，就是照片跟本人有蠻大的落差，年紀的部分我跟朋友都遇到比標註年紀+4~5歲的，不確定是全部都這樣還是個案。一定要把妹子叫出來選，我到完事後才發現可以看本人。另外如果希望能夠有談話能力的請選擇語言能力標註為○的，標註為△的僅能聽懂一些單字(無法組成句子)。另外真心不推薦抽完放鬆的大麻去，整個太chill勾不太起性慾，害我對Pat感到很抱歉。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Kevin Chen</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 5, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">三十代、ルックス一般、スキル良し、2時間で3回、初日に来たら数日で落ち着いて他の女性にお金をかけないことをお勧めします🤩</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">TegHalvarsson</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 9, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">First time at 101 after I have been to all sorts of soapies in Bangkok over the past years. Annie's, sadly no longer here, was always my favourite even tho dated and a bit scruffy. But it was an institution.<br><br>Anyway, my alter ego went to 101 Premiere today after reading some reviews on Bangkok Nightlife. Had some masseuses in mind already when I turned up and luckily one of my top 3, Tong, was available. 29 years old (website says 25) and quiet cute. Massage quality was okay, nothing special but the other service was great. One of the yummy mommy's.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Sakai Jin</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 24, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">进店以后给你的册子看照片选人，有点照骗的意思，但是姑娘服务都挺好的</div>
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/101-premier-massage#reviews" target="_blank" class="btn btn-outline">View all 75 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -186,7 +267,7 @@
         <div class="nearby-body"><div class="nearby-name">Suwon Man's spa</div><div class="nearby-meta">Massage · Soapy · ★ 5.0</div></div>
       </a>
       <a href="listing-baccara.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://swanpass.com/wp-content/uploads/2023/03/DJCYez0VwAInQKv-640x427.jpg" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Baccara</div><div class="nearby-meta">Gentlemen’s Clubs · ★ 3.4</div></div>
       </a>
       <a href="listing-aqua-entertainment.html" class="nearby-card">
@@ -207,11 +288,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_FILE = path.join(__dirname, '..', 'data', 'listings.json');
+const REVIEWS_FILE = path.join(__dirname, '..', 'data', 'reviews.json');
 const OUTPUT_DIR = path.join(__dirname, '..');
 const PARTIALS_DIR = path.join(__dirname, '..', 'partials');
 
@@ -322,7 +323,42 @@ function generateCtaButtons(contacts) {
   return buttons;
 }
 
-function generatePage(listing, allListings, garbageSet) {
+function generateReviewCardsHtml(listing, allReviews) {
+  const reviews = (allReviews || {})[listing.slug] || [];
+  if (reviews.length === 0) {
+    return `<div style="text-align:center;padding:16px 0;color:var(--white40);font-size:13px;">
+      <p>No reviews yet.</p>
+      <a href="${escapeHtml(listing.source_url)}#reviews" target="_blank" class="btn btn-outline" style="margin-top:8px;">Leave a review on SwanPass &rarr;</a>
+    </div>`;
+  }
+  const sorted = [...reviews]
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 10);
+  let html = '';
+  sorted.forEach(r => {
+    const name = escapeHtml(r.title || r.display_name || 'Anonymous');
+    const date = r.created_at ? new Date(r.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+    const stars = starsHtml(r.rating);
+    const body = escapeHtml(r.message || '').replace(/\n/g, '<br>');
+    html += `
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">${name}</div>
+        <div style="font-size:12px;color:var(--white40);">${date}</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">${stars}</div>
+      ${body ? `<div style="color:var(--white70);font-size:13px;line-height:1.5;">${body}</div>` : ''}
+    </div>`;
+  });
+  if (reviews.length > 10) {
+    html += `<div style="text-align:center;padding:8px 0;">
+      <a href="${escapeHtml(listing.source_url)}#reviews" target="_blank" class="btn btn-outline">View all ${reviews.length} reviews on SwanPass &rarr;</a>
+    </div>`;
+  }
+  return html;
+}
+
+function generatePage(listing, allListings, garbageSet, allReviews) {
   const images = getListingImages(listing, garbageSet);
   const mainImage = images[0] || '';
   const categoryBadges = listing.categories.map(c => `<span class="badge badge-cat">${escapeHtml(c)}</span>`).join('\n    ');
@@ -423,9 +459,7 @@ ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slu
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">${reviewCount} Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="${escapeHtml(listing.source_url)}#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
-    </div>
+    ${generateReviewCardsHtml(listing, allReviews)}
   </div>
 
   <!-- CONTACT TAB -->
@@ -640,6 +674,15 @@ function main() {
 
   const allListings = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
 
+  // Load reviews data
+  let allReviews = {};
+  if (fs.existsSync(REVIEWS_FILE)) {
+    allReviews = JSON.parse(fs.readFileSync(REVIEWS_FILE, 'utf-8'));
+    console.log(`Loaded reviews for ${Object.keys(allReviews).length} listings`);
+  } else {
+    console.log('Warning: data/reviews.json not found, reviews will be empty');
+  }
+
   // Build garbage image set (sidebar/sponsored images that got scraped into every listing)
   const garbageSet = buildGarbageImageSet(allListings);
   console.log(`Identified ${garbageSet.size} garbage sidebar images to filter out`);
@@ -658,7 +701,7 @@ function main() {
     // Generate listing page
     const filename = `listing-${listing.slug}.html`;
     const filepath = path.join(OUTPUT_DIR, filename);
-    const html = generatePage(listing, allListings, garbageSet);
+    const html = generatePage(listing, allListings, garbageSet, allReviews);
     if (getListingImages(listing, garbageSet).length === 0) noImages++;
     fs.writeFileSync(filepath, html);
     generated++;

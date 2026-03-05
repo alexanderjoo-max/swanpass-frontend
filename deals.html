@@ -72,6 +72,8 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 }
 </style>
 <link rel="stylesheet" href="css/site.css?v=3">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 <body>
 <header>
@@ -79,17 +81,16 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -409,10 +410,9 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 
 <div class="bottom-nav-spacer"></div>
 <nav class="bottom-nav">
-  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
   <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
   <a href="deals.html" class="bnav-item active"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
-  <a href="listings.html" class="bnav-item"><span class="bnav-icon">🔍</span><span class="bnav-label">Browse</span></a>
+  <a href="search.html" class="bnav-item"><span class="bnav-icon">🔎</span><span class="bnav-label">Search</span></a>
   <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
 </nav>
 
@@ -423,11 +423,9 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -214,8 +215,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">65 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/sapphire-club#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Vitali Smyk</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 20, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">No drink must go. I'm ok if no place or place crowdy but it is not. And not friendly at all. Go to Coke on same street instead. Girls mostly young and not skilled.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Peter Heise</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 23, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tolle Mädels, toller Club. Sehr ehrlich in der Preiskommunikation. Rechnung kam immer sofort und man wusste wo man steht.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">John Tan</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 22, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">One of the most underrated agogo bar in walking st. No pushy mamasan or staff to buy lady drinks. You can sit at a corner order a drink for yourself or even a whole pizza for 150 bant and enjoy your time in the bar. Cool for solo. And the toilet was cleaned tip top.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Pattaya Weed Reviewer</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 5, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">In the depths of a Go Go club's domain,<br>the glamorous stage illuminates, revealing girls of play.<br>Maroon love seats wrap around, embracing the space.<br>Obsidian tiles, a floor where secrets trace.<br>Gothic pillars rise, forming crosses in the ceilings design,<br>with diamond LEDs bathed in a crimson hue.<br>Disco ball circulates casting a sultry glow,<br>as the sweet dreams are made of a tempting allure.<br>Upon a pill-shaped platform, the sirens call,<br>turning and spinning, their bodies in sync, behold.<br>In bikini costumes, they tease, indulgence supercharges,<br>seventy-plus girls, lost in the chase of eyegaze.<br>Royal sheek bar, mirror reflecting each chance,<br>daily promos on drinks, a tempting plan.<br>Professionalism surrounds, not pushy at all,<br>drives calm incentive to spend, after numbing the mind core.<br>Soundstage is magnificent, with slight treble on the low,<br>it stirs the soul clean and forward.<br>Upstairs, a play pool, to tempt with even more,<br>the VIP lounge, big spenders roll.<br>Karaoke and food order you got it all,<br>Sapphire crystal reglows you in return.<br>For the sexy here is truly pro.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Sonny R.</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 5, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">The staff is so gorgeous it’s hard to know who to look at. My jaw dropped and I was afraid to speak.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Lukas</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 8, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Great experience.  Staff is very friendly.  Pricing fair, and the girls seem happy.  Most other GoGo Bars, it looks like they don't want to be there.  Manasan, great fun.  Will recommend any day.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Raymond Martens</div>
+        <div style="font-size:12px;color:var(--white40);">May 6, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Opdringerig personeel en opgelicht ik betaalde met 1000 bath aan de serveerste en kwam vervolgens terug en liet een briefje van 100 zien ze zei ik heb haar maar 100 bath gegevens.<br>Pas op voor deze wisseltruc!!!!</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Steven Brownjohn</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 25, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Isobel Smith</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 25, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Super Club</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Micky</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 3, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">In this gogo you will always find a pearl, even after COVID, and the best staff to laught with.<br>Ladies are not the same as the one advertised in the pictures (models? Photoshop?only for parties?), so don't expect many stunnings, but still a good go go to get lost.<br>I find the music here really annoying, and the dj that comes from time to time is just able to add more screaming/noises.</div>
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/sapphire-club#reviews" target="_blank" class="btn btn-outline">View all 65 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -282,11 +363,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>

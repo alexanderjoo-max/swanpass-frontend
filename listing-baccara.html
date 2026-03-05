@@ -12,22 +12,23 @@
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)">
+      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -48,8 +49,8 @@
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    // Listing pages → highlight Search tab
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
@@ -60,12 +61,16 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    
+    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/03/DJCYez0VwAInQKv-640x427.jpg" alt="Baccara"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/02/305019048_619666009859434_8372238849948305452_n-600x427.jpg" alt="Baccara"  onerror="this.style.display='none'">
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <div class="gallery-count" id="galleryCount">1 / 2</div>
 </div>
-
-<a href="photos-baccara.html" class="gallery-view-all">📷 View all 10 photos →</a>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://swanpass.com/wp-content/uploads/2023/03/DJCYez0VwAInQKv-640x427.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://swanpass.com/wp-content/uploads/2023/02/305019048_619666009859434_8372238849948305452_n-600x427.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+</div>
+<a href="photos-baccara.html" class="gallery-view-all">📷 View all 2 photos →</a>
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -125,8 +130,88 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">225 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/baccara#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Cindy He</div>
+        <div style="font-size:12px;color:var(--white40);">May 10, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">At first I was skeptical reading all the reviews. Took a chance and glad I did. I believe this club has been featured in US TV shows. 2 floors. 1st floor is go go dancers. Second floor is like school girls and some are topless. Glass ceiling/floor between 1st and 2nd floors so u can look up at their butts from 1st floor. Short time is 3000 baht long time 6000 baht bar fine is 700 baht plus 2 lady drinks. Some stunners in here but u must get here early, like by 9pm. No pressure to buy lady drinks here unlike many other bars where u buy one lady drink and next thing u know every server and go go dancer will come over and harass u for a drink like a pack of hungry wolves or lions. Some other go go bars u can expect to pay over 10000 baht but here about 5000-6000 is good enough for short time including bar fines and drinks. Short time hotel across the street for 500 baht.<br><br>***DO NOT buy drinks for servers. U have been warned. Buy lady drinks never buy drinks for server. Because there is no set price so they can get Hennessy XO 3000 baht one drink if they want.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Thomas Dalm</div>
+        <div style="font-size:12px;color:var(--white40);">May 6, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">190 Baht um draussen ein kleines Bier zu trinken ist ja absolut daneben.<br>Bei den Preisen ist es kein Wunder wenn der Laden fast leer ist.<br>Kommt mal wieder runter.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Nick Tsao</div>
+        <div style="font-size:12px;color:var(--white40);">May 5, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">如果你是台灣人，來到這裡有問題可以跟我說<br>我想這裡真的算是曼谷最好的gogobar了</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Yutaka</div>
+        <div style="font-size:12px;color:var(--white40);">May 4, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">久しぶりに来たら店全体がさらにがめつくなっていた。<br>女の子を隣につけたら、自分だけでなくトモダチやウェイターへのドリンクをひたすら要求され続ける。会話の内容もずっとドリンク。ペイバーすると言っても最後の瞬間までウェイターと一緒になってドリンク要求。ペイバー宣言後はさすがに断ったが、断った後も「最後だ」と4回くらいしつこく言ってくる。その時点で萎えてしまうし、そんな娘なのでペイバーしてもその後が楽しいはずもなくゲンナリしただけだった。<br>以前はここまでではなかったと思うのだが、、、</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Alex N</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 2, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Girls here are the prettiest. But be careful these are professionals at separating men from their money. These girls are all business and dont care who you are or where you are from as long as your wallet is deep. Especially Na. She is very pretty and a pro who been in this business for six years.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">宮崎滉</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 30, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">タバコを吸うと言えば、2階に案内してもらえる。二階の方がブラを脱いだりと過激なのでおすすめ。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Bryan Myers</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 12, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">I walked in here, had a beer and a shot at the outside bar -- not even 500 baht. walked inside and sat down with a girl, bought her a shot and myself too -- and then another girl asked for a shot. but somehow my bill came out to 4,700 baht. so they up-charge you when you are drunk, meaning they'll take advantage of you when drunk. and one of the girls I bought a drink for just got up and left, so I did too. total rip off. I know that, because I was in Crazy House before -- and I bought a lot of drinks and spent less there. so I didn't have a good experience here, not honest.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Kevin Teoh</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 11, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Prefer to go upstairs. Not the cheapest but plenty of action.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Jean Gabin</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 20, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Probably the best agogo in Soi Cowboy currently. When I went they had two floors open. The first floor closes early and the second floor is open till late. Baccara is unique in that the first floor ceiling/second floor stage is glass. So you can see the dancers above or below if you are sitting near the stage. Beer for customers is 180 Baht. Early work release is 700 Baht plus 3000 Baht for the girl. If you go late, all the stunners will be gone. I think one dancer on the second floor is a ladyboy. But I'm not 100% sure. If you go here, you will end up spending a lot of money because they will be a decent amount of pressure for drinks and tips. But in my experience, they do not do any funny business with the bills.<br><br>A tip for newbies: Do not enter any of the agogos on the opposite side of Baccara. Baccara side is ok. But not on the opposite side of Baccara. I mean all agogos on the opposite side. They do funny things with your bill. You have been advised.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">肖佳龙</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 3, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">如果带着女生进去必须要点酒才能进，男生可以随意进入参观。点一瓶酒看了二十几分钟就被赶出来了，只因为带着女生，服务员觉得我们不会点女生下来。服务员脸很臭，语气很差，在训斥我们的感觉，不会再来了。</div>
+    </div><div style="text-align:center;padding:8px 0;">
+      <a href="https://swanpass.com/listing/baccara#reviews" target="_blank" class="btn btn-outline">View all 225 reviews on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -188,11 +273,9 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="city-bangkok.html">Bangkok</a>
       <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
-      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
       <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
@@ -206,6 +289,78 @@
 
 
 <script>
+
+const strip = document.getElementById('galleryStrip');
+const countEl = document.getElementById('galleryCount');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
+let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
+
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
+}
+
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
+    }
+  });
+});
+
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
+
+// Auto-scroll every 4s
+let autoTimer = null;
+function startAutoScroll() {
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

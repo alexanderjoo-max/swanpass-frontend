@@ -18,7 +18,7 @@ a{color:inherit;text-decoration:none;}
 header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;overflow:hidden;max-width:100vw;}
 .header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
 .logo-img{height:14px;display:block;}
-.header-search{flex:1;display:flex;align-items:center;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:36px;gap:8px;cursor:pointer;transition:border-color .2s;}
+.header-search{flex:1;display:flex;align-items:center;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:36px;gap:8px;cursor:pointer;transition:border-color .2s;position:relative;}
 .header-search:hover{border-color:var(--red);}
 .header-search input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;flex:1;min-width:0;}
 .header-search input::placeholder{color:var(--white40);}
@@ -106,7 +106,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .price-table tr:last-child{border-bottom:none;}
 .price-table td{padding:9px 0;font-size:13px;}
 .price-table td:last-child{text-align:right;color:var(--gold);font-weight:600;}
-.price-table tr:first-child td{color:var(--white40);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding-bottom:6px;}
+.price-table thead td,.price-table thead th{color:var(--white40);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding-bottom:6px;font-weight:400;}
 .price-extra{color:var(--white40)!important;}
 
 /* === COLLAPSIBLE === */
@@ -236,6 +236,11 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .lightbox-nav:hover{background:rgba(255,255,255,0.15);}
 .lightbox-prev{left:8px;}
 .lightbox-next{right:8px;}
+
+/* === SEARCH CLEAR BUTTON === */
+.search-clear{display:none;align-items:center;justify-content:center;background:var(--white10);border:none;border-radius:50%;width:20px;height:20px;color:var(--white70);font-size:12px;cursor:pointer;flex-shrink:0;line-height:1;padding:0;transition:background .2s;}
+.search-clear:hover{background:var(--red);color:#fff;}
+.search-clear.visible{display:flex;}
 
 /* === VIEW ALL PHOTOS LINK === */
 .gallery-view-all{display:block;text-align:center;padding:10px;color:var(--white70);font-size:13px;font-weight:500;text-decoration:none;background:var(--black2);border-top:1px solid var(--border);transition:color .2s;}
