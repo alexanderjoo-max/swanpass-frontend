@@ -309,7 +309,7 @@ function generatePage(listing, allListings, garbageSet) {
 <meta name="description" content="${escapeHtml((listing.description || '').slice(0, 160))}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
 
@@ -462,7 +462,7 @@ function generatePhotosPage(listing) {
 <title>Photos — ${escapeHtml(listing.name)} — Swanpass</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
 
