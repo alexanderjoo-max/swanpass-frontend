@@ -59,11 +59,24 @@
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg" alt="Suzy Wong's 3" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-strip" id="galleryStrip">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg" alt="Suzy Wong's 3"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/647/suzy-wongs-3-bangla-copy.jpg" alt="Suzy Wong's 3"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/648/suzy-wongs-3-phuket-1.jpg" alt="Suzy Wong's 3"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg" alt="Suzy Wong's 3"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/637/17200884_1826725817352946_3282322158074475394_n.jpg" alt="Suzy Wong's 3"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/636/17155687_1826725810686280_6209697978126965229_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/638/14712869_1583053578386839_6768175097700358673_o.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/639/12310003_1283746398317560_7063401736795307229_o.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/640/51513495_3052789278079921_3013659568124198912_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/641/78991900_3933238080035032_3821329375022809088_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/643/80070664_3965566876802152_4389347153630199808_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/644/80540022_3978759252149581_8718791341821132800_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/645/80692688_4021881337837372_1788082631506657280_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/642/79387215_3972052276153612_7473238151532642304_n.jpg" alt="Suzy Wong's 3" loading="lazy" onerror="this.style.display='none'">
+  </div>
   <div class="gallery-count" id="galleryCount">1 / 14</div>
-  <div class="gallery-dots" id="galleryDots"></div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
 <a href="photos-suzy-wong-s-3.html" class="gallery-view-all">📷 View all 14 photos →</a>
 
 <!-- MAIN LAYOUT -->
@@ -182,12 +195,6 @@
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
 
-<!-- STICKY MOBILE CTA -->
-
-<div class="sticky-cta">
-  <a href="tel:08 7272 2588" class="btn btn-primary">📞 Call</a>
-</div>
-<div style="height:80px"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -197,79 +204,75 @@
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="listings.html">Browse</a>
-      <a href="cities.html">Cities</a>
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
+      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
     </div>
-    <div class="footer-copy">
-      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
-    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
 
 <script>
 
-const photos = [
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/647/suzy-wongs-3-bangla-copy.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/648/suzy-wongs-3-phuket-1.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/646/suzy-wongs-3.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/637/17200884_1826725817352946_3282322158074475394_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/636/17155687_1826725810686280_6209697978126965229_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/638/14712869_1583053578386839_6768175097700358673_o.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/639/12310003_1283746398317560_7063401736795307229_o.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/640/51513495_3052789278079921_3013659568124198912_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/641/78991900_3933238080035032_3821329375022809088_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/643/80070664_3965566876802152_4389347153630199808_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/644/80540022_3978759252149581_8718791341821132800_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/645/80692688_4021881337837372_1788082631506657280_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/642/79387215_3972052276153612_7473238151532642304_n.jpg'
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
+const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+let currentIdx = 0;
 
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
 }
 
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  dotsEl.appendChild(d);
+// Track scroll to update counter
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+    }
+  });
 });
 
-mainImg.onclick = () => { setPhoto((current+1) % photos.length); resetAutoScroll(); };
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
 
-// Auto-scroll hero gallery every 4s, pause on interaction
+// Auto-scroll every 4s
 let autoTimer = null;
 function startAutoScroll() {
-  if (photos.length <= 1) return;
-  autoTimer = setInterval(() => {
-    setPhoto((current + 1) % photos.length);
-  }, 4000);
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
 }
 function resetAutoScroll() {
   clearInterval(autoTimer);
   startAutoScroll();
 }
 startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

@@ -123,53 +123,58 @@ function getListingImages(listing, garbageSet) {
 function generateGalleryScript(listing, garbageSet) {
   const images = getListingImages(listing, garbageSet);
   if (images.length === 0) return '';
-  const photosArray = images.map(i => `'${i}'`).join(',\n  ');
   return `
-const photos = [
-  ${photosArray}
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
+const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+let currentIdx = 0;
 
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
 }
 
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  dotsEl.appendChild(d);
+// Track scroll to update counter
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+    }
+  });
 });
 
-mainImg.onclick = () => { setPhoto((current+1) % photos.length); resetAutoScroll(); };
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
 
-// Auto-scroll hero gallery every 4s, pause on interaction
+// Auto-scroll every 4s
 let autoTimer = null;
 function startAutoScroll() {
-  if (photos.length <= 1) return;
-  autoTimer = setInterval(() => {
-    setPhoto((current + 1) % photos.length);
-  }, 4000);
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
 }
 function resetAutoScroll() {
   clearInterval(autoTimer);
   startAutoScroll();
 }
 startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 `;
 }
 
@@ -312,11 +317,11 @@ ${HEADER_HTML}
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="${mainImage}" alt="${escapeHtml(listing.name)}" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-strip" id="galleryStrip">
+    ${images.map((img, i) => `<img class="gallery-photo" src="${img}" alt="${escapeHtml(listing.name)}" ${i > 4 ? 'loading="lazy"' : ''} onerror="this.style.display='none'">`).join('\n    ')}
+  </div>
   <div class="gallery-count" id="galleryCount">1 / ${images.length}</div>
-  <div class="gallery-dots" id="galleryDots"></div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
 ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slug}.html" class="gallery-view-all">📷 View all ${listing.photos.length} photos →</a>` : ''}
 
 <!-- MAIN LAYOUT -->
@@ -402,12 +407,6 @@ ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slu
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
 
-<!-- STICKY MOBILE CTA -->
-${stickyButtons.length > 0 ? `
-<div class="sticky-cta">
-  ${stickyButtons.join('\n  ')}
-</div>
-<div style="height:80px"></div>` : ''}
 
 ${FOOTER_HTML}
 
@@ -476,8 +475,8 @@ ${HEADER_HTML}
 
 <div class="photos-tab-bar">
   <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">${allCount}</span></button>
-  ${talentCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('talent', this)">Talents<span class="photos-count">${talentCount}</span></button>` : ''}
-  ${shopCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('shop', this)">Interior/Exterior<span class="photos-count">${shopCount}</span></button>` : ''}
+  ${talentCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('talent', this)">Talent<span class="photos-count">${talentCount}</span></button>` : ''}
+  ${shopCount > 0 ? `<button class="photos-tab" onclick="filterPhotos('shop', this)">Shop<span class="photos-count">${shopCount}</span></button>` : ''}
 </div>
 
 <div class="photos-grid" id="photosGrid">

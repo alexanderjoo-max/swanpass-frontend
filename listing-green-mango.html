@@ -59,11 +59,23 @@
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg" alt="Green Mango" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-strip" id="galleryStrip">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg" alt="Green Mango"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5021/20220920_222728.jpg" alt="Green Mango"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5023/GMC-PHOTOS-2022-180.jpg" alt="Green Mango"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg" alt="Green Mango"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5024/GMC-Oct-1-34.jpg" alt="Green Mango"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5025/GMC-Oct-1-53.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5017/369681515_836253431627372_3575302781225363434_n.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5014/397276067_834857471766968_517892316230425631_n.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5015/396085330_833715335214515_3913713592610054393_n.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5016/393643634_829906082262107_1897556632737543568_n.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5018/398044216_836254298293952_305173840376476488_n.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5019/NYE-2023-GMC-18.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5020/ctr.jpg" alt="Green Mango" loading="lazy" onerror="this.style.display='none'">
+  </div>
   <div class="gallery-count" id="galleryCount">1 / 13</div>
-  <div class="gallery-dots" id="galleryDots"></div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
 <a href="photos-green-mango.html" class="gallery-view-all">📷 View all 13 photos →</a>
 
 <!-- MAIN LAYOUT -->
@@ -178,12 +190,6 @@
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
 
-<!-- STICKY MOBILE CTA -->
-
-<div class="sticky-cta">
-  <a href="tel:+66 77 300 672" class="btn btn-primary">📞 Call</a>
-</div>
-<div style="height:80px"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -193,78 +199,75 @@
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="listings.html">Browse</a>
-      <a href="cities.html">Cities</a>
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
+      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
     </div>
-    <div class="footer-copy">
-      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
-    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
 
 <script>
 
-const photos = [
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5021/20220920_222728.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5023/GMC-PHOTOS-2022-180.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5024/GMC-Oct-1-34.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5025/GMC-Oct-1-53.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5017/369681515_836253431627372_3575302781225363434_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5014/397276067_834857471766968_517892316230425631_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5015/396085330_833715335214515_3913713592610054393_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5016/393643634_829906082262107_1897556632737543568_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5018/398044216_836254298293952_305173840376476488_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5019/NYE-2023-GMC-18.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5020/ctr.jpg'
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
+const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+let currentIdx = 0;
 
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
 }
 
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  dotsEl.appendChild(d);
+// Track scroll to update counter
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+    }
+  });
 });
 
-mainImg.onclick = () => { setPhoto((current+1) % photos.length); resetAutoScroll(); };
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
 
-// Auto-scroll hero gallery every 4s, pause on interaction
+// Auto-scroll every 4s
 let autoTimer = null;
 function startAutoScroll() {
-  if (photos.length <= 1) return;
-  autoTimer = setInterval(() => {
-    setPhoto((current + 1) % photos.length);
-  }, 4000);
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
 }
 function resetAutoScroll() {
   clearInterval(autoTimer);
   startAutoScroll();
 }
 startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

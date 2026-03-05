@@ -59,11 +59,11 @@
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="https://swanpass.com/wp-content/uploads/2023/05/main_image01-1.jpg" alt="Asoke First class" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-strip" id="galleryStrip">
+    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/05/main_image01-1.jpg" alt="Asoke First class"  onerror="this.style.display='none'">
+  </div>
   <div class="gallery-count" id="galleryCount">1 / 1</div>
-  <div class="gallery-dots" id="galleryDots"></div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
 <a href="photos-asoke-first-class.html" class="gallery-view-all">📷 View all 10 photos →</a>
 
 <!-- MAIN LAYOUT -->
@@ -182,12 +182,6 @@
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
 
-<!-- STICKY MOBILE CTA -->
-
-<div class="sticky-cta">
-  <a href="tel:09 2 265 3024" class="btn btn-primary">📞 Call</a>
-</div>
-<div style="height:80px"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -197,66 +191,75 @@
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="listings.html">Browse</a>
-      <a href="cities.html">Cities</a>
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
+      <a href="listings.html">Browse</a>
       <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
     </div>
-    <div class="footer-copy">
-      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
-    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
 
 <script>
 
-const photos = [
-  'https://swanpass.com/wp-content/uploads/2023/05/main_image01-1.jpg'
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
+const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+let currentIdx = 0;
 
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
 }
 
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => { setPhoto(i); resetAutoScroll(); };
-  dotsEl.appendChild(d);
+// Track scroll to update counter
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+    }
+  });
 });
 
-mainImg.onclick = () => { setPhoto((current+1) % photos.length); resetAutoScroll(); };
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
 
-// Auto-scroll hero gallery every 4s, pause on interaction
+// Auto-scroll every 4s
 let autoTimer = null;
 function startAutoScroll() {
-  if (photos.length <= 1) return;
-  autoTimer = setInterval(() => {
-    setPhoto((current + 1) % photos.length);
-  }, 4000);
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
 }
 function resetAutoScroll() {
   clearInterval(autoTimer);
   startAutoScroll();
 }
 startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {
