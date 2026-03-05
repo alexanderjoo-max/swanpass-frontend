@@ -123,12 +123,17 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 /* === CONTACT === */
 .contact-list{display:flex;flex-direction:column;gap:10px;}
 .contact-item{display:flex;align-items:center;gap:10px;font-size:13px;}
-.contact-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.contact-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;}
+.contact-icon svg{width:100%;height:100%;display:block;}
 .contact-icon.phone{background:rgba(34,197,94,0.15);}
 .contact-icon.tg{background:rgba(0,136,204,0.15);}
 .contact-icon.line{background:rgba(6,199,85,0.15);}
-.contact-icon.web{background:rgba(232,20,42,0.15);}
+.contact-icon.web{background:rgba(100,100,120,0.15);}
 .contact-icon.ig{background:rgba(225,48,108,0.15);}
+.contact-icon.fb{background:rgba(24,119,242,0.15);}
+.contact-icon.wa{background:rgba(37,211,102,0.15);}
+.contact-icon.wc{background:rgba(9,186,9,0.15);}
+.contact-icon.em{background:rgba(234,88,12,0.15);}
 .contact-item a{color:var(--white);text-decoration:none;}
 .contact-item a:hover{color:var(--red);}
 
