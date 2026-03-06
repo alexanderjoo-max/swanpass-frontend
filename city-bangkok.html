@@ -125,9 +125,16 @@ a{color:inherit;text-decoration:none;}
 <header>
   <div class="header-inner">
     <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-    <button class="btn-register" onclick="window.location='login.html?register=1'">Register</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
+    </div>
+
 
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
@@ -149,15 +156,16 @@ a{color:inherit;text-decoration:none;}
   var tabs = document.querySelectorAll('.nav-tab');
   for (var i = 0; i < tabs.length; i++) {
     var href = tabs[i].getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) {
-      tabs[i].classList.add('active');
-    }
-    if (page.indexOf('city-') === 0 && href === 'cities.html') {
-      tabs[i].classList.add('active');
-    }
-    if (page.indexOf('listing-') === 0 && href === 'search.html') {
-      tabs[i].classList.add('active');
-    }
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
+  }
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
   }
   var nav = document.querySelector('.nav-tabs');
   var btn = document.querySelector('.btn-hamburger');
@@ -251,6 +259,14 @@ a{color:inherit;text-decoration:none;}
     <a href="listing-drake-luxury-lounge-bangkok.html" class="h-card">
       <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
       <div class="h-card-body"><div class="h-card-name">DRAKE Luxury</div><div class="h-card-meta">💃 ★ 4.2 · New</div></div>
+    </a>
+    <a href="listing-exotic-massage-bangkok-bangkok.html" class="h-card">
+      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="h-card-body"><div class="h-card-name">Exotic Massage</div><div class="h-card-meta">👄 ★ 4.8 · 9K+ ⭐</div></div>
+    </a>
+    <a href="listing-body-bliss.html" class="h-card">
+      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1879/ammy.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="h-card-body"><div class="h-card-name">Body Bliss</div><div class="h-card-meta">👄 ★ 5.0 · ⭐ Featured</div></div>
     </a>
   </div>
 </div>

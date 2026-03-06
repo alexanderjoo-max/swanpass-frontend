@@ -486,7 +486,6 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 @media (max-width: 479px) {
   .hero-title { font-size: 28px; }
   .btn-login { padding: 6px 10px; font-size: 11px; }
-  .btn-register { padding: 6px 10px; font-size: 11px; }
 }
 </style>
 <link rel="stylesheet" href="css/site.css?v=3">
@@ -512,9 +511,15 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 <header>
   <div class="header-inner">
     <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-    <button class="btn-register" onclick="window.location='login.html?register=1'">Register</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
+    </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
@@ -544,6 +549,13 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
     if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
+  }
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
   }
   var nav = document.querySelector('.nav-tabs');
   var btn = document.querySelector('.btn-hamburger');
@@ -880,6 +892,14 @@ const SHOPS = [
     tags:[],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4815/shop01b.jpg',
     page:'listing-tokimeki-thonglor-story.html', deal:null
+  },
+  {
+    id:'bodybliss', name:'Body Bliss',
+    cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Phrom Phong',
+    rating:5.0, visits:'100+',
+    tags:['featured'],
+    img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1879/ammy.jpg',
+    page:'listing-body-bliss.html', deal:'SAVE ฿200'
   }
 ];
 
@@ -921,7 +941,7 @@ function imgErr() {
 /* ─── RENDER: FEATURED GRID ──────────────────────────────────────────────── */
 function renderSponsored() {
   const el = document.getElementById('sponsoredGrid');
-  const list = SHOPS.filter(s => s.tags.includes('sponsored'));
+  const list = SHOPS.filter(s => s.tags.includes('sponsored') || s.tags.includes('featured'));
   el.innerHTML = list.map(s => `
     <a href="${s.page}" class="sp-card">
       <img class="sp-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
