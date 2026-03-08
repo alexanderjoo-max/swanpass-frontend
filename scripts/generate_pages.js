@@ -29,6 +29,18 @@ const VERIFIED_SLUGS = new Set([
   'body-bliss',
 ]);
 
+const DEALS = {
+  'chairman-nuru-massage-bangkok': 'FREE JACUZZI',
+  'g2g-massage-bangkok': 'FREE JACUZZI',
+  'jspot-bangkok': 'FREE JACUZZI',
+  'amor888': 'FREE JACUZZI',
+  'the333-bangkok': 'FREE JACUZZI',
+  '666-class': 'FREE JACUZZI',
+  'suwon-man-s-spa-bangkok': 'SAVE ฿500',
+  'exotic-massage-bangkok-bangkok': 'SAVE ฿200',
+  'body-bliss': 'SAVE ฿200',
+};
+
 // Read shared partials once at build time (inlined into every page)
 const HEADER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'header.html'), 'utf-8');
 const FOOTER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'footer.html'), 'utf-8');
@@ -41,6 +53,20 @@ function escapeHtml(str) {
 function vCheckHTML(slug) {
   if (!VERIFIED_SLUGS.has(slug)) return '';
   return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
+}
+
+function generateDealBanner(slug) {
+  const deal = DEALS[slug];
+  if (!deal) return '';
+  return `
+  <div class="listing-deal-banner">
+    <div class="deal-banner-top">
+      <span class="deal-banner-icon">🏷️</span>
+      <span class="deal-banner-label">SWANPASS DEAL</span>
+      <span class="deal-banner-value">${deal}</span>
+    </div>
+    <div class="deal-banner-redeem">Say <strong>"SwanPass"</strong> at the shop or 📱 show this screen</div>
+  </div>`;
 }
 
 function formatDescription(text) {
@@ -479,6 +505,7 @@ ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slu
     <span>·</span>
     <span class="rating-row"><span class="stars">${starsHtml(listing.rating)}</span> <span class="rating-num">${rating}</span> <span class="review-count">(${reviewCount} reviews)</span></span>
   </div>
+  ${generateDealBanner(listing.slug)}
 
   <!-- TABS -->
   <div class="tabs">
