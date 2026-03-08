@@ -172,6 +172,7 @@ fetch('data/listings.json')
         return fallback[0] || '';
       })(),
       page: 'listing-' + l.slug + '.html',
+      deal: DEALS_MAP[l.slug] || null,
     }));
     filterShops();
   })
@@ -190,6 +191,18 @@ function imgErr() {
 }
 
 const VER_SET=new Set(['chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok','amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok','drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss']);
+
+const DEALS_MAP={
+  'chairman-nuru-massage-bangkok':'FREE JACUZZI',
+  'g2g-massage-bangkok':'FREE JACUZZI',
+  'jspot-bangkok':'FREE JACUZZI',
+  'amor888':'FREE JACUZZI',
+  'the333-bangkok':'FREE JACUZZI',
+  '666-class':'FREE JACUZZI',
+  'suwon-man-s-spa-bangkok':'SAVE ฿500',
+  'exotic-massage-bangkok-bangkok':'SAVE ฿200',
+  'body-bliss':'SAVE ฿200'
+};
 
 function vCheck(id){
   if(!VER_SET.has(id))return '';
@@ -235,7 +248,8 @@ function filterShops() {
         <div class="card-foot">
           <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating ? s.rating.toFixed(1) : 'N/A'}</div>
           <span class="visits">${s.reviews} reviews</span>
-        </div>
+        </div>${s.deal ? `
+        <div class="card-deal">🏷️ ${s.deal}</div>` : ''}
       </div>
     </a>`).join('');
 }
