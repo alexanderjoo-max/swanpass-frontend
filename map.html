@@ -22,7 +22,7 @@ header{flex-shrink:0;}
 .filter-search{display:flex;align-items:center;gap:6px;background:var(--white10);border:1px solid var(--border);border-radius:20px;padding:5px 12px;flex-shrink:0;position:relative;}
 .filter-search input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:12px;width:130px;}
 .filter-search input::placeholder{color:var(--white40);}
-.main{flex:1;display:flex;overflow:hidden;position:relative;}
+.main{flex:1;display:flex;overflow:hidden;position:relative;z-index:0;}
 #map{flex:1;}
 .leaflet-container{background:#1a1a1a!important;}
 .emoji-pin{font-size:24px;cursor:pointer;filter:drop-shadow(0 2px 6px rgba(0,0,0,.9));transition:transform .15s;line-height:1;display:block;}
@@ -46,12 +46,13 @@ header{flex-shrink:0;}
 .badge-sponsored{background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;text-shadow:0 1px 0 rgba(255,255,255,.25);box-shadow:0 1px 4px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3);}
 .badge-deal{background:rgba(34,197,94,.9);color:#000;}
 .badge-new{background:rgba(99,102,241,.9);color:#fff;}
+.badge-verified{background:rgba(59,130,246,.92);color:#fff;}
 /* Popup overlay on pin click */
 .map-popup{position:absolute;z-index:500;bottom:80px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:300px;display:none;pointer-events:none;}
 .map-popup.show{display:block;pointer-events:auto;}
 .popup-card{background:var(--black2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.8);position:relative;}
 .popup-img{width:100%;height:120px;object-fit:cover;display:block;}
-.popup-img-overlay{position:absolute;top:0;left:0;right:0;height:120px;display:flex;align-items:flex-start;justify-content:space-between;padding:8px;}
+.popup-img-overlay{position:absolute;top:0;left:0;right:0;height:120px;display:flex;align-items:flex-start;justify-content:flex-end;gap:6px;padding:8px;}
 .popup-close{background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:none;border-radius:50%;width:32px;height:32px;color:var(--white);cursor:pointer;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1;}.popup-close:hover{background:var(--red);}
 .popup-heart{background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:none;border-radius:50%;width:32px;height:32px;color:var(--white);cursor:pointer;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;}.popup-heart:hover,.popup-heart.saved{background:var(--red);color:#fff;}
 .popup-body{padding:10px 12px 12px;}
@@ -64,7 +65,7 @@ header{flex-shrink:0;}
 .popup-actions{display:flex;gap:8px;}
 .btn-view{flex:1;background:var(--red);color:var(--white);border:none;border-radius:6px;padding:8px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;text-align:center;text-decoration:none;display:block;}
 /* Bottom scrollable card panel (mobile) */
-.map-cards-panel{position:fixed;bottom:56px;left:0;right:0;z-index:80;display:flex;gap:10px;padding:8px 12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.map-cards-panel{position:fixed;bottom:56px;left:0;right:0;z-index:400;display:flex;gap:10px;padding:8px 12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.75) 80%,transparent 100%);}
 .map-cards-panel::-webkit-scrollbar{display:none;}
 .map-card{flex-shrink:0;width:220px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;gap:0;text-decoration:none;color:inherit;transition:border-color .2s;cursor:pointer;}
 .map-card:hover,.map-card.active{border-color:var(--red);}
@@ -195,10 +196,10 @@ header{flex-shrink:0;}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const shops=[
-  {id:1,name:'The333',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7346695,lng:100.5677716,rating:4.9,visits:'52',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',page:'listing-the333-bangkok.html'},
+  {id:1,name:'The333',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7346695,lng:100.5677716,rating:4.9,visits:'52',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',page:'listing-the333-bangkok.html'},
   {id:2,name:'Astro Bar',cat:'gogo',emoji:'👯',city:'Pattaya',lat:12.9285555,lng:100.885292,rating:4.9,visits:'7',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1555/348967037_258043010090980_3925690681634798947_n.jpg',page:'listing-astro-bar.html'},
   {id:3,name:'The Underground',cat:'gogo',emoji:'👯',city:'Khon Kaen',lat:16.4297027,lng:102.83261,rating:3.9,visits:'20',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3020/161000472_151746810135500_8115891874269079098_n.jpg',page:'listing-the-underground.html'},
-  {id:4,name:'Suwon Man\'s spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.729112,lng:100.5610487,rating:5,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',page:'listing-suwon-man-s-spa-bangkok.html'},
+  {id:4,name:'Suwon Man\'s spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.729112,lng:100.5610487,rating:5,visits:'1',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',page:'listing-suwon-man-s-spa-bangkok.html'},
   {id:5,name:'Baccara',cat:'club',emoji:'💃',city:'Bangkok',lat:13.7370339,lng:100.5626718,rating:3.4,visits:'200+',tags:[],img:'',page:'listing-baccara.html'},
   {id:6,name:'MClub',cat:'freelancer',emoji:'❤️‍🔥',city:'Pattaya',lat:12.9302636,lng:100.8912262,rating:4,visits:'100+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1692/361177914_153771134390150_2703558476596724414_n.jpg',page:'listing-mclub.html'},
   {id:7,name:'Play Girlz Pattaya',cat:'freelancer',emoji:'❤️‍🔥',city:'Pattaya',lat:12.9277036,lng:100.8836743,rating:4.2,visits:'14',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1535/Nice_2.jpg',page:'listing-play-girlz-pattaya.html'},
@@ -335,7 +336,7 @@ const shops=[
   {id:138,name:'Butterfly',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7295001,lng:100.5696854,rating:5,visits:'1',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/05/room04.jpg',page:'listing-butterfly.html'},
   {id:139,name:'Club Level 41',cat:'club',emoji:'💃',city:'Bangkok',lat:13.7294464,lng:100.572243,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13781/d6f2d3ba1d6e60e87c14102934a1db12.webp',page:'listing-club-level-41-bangkok.html'},
   {id:140,name:'La Belle',cat:'soapy',emoji:'🛁',city:'Bangkok',lat:13.7493315,lng:100.5660782,rating:5,visits:'1',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/01/xLa-Belle.jpg.pagespeed.ic_.bt52w9zxQ3.jpg',page:'listing-la-belle.html'},
-  {id:141,name:'Exotic Massage Bangkok',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7337896,lng:100.5634857,rating:5,visits:'2',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',page:'listing-exotic-massage-bangkok-bangkok.html'},
+  {id:141,name:'Exotic Massage Bangkok',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7337896,lng:100.5634857,rating:5,visits:'2',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',page:'listing-exotic-massage-bangkok-bangkok.html'},
   {id:142,name:'Entertain Karaoke',cat:'gogo',emoji:'👯',city:'Khon Kaen',lat:16.4288773,lng:102.8288868,rating:4.5,visits:'12',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4172/326919969_5792992677451579_1733711824062972847_n.jpg',page:'listing-entertain-karaoke.html'},
   {id:143,name:'Hwang Jae Relax',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.730867,lng:100.5702833,rating:4.4,visits:'35',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15091/store01.jpg',page:'listing-hwang-jae-relax-bangkok.html'},
   {id:144,name:'Thonglor ONE Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7271493,lng:100.5786501,rating:4.3,visits:'21',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/05/newshop13.jpg',page:'listing-thonglor-one-massage.html'},
@@ -385,7 +386,7 @@ const shops=[
   {id:188,name:'Kasalong BJ Bar',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7392627,lng:100.5554001,rating:3.7,visits:'38',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/937/Kasalong-Shop-678x381.jpg',page:'listing-kasalong-bj-bar.html'},
   {id:189,name:'Angel Massage',cat:'soapy',emoji:'🛁',city:'Phuket',lat:7.8751898,lng:98.3889567,rating:3.9,visits:'92',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/03/320610201_826696068437450_7910629000721365818_n-640x427.jpg',page:'listing-angel-massage.html'},
   {id:190,name:'Nuru Massage Soi Sansabai',cat:'soapy',emoji:'🛁',city:'Phuket',lat:7.8928111,lng:98.2991883,rating:4.3,visits:'44',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/03/01-nuru-massage-pattaya-shop-girls-1-578x434-1.jpeg',page:'listing-nuru-massage-soi-sansabai.html'},
-  {id:191,name:'666 Class',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7341545,lng:100.5676335,rating:4.6,visits:'300+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',page:'listing-666-class.html'},
+  {id:191,name:'666 Class',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7341545,lng:100.5676335,rating:4.6,visits:'300+',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',page:'listing-666-class.html'},
   {id:192,name:'BB EX',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7862835,lng:100.4704424,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7521/mMJv2W.jpg',page:'listing-bb-ex.html'},
   {id:193,name:'Taki',cat:'club',emoji:'💃',city:'Bangkok',lat:13.715099,lng:100.594436,rating:5,visits:'3',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg',page:'listing-taki.html'},
   {id:194,name:'Bangkok Passion',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7296581,lng:100.5652847,rating:4.3,visits:'75',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/02/download.jpg',page:'listing-bangkok-passion.html'},
@@ -421,7 +422,7 @@ const shops=[
   {id:224,name:'SOAP MITU',cat:'soapy',emoji:'🛁',city:'Bangkok',lat:13.738507,lng:100.5639449,rating:4.2,visits:'97',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/869/marni_1.webp',page:'listing-mitu.html'},
   {id:225,name:'Orange Oil Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.6561504,lng:100.4238203,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7248/oom-01.jpg',page:'listing-orange-oil-massage.html'},
   {id:226,name:'Mai Chan',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7392922,lng:100.5604299,rating:3.9,visits:'15',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/05/store02.jpg',page:'listing-mai-chan.html'},
-  {id:227,name:'DRAKE Luxury Lounge',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7342969,lng:100.5676649,rating:5,visits:'4',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',page:'listing-drake-luxury-lounge-bangkok.html'},
+  {id:227,name:'DRAKE Luxury Lounge',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7342969,lng:100.5676649,rating:5,visits:'4',tags:['sponsored','verified','new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',page:'listing-drake-luxury-lounge-bangkok.html'},
   {id:228,name:'Dr. BJ\'s Nuru',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7413579,lng:100.5555735,rating:3.8,visits:'69',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1979/download.jpg',page:'listing-dr-bj-s-nuru.html'},
   {id:229,name:'Analisa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7390729,lng:100.555104,rating:3.6,visits:'100+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1028/2022-02-04.jpg',page:'listing-analisa.html'},
   {id:230,name:'WoW',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7215764,lng:100.4907139,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7751/Msbaig.jpeg',page:'listing-wow.html'},
@@ -471,7 +472,7 @@ const shops=[
   {id:274,name:'Orchid 24',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7304479,lng:100.5697677,rating:3,visits:'2',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/56/2017-03-05.jpg',page:'listing-orchid.html'},
   {id:275,name:'Fortune Club',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7342722,lng:100.5679144,rating:4,visits:'34',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/894/1505633_1412284189019364_904668141_n.jpg',page:'listing-fortune-club.html'},
   {id:276,name:'Addict Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7297655,lng:100.5698176,rating:4,visits:'300+',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/02/file-640x427.png',page:'listing-addict-massage.html'},
-  {id:277,name:'Chairman Nuru Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7341643,lng:100.5677519,rating:5,visits:'38',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',page:'listing-chairman-nuru-massage-bangkok.html'},
+  {id:277,name:'Chairman Nuru Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7341643,lng:100.5677519,rating:5,visits:'38',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',page:'listing-chairman-nuru-massage-bangkok.html'},
   {id:278,name:'Office Massage Club',cat:'soapy',emoji:'🛁',city:'Bangkok',lat:13.7519317,lng:100.589437,rating:4,visits:'23',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/02/office-massage-bangkok-41-640x427.png',page:'listing-office-massage-club.html'},
   {id:279,name:'Visa Club Phitsanulok',cat:'massage',emoji:'👄',city:'Bangkok',lat:16.8430504,lng:100.2307889,rating:4.7,visits:'10',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2427/1761499.jpg',page:'listing-visa-club-phitsanulok.html'},
   {id:280,name:'Ladies Room',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7297529,lng:100.5329925,rating:5,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5568/S__45719606.jpg',page:'listing-ladies-room.html'},
@@ -555,7 +556,7 @@ const shops=[
   {id:358,name:'Mandarin a-Go-Go',cat:'freelancer',emoji:'❤️‍🔥',city:'Bangkok',lat:13.7415579,lng:100.5531463,rating:1.5,visits:'6',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/468/58968040_685599661879935_6064362142549671936_n.jpg',page:'listing-mandarin-a-go-go.html'},
   {id:359,name:'Melody Spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7689425,lng:100.6056149,rating:3.4,visits:'5',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5595/mNaTM8.md.jpg',page:'listing-melody-spa-284d9442-4508-4300-bfaf-56056c9585dd.html'},
   {id:360,name:'Yoshi',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7281583,lng:100.6559765,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5645/F7gImQZaQAAtKQz.jpeg',page:'listing-yoshi.html'},
-  {id:361,name:'Body Bliss (Outcall Only)',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7387158,lng:100.5689948,rating:5,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1879/ammy.jpg',page:'listing-body-bliss.html'},
+  {id:361,name:'Body Bliss (Outcall Only)',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7387158,lng:100.5689948,rating:5,visits:'1',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1879/ammy.jpg',page:'listing-body-bliss.html'},
   {id:362,name:'Tycoon A Go Go',cat:'gogo',emoji:'👯',city:'Bangkok',lat:13.740371,lng:100.553071,rating:5,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1366/328163208_1658447534593667_4685716062397258034_n.jpeg',page:'listing-tycoon-a-go-go.html'},
   {id:363,name:'Harem',cat:'gogo',emoji:'👯',city:'Phuket',lat:7.8938807,lng:98.2967594,rating:4.2,visits:'100+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/673/302602792_550375766884739_7384052954258819114_n_1_.jpg',page:'listing-harem.html'},
   {id:364,name:'Z-Through Spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:15.2279642,lng:104.8683657,rating:4.3,visits:'26',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8574/243317626_250503173753447_1396772154486943747_n.jpg',page:'listing-z-through-spa.html'},
@@ -582,7 +583,7 @@ const shops=[
   {id:385,name:'Rong Nam Cha',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7280957,lng:100.4752528,rating:3,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7699/IMG_7532.jpeg_thumb.png',page:'listing-rong-nam-cha.html'},
   {id:386,name:'Lavender Spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.65265,lng:100.424573,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7023/IMG_8360.jpeg_thumb.png',page:'listing-lavender-spa.html'},
   {id:387,name:'Paza',cat:'soapy',emoji:'🛁',city:'Bangkok',lat:14.9733955,lng:102.0926372,rating:3.8,visits:'5',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3145/Korat-Erotic-Massage-500.jpg',page:'listing-paza.html'},
-  {id:388,name:'G2G Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7346049,lng:100.5679942,rating:5,visits:'55',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',page:'listing-g2g-massage-bangkok.html'},
+  {id:388,name:'G2G Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7346049,lng:100.5679942,rating:5,visits:'55',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',page:'listing-g2g-massage-bangkok.html'},
   {id:389,name:'Zabb Spa',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.8543249,lng:100.5510446,rating:3.6,visits:'34',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3500/307125286_414922204088137_2151403393030159804_n.jpg',page:'listing-zab-spa.html'},
   {id:390,name:'Bar Three',cat:'freelancer',emoji:'❤️‍🔥',city:'Bangkok',lat:13.7338633,lng:100.5798751,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13729/room03.jpg',page:'listing-bar-three-bangkok.html'},
   {id:391,name:'Pink Baby a Go Go',cat:'gogo',emoji:'👯',city:'Bangkok',lat:12.9279028,lng:100.8837091,rating:3,visits:'4',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2697/311573167_638758371245897_3055662797861568928_n.jpg',page:'listing-pink-baby-a-go-go.html'},
@@ -640,7 +641,7 @@ const shops=[
   {id:443,name:'Awesome999',cat:'soapy',emoji:'🛁',city:'Bangkok',lat:13.7383786,lng:100.5653806,rating:4.7,visits:'43',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14213/awesome999.jpeg',page:'listing-awesome999-bangkok.html'},
   {id:444,name:'Daisy Dream',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7340735,lng:100.5679676,rating:4.2,visits:'76',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1000/signature-suite.jpg',page:'listing-daisy-dream.html'},
   {id:445,name:'Stella Nuru Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7365711,lng:100.5573311,rating:0,visits:'<100',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14139/GdXbYEOa4AAZbTB.jpg',page:'listing-stella-nuru-massage-bangkok.html'},
-  {id:446,name:'JSpot',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7340956,lng:100.5678083,rating:5,visits:'1',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',page:'listing-jspot-bangkok.html'},
+  {id:446,name:'JSpot',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7340956,lng:100.5678083,rating:5,visits:'1',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',page:'listing-jspot-bangkok.html'},
   {id:447,name:'Billboard',cat:'club',emoji:'💃',city:'Bangkok',lat:13.7416492,lng:100.5531641,rating:3.2,visits:'74',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/03/337036652_1408039486608284_8726402371179242068_n-640x427.jpg',page:'listing-billboard.html'},
   {id:448,name:'Suzy Wong\'s',cat:'gogo',emoji:'👯',city:'Phuket',lat:7.8944064,lng:98.2969844,rating:4.2,visits:'500+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1/suzy-wongs-2-768x512.jpeg',page:'listing-suzy-wongs.html'},
   {id:449,name:'Classy Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7294176,lng:100.5652896,rating:5,visits:'41',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15076/store01.jpg',page:'listing-classy-massage-bangkok.html'},
@@ -648,7 +649,7 @@ const shops=[
   {id:451,name:'Honey2 Body Massage',cat:'soapy',emoji:'🛁',city:'Pattaya',lat:12.94543,lng:100.8888538,rating:4.2,visits:'900+',tags:[],img:'https://swanpass.com/wp-content/uploads/2023/03/162599893_256203402836301_1126974168869351324_n-640x427.jpg',page:'listing-honey2-body-massage.html'},
   {id:452,name:'Kawaii Nuru Massage',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7338366,lng:100.5634872,rating:4.3,visits:'6',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2814/photo_2566-07-18-16.02.34.jpeg',page:'listing-kawaii-nuru-massage.html'},
   {id:453,name:'Aiyume Bangkok',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7305348,lng:100.5628143,rating:4.4,visits:'35',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15121/aiyumebangkok-Sukhumvit18-h2-1-1.webp',page:'listing-aiyume-bangkok-bangkok-2007063c-d834-4099-ac3d-c0b224134161.html'},
-  {id:454,name:'AMOR888',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7352345,lng:100.5620266,rating:4.7,visits:'40',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',page:'listing-amor888.html'}
+  {id:454,name:'AMOR888',cat:'massage',emoji:'👄',city:'Bangkok',lat:13.7352345,lng:100.5620266,rating:4.7,visits:'40',tags:['sponsored','deal','verified'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',page:'listing-amor888.html'}
 ];
 
 
@@ -690,6 +691,7 @@ function renderMarkers(){
       <div class="list-footer">
         <span class="list-rating">★ ${s.rating}</span>
         <span class="list-visits">${s.visits}</span>
+        ${s.tags.includes('verified')?'<span class="badge badge-verified">✓ Verified</span>':''}
         ${s.tags.includes('sponsored')?'<span class="badge badge-sponsored">★ Featured</span>':''}
         ${s.tags.includes('deal')?'<span class="badge badge-deal">Deal</span>':''}
         ${s.tags.includes('new')?'<span class="badge badge-new">New</span>':''}
@@ -734,7 +736,7 @@ function showPopup(s,marker){
   document.getElementById('popupMeta').textContent=s.emoji+' '+s.cat+' · 📍 '+s.city;
   document.getElementById('popupRating').textContent='★ '+s.rating;
   document.getElementById('popupVisits').textContent=s.visits+' visits';
-  document.getElementById('popupBadges').innerHTML=(s.tags.includes('sponsored')?'<span class="badge badge-sponsored">★ Featured</span>':'')+(s.tags.includes('deal')?'<span class="badge badge-deal">Deal</span>':'')+(s.tags.includes('new')?'<span class="badge badge-new">New</span>':'');
+  document.getElementById('popupBadges').innerHTML=(s.tags.includes('verified')?'<span class="badge badge-verified">✓ Verified</span>':'')+(s.tags.includes('sponsored')?'<span class="badge badge-sponsored">★ Featured</span>':'')+(s.tags.includes('deal')?'<span class="badge badge-deal">Deal</span>':'')+(s.tags.includes('new')?'<span class="badge badge-new">New</span>':'');
   document.getElementById('popupLink').href=s.page;
   // Reset heart state
   var heart=document.querySelector('.popup-heart');if(heart){heart.classList.remove('saved');heart.textContent='♡';}
