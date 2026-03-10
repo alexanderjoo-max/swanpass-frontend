@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Bangkok, Thailand — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=3">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CITY PAGE STYLES — Mobile-first base
+═══════════════════════════════════════════════════════════════ */
+
+/* Featured grid: 1-col stacked cards on mobile */
+.cp-featured-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* Small card grids: 2-col on mobile */
+.cp-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Shop card hover */
+.shop-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232,20,42,.4) !important;
+}
+
+/* Hide scrollbar on filter */
+#cpCatFilter::-webkit-scrollbar { display: none; }
+#cpCatFilter { scrollbar-width: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT — ≥ 768px
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  /* Featured: 2-col wide cards */
+  .cp-featured-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Card grids: 4 cols */
+  .cp-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Card grids: 5 cols on large screens */
+  .cp-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
+    <div class="header-logo-wrap"><a href="/"><img src="/swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="/map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="/deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="/best-places.html">&#x1F3C6; Best Places</a>
+      <a href="/cities.html">&#x1F4CD; Cities</a>
+      <a href="/search.html">&#x1F50E; Search</a>
+      <a href="/add-listing.html">&#x2795; List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='/login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="/map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="/deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="/best-places.html" class="nav-tab">&#x1F3C6; Best Places</a>
+    <a href="/cities.html" class="nav-tab">&#x1F4CD; Cities</a>
+    <a href="/search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="/add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="/admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var p = location.pathname;
+  var segs = p.replace(/^\/|\/$/g,'').split('/').filter(Boolean);
+  var depth = segs.length;
+  var isRoot = depth <= 1;
+  var pageName = isRoot ? (segs[0] || 'index.html') : '';
+  function matchNav(href) {
+    if (href === '/' || href === '/index.html') return p === '/' || p === '/index.html';
+    var base = href.replace('.html','').replace(/^\//,'');
+    if (pageName.replace('.html','') === base) return true;
+    if (depth === 2 && base === 'cities') return true;
+    if (depth >= 3 && base === 'search') return true;
+    return false;
+  }
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    if (matchNav(tabs[i].getAttribute('href'))) tabs[i].classList.add('active');
+  }
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    if (matchNav(hLinks[j].getAttribute('href'))) hLinks[j].classList.add('active');
+  }
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
+})();
+</script>
+
+<!-- ══ CITY PAGE CONTENT (rendered by city-page.js) ══════════════ -->
+<div id="cityHero"></div>
+<div id="cityContent" style="max-width:1200px;margin:0 auto;padding:16px;"></div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/thailand/bangkok/">Bangkok</a>
+      <a href="/thailand/pattaya/">Pattaya</a>
+      <a href="/deals.html">Deals</a>
+      <a href="/map.html">Map</a>
+      <a href="/search.html">Search</a>
+      <a href="/add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="/js/city-page.js"></script>
+<script src="/js/bottom-nav.js"></script>
+</body>
+</html>
