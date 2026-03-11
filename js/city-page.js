@@ -338,12 +338,6 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<div class="stats-bar" style="grid-template-columns:repeat(4,1fr);">' +
-            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--gold,#d4a847);">' + avgRating + '</div><div class="stats-lbl">Avg Rating</div></div>' +
-            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;">' + cityShops.length + '</div><div class="stats-lbl">Listings</div></div>' +
-            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--red,#e8142a);">' + dealCount + '</div><div class="stats-lbl">Deals</div></div>' +
-            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--green,#22c55e);">' + verifiedCount + '</div><div class="stats-lbl">Verified</div></div>' +
-          '</div>' +
           '<a href="' + basePath + 'map.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);border:1px solid var(--border);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.5)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
             '<span style="font-size:18px;">\uD83D\uDDFA\uFE0F</span>' +
             '<span>Search on the Map \u2014 find venues near you</span>' +
