@@ -1,8 +1,8 @@
 /**
  * city-page.js — Reusable city page renderer
  * Reads the URL path to determine country/city, fetches listings.json,
- * and renders 9 sections: hero+search, featured, deals, top rated,
- * new listings, all listings (filtered), best places / map links, SEO intro.
+ * and renders sections: hero+search+city tools, recently added, featured,
+ * top rated, all listings (filtered), SEO intro.
  *
  * Usage: include on any /country/city/index.html page.
  * The page must contain:
@@ -338,11 +338,16 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<a href="' + basePath + 'map.html?city=' + encodeURIComponent(cityName) + '" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);border:1px solid var(--border);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.5)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-            '<span style="font-size:18px;">\uD83D\uDDFA\uFE0F</span>' +
-            '<span>Search on the Map \u2014 find venues near you</span>' +
-            '<span style="color:var(--red,#e8142a);font-size:16px;">\u203A</span>' +
-          '</a>';
+          '<div style="display:flex;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">' +
+            '<a href="' + basePath + countrySlug + '/' + citySlug + '/deals/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:background .2s;border-right:1px solid var(--border);" onmouseover="this.style.background=\'rgba(232,20,42,.08)\'" onmouseout="this.style.background=\'var(--card-bg,#161616)\'">' +
+              '<span style="font-size:16px;">\uD83C\uDFF7\uFE0F</span>' +
+              '<span>Deals</span>' +
+            '</a>' +
+            '<a href="' + basePath + countrySlug + '/' + citySlug + '/best-places/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:background .2s;" onmouseover="this.style.background=\'rgba(232,20,42,.08)\'" onmouseout="this.style.background=\'var(--card-bg,#161616)\'">' +
+              '<span style="font-size:16px;">\uD83C\uDFC6</span>' +
+              '<span>Best Places</span>' +
+            '</a>' +
+          '</div>';
       }
 
       // Update page title
@@ -350,36 +355,11 @@
 
       /* ═══════════════════════════════════════════════════════════════
          BUILD CONTENT SECTIONS
+         Order: 1) Recently Added  2) Featured  3) Top Rated  4) All Listings
       ═══════════════════════════════════════════════════════════════ */
       var html = '';
 
-      /* ── SECTION 2: FEATURED ──────────────────────────────────────── */
-      var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
-      if (featured.length > 0) {
-        featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
-        var featHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
-          featured.map(gridCard).join('') + '</div>';
-        html += buildSection('\u2B50 Featured in ' + cityName, 'cpFeatured', featHTML);
-      }
-
-      /* ── SECTION 3: DEALS ─────────────────────────────────────────── */
-      if (dealShops.length > 0) {
-        var dealsHTML = '<div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;" class="cp-deals-scroll">' +
-          dealShops.map(dealCard).join('') + '</div>';
-        html += buildSection('\uD83C\uDFF7\uFE0F ' + cityName + ' Deals', 'cpDeals', dealsHTML);
-      }
-
-      /* ── SECTION 4: TOP RATED ─────────────────────────────────────── */
-      var topRated = cityShops.filter(function (s) { return s.rating > 0; })
-        .sort(function (a, b) { return b.rating - a.rating || b.reviews - a.reviews; })
-        .slice(0, 8);
-      if (topRated.length > 0) {
-        var trHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
-          topRated.map(gridCard).join('') + '</div>';
-        html += buildSection('\uD83C\uDFC6 Top Rated', 'cpTopRated', trHTML);
-      }
-
-      /* ── SECTION 5: NEW LISTINGS ──────────────────────────────────── */
+      /* ── SECTION 1: RECENTLY ADDED ──────────────────────────────────── */
       var newListings = cityShops.filter(function (s) { return NEW_SET.has(s.id); });
       var newTitle = '\uD83C\uDD95 Newly Added';
       // Fallback for cities without tagged new shops: show last 6
@@ -393,7 +373,26 @@
         html += buildSection(newTitle, 'cpNewest', nHTML);
       }
 
-      /* ── SECTION 6: ALL LISTINGS (with category filter) ───────────── */
+      /* ── SECTION 2: FEATURED ──────────────────────────────────────── */
+      var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
+      if (featured.length > 0) {
+        featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
+        var featHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+          featured.map(gridCard).join('') + '</div>';
+        html += buildSection('\u2B50 Featured in ' + cityName, 'cpFeatured', featHTML);
+      }
+
+      /* ── SECTION 3: TOP RATED ─────────────────────────────────────── */
+      var topRated = cityShops.filter(function (s) { return s.rating > 0; })
+        .sort(function (a, b) { return b.rating - a.rating || b.reviews - a.reviews; })
+        .slice(0, 8);
+      if (topRated.length > 0) {
+        var trHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+          topRated.map(gridCard).join('') + '</div>';
+        html += buildSection('\uD83C\uDFC6 Top Rated', 'cpTopRated', trHTML);
+      }
+
+      /* ── SECTION 4: ALL LISTINGS (with category filter) ───────────── */
       var filterHTML = '<div style="display:flex;gap:6px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;flex-wrap:nowrap;" id="cpCatFilter">' +
         '<button data-cat="all" style="background:var(--red,#e8142a);border:1px solid var(--red,#e8142a);border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white,#fff);white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'DM Sans\',sans-serif;" class="cp-fbtn active">All (' + cityShops.length + ')</button>';
       catKeys.forEach(function (c) {
@@ -412,21 +411,7 @@
 
       html += buildSection('All ' + cityName + ' Listings', 'cpAll', allGridHTML);
 
-      /* ── SECTION 7 & 8: BEST PLACES + MAP LINKS ──────────────────── */
-      html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">' +
-        '<a href="' + basePath + 'best-places.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-          '<div style="font-size:28px;margin-bottom:8px;">\uD83C\uDFC6</div>' +
-          '<div style="font-size:14px;font-weight:600;">Best Places</div>' +
-          '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Top-rated venues in ' + cityName + '</div>' +
-        '</a>' +
-        '<a href="' + basePath + 'map.html?city=' + encodeURIComponent(cityName) + '" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-          '<div style="font-size:28px;margin-bottom:8px;">\uD83D\uDDFA\uFE0F</div>' +
-          '<div style="font-size:14px;font-weight:600;">Explore Map</div>' +
-          '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Find venues near you</div>' +
-        '</a>' +
-      '</div>';
-
-      /* ── SECTION 9: SEO INTRO ─────────────────────────────────────── */
+      /* ── SEO INTRO ──────────────────────────────────────────────────── */
       var seoText = CITY_SEO[citySlug] || '';
       if (seoText) {
         html += '<div style="margin-bottom:24px;padding:20px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;">' +

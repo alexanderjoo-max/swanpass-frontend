@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Deals in Kanchanaburi — Swanpass Thailand</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/site.css?v=3">
+<link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png">
+<style>
+.city-hero{position:relative;height:180px;overflow:hidden}
+.city-hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:20px 16px;max-width:1200px;margin:0 auto}
+.city-big{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:3px;line-height:1;margin-bottom:6px}
+.cp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.shop-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4)!important}
+@media(min-width:768px){.city-hero{height:240px}.city-big{font-size:48px}.cp-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1024px){.cp-grid{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
+    <div class="header-logo-wrap"><a href="../../../index.html"><img src="../../../swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="../../../cities.html">&#x1F4CD; Cities</a>
+      <a href="../../../search.html">&#x1F50E; Search</a>
+      <a href="../../../add-listing.html">&#x2795; List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='../../../login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="../../../map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="../../../cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
+    <a href="../../../search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="../../../add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="../../../admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var nav=document.querySelector('.nav-tabs'),btn=document.querySelector('.btn-hamburger');
+  document.querySelectorAll('.nav-tab').forEach(function(t){
+    t.addEventListener('click',function(){nav.classList.remove('open');if(btn)btn.textContent='\u2630';});
+  });
+})();
+</script>
+
+<div id="pageHero"></div>
+<div id="pageContent" style="max-width:1200px;margin:0 auto;padding:16px;">
+  <p style="color:rgba(255,255,255,.5);text-align:center;padding:40px 0;">Loading&hellip;</p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../../../swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../../../cities.html">Cities</a>
+      <a href="../../../map.html">Map</a>
+      <a href="../../../search.html">Search</a>
+      <a href="../../../add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var basePath='../../../';
+  var countrySlug='thailand';
+  var citySlug='kanchanaburi';
+  var cityPageFile='city-kanchanaburi.html';
+
+  var CITY_NAMES={'bangkok':'Bangkok','pattaya':'Pattaya','chiang-mai':'Chiang Mai','phuket':'Phuket','hua-hin':'Hua Hin','khon-kaen':'Khon Kaen','ko-samui':'Ko Samui','nakhon-ratchasima':'Nakhon Ratchasima','udon-thani':'Udon Thani','ubon-ratchathani':'Ubon Ratchathani','phitsanulok':'Phitsanulok','krabi':'Krabi','kanchanaburi':'Kanchanaburi','ratchaburi':'Ratchaburi','nakhon-sawan':'Nakhon Sawan','sri-racha':'Sri Racha','rayong':'Rayong','ho-chi-minh-city':'Ho Chi Minh City','hanoi':'Hanoi','bali':'Bali','jakarta':'Jakarta','surabaya':'Surabaya','batam':'Batam','phnom-penh':'Phnom Penh','singapore':'Singapore','kuala-lumpur':'Kuala Lumpur'};
+  var COUNTRY_NAMES={'thailand':'Thailand','vietnam':'Vietnam','indonesia':'Indonesia','cambodia':'Cambodia','singapore':'Singapore','malaysia':'Malaysia'};
+  var COUNTRY_FLAGS={'thailand':'\uD83C\uDDF9\uD83C\uDDED','vietnam':'\uD83C\uDDFB\uD83C\uDDF3','indonesia':'\uD83C\uDDEE\uD83C\uDDE9','cambodia':'\uD83C\uDDF0\uD83C\uDDED','singapore':'\uD83C\uDDF8\uD83C\uDDEC','malaysia':'\uD83C\uDDF2\uD83C\uDDFE'};
+
+  var cityName=CITY_NAMES[citySlug]||citySlug;
+  var countryName=COUNTRY_NAMES[countrySlug]||countrySlug;
+  var flag=COUNTRY_FLAGS[countrySlug]||'\uD83D\uDCCD';
+
+  var VER_SET=new Set(['chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok','amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok','drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss']);
+  var DEALS_MAP={'chairman-nuru-massage-bangkok':'FREE JACUZZI','g2g-massage-bangkok':'FREE JACUZZI','jspot-bangkok':'FREE JACUZZI','amor888':'FREE JACUZZI','the333-bangkok':'FREE JACUZZI','666-class':'FREE JACUZZI','suwon-man-s-spa-bangkok':'SAVE \u0E3F500','exotic-massage-bangkok-bangkok':'SAVE \u0E3F200','body-bliss':'SAVE \u0E3F200'};
+  var NEW_SET=new Set(['drake-luxury-lounge-bangkok','lunar-nuru-bangkok','dragon-lady-bkk-bangkok','riviere-77-bangkok']);
+
+  function slugifyCity(c){return c?c.toLowerCase().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,''):'other';}
+  function starsHTML(r){var f=Math.round(r||0);return '\u2605'.repeat(f)+'\u2606'.repeat(Math.max(0,5-f));}
+  function imgErr(){return 'onerror="this.style.background=\'linear-gradient(135deg,#2a1a1a,#1a0a0a)\';this.removeAttribute(\'src\')"';}
+  function vCheck(id){if(!VER_SET.has(id))return'';return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';}
+  function cardBadges(shop){
+    var h='';
+    if(VER_SET.has(shop.id))h+='<span style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">\u2713 Verified</span>';
+    if(shop.featured)h+='<span style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;">\u2605 Featured</span>';
+    if(NEW_SET.has(shop.id))h+='<span style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(99,102,241,.92);color:#fff;">\uD83C\uDD95 New</span>';
+    return h?'<div style="position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;">'+h+'</div>':'';
+  }
+  function bestImage(l,gs){
+    var vp=(l.photos||[]).filter(function(p){return p.id!==null&&p.url;});
+    if(vp.length>0){var o={featured:0,shop:1,talent:2};vp.sort(function(a,b){return((o[a.category]!=null?o[a.category]:1)-(o[b.category]!=null?o[b.category]:1))||((a.sort_order||0)-(b.sort_order||0));});return vp[0].url;}
+    var fb=(l.image_urls||[]).filter(function(u){return u&&!gs.has(u);});
+    return fb[0]||'';
+  }
+  function gridCard(s){
+    return '<a href="'+basePath+'listing-'+s.slug+'.html" class="shop-card" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s;">'+
+      '<img style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" src="'+s.img+'" alt="'+s.name+'" '+imgErr()+'>'+
+      cardBadges(s)+
+      '<div style="padding:8px 10px 10px;">'+
+        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:2px;">'+s.categories.join(' \u00B7 ')+'</div>'+
+        '<div style="font-size:12px;font-weight:700;line-height:1.2;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+s.name+vCheck(s.id)+'</div>'+
+        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">\uD83D\uDCCD '+(s.area||s.city)+'</div>'+
+        '<div style="display:flex;align-items:center;justify-content:space-between;">'+
+          '<div style="display:flex;align-items:center;gap:4px;"><span style="color:var(--gold,#d4a847);font-size:11px;">'+starsHTML(s.rating)+'</span> <span style="font-size:11px;font-weight:600;">'+(s.rating?s.rating.toFixed(1):'N/A')+'</span></div>'+
+          '<span style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));">'+s.reviews+' reviews</span>'+
+        '</div>'+
+        (s.deal?'<div style="margin-top:4px;font-size:10px;color:var(--green,#22c55e);font-weight:600;">\uD83C\uDFF7\uFE0F '+s.deal+'</div>':'')+
+      '</div></a>';
+  }
+
+  fetch(basePath+'data/listings.json')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var urlCounts={};
+      data.forEach(function(l){var seen={};(l.image_urls||[]).forEach(function(u){if(u&&!seen[u]){seen[u]=1;urlCounts[u]=(urlCounts[u]||0)+1;}});});
+      var garbageSet=new Set(Object.keys(urlCounts).filter(function(u){return urlCounts[u]>=20;}));
+
+      var allShops=data.map(function(l){
+        return {id:l.slug,name:l.name||l.slug,categories:l.categories||[],city:l.city||'',
+          country:l.country||'',area:(l.address||'').split(',')[0]||'',rating:l.rating||0,
+          reviews:l.review_count||0,featured:l.featured||false,sponsor:l.sponsor||false,
+          img:bestImage(l,garbageSet),slug:l.slug,deal:DEALS_MAP[l.slug]||null};
+      });
+
+      var cityShops=allShops.filter(function(s){
+        return slugifyCity(s.city)===citySlug||(citySlug==='korat'&&slugifyCity(s.city)==='nakhon-ratchasima');
+      });
+
+      var heroEl=document.getElementById('pageHero');
+      if(heroEl){
+        heroEl.innerHTML=
+          '<div class="city-hero">'+
+            '<div class="city-hero-img" style="background:linear-gradient(135deg,#1a0305,#4a000f);"></div>'+
+            '<div class="hero-overlay"></div>'+
+            '<div class="hero-content">'+
+              '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">'+
+                '<a href="'+basePath+'" style="color:inherit;text-decoration:none;">Home</a> \u203A '+
+                '<a href="'+basePath+cityPageFile+'" style="color:inherit;text-decoration:none;">'+cityName+'</a> \u203A '+
+                'Deals'+
+              '</p>'+
+              '<div style="font-size:26px;margin-bottom:4px;">'+flag+'</div>'+
+              '<h1 class="city-big">DEALS</h1>'+
+              '<div style="font-size:14px;color:rgba(255,255,255,.6);">'+cityName+', '+countryName+'</div>'+
+            '</div>'+
+          '</div>';
+      }
+
+      var filtered=cityShops.filter(function(s){return s.deal;});
+      filtered.sort(function(a,b){return b.rating-a.rating||b.reviews-a.reviews;});
+
+      var contentEl=document.getElementById('pageContent');
+      if(filtered.length===0){
+        contentEl.innerHTML='<div style="text-align:center;padding:60px 20px;color:rgba(255,255,255,.5);"><div style="font-size:48px;margin-bottom:16px;">🏷️</div><p style="font-size:16px;margin-bottom:8px;">No active deals in '+cityName+'</p><p style="font-size:13px;">Check back soon!</p><a href="'+basePath+cityPageFile+'" style="display:inline-block;margin-top:20px;padding:10px 24px;background:var(--red,#e8142a);border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;">Back to '+cityName+'</a></div>';
+        return;
+      }
+
+      var html='<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:16px;display:flex;align-items:center;gap:8px;">'+
+        '<span style="width:3px;height:14px;background:var(--red,#e8142a);border-radius:2px;flex-shrink:0;"></span>🏷️ '+cityName+' Deals <span style="font-size:13px;color:rgba(255,255,255,.4);font-weight:400;font-family:\'DM Sans\',sans-serif;">('+filtered.length+')</span></h2>';
+      html+='<div class="cp-grid">';
+      filtered.forEach(function(s){html+=gridCard(s);});
+      html+='</div>';
+      html+='<div style="text-align:center;margin-top:24px;"><a href="'+basePath+cityPageFile+'" style="display:inline-block;padding:10px 24px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">\u2190 Back to '+cityName+'</a></div>';
+
+      contentEl.innerHTML=html;
+      document.title=('Deals in '+cityName+' \u2014 Swanpass');
+    });
+})();
+</script>
+<script src="../../../js/bottom-nav.js"></script>
+</body>
+</html>
