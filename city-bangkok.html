@@ -6,148 +6,87 @@
 <meta name="referrer" content="no-referrer">
 <title>Bangkok — Swanpass Thailand</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════ SHARED TOKENS ═══════════════════ */
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dk:#b80f20;--white:#fff;--w70:rgba(255,255,255,.7);--w40:rgba(255,255,255,.4);--w10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--r:10px;--r-sm:6px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-
-/* ═══════════════════ MOBILE CODE ═══════════════════ */
-
-/* Hero */
-.city-hero{position:relative;height:220px;overflow:hidden;}
-.city-hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(.45);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
-.hero-content{position:absolute;bottom:0;left:0;right:0;padding:20px 16px;max-width:1200px;margin:0 auto;}
-.hero-flag{font-size:26px;margin-bottom:4px;}
-.city-big{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:3px;line-height:1;margin-bottom:6px;}
-.city-stats-row{display:flex;gap:14px;flex-wrap:wrap;}
-.city-stat{font-size:12px;color:var(--w70);display:flex;align-items:center;gap:4px;}
-.city-stat strong{color:var(--white);}
-
-/* Stats bar */
-.stats-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.stats-item{background:var(--black2);padding:12px 16px;text-align:center;}
-.stats-val{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;margin-bottom:2px;}
-.stats-lbl{font-size:10px;color:var(--w40);text-transform:uppercase;letter-spacing:.5px;}
-
-/* Filter tabs */
-.filter-tabs{background:var(--black2);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 14px;}
-.filter-tabs::-webkit-scrollbar{display:none;}
-.ftab{padding:11px 12px;font-size:12px;font-weight:500;color:var(--w70);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0;}
-.ftab:hover{color:var(--white);}
-.ftab.active{color:var(--red);border-bottom-color:var(--red);}
-
-/* Area pills */
-.area-wrap{padding:10px 14px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;background:var(--black2);border-bottom:1px solid var(--border);}
-.area-wrap::-webkit-scrollbar{display:none;}
-.area-pill{background:var(--w10);border:1px solid var(--border);border-radius:16px;padding:4px 12px;font-size:11px;font-weight:500;white-space:nowrap;cursor:pointer;color:var(--w70);transition:all .2s;flex-shrink:0;}
-.area-pill.active,.area-pill:hover{background:var(--red);border-color:var(--red);color:var(--white);}
-
-/* Sections */
-.page-wrap{max-width:1200px;margin:0 auto;}
-.section{padding:18px 14px;}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
-.section-title .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
-.see-all{font-size:12px;color:var(--red);font-weight:600;}
-.divider{height:1px;background:var(--border);margin:0 14px;}
-
-/* Cards */
-.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.shop-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;display:block;color:inherit;}
-.shop-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);}
-.card-badges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
-.badge{display:inline-flex;padding:1px 5px;border-radius:3px;font-size:6px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.b-sp{background:rgba(212,168,71,.92);color:#000;}.b-ft{background:rgba(232,20,42,.92);color:#fff;}.b-nw{background:rgba(99,102,241,.92);color:#fff;}
-.card-body{padding:8px 10px 10px;}
-.card-cat{font-size:10px;color:var(--w40);margin-bottom:2px;}
-.card-name{font-size:12px;font-weight:700;line-height:1.2;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.card-loc{font-size:10px;color:var(--w40);margin-bottom:6px;}
-.card-foot{display:flex;align-items:center;justify-content:space-between;}
-.rating{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
-.stars{color:var(--gold);font-size:10px;}
-.visits{font-size:10px;color:var(--w40);background:var(--w10);padding:2px 6px;border-radius:10px;}
-.deal-strip{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
-.deal-pct{font-family:'Bebas Neue',sans-serif;font-size:14px;}
-
-/* Horizontal scroll cards */
-.h-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
-.h-scroll::-webkit-scrollbar{display:none;}
-.h-card{flex-shrink:0;width:150px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;display:block;color:inherit;transition:border-color .2s;position:relative;}
-.h-card:hover{border-color:var(--red);}
-.h-card-img{width:100%;height:100px;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);}
-.h-card-body{padding:8px;}
-.h-card-name{font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.h-card-meta{font-size:10px;color:var(--w40);}
-
-/* Area cards */
-.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.area-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 10px;text-align:center;cursor:pointer;transition:border-color .2s;display:block;color:inherit;}
-.area-card:hover{border-color:var(--red);}
-.area-icon{font-size:22px;margin-bottom:5px;}
-.area-name{font-size:12px;font-weight:600;margin-bottom:2px;}
-.area-count{font-size:10px;color:var(--w40);}
-
-/* Bottom nav */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--w40);text-decoration:none;transition:color .2s;}
-.bnav-item.active{color:var(--red);}
-.bi{font-size:20px;}.bl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bn-spacer{height:70px;}
-
-/* ═══════════════════ DESKTOP CODE ═══════════════════ */
-@media(min-width:768px){
-  .bottom-nav,.bn-spacer{display:none!important;}
-  .city-hero{height:300px;}
-  .city-big{font-size:58px;}
-  .stats-bar{grid-template-columns:repeat(4,1fr);}
-  .stats-val{font-size:32px;}
-  .cards-grid{grid-template-columns:repeat(4,1fr);gap:12px;}
-  .area-grid{grid-template-columns:repeat(6,1fr);}
-  .section{padding:24px 24px;}
-  .divider{margin:0 24px;}
-  .h-card{width:170px;}
-  .h-card-img{height:120px;}
-}
-@media(min-width:1024px){
-  .cards-grid{grid-template-columns:repeat(5,1fr);}
-}
-</style>
 <link rel="stylesheet" href="css/site.css?v=3">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CITY PAGE STYLES — Mobile-first base
+═══════════════════════════════════════════════════════════════ */
+
+/* Hero */
+.city-hero { position: relative; height: 220px; overflow: hidden; }
+.city-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 60%); }
+.hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.city-big { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 3px; line-height: 1; margin-bottom: 6px; }
+.city-stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.city-stat { font-size: 12px; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 4px; }
+.city-stat strong { color: #fff; }
+
+/* Stats bar */
+.stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 12px 16px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 10px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
+
+/* Featured grid: 1-col stacked cards on mobile */
+.cp-featured-grid { grid-template-columns: 1fr !important; }
+
+/* Small card grids: 2-col on mobile */
+.cp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+/* Shop card hover */
+.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4) !important; }
+
+/* Hide scrollbar on filters and deal scroll */
+#cpCatFilter::-webkit-scrollbar { display: none; }
+#cpCatFilter { scrollbar-width: none; }
+.cp-deals-scroll::-webkit-scrollbar { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT — ≥ 768px
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .city-hero { height: 300px; }
+  .city-big { font-size: 58px; }
+  .stats-bar { grid-template-columns: repeat(4, 1fr); }
+  .stats-val { font-size: 32px; }
+  .cp-featured-grid { grid-template-columns: 1fr 1fr !important; }
+  .cp-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+@media (min-width: 1024px) {
+  .cp-grid { grid-template-columns: repeat(5, 1fr) !important; }
+}
+</style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="best-places.html">&#x1F3C6; Best Places</a>
+      <a href="cities.html">&#x1F4CD; Cities</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
     </div>
-
-
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="best-places.html" class="nav-tab">&#x1F3C6; Best Places</a>
+    <a href="cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
   </div>
 </nav>
 <script>
@@ -178,273 +117,10 @@ a{color:inherit;text-decoration:none;}
 })();
 </script>
 
+<!-- ══ CITY PAGE CONTENT (rendered by city-page.js) ══════════════ -->
+<div id="cityHero"></div>
+<div id="cityContent" style="max-width:1200px;margin:0 auto;padding:16px;"></div>
 
-<!-- HERO -->
-<div class="city-hero">
-  <img class="city-hero-img"
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bangkok_Montage_2017.png/800px-Bangkok_Montage_2017.png"
-    onerror="this.style.background='linear-gradient(135deg,#1a0305,#4a000f)';this.removeAttribute('src')" alt="Bangkok">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-flag">🇹🇭</div>
-    <div class="city-big">BANGKOK</div>
-    <div class="city-stats-row">
-      <div class="city-stat"><strong>15+</strong> listings</div>
-      <div class="city-stat"><strong>6</strong> categories</div>
-      <div class="city-stat"><strong>5</strong> active deals</div>
-      <div class="city-stat">🏆 Most popular city</div>
-    </div>
-  </div>
-</div>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stats-item"><div class="stats-val" style="color:var(--gold)">4.7</div><div class="stats-lbl">Avg Rating</div></div>
-  <div class="stats-item"><div class="stats-val">15+</div><div class="stats-lbl">Listings</div></div>
-  <div class="stats-item"><div class="stats-val" style="color:var(--red)">5</div><div class="stats-lbl">Active Deals</div></div>
-  <div class="stats-item"><div class="stats-val" style="color:var(--green)">6</div><div class="stats-lbl">Sponsored</div></div>
-</div>
-
-<!-- FILTER TABS -->
-<div class="filter-tabs" id="catTabs">
-  <div class="ftab active" data-cat="all">🔥 All</div>
-  <div class="ftab" data-cat="massage">👄 Massage</div>
-  <div class="ftab" data-cat="soapy">🛁 Soapy</div>
-  <div class="ftab" data-cat="club">💃 Clubs</div>
-  <div class="ftab" data-cat="gogo">👯 Go-Go</div>
-  <div class="ftab" data-cat="freelancer">❤️‍🔥 Freelancers</div>
-</div>
-
-<!-- AREA PILLS -->
-<div class="area-wrap" id="areaPills">
-  <div class="area-pill active" data-area="all">All Areas</div>
-  <div class="area-pill" data-area="Sukhumvit">Sukhumvit</div>
-  <div class="area-pill" data-area="Soi Cowboy">Soi Cowboy</div>
-  <div class="area-pill" data-area="Nana Plaza">Nana Plaza</div>
-  <div class="area-pill" data-area="Patpong">Patpong</div>
-  <div class="area-pill" data-area="Thonglor">Thonglor</div>
-  <div class="area-pill" data-area="Ekkamai">Ekkamai</div>
-  <div class="area-pill" data-area="Silom">Silom</div>
-</div>
-
-<div class="page-wrap">
-
-<!-- SPONSORED -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>📣 Sponsored</div>
-    <a href="listings.html?tag=sponsored&city=Bangkok" class="see-all">See all →</a>
-  </div>
-  <div class="h-scroll">
-    <a href="listing-chairman-nuru-massage-bangkok.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">Chairman Nuru<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">👄 ★ 4.9 · 9K+</div></div>
-    </a>
-    <a href="listing-jspot-bangkok.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">JSpot Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">🛁 ★ 4.7 · 5K+ 🏷️ -20%</div></div>
-    </a>
-    <a href="listing-amor888.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">AMOR888<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">🛁 ★ 4.8 · 2K+</div></div>
-    </a>
-    <a href="listing-666-class.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">666 Class<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">👄 ★ 4.8 · 3K+</div></div>
-    </a>
-    <a href="listing-suwon-man-s-spa-bangkok.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">Suwon Man's Spa<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">👄 ★ 4.3 · 7K+</div></div>
-    </a>
-    <a href="listing-drake-luxury-lounge-bangkok.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">DRAKE Luxury<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">💃 ★ 4.2 · New</div></div>
-    </a>
-    <a href="listing-exotic-massage-bangkok-bangkok.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">Exotic Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">👄 ★ 4.8 · 9K+ ⭐</div></div>
-    </a>
-    <a href="listing-body-bliss.html" class="h-card">
-      <img class="h-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1879/ammy.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="h-card-body"><div class="h-card-name">Body Bliss<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="h-card-meta">👄 ★ 5.0 · ⭐ Featured</div></div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- TOP MASSAGE -->
-<div class="section" id="sec-massage">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>👄 Top Massage</div>
-    <a href="listings.html?cat=massage&city=Bangkok" class="see-all">See all →</a>
-  </div>
-  <div class="cards-grid">
-    <a href="listing-chairman-nuru-massage-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-sp">★ Spons</span><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage · 🛁 Soapy</div><div class="card-name">Chairman Nuru Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.9</div><div class="visits">9K+</div></div></div>
-    </a>
-    <a href="listing-g2g-massage-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage · 🛁 Soapy</div><div class="card-name">G2G Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.9</div><div class="visits">8K+</div></div></div>
-    </a>
-    <a href="listing-exotic-massage-bangkok-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage · 🛁 Soapy</div><div class="card-name">Exotic Massage BKK<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Khlong Toei</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.8</div><div class="visits">9K+</div></div></div>
-    </a>
-    <a href="listing-don-quixote.html" class="shop-card">
-      <img class="card-img" src="" onerror="this.style.background='linear-gradient(135deg,#1a0010,#3a0028)';this.removeAttribute('src')" alt="" style="background:linear-gradient(135deg,#1a0010,#3a0028)">
-      <div class="card-badges"><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage · 🛁 Soapy</div><div class="card-name">Don Quixote</div><div class="card-loc">📍 Sukhumvit 26</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.7</div><div class="visits">7K+</div></div></div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- TOP SOAPY -->
-<div class="section" id="sec-soapy">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🛁 Top Soapy</div>
-    <a href="listings.html?cat=soapy&city=Bangkok" class="see-all">See all →</a>
-  </div>
-  <div class="cards-grid">
-    <a href="listing-the333-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body"><div class="card-cat">🛁 Soapy</div><div class="card-name">The333<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.8</div><div class="visits">2K+</div></div></div>
-      <div class="deal-strip"><span>Weekend Deal</span><span class="deal-pct">-20%</span></div>
-    </a>
-    <a href="listing-amor888.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-sp">★ Spons</span></div>
-      <div class="card-body"><div class="card-cat">🛁 Soapy</div><div class="card-name">AMOR888<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 18</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.8</div><div class="visits">2K+</div></div></div>
-    </a>
-    <a href="listing-jspot-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-dl">🏷️ Deal</span></div>
-      <div class="card-body"><div class="card-cat">🛁 Soapy</div><div class="card-name">JSpot Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.7</div><div class="visits">5K+</div></div></div>
-      <div class="deal-strip"><span>20% OFF This Week</span><span class="deal-pct">-20%</span></div>
-    </a>
-    <a href="listing-lunar-nuru-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">🛁 Soapy</div><div class="card-name">Lunar Nuru</div><div class="card-loc">📍 Sukhumvit 30</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.9</div><div class="visits">100+</div></div></div>
-      <div class="deal-strip"><span>Opening Special</span><span class="deal-pct">-40%</span></div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- CLUBS -->
-<div class="section" id="sec-club">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>💃 Gentlemen's Clubs</div>
-    <a href="listings.html?cat=club&city=Bangkok" class="see-all">See all →</a>
-  </div>
-  <div class="cards-grid">
-    <a href="listing-club-cozmo.html" class="shop-card">
-      <img class="card-img" src="" onerror="this.style.background='linear-gradient(135deg,#0d1a2e,#1a3a5c)';this.removeAttribute('src')" alt="" style="background:linear-gradient(135deg,#0d1a2e,#1a3a5c)">
-      <div class="card-badges"><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body"><div class="card-cat">💃 Gentlemen's Club</div><div class="card-name">Club Cozmo</div><div class="card-loc">📍 Taniya, Bangkok</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.5</div><div class="visits">4K+</div></div></div>
-    </a>
-    <a href="listing-taki.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-body"><div class="card-cat">💃 Gentlemen's Club</div><div class="card-name">Taki</div><div class="card-loc">📍 Pridi Banomyong</div><div class="card-foot"><div class="rating"><span class="stars">★★★★</span> 4.4</div><div class="visits">3K+</div></div></div>
-    </a>
-    <a href="listing-tokimeki-thonglor-story.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4815/shop01b.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-body"><div class="card-cat">💃 Gentlemen's Club</div><div class="card-name">Tokimeki Thonglor</div><div class="card-loc">📍 Thonglor</div><div class="card-foot"><div class="rating"><span class="stars">★★★★</span> 4.2</div><div class="visits">3K+</div></div></div>
-    </a>
-    <a href="listing-drake-luxury-lounge-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-sp">★ Spons</span><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">💃 Gentlemen's Club</div><div class="card-name">DRAKE Luxury Lounge<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★</span> 4.2</div><div class="visits">&lt;100</div></div></div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- NEWLY ADDED -->
-<div class="section" id="sec-new">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🆕 Newly Added</div>
-    <a href="listings.html?tag=new&city=Bangkok" class="see-all">See all →</a>
-  </div>
-  <div class="cards-grid">
-    <a href="listing-lunar-nuru-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">🛁 Soapy</div><div class="card-name">Lunar Nuru</div><div class="card-loc">📍 Sukhumvit 30</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.9</div><div class="visits">100+</div></div></div>
-      <div class="deal-strip"><span>Opening Special</span><span class="deal-pct">-40%</span></div>
-    </a>
-    <a href="listing-drake-luxury-lounge-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-vr">✓ Verified</span><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">💃 Club</div><div class="card-name">DRAKE Luxury Lounge<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div><div class="card-loc">📍 Sukhumvit 33</div><div class="card-foot"><div class="rating"><span class="stars">★★★★</span> 4.2</div><div class="visits">&lt;100</div></div></div>
-    </a>
-    <a href="listing-dragon-lady-bkk-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage</div><div class="card-name">Dragon Lady BKK</div><div class="card-loc">📍 Ekkamai</div><div class="card-foot"><div class="rating"><span class="stars">★★★</span> 3.8</div><div class="visits">100+</div></div></div>
-    </a>
-    <a href="listing-riviere-77-bangkok.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-nw">🆕 New</span></div>
-      <div class="card-body"><div class="card-cat">👄 Massage</div><div class="card-name">Riviere 77</div><div class="card-loc">📍 Sukhumvit 77</div><div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.9</div><div class="visits">100+</div></div></div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- BROWSE BY AREA -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>📍 Browse by Area</div>
-    <a href="map.html" class="see-all">Map →</a>
-  </div>
-  <div class="area-grid">
-    <a href="listings.html?area=Sukhumvit&city=Bangkok" class="area-card"><div class="area-icon">🍹</div><div class="area-name">Sukhumvit</div><div class="area-count">12 listings</div></a>
-    <a href="listings.html?area=Soi+Cowboy&city=Bangkok" class="area-card"><div class="area-icon">🐄</div><div class="area-name">Soi Cowboy</div><div class="area-count">Coming soon</div></a>
-    <a href="listings.html?area=Nana+Plaza&city=Bangkok" class="area-card"><div class="area-icon">🧿</div><div class="area-name">Nana Plaza</div><div class="area-count">Coming soon</div></a>
-    <a href="listings.html?area=Patpong&city=Bangkok" class="area-card"><div class="area-icon">🌙</div><div class="area-name">Patpong</div><div class="area-count">Coming soon</div></a>
-    <a href="listings.html?area=Thonglor&city=Bangkok" class="area-card"><div class="area-icon">🎸</div><div class="area-name">Thonglor</div><div class="area-count">1 listing</div></a>
-    <a href="listings.html?area=Ekkamai&city=Bangkok" class="area-card"><div class="area-icon">🌿</div><div class="area-name">Ekkamai</div><div class="area-count">1 listing</div></a>
-  </div>
-</div>
-
-</div><!-- page-wrap -->
-
-<script src="js/bottom-nav.js"></script>
-
-<script>
-// Category tab filter
-document.getElementById('catTabs').addEventListener('click', e => {
-  const t = e.target.closest('.ftab'); if (!t) return;
-  document.querySelectorAll('.ftab').forEach(x => x.classList.remove('active'));
-  t.classList.add('active');
-});
-// Area pill filter
-document.getElementById('areaPills').addEventListener('click', e => {
-  const p = e.target.closest('.area-pill'); if (!p) return;
-  document.querySelectorAll('.area-pill').forEach(x => x.classList.remove('active'));
-  p.classList.add('active');
-});
-</script>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -461,10 +137,13 @@ document.getElementById('areaPills').addEventListener('click', e => {
       <a href="#">Privacy Policy</a>
       <a href="#">Terms</a>
     </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
     <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
+<script>window.CITY_PAGE_CONFIG = { country: 'thailand', city: 'bangkok', flatUrls: true };</script>
+<script src="js/city-page.js"></script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>

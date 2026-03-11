@@ -9,14 +9,29 @@
  *   <div id="cityHero"></div>
  *   <div id="cityContent"></div>
  * And load this script after those elements.
+ *
+ * Optional: set window.CITY_PAGE_CONFIG before loading this script:
+ *   { country: 'thailand', city: 'bangkok', flatUrls: true }
+ * - country/city: override URL-based detection
+ * - flatUrls: generate listing-{slug}.html links instead of /country/city/slug/
  */
 (function () {
   'use strict';
 
+  /* ─── CONFIG & BASE PATH ────────────────────────────────────────── */
+  var config = window.CITY_PAGE_CONFIG || {};
+
+  // Compute basePath from the script's src attribute (handles GitHub Pages subpaths)
+  var basePath = '';
+  var scriptEls = document.querySelectorAll('script[src*="city-page"]');
+  if (scriptEls.length > 0) {
+    basePath = scriptEls[0].getAttribute('src').replace(/js\/city-page\.js.*$/, '');
+  }
+
   /* ─── PATH PARSING ──────────────────────────────────────────────── */
   var segs = location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
-  var countrySlug = segs[0] || '';
-  var citySlug = segs[1] || '';
+  var countrySlug = config.country || segs[0] || '';
+  var citySlug = config.city || segs[1] || '';
 
   /* ─── CITY / COUNTRY NAME MAPS ──────────────────────────────────── */
   var CITY_NAMES = {
@@ -235,7 +250,7 @@
       '</div>';
   }
 
-  fetch('/data/listings.json')
+  fetch(basePath + 'data/listings.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       /* ── Build garbage image set ── */
@@ -263,7 +278,9 @@
           featured: l.featured || false,
           sponsor: l.sponsor || false,
           img: bestImage(l, garbageSet),
-          page: '/' + (l.country || 'Thailand').toLowerCase() + '/' + slugifyCity(l.city || 'other') + '/' + l.slug + '/',
+          page: config.flatUrls
+            ? basePath + 'listing-' + l.slug + '.html'
+            : '/' + (l.country || 'Thailand').toLowerCase() + '/' + slugifyCity(l.city || 'other') + '/' + l.slug + '/',
           deal: DEALS_MAP[l.slug] || null,
           slug: l.slug,
           created: l.created_at || l.updated_at || ''
@@ -305,8 +322,8 @@
             '<div class="hero-overlay"></div>' +
             '<div class="hero-content">' +
               '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">' +
-                '<a href="/" style="color:inherit;text-decoration:none;">Home</a> \u203A ' +
-                '<a href="/' + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
+                '<a href="' + (basePath || '/') + '" style="color:inherit;text-decoration:none;">Home</a> \u203A ' +
+                '<a href="' + (basePath || '/') + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
               '</p>' +
               '<div style="font-size:26px;margin-bottom:4px;">' + flag + '</div>' +
               '<h1 class="city-big">' + cityName.toUpperCase() + '</h1>' +
@@ -400,12 +417,12 @@
 
       /* ── SECTION 7 & 8: BEST PLACES + MAP LINKS ──────────────────── */
       html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">' +
-        '<a href="/best-places.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+        '<a href="' + basePath + 'best-places.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
           '<div style="font-size:28px;margin-bottom:8px;">\uD83C\uDFC6</div>' +
           '<div style="font-size:14px;font-weight:600;">Best Places</div>' +
           '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Top-rated venues in ' + cityName + '</div>' +
         '</a>' +
-        '<a href="/map.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+        '<a href="' + basePath + 'map.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
           '<div style="font-size:28px;margin-bottom:8px;">\uD83D\uDDFA\uFE0F</div>' +
           '<div style="font-size:14px;font-weight:600;">Explore Map</div>' +
           '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Find venues near you</div>' +
