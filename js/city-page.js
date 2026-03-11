@@ -1,7 +1,8 @@
 /**
  * city-page.js — Reusable city page renderer
  * Reads the URL path to determine country/city, fetches listings.json,
- * and renders: city header, featured, top rated, newest, full grid.
+ * and renders 9 sections: hero+search, featured, deals, top rated,
+ * new listings, all listings (filtered), best places / map links, SEO intro.
  *
  * Usage: include on any /country/city/index.html page.
  * The page must contain:
@@ -14,11 +15,10 @@
 
   /* ─── PATH PARSING ──────────────────────────────────────────────── */
   var segs = location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
-  // Expected: ['thailand','bangkok'] or ['vietnam','ho-chi-minh-city']
   var countrySlug = segs[0] || '';
   var citySlug = segs[1] || '';
 
-  /* ─── CITY SLUG → DISPLAY NAME MAP ─────────────────────────────── */
+  /* ─── CITY / COUNTRY NAME MAPS ──────────────────────────────────── */
   var CITY_NAMES = {
     'bangkok': 'Bangkok',
     'pattaya': 'Pattaya',
@@ -61,10 +61,20 @@
     'malaysia': 'Malaysia'
   };
 
+  var COUNTRY_FLAGS = {
+    'thailand': '\uD83C\uDDF9\uD83C\uDDED',
+    'vietnam': '\uD83C\uDDFB\uD83C\uDDF3',
+    'indonesia': '\uD83C\uDDEE\uD83C\uDDE9',
+    'cambodia': '\uD83C\uDDF0\uD83C\uDDED',
+    'singapore': '\uD83C\uDDF8\uD83C\uDDEC',
+    'malaysia': '\uD83C\uDDF2\uD83C\uDDFE'
+  };
+
   var cityName = CITY_NAMES[citySlug] || citySlug.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   var countryName = COUNTRY_NAMES[countrySlug] || countrySlug.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  var flag = COUNTRY_FLAGS[countrySlug] || '\uD83D\uDCCD';
 
-  /* ─── VERIFIED / DEALS DATA ─────────────────────────────────────── */
+  /* ─── VERIFIED / DEALS / NEW DATA ───────────────────────────────── */
   var VER_SET = new Set([
     'chairman-nuru-massage-bangkok', 'g2g-massage-bangkok', 'jspot-bangkok',
     'amor888', 'the333-bangkok', '666-class', 'suwon-man-s-spa-bangkok',
@@ -78,9 +88,26 @@
     'amor888': 'FREE JACUZZI',
     'the333-bangkok': 'FREE JACUZZI',
     '666-class': 'FREE JACUZZI',
-    'suwon-man-s-spa-bangkok': 'SAVE ฿500',
-    'exotic-massage-bangkok-bangkok': 'SAVE ฿200',
-    'body-bliss': 'SAVE ฿200'
+    'suwon-man-s-spa-bangkok': 'SAVE \u0E3F500',
+    'exotic-massage-bangkok-bangkok': 'SAVE \u0E3F200',
+    'body-bliss': 'SAVE \u0E3F200'
+  };
+
+  var NEW_SET = new Set([
+    'drake-luxury-lounge-bangkok',
+    'lunar-nuru-bangkok',
+    'dragon-lady-bkk-bangkok',
+    'riviere-77-bangkok'
+  ]);
+
+  /* ─── CITY HERO IMAGES ─────────────────────────────────────────── */
+  var CITY_HERO_IMG = {
+    'bangkok': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bangkok_Montage_2017.png/800px-Bangkok_Montage_2017.png'
+  };
+
+  /* ─── SEO COPY ─────────────────────────────────────────────────── */
+  var CITY_SEO = {
+    'bangkok': 'Bangkok is Thailand\u2019s vibrant capital and the top destination for massage, spa, and nightlife experiences in Southeast Asia. From traditional Thai massage parlors to luxury soapy venues along Sukhumvit, the city offers an unmatched variety of services across neighborhoods like Thonglor, Ekkamai, Nana, and Silom. Swanpass helps you discover the best-rated, verified venues in Bangkok \u2014 with real reviews, exclusive deals, and up-to-date listings.'
   };
 
   /* ─── HELPERS ───────────────────────────────────────────────────── */
@@ -91,7 +118,7 @@
 
   function starsHTML(r) {
     var f = Math.round(r || 0);
-    return '★'.repeat(f) + '☆'.repeat(Math.max(0, 5 - f));
+    return '\u2605'.repeat(f) + '\u2606'.repeat(Math.max(0, 5 - f));
   }
 
   function imgErr() {
@@ -105,8 +132,9 @@
 
   function cardBadges(shop) {
     var h = '';
-    if (VER_SET.has(shop.id)) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">✓ Verified</span>';
-    if (shop.featured) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;">★ Featured</span>';
+    if (VER_SET.has(shop.id)) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">\u2713 Verified</span>';
+    if (shop.featured) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;">\u2605 Featured</span>';
+    if (NEW_SET.has(shop.id)) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(99,102,241,.92);color:#fff;">\uD83C\uDD95 New</span>';
     return h ? '<div style="position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;">' + h + '</div>' : '';
   }
 
@@ -125,13 +153,13 @@
 
   /* ─── CARD RENDERERS ────────────────────────────────────────────── */
 
-  /** Small grid card (used in top rated, newest, full grid) */
+  /** Small grid card (top rated, newest, full grid) */
   function gridCard(s) {
     return '<a href="' + s.page + '" class="shop-card" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s;">' +
       '<img style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" src="' + s.img + '" alt="' + s.name + '" ' + imgErr() + '>' +
       cardBadges(s) +
       '<div style="padding:8px 10px 10px;">' +
-        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:2px;">' + s.categories.join(' · ') + '</div>' +
+        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:2px;">' + s.categories.join(' \u00B7 ') + '</div>' +
         '<div style="font-size:12px;font-weight:700;line-height:1.2;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
         '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">\uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
         '<div style="display:flex;align-items:center;justify-content:space-between;">' +
@@ -142,13 +170,13 @@
       '</div></a>';
   }
 
-  /** Wide featured card (used in featured section) */
+  /** Wide featured card (featured section) */
   function featuredCard(s) {
     return '<a href="' + s.page + '" style="display:flex;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s;position:relative;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
       '<img src="' + s.img + '" alt="' + s.name + '" style="width:110px;height:110px;flex-shrink:0;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" ' + imgErr() + '>' +
       '<div style="flex:1;padding:10px 12px;min-width:0;">' +
         '<div style="font-size:13px;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
-        '<div style="font-size:11px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">' + s.categories.join(' · ') + ' · \uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
+        '<div style="font-size:11px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">' + s.categories.join(' \u00B7 ') + ' \u00B7 \uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
         '<div style="display:flex;align-items:center;gap:8px;">' +
           '<span style="color:var(--gold,#d4a847);font-size:12px;">' + starsHTML(s.rating) + '</span>' +
           '<span style="font-size:12px;font-weight:600;">' + (s.rating ? s.rating.toFixed(1) : 'N/A') + '</span>' +
@@ -156,6 +184,23 @@
         '</div>' +
         (s.deal ? '<div style="margin-top:4px;font-size:10px;color:var(--green,#22c55e);font-weight:600;">\uD83C\uDFF7\uFE0F ' + s.deal + '</div>' : '') +
       '</div></a>';
+  }
+
+  /** Horizontal scroll deal card (deals section) */
+  function dealCard(s) {
+    return '<a href="' + s.page + '" style="flex-shrink:0;width:160px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:block;color:inherit;text-decoration:none;transition:border-color .2s;position:relative;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+      '<img src="' + s.img + '" alt="' + s.name + '" style="width:100%;height:100px;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" ' + imgErr() + '>' +
+      '<div style="position:absolute;top:6px;left:6px;">' +
+        (VER_SET.has(s.id) ? '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">\u2713 Verified</span>' : '') +
+      '</div>' +
+      '<div style="padding:8px 10px;">' +
+        '<div style="font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
+        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));">\uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
+      '</div>' +
+      '<div style="background:linear-gradient(90deg,var(--red,#e8142a),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;">' +
+        '<span>\uD83C\uDFF7\uFE0F ' + s.deal + '</span>' +
+      '</div>' +
+    '</a>';
   }
 
   /* ─── SECTION BUILDER ───────────────────────────────────────────── */
@@ -173,19 +218,27 @@
   var heroEl = document.getElementById('cityHero');
   var contentEl = document.getElementById('cityContent');
 
-  // Show loading state
+  // Show loading hero
   if (heroEl) {
+    var loadImg = CITY_HERO_IMG[citySlug] || '';
     heroEl.innerHTML =
-      '<div style="background:linear-gradient(135deg,#1a0a0a 0%,#2a1a1a 50%,#0a0a0a 100%);padding:48px 16px;text-align:center;">' +
-        '<h1 style="font-family:\'Bebas Neue\',sans-serif;font-size:36px;color:var(--white,#fff);margin:0;letter-spacing:2px;">' + cityName.toUpperCase() + '</h1>' +
-        '<p style="font-family:\'DM Sans\',sans-serif;font-size:14px;color:var(--white40,rgba(255,255,255,.4));margin-top:8px;">' + countryName + ' · Loading…</p>' +
+      '<div class="city-hero">' +
+        (loadImg
+          ? '<img class="city-hero-img" src="' + loadImg + '" onerror="this.style.background=\'linear-gradient(135deg,#1a0305,#4a000f)\';this.removeAttribute(\'src\')" alt="' + cityName + '">'
+          : '<div class="city-hero-img" style="background:linear-gradient(135deg,#1a0305,#4a000f);"></div>') +
+        '<div class="hero-overlay"></div>' +
+        '<div class="hero-content">' +
+          '<div style="font-size:26px;margin-bottom:4px;">' + flag + '</div>' +
+          '<h1 class="city-big">' + cityName.toUpperCase() + '</h1>' +
+          '<p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px;">Loading\u2026</p>' +
+        '</div>' +
       '</div>';
   }
 
   fetch('/data/listings.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
-      // Build garbage image set
+      /* ── Build garbage image set ── */
       var urlCounts = {};
       data.forEach(function (l) {
         var seen = {};
@@ -195,7 +248,7 @@
       });
       var garbageSet = new Set(Object.keys(urlCounts).filter(function (u) { return urlCounts[u] >= 20; }));
 
-      // Map raw data → shop objects
+      /* ── Map raw data → shop objects ── */
       var allShops = data.map(function (l) {
         return {
           id: l.slug,
@@ -217,66 +270,116 @@
         };
       });
 
-      // Filter for this city — match by slug or by city name
+      /* ── Filter for this city ── */
       var cityShops = allShops.filter(function (s) {
         return slugifyCity(s.city) === citySlug ||
                (citySlug === 'korat' && slugifyCity(s.city) === 'nakhon-ratchasima');
       });
 
-      // Update hero
-      if (heroEl) {
-        heroEl.innerHTML =
-          '<div style="background:linear-gradient(135deg,#1a0a0a 0%,#2a1a1a 50%,#0a0a0a 100%);padding:48px 16px;text-align:center;">' +
-            '<p style="font-family:\'DM Sans\',sans-serif;font-size:12px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">' +
-              '<a href="/" style="color:inherit;text-decoration:none;">Home</a> › ' +
-              '<a href="/' + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
-            '</p>' +
-            '<h1 style="font-family:\'Bebas Neue\',sans-serif;font-size:42px;color:var(--white,#fff);margin:0;letter-spacing:3px;">' + cityName.toUpperCase() + '</h1>' +
-            '<p style="font-family:\'DM Sans\',sans-serif;font-size:14px;color:var(--white40,rgba(255,255,255,.4));margin-top:8px;">' + countryName + ' · ' + cityShops.length + ' listing' + (cityShops.length !== 1 ? 's' : '') + '</p>' +
-          '</div>';
-      }
+      /* ── Compute stats ── */
+      var ratedShops = cityShops.filter(function (s) { return s.rating > 0; });
+      var avgRating = ratedShops.length > 0
+        ? (ratedShops.reduce(function (sum, s) { return sum + s.rating; }, 0) / ratedShops.length).toFixed(1)
+        : 'N/A';
+      var dealShops = cityShops.filter(function (s) { return s.deal; });
+      var dealCount = dealShops.length;
+      var verifiedCount = cityShops.filter(function (s) { return VER_SET.has(s.id); }).length;
 
-      // Update page title
-      document.title = cityName + ', ' + countryName + ' — Swanpass';
-
-      // Build sections
-      var html = '';
-
-      // 1) FEATURED LISTINGS (verified + featured)
-      var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
-      if (featured.length > 0) {
-        // Sort: verified first, then featured
-        featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
-        var featHTML = '<div style="display:grid;grid-template-columns:1fr;gap:10px;" class="cp-featured-grid">' +
-          featured.map(featuredCard).join('') + '</div>';
-        html += buildSection('Featured', 'cpFeatured', featHTML);
-      }
-
-      // 2) TOP RATED (rating > 0, sorted by rating desc, max 8)
-      var topRated = cityShops.filter(function (s) { return s.rating > 0; })
-        .sort(function (a, b) { return b.rating - a.rating || b.reviews - a.reviews; })
-        .slice(0, 8);
-      if (topRated.length > 0) {
-        var trHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
-          topRated.map(gridCard).join('') + '</div>';
-        html += buildSection('Top Rated', 'cpTopRated', trHTML);
-      }
-
-      // 3) NEWEST LISTINGS (last 6 by created date or end of array)
-      var newest = cityShops.slice().reverse().slice(0, 6);
-      if (newest.length > 0) {
-        var nHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
-          newest.map(gridCard).join('') + '</div>';
-        html += buildSection('Recently Added', 'cpNewest', nHTML);
-      }
-
-      // 4) FULL LISTINGS GRID (all, with category filter)
+      /* ── Category counts ── */
       var categories = {};
       cityShops.forEach(function (s) {
         (s.categories || []).forEach(function (c) { categories[c] = (categories[c] || 0) + 1; });
       });
       var catKeys = Object.keys(categories).sort(function (a, b) { return categories[b] - categories[a]; });
 
+      /* ═══════════════════════════════════════════════════════════════
+         SECTION 1: HERO + SEARCH + STATS BAR
+      ═══════════════════════════════════════════════════════════════ */
+      if (heroEl) {
+        var heroImg = CITY_HERO_IMG[citySlug] || '';
+        heroEl.innerHTML =
+          '<div class="city-hero">' +
+            (heroImg
+              ? '<img class="city-hero-img" src="' + heroImg + '" onerror="this.style.background=\'linear-gradient(135deg,#1a0305,#4a000f)\';this.removeAttribute(\'src\')" alt="' + cityName + '">'
+              : '<div class="city-hero-img" style="background:linear-gradient(135deg,#1a0305,#4a000f);"></div>') +
+            '<div class="hero-overlay"></div>' +
+            '<div class="hero-content">' +
+              '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">' +
+                '<a href="/" style="color:inherit;text-decoration:none;">Home</a> \u203A ' +
+                '<a href="/' + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
+              '</p>' +
+              '<div style="font-size:26px;margin-bottom:4px;">' + flag + '</div>' +
+              '<h1 class="city-big">' + cityName.toUpperCase() + '</h1>' +
+              '<div class="city-stats-row">' +
+                '<div class="city-stat"><strong>' + cityShops.length + '</strong> listings</div>' +
+                '<div class="city-stat"><strong>' + catKeys.length + '</strong> categories</div>' +
+                (dealCount > 0 ? '<div class="city-stat"><strong>' + dealCount + '</strong> active deals</div>' : '') +
+                '<div class="city-stat">\u2B50 Avg ' + avgRating + '</div>' +
+              '</div>' +
+              '<div style="margin-top:14px;">' +
+                '<input type="text" id="cpSearchInput" placeholder="Search ' + cityName + ' listings\u2026" ' +
+                  'style="width:100%;max-width:400px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 14px;color:#fff;font-family:\'DM Sans\',sans-serif;font-size:13px;outline:none;backdrop-filter:blur(4px);transition:border-color .2s;" ' +
+                  'onfocus="this.style.borderColor=\'rgba(232,20,42,.6)\'" onblur="this.style.borderColor=\'rgba(255,255,255,.15)\'">' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="stats-bar">' +
+            '<div class="stats-item"><div class="stats-val" style="color:var(--gold,#d4a847);">' + avgRating + '</div><div class="stats-lbl">Avg Rating</div></div>' +
+            '<div class="stats-item"><div class="stats-val">' + cityShops.length + '</div><div class="stats-lbl">Listings</div></div>' +
+            '<div class="stats-item"><div class="stats-val" style="color:var(--red,#e8142a);">' + dealCount + '</div><div class="stats-lbl">Active Deals</div></div>' +
+            '<div class="stats-item"><div class="stats-val" style="color:var(--green,#22c55e);">' + verifiedCount + '</div><div class="stats-lbl">Verified</div></div>' +
+          '</div>';
+      }
+
+      // Update page title
+      document.title = cityName + ', ' + countryName + ' \u2014 Swanpass';
+
+      /* ═══════════════════════════════════════════════════════════════
+         BUILD CONTENT SECTIONS
+      ═══════════════════════════════════════════════════════════════ */
+      var html = '';
+
+      /* ── SECTION 2: FEATURED ──────────────────────────────────────── */
+      var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
+      if (featured.length > 0) {
+        featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
+        var featHTML = '<div style="display:grid;grid-template-columns:1fr;gap:10px;" class="cp-featured-grid">' +
+          featured.map(featuredCard).join('') + '</div>';
+        html += buildSection('\u2B50 Featured in ' + cityName, 'cpFeatured', featHTML);
+      }
+
+      /* ── SECTION 3: DEALS ─────────────────────────────────────────── */
+      if (dealShops.length > 0) {
+        var dealsHTML = '<div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;" class="cp-deals-scroll">' +
+          dealShops.map(dealCard).join('') + '</div>';
+        html += buildSection('\uD83C\uDFF7\uFE0F ' + cityName + ' Deals', 'cpDeals', dealsHTML);
+      }
+
+      /* ── SECTION 4: TOP RATED ─────────────────────────────────────── */
+      var topRated = cityShops.filter(function (s) { return s.rating > 0; })
+        .sort(function (a, b) { return b.rating - a.rating || b.reviews - a.reviews; })
+        .slice(0, 8);
+      if (topRated.length > 0) {
+        var trHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+          topRated.map(gridCard).join('') + '</div>';
+        html += buildSection('\uD83C\uDFC6 Top Rated', 'cpTopRated', trHTML);
+      }
+
+      /* ── SECTION 5: NEW LISTINGS ──────────────────────────────────── */
+      var newListings = cityShops.filter(function (s) { return NEW_SET.has(s.id); });
+      var newTitle = '\uD83C\uDD95 Newly Added';
+      // Fallback for cities without tagged new shops: show last 6
+      if (newListings.length === 0) {
+        newListings = cityShops.slice().reverse().slice(0, 6);
+        newTitle = '\uD83C\uDD95 Recently Added';
+      }
+      if (newListings.length > 0) {
+        var nHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+          newListings.map(gridCard).join('') + '</div>';
+        html += buildSection(newTitle, 'cpNewest', nHTML);
+      }
+
+      /* ── SECTION 6: ALL LISTINGS (with category filter) ───────────── */
       var filterHTML = '<div style="display:flex;gap:6px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;flex-wrap:nowrap;" id="cpCatFilter">' +
         '<button data-cat="all" style="background:var(--red,#e8142a);border:1px solid var(--red,#e8142a);border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white,#fff);white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'DM Sans\',sans-serif;" class="cp-fbtn active">All (' + cityShops.length + ')</button>';
       catKeys.forEach(function (c) {
@@ -284,7 +387,7 @@
       });
       filterHTML += '</div>';
 
-      // Sort all listings: verified first, then by rating
+      // Sort: verified first, then by rating
       var sortedAll = cityShops.slice().sort(function (a, b) {
         return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0) || b.rating - a.rating;
       });
@@ -295,15 +398,92 @@
 
       html += buildSection('All ' + cityName + ' Listings', 'cpAll', allGridHTML);
 
-      // Render
+      /* ── SECTION 7 & 8: BEST PLACES + MAP LINKS ──────────────────── */
+      html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">' +
+        '<a href="/best-places.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+          '<div style="font-size:28px;margin-bottom:8px;">\uD83C\uDFC6</div>' +
+          '<div style="font-size:14px;font-weight:600;">Best Places</div>' +
+          '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Top-rated venues in ' + cityName + '</div>' +
+        '</a>' +
+        '<a href="/map.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+          '<div style="font-size:28px;margin-bottom:8px;">\uD83D\uDDFA\uFE0F</div>' +
+          '<div style="font-size:14px;font-weight:600;">Explore Map</div>' +
+          '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Find venues near you</div>' +
+        '</a>' +
+      '</div>';
+
+      /* ── SECTION 9: SEO INTRO ─────────────────────────────────────── */
+      var seoText = CITY_SEO[citySlug] || '';
+      if (seoText) {
+        html += '<div style="margin-bottom:24px;padding:20px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;">' +
+          '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:20px;margin-bottom:10px;letter-spacing:1px;">About ' + cityName + '</h2>' +
+          '<p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;">' + seoText + '</p>' +
+        '</div>';
+      }
+
+      /* ── Render all content ── */
       if (contentEl) contentEl.innerHTML = html;
 
-      // Category filter interactivity
+      /* ═══════════════════════════════════════════════════════════════
+         INTERACTIVITY
+      ═══════════════════════════════════════════════════════════════ */
+
+      /* ── Search (hero input filters All Listings grid) ── */
+      var searchInput = document.getElementById('cpSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          var q = this.value.toLowerCase().trim();
+          var allGrid = document.getElementById('cpAllGrid');
+          var allSection = document.getElementById('cpAll');
+          if (!allGrid) return;
+
+          // Reset category filter to All when searching
+          var fw = document.getElementById('cpCatFilter');
+          if (fw && q.length > 0) {
+            fw.querySelectorAll('.cp-fbtn').forEach(function (b) {
+              b.classList.remove('active');
+              b.style.background = 'var(--white10,rgba(255,255,255,.08))';
+              b.style.borderColor = 'var(--border,rgba(255,255,255,.08))';
+              b.style.color = 'var(--white70,rgba(255,255,255,.7))';
+            });
+            var allBtn = fw.querySelector('[data-cat="all"]');
+            if (allBtn) {
+              allBtn.classList.add('active');
+              allBtn.style.background = 'var(--red,#e8142a)';
+              allBtn.style.borderColor = 'var(--red,#e8142a)';
+              allBtn.style.color = 'var(--white,#fff)';
+            }
+          }
+
+          // Filter by name, area, or category
+          var filtered = q.length === 0 ? sortedAll : sortedAll.filter(function (s) {
+            return s.name.toLowerCase().indexOf(q) !== -1 ||
+              (s.area && s.area.toLowerCase().indexOf(q) !== -1) ||
+              s.categories.some(function (c) { return c.toLowerCase().indexOf(q) !== -1; });
+          });
+
+          allGrid.innerHTML = filtered.length > 0
+            ? filtered.map(gridCard).join('')
+            : '<p style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,.4);font-size:13px;">No listings found for \u201C' + this.value + '\u201D</p>';
+
+          // Scroll to all listings when searching
+          if (q.length > 0 && allSection) {
+            allSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+
+      /* ── Category filter ── */
       var filterWrap = document.getElementById('cpCatFilter');
       if (filterWrap) {
         filterWrap.addEventListener('click', function (e) {
           var btn = e.target.closest('.cp-fbtn');
           if (!btn) return;
+
+          // Clear search input
+          var si = document.getElementById('cpSearchInput');
+          if (si) si.value = '';
+
           // Update active state
           filterWrap.querySelectorAll('.cp-fbtn').forEach(function (b) {
             b.classList.remove('active');

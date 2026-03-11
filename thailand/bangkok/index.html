@@ -15,6 +15,22 @@
    CITY PAGE STYLES — Mobile-first base
 ═══════════════════════════════════════════════════════════════ */
 
+/* Hero */
+.city-hero { position: relative; height: 220px; overflow: hidden; }
+.city-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 60%); }
+.hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.city-big { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 3px; line-height: 1; margin-bottom: 6px; }
+.city-stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.city-stat { font-size: 12px; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 4px; }
+.city-stat strong { color: #fff; }
+
+/* Stats bar */
+.stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 12px 16px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 10px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
+
 /* Featured grid: 1-col stacked cards on mobile */
 .cp-featured-grid {
   grid-template-columns: 1fr !important;
@@ -31,14 +47,23 @@
   border-color: rgba(232,20,42,.4) !important;
 }
 
-/* Hide scrollbar on filter */
+/* Hide scrollbar on filters and deal scroll */
 #cpCatFilter::-webkit-scrollbar { display: none; }
 #cpCatFilter { scrollbar-width: none; }
+.cp-deals-scroll::-webkit-scrollbar { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════
    DESKTOP LAYOUT — ≥ 768px
 ═══════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
+  /* Hero: taller on desktop */
+  .city-hero { height: 300px; }
+  .city-big { font-size: 58px; }
+
+  /* Stats bar: 4-col on desktop */
+  .stats-bar { grid-template-columns: repeat(4, 1fr); }
+  .stats-val { font-size: 32px; }
+
   /* Featured: 2-col wide cards */
   .cp-featured-grid {
     grid-template-columns: 1fr 1fr !important;
