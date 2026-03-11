@@ -3,168 +3,299 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photos — Don Quixote — Swanpass</title>
+<title>Photos — Don Quixote | Swanpass</title>
+<link rel="icon" href="./favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=3">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<header>
-  <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
-    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
-    <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
-    </div>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
 </header>
-<nav class="nav-tabs">
-  <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
-  </div>
-</nav>
-<script>
-(function(){
-  var page = location.pathname.split('/').pop() || 'index.html';
-  // Highlight active nav-tab (mobile drawer)
-  var tabs = document.querySelectorAll('.nav-tab');
-  for (var i = 0; i < tabs.length; i++) {
-    var href = tabs[i].getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
-    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
-    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
-  }
-  // Highlight active header-nav link (desktop)
-  var hLinks = document.querySelectorAll('.header-nav a');
-  for (var j = 0; j < hLinks.length; j++) {
-    var h = hLinks[j].getAttribute('href');
-    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
-    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
-    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
-  }
-  // Close mobile nav when a link is clicked
-  var nav = document.querySelector('.nav-tabs');
-  var btn = document.querySelector('.btn-hamburger');
-  tabs.forEach(function(t){
-    t.addEventListener('click', function(){
-      nav.classList.remove('open');
-      if(btn) btn.textContent = '\u2630';
-    });
-  });
-})();
-</script>
-
 
 <div class="photos-header">
-  <a href="listing-don-quixote.html" class="photos-back">←</a>
+  <a href="listing-don-quixote.html" class="photos-back">&larr;</a>
   <div class="photos-title">Photos for Don Quixote</div>
 </div>
 
 <div class="photos-tab-bar">
-  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">15</span></button>
-  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talent<span class="photos-count">12</span></button>
-  <button class="photos-tab" onclick="filterPhotos('shop', this)">Shop<span class="photos-count">3</span></button>
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">83</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talent<span class="photos-count">68</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Shop<span class="photos-count">15</span></button>
 </div>
 
 <div class="photos-grid" id="photosGrid">
-  <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/image09.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(1, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(2, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/bam1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/ball1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/bank1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/benz1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/butter1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/cake1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/cartoon1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
-        <img src="https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
+    <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image09.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bambam3.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bella1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bonus1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bora1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bovy1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/champagne1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/dada1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/dream1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/ema1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/emma1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/fah1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/fai1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/gina1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/hana3.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(22, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/haru1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(23, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/honey1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(24, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/hong1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(25, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/id1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(26, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image11.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(27, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image12.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(28, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image13.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(29, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image14.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(30, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image15.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(31, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/irin1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(32, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/ivy1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(33, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/jessi1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(34, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/jiji1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(35, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/kara1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(36, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/kitty1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(37, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/kiwi1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(38, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/leea1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(39, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/lily1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(40, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/main-image01.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(41, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/main-image02.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(42, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/main-image03.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(43, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/main-image06.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(44, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/main-image07.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(45, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/mali1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(46, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/maya1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(47, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/mimi1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(48, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/mina1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(49, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/mint1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(50, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/miso1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(51, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/nana1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(52, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/new1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(53, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/noon3.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(54, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/oily1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(55, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/ploy1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(56, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/poky1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(57, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/punch1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(58, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/rita1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(59, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/rose3.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(60, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/sin4.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(61, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/sky1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(62, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/soda1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(63, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/sofia4.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(64, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/som1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(65, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/somi1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(66, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/sprite4.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(67, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/sugar1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(68, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/yuri1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(69, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/thumbnail-1.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(70, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/2022-10-27.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(71, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image02.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(72, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image01.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(73, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/don-quixote-massage-room.webp" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(74, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/1670839141172-0.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(75, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image10.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(76, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image09.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(77, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image08.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(78, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image07.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(79, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image03.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(80, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image04.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(81, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image05.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(82, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/01/image06.jpg" alt="Don Quixote" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
   <div class="lightbox-counter" id="lightboxCounter"></div>
-  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&lsaquo;</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&rsaquo;</button>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
-      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
-    </div>
-    <div class="footer-links">
-      <a href="city-bangkok.html">Bangkok</a>
-      <a href="city-pattaya.html">Pattaya</a>
-      <a href="deals.html">Deals</a>
-      <a href="map.html">Map</a>
-      <a href="search.html">Search</a>
-      <a href="add-listing.html">List Your Business</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
-    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
-  </div>
-</footer>
-
-
+<div class="bn-spacer"></div>
+<script src="js/bottom-nav.js"></script>
 <script>
 const photoSets = {
-  all: ["https://swanpass.com/wp-content/uploads/2023/01/image09.jpg","https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp","https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg","https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg","https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bam1.jpg","https://swanpass.com/wp-content/uploads/2023/01/ball1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bank1.jpg","https://swanpass.com/wp-content/uploads/2023/01/benz1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg","https://swanpass.com/wp-content/uploads/2023/01/butter1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cake1.jpg","https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cartoon1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg"],
-  talent: ["https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg","https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bam1.jpg","https://swanpass.com/wp-content/uploads/2023/01/ball1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bank1.jpg","https://swanpass.com/wp-content/uploads/2023/01/benz1.jpg","https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg","https://swanpass.com/wp-content/uploads/2023/01/butter1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cake1.jpg","https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cartoon1.jpg","https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg"],
-  shop: ["https://swanpass.com/wp-content/uploads/2023/01/image09.jpg","https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp","https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg"]
+  all: ["https://swanpass.com/wp-content/uploads/2023/01/image09.jpg", "https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp", "https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg", "https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bambam3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bella1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bonus1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bora1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bovy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/champagne1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/dada1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/dream1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ema1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/emma1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/fah1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/fai1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/gina1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/hana3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/haru1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/honey1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/hong1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/id1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image11.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image12.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image13.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image14.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image15.jpg", "https://swanpass.com/wp-content/uploads/2023/01/irin1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ivy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/jessi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/jiji1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kara1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kitty1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kiwi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/leea1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/lily1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image01.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image02.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image03.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image06.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image07.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mali1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/maya1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mimi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mina1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mint1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/miso1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/nana1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/new1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/noon3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/oily1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ploy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/poky1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/punch1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/rita1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/rose3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sin4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sky1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/soda1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sofia4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/som1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/somi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sprite4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sugar1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/yuri1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/thumbnail-1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/2022-10-27.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image02.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image01.jpg", "https://swanpass.com/wp-content/uploads/2023/01/don-quixote-massage-room.webp", "https://swanpass.com/wp-content/uploads/2023/01/1670839141172-0.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image10.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image09.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image08.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image07.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image03.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image04.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image05.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image06.jpg"],
+  talent: ["https://swanpass.com/wp-content/uploads/2023/01/don-quixote-bangkok-ladies.webp", "https://swanpass.com/wp-content/uploads/2023/01/thai-massage-girl-don-quixote.jpg", "https://swanpass.com/wp-content/uploads/2023/01/alice1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/apple1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bambam3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bella1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bonus1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bora1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bovy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/bow1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/candy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/champagne1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/cherry1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/dada1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/dream1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ema1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/emma1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/fah1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/fai1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/gina1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/hana3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/haru1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/honey1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/hong1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/id1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image11.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image12.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image13.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image14.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image15.jpg", "https://swanpass.com/wp-content/uploads/2023/01/irin1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ivy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/jessi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/jiji1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kara1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kitty1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/kiwi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/leea1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/lily1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image01.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image02.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image03.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image06.jpg", "https://swanpass.com/wp-content/uploads/2023/01/main-image07.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mali1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/maya1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mimi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mina1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/mint1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/miso1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/nana1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/new1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/noon3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/oily1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/ploy1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/poky1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/punch1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/rita1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/rose3.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sin4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sky1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/soda1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sofia4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/som1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/somi1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sprite4.jpg", "https://swanpass.com/wp-content/uploads/2023/01/sugar1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/yuri1.jpg"],
+  shop: ["https://swanpass.com/wp-content/uploads/2023/01/image09.jpg", "https://swanpass.com/wp-content/uploads/2023/01/thumbnail-1.jpg", "https://swanpass.com/wp-content/uploads/2023/01/2022-10-27.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image02.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image01.jpg", "https://swanpass.com/wp-content/uploads/2023/01/don-quixote-massage-room.webp", "https://swanpass.com/wp-content/uploads/2023/01/1670839141172-0.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image10.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image09.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image08.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image07.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image03.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image04.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image05.jpg", "https://swanpass.com/wp-content/uploads/2023/01/image06.jpg"]
 };
 let currentSet = 'all';
 let lbIndex = 0;
@@ -185,11 +316,9 @@ function filterPhotos(cat, btn) {
 }
 
 function openLightbox(idx, grid) {
-  // Build URL list from visible thumbs
   const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
   const url = visible[idx]?.querySelector('img')?.src;
   if (!url) return;
-  // Find index in current set
   const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
   lbIndex = urls.indexOf(url);
   if (lbIndex === -1) lbIndex = 0;
@@ -218,31 +347,26 @@ function navLightbox(dir) {
   document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
 }
 
-// Keyboard navigation
-document.addEventListener('keydown', e => {
-  const lb = document.getElementById('lightbox');
-  if (!lb.classList.contains('active')) return;
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') navLightbox(-1);
   if (e.key === 'ArrowRight') navLightbox(1);
 });
 
-// Touch swipe for mobile lightbox
-let touchStartX = 0;
-document.getElementById('lightbox').addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-document.getElementById('lightbox').addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].screenX - touchStartX;
-  if (Math.abs(diff) > 50) {
-    navLightbox(diff > 0 ? -1 : 1);
-  }
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
 });
 
-// Close lightbox on background click
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLightbox();
-});
+(function() {
+  let startX = 0;
+  const img = document.getElementById('lightboxImg');
+  img.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; });
+  img.addEventListener('touchend', function(e) {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diff) > 50) navLightbox(diff > 0 ? -1 : 1);
+  });
+})();
 </script>
 </body>
 </html>

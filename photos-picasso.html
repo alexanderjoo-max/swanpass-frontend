@@ -3,153 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photos — Picasso — Swanpass</title>
+<title>Photos — Picasso | Swanpass</title>
+<link rel="icon" href="./favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=3">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<header>
-  <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
-    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
-    <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
-    </div>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
 </header>
-<nav class="nav-tabs">
-  <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
-  </div>
-</nav>
-<script>
-(function(){
-  var page = location.pathname.split('/').pop() || 'index.html';
-  // Highlight active nav-tab (mobile drawer)
-  var tabs = document.querySelectorAll('.nav-tab');
-  for (var i = 0; i < tabs.length; i++) {
-    var href = tabs[i].getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
-    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
-    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
-  }
-  // Highlight active header-nav link (desktop)
-  var hLinks = document.querySelectorAll('.header-nav a');
-  for (var j = 0; j < hLinks.length; j++) {
-    var h = hLinks[j].getAttribute('href');
-    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
-    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
-    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
-  }
-  // Close mobile nav when a link is clicked
-  var nav = document.querySelector('.nav-tabs');
-  var btn = document.querySelector('.btn-hamburger');
-  tabs.forEach(function(t){
-    t.addEventListener('click', function(){
-      nav.classList.remove('open');
-      if(btn) btn.textContent = '\u2630';
-    });
-  });
-})();
-</script>
-
 
 <div class="photos-header">
-  <a href="listing-picasso.html" class="photos-back">←</a>
+  <a href="listing-picasso.html" class="photos-back">&larr;</a>
   <div class="photos-title">Photos for Picasso</div>
 </div>
 
 <div class="photos-tab-bar">
-  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">10</span></button>
-  
-  <button class="photos-tab" onclick="filterPhotos('shop', this)">Shop<span class="photos-count">10</span></button>
+  <button class="photos-tab active" onclick="filterPhotos('all', this)">All<span class="photos-count">25</span></button>
+  <button class="photos-tab" onclick="filterPhotos('talent', this)">Talent<span class="photos-count">21</span></button>
+  <button class="photos-tab" onclick="filterPhotos('shop', this)">Shop<span class="photos-count">4</span></button>
 </div>
 
 <div class="photos-grid" id="photosGrid">
-  <div class="photo-thumb" data-cat="shop" onclick="openLightbox(0, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(1, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(2, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(3, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(4, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(5, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(6, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(7, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(8, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5726/2018-02-24.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="photo-thumb" data-cat="shop" onclick="openLightbox(9, this.parentNode)">
-        <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6028/2023-11-18_11.47.07.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
-      </div>
+    <div class="photo-thumb" data-cat="featured" onclick="openLightbox(0, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance-640x427.webp" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(1, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/5E68648C-9A1B-4A9C-AC3B-1FAE77C7D1EE-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(2, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/07A38A79-7C54-4FF5-9715-54D02BF02779-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(3, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/7B26C7B3-B590-44AE-B389-7E642EE448FC.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(4, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/10B2CC14-3C33-498C-827B-706F38CC298F-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(5, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/53F4EE87-917F-4E1D-B1CB-E3E8A756FF1F-765x1024-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(6, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/321B6006-E0BC-4CD3-AFEA-8810F8AFE362-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(7, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/28675649-A236-4A7E-9BE5-9579A2BC1EF6-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(8, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/A15930C6-365B-41DB-9725-113BBC3FFF1D-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(9, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/C1A6E9B5-9781-4D43-833A-5A1AEA10B2A8-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(10, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(11, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-2.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(12, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/D2920449-4160-4C24-A2BD-BA66A8AF8240-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(13, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/DDFC3562-4E16-48F3-BF13-949DA14494BA-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(14, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/E12A1EB1-FA75-4649-A5EA-0AFCDFF1EA91-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(15, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/EFF7CFDD-5169-43DE-B6EA-D0FAB7E835A5-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(16, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2548-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(17, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2585-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(18, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2663-762x1017-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(19, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2669-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(20, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2673-762x1016-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="talent" onclick="openLightbox(21, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/IMG_2678-1.jpg" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(22, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance.webp" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(23, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-entrance.webp" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="photo-thumb" data-cat="shop" onclick="openLightbox(24, this.parentNode)">
+      <img src="https://swanpass.com/wp-content/uploads/2023/04/picasso-bangkok-massage-room.webp" alt="Picasso" loading="lazy" onerror="this.parentNode.style.display='none'">
+    </div>
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
   <div class="lightbox-counter" id="lightboxCounter"></div>
-  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&lsaquo;</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&rsaquo;</button>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
-      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
-    </div>
-    <div class="footer-links">
-      <a href="city-bangkok.html">Bangkok</a>
-      <a href="city-pattaya.html">Pattaya</a>
-      <a href="deals.html">Deals</a>
-      <a href="map.html">Map</a>
-      <a href="search.html">Search</a>
-      <a href="add-listing.html">List Your Business</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
-    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
-  </div>
-</footer>
-
-
+<div class="bn-spacer"></div>
+<script src="js/bottom-nav.js"></script>
 <script>
 const photoSets = {
-  all: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5726/2018-02-24.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6028/2023-11-18_11.47.07.jpg"],
-  talent: [],
-  shop: ["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5726/2018-02-24.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6028/2023-11-18_11.47.07.jpg"]
+  all: ["https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance-640x427.webp", "https://swanpass.com/wp-content/uploads/2023/04/5E68648C-9A1B-4A9C-AC3B-1FAE77C7D1EE-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/07A38A79-7C54-4FF5-9715-54D02BF02779-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/7B26C7B3-B590-44AE-B389-7E642EE448FC.jpg", "https://swanpass.com/wp-content/uploads/2023/04/10B2CC14-3C33-498C-827B-706F38CC298F-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/53F4EE87-917F-4E1D-B1CB-E3E8A756FF1F-765x1024-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/321B6006-E0BC-4CD3-AFEA-8810F8AFE362-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/28675649-A236-4A7E-9BE5-9579A2BC1EF6-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/A15930C6-365B-41DB-9725-113BBC3FFF1D-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/C1A6E9B5-9781-4D43-833A-5A1AEA10B2A8-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-2.jpg", "https://swanpass.com/wp-content/uploads/2023/04/D2920449-4160-4C24-A2BD-BA66A8AF8240-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/DDFC3562-4E16-48F3-BF13-949DA14494BA-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/E12A1EB1-FA75-4649-A5EA-0AFCDFF1EA91-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/EFF7CFDD-5169-43DE-B6EA-D0FAB7E835A5-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2548-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2585-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2663-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2669-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2673-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2678-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance.webp", "https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-entrance.webp", "https://swanpass.com/wp-content/uploads/2023/04/picasso-bangkok-massage-room.webp"],
+  talent: ["https://swanpass.com/wp-content/uploads/2023/04/5E68648C-9A1B-4A9C-AC3B-1FAE77C7D1EE-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/07A38A79-7C54-4FF5-9715-54D02BF02779-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/7B26C7B3-B590-44AE-B389-7E642EE448FC.jpg", "https://swanpass.com/wp-content/uploads/2023/04/10B2CC14-3C33-498C-827B-706F38CC298F-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/53F4EE87-917F-4E1D-B1CB-E3E8A756FF1F-765x1024-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/321B6006-E0BC-4CD3-AFEA-8810F8AFE362-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/28675649-A236-4A7E-9BE5-9579A2BC1EF6-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/A15930C6-365B-41DB-9725-113BBC3FFF1D-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/C1A6E9B5-9781-4D43-833A-5A1AEA10B2A8-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/CCD7803D-F13A-4E6D-8833-A88982CD9E8A-762x1016-2.jpg", "https://swanpass.com/wp-content/uploads/2023/04/D2920449-4160-4C24-A2BD-BA66A8AF8240-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/DDFC3562-4E16-48F3-BF13-949DA14494BA-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/E12A1EB1-FA75-4649-A5EA-0AFCDFF1EA91-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/EFF7CFDD-5169-43DE-B6EA-D0FAB7E835A5-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2548-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2585-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2663-762x1017-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2669-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2673-762x1016-1.jpg", "https://swanpass.com/wp-content/uploads/2023/04/IMG_2678-1.jpg"],
+  shop: ["https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance-640x427.webp", "https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-bangkok-entrance.webp", "https://swanpass.com/wp-content/uploads/2023/04/picasso-massage-entrance.webp", "https://swanpass.com/wp-content/uploads/2023/04/picasso-bangkok-massage-room.webp"]
 };
 let currentSet = 'all';
 let lbIndex = 0;
@@ -170,11 +142,9 @@ function filterPhotos(cat, btn) {
 }
 
 function openLightbox(idx, grid) {
-  // Build URL list from visible thumbs
   const visible = [...grid.querySelectorAll('.photo-thumb')].filter(t => t.style.display !== 'none');
   const url = visible[idx]?.querySelector('img')?.src;
   if (!url) return;
-  // Find index in current set
   const urls = photoSets[currentSet].length > 0 ? photoSets[currentSet] : photoSets.all;
   lbIndex = urls.indexOf(url);
   if (lbIndex === -1) lbIndex = 0;
@@ -203,31 +173,26 @@ function navLightbox(dir) {
   document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + urls.length;
 }
 
-// Keyboard navigation
-document.addEventListener('keydown', e => {
-  const lb = document.getElementById('lightbox');
-  if (!lb.classList.contains('active')) return;
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') navLightbox(-1);
   if (e.key === 'ArrowRight') navLightbox(1);
 });
 
-// Touch swipe for mobile lightbox
-let touchStartX = 0;
-document.getElementById('lightbox').addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-document.getElementById('lightbox').addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].screenX - touchStartX;
-  if (Math.abs(diff) > 50) {
-    navLightbox(diff > 0 ? -1 : 1);
-  }
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
 });
 
-// Close lightbox on background click
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLightbox();
-});
+(function() {
+  let startX = 0;
+  const img = document.getElementById('lightboxImg');
+  img.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; });
+  img.addEventListener('touchend', function(e) {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diff) > 50) navLightbox(diff > 0 ? -1 : 1);
+  });
+})();
 </script>
 </body>
 </html>
