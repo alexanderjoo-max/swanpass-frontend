@@ -298,31 +298,20 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
       });
       var garbageSet = new Set(Object.keys(urlCounts).filter(function(u) { return urlCounts[u] >= 20; }));
 
-      /* Collect talent photos */
+      /* Collect talent photos only (category === 'talent') */
       data.forEach(function(l) {
         var slug = l.slug;
         var name = l.name || slug;
         var city = l.city || 'Unknown';
         var photos = l.photos || [];
 
-        /* Priority 1: categorized talent photos */
         var talentPhotos = photos.filter(function(p) {
           return p.category === 'talent' && p.url && !garbageSet.has(p.url);
         });
 
-        if (talentPhotos.length > 0) {
-          talentPhotos.slice(0, MAX_TALENT_PER_LISTING).forEach(function(p) {
-            allPhotos.push({ img: p.url, name: name, city: city, slug: slug });
-          });
-        } else {
-          /* Priority 2: first non-garbage image as fallback */
-          var good = (l.image_urls || []).filter(function(u) { return u && !garbageSet.has(u); });
-          if (good.length > 0) {
-            good.slice(0, MAX_FALLBACK_PER_LISTING).forEach(function(u) {
-              allPhotos.push({ img: u, name: name, city: city, slug: slug });
-            });
-          }
-        }
+        talentPhotos.slice(0, MAX_TALENT_PER_LISTING).forEach(function(p) {
+          allPhotos.push({ img: p.url, name: name, city: city, slug: slug });
+        });
       });
 
       /* Shuffle for discovery */
