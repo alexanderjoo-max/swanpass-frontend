@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Talent — Swanpass</title>
+<meta name="description" content="Browse talent photos from massage, spa, and nightlife venues across Southeast Asia. Discover verified shops in Bangkok, Pattaya, Bali, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;overflow-x:hidden;}
+
+/* HERO */
+.talent-hero{padding:28px 16px 20px;text-align:center;background:linear-gradient(180deg,rgba(232,20,42,.08) 0%,transparent 100%);}
+.talent-icon{font-size:36px;margin-bottom:6px;}
+.talent-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:3px;line-height:1;}
+.talent-sub{font-size:13px;color:var(--white40);margin-top:6px;}
+
+/* FILTER BAR */
+.talent-filters{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+.tf-select{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:38px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;cursor:pointer;flex:1;min-width:120px;}
+.tf-select option{background:#1a1a1a;}
+.tf-input{flex:2;min-width:120px;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 14px;height:38px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
+.tf-input::placeholder{color:var(--white40);}
+.tf-count{width:100%;font-size:12px;color:var(--white40);white-space:nowrap;}
+.tf-count strong{color:var(--white);margin:0 3px;}
+
+/* GRID */
+.talent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:12px 16px;max-width:1200px;margin:0 auto;}
+.tcard{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;aspect-ratio:1/1;}
+.tcard img{width:100%;height:100%;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);transition:transform .3s;}
+.tcard:hover img{transform:scale(1.05);}
+.tcard-overlay{position:absolute;bottom:0;left:0;right:0;padding:8px 10px;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 100%);pointer-events:none;}
+.tcard-name{font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3;}
+.tcard-city{font-size:10px;color:var(--white40);}
+.tcard-badge{position:absolute;top:6px;left:6px;display:flex;gap:3px;}
+.tcard-badge span{font-size:6px;font-weight:900;padding:2px 5px;border-radius:3px;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
+.tb-vr{background:rgba(59,130,246,.92);color:#fff;}
+.tb-ft{background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;}
+
+/* EMPTY */
+.talent-empty{text-align:center;padding:60px 20px;color:var(--white40);}
+.talent-empty .icon{font-size:48px;margin-bottom:12px;}
+
+/* LOAD MORE */
+.load-more-wrap{text-align:center;padding:20px 16px 40px;}
+.btn-load{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:10px 28px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn-load:hover{background:var(--red);border-color:var(--red);}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
+.bnav-item.active{color:var(--red);}
+.bi{font-size:20px;}.bl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bn-spacer{height:70px;}
+.logo-img{height:28px;display:block;}
+
+/* DESKTOP */
+@media(min-width:768px){
+  .talent-hero{padding:36px 24px 24px;}
+  .talent-title{font-size:48px;}
+  .talent-grid{grid-template-columns:repeat(4,1fr);gap:8px;padding:16px 24px;}
+  .bottom-nav,.bn-spacer{display:none!important;}
+  .tcard-name{font-size:12px;}
+}
+@media(min-width:1024px){
+  .talent-grid{grid-template-columns:repeat(5,1fr);}
+}
+</style>
+<link rel="stylesheet" href="css/site.css?v=3">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="cities.html">&#x1F4CD; Cities</a>
+      <a href="talent.html">&#x1F469; Talent</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="cities.html" class="nav-tab">&#x1F4CD; Cities</a>
+    <a href="talent.html" class="nav-tab active">&#x1F469; Talent</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page) hLinks[j].classList.add('active');
+  }
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  document.querySelectorAll('.nav-tab').forEach(function(t){
+    t.addEventListener('click', function(){ nav.classList.remove('open'); if(btn) btn.textContent = '\u2630'; });
+  });
+})();
+</script>
+
+<!-- HERO -->
+<div class="talent-hero">
+  <div class="talent-icon">&#x1F469;</div>
+  <h1 class="talent-title">TALENT</h1>
+  <p class="talent-sub">Browse talent photos from venues across Southeast Asia</p>
+</div>
+
+<!-- FILTERS -->
+<div class="talent-filters">
+  <select class="tf-select" id="cityFilter" onchange="applyFilters()">
+    <option value="">All Cities</option>
+    <optgroup label="&#x1F1F9;&#x1F1ED; Thailand">
+      <option value="Bangkok">Bangkok</option>
+      <option value="Pattaya">Pattaya</option>
+      <option value="Chiang Mai">Chiang Mai</option>
+      <option value="Phuket">Phuket</option>
+      <option value="Hua Hin">Hua Hin</option>
+      <option value="Khon Kaen">Khon Kaen</option>
+      <option value="Ko Samui">Ko Samui</option>
+      <option value="Nakhon Ratchasima">Nakhon Ratchasima</option>
+      <option value="Udon Thani">Udon Thani</option>
+      <option value="Ubon Ratchathani">Ubon Ratchathani</option>
+      <option value="Phitsanulok">Phitsanulok</option>
+      <option value="Krabi">Krabi</option>
+      <option value="Kanchanaburi">Kanchanaburi</option>
+      <option value="Ratchaburi">Ratchaburi</option>
+      <option value="Nakhon Sawan">Nakhon Sawan</option>
+      <option value="Sri Racha">Sri Racha</option>
+      <option value="Rayong">Rayong</option>
+    </optgroup>
+    <optgroup label="&#x1F1FB;&#x1F1F3; Vietnam">
+      <option value="Ho Chi Minh City">Ho Chi Minh City</option>
+      <option value="Hanoi">Hanoi</option>
+    </optgroup>
+    <optgroup label="&#x1F1EE;&#x1F1E9; Indonesia">
+      <option value="Bali">Bali</option>
+      <option value="Jakarta">Jakarta</option>
+      <option value="Surabaya">Surabaya</option>
+      <option value="Batam">Batam</option>
+    </optgroup>
+    <optgroup label="&#x1F1F0;&#x1F1ED; Cambodia">
+      <option value="Phnom Penh">Phnom Penh</option>
+    </optgroup>
+    <optgroup label="&#x1F1F8;&#x1F1EC; Singapore">
+      <option value="Singapore">Singapore</option>
+    </optgroup>
+    <optgroup label="&#x1F1F2;&#x1F1FE; Malaysia">
+      <option value="Kuala Lumpur">Kuala Lumpur</option>
+    </optgroup>
+  </select>
+  <input class="tf-input" type="text" id="nameFilter" placeholder="Search shop name..." oninput="applyFilters()">
+  <div class="tf-count" id="photoCount"></div>
+</div>
+
+<!-- GRID -->
+<div class="talent-grid" id="talentGrid">
+  <div class="talent-empty"><div class="icon">&#x23F3;</div><p>Loading talent photos&hellip;</p></div>
+</div>
+
+<div class="load-more-wrap" id="loadMoreWrap" style="display:none;">
+  <button class="btn-load" id="btnLoadMore" onclick="loadMore()">Load More</button>
+</div>
+
+<div class="bn-spacer"></div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
+      <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
+      <a href="talent.html">Talent</a>
+      <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ─── CONFIG ──────────────────────────────────────── */
+  var PAGE_SIZE = 60;
+  var MAX_TALENT_PER_LISTING = 3;
+  var MAX_FALLBACK_PER_LISTING = 1;
+
+  var VERIFIED = new Set([
+    'chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok',
+    'amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok',
+    'drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss'
+  ]);
+
+  /* ─── STATE ───────────────────────────────────────── */
+  var allPhotos = [];
+  var filtered = [];
+  var shown = 0;
+
+  /* ─── HELPERS ─────────────────────────────────────── */
+  function seededShuffle(arr) {
+    /* Deterministic daily shuffle so page is stable but changes each day */
+    var d = new Date();
+    var seed = d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate();
+    function rng() { seed = (seed * 16807 + 0) % 2147483647; return (seed - 1) / 2147483646; }
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(rng() * (i + 1));
+      var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+
+  function cardHTML(p) {
+    var badges = '';
+    if (VERIFIED.has(p.slug)) badges += '<span class="tb-vr">\u2713 Verified</span>';
+    return '<a href="listing-' + p.slug + '.html" class="tcard">' +
+      '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" onerror="this.style.background=\'linear-gradient(135deg,#2a1a1a,#1a0a0a)\';this.removeAttribute(\'src\')">' +
+      (badges ? '<div class="tcard-badge">' + badges + '</div>' : '') +
+      '<div class="tcard-overlay">' +
+        '<div class="tcard-name">' + p.name + '</div>' +
+        '<div class="tcard-city">\uD83D\uDCCD ' + p.city + '</div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  function renderPage() {
+    var grid = document.getElementById('talentGrid');
+    var wrap = document.getElementById('loadMoreWrap');
+    var countEl = document.getElementById('photoCount');
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="talent-empty"><div class="icon">\uD83D\uDE45</div><p>No talent photos found</p><p style="font-size:12px;margin-top:6px;">Try a different city or search term</p></div>';
+      wrap.style.display = 'none';
+      countEl.innerHTML = '<strong>0</strong> photos';
+      return;
+    }
+
+    var batch = filtered.slice(0, shown);
+    grid.innerHTML = batch.map(cardHTML).join('');
+    wrap.style.display = shown < filtered.length ? '' : 'none';
+    countEl.innerHTML = 'Showing <strong>' + Math.min(shown, filtered.length) + '</strong> of <strong>' + filtered.length + '</strong> photos';
+  }
+
+  function applyFilters() {
+    var city = document.getElementById('cityFilter').value.toLowerCase();
+    var name = document.getElementById('nameFilter').value.toLowerCase().trim();
+
+    filtered = allPhotos.filter(function(p) {
+      if (city && p.city.toLowerCase() !== city) return false;
+      if (name && p.name.toLowerCase().indexOf(name) === -1) return false;
+      return true;
+    });
+
+    shown = PAGE_SIZE;
+    renderPage();
+  }
+
+  function loadMore() {
+    shown += PAGE_SIZE;
+    renderPage();
+  }
+  window.loadMore = loadMore;
+  window.applyFilters = applyFilters;
+
+  /* ─── INIT ────────────────────────────────────────── */
+  fetch('data/listings.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      /* Build garbage set */
+      var urlCounts = {};
+      data.forEach(function(l) {
+        var seen = {};
+        (l.image_urls || []).forEach(function(u) {
+          if (u && !seen[u]) { seen[u] = 1; urlCounts[u] = (urlCounts[u] || 0) + 1; }
+        });
+      });
+      var garbageSet = new Set(Object.keys(urlCounts).filter(function(u) { return urlCounts[u] >= 20; }));
+
+      /* Collect talent photos */
+      data.forEach(function(l) {
+        var slug = l.slug;
+        var name = l.name || slug;
+        var city = l.city || 'Unknown';
+        var photos = l.photos || [];
+
+        /* Priority 1: categorized talent photos */
+        var talentPhotos = photos.filter(function(p) {
+          return p.category === 'talent' && p.url && !garbageSet.has(p.url);
+        });
+
+        if (talentPhotos.length > 0) {
+          talentPhotos.slice(0, MAX_TALENT_PER_LISTING).forEach(function(p) {
+            allPhotos.push({ img: p.url, name: name, city: city, slug: slug });
+          });
+        } else {
+          /* Priority 2: first non-garbage image as fallback */
+          var good = (l.image_urls || []).filter(function(u) { return u && !garbageSet.has(u); });
+          if (good.length > 0) {
+            good.slice(0, MAX_FALLBACK_PER_LISTING).forEach(function(u) {
+              allPhotos.push({ img: u, name: name, city: city, slug: slug });
+            });
+          }
+        }
+      });
+
+      /* Shuffle for discovery */
+      seededShuffle(allPhotos);
+
+      /* Initial render */
+      shown = PAGE_SIZE;
+      filtered = allPhotos;
+      renderPage();
+    })
+    .catch(function(err) {
+      document.getElementById('talentGrid').innerHTML =
+        '<div class="talent-empty"><div class="icon">\u26A0\uFE0F</div><p>Could not load talent data</p></div>';
+      console.error(err);
+    });
+})();
+</script>
+
+<script src="js/bottom-nav.js"></script>
+</body>
+</html>
