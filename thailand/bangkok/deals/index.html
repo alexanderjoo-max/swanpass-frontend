@@ -28,7 +28,8 @@
     <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="../../../index.html"><img src="../../../swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="../../../map.html"><a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>#x1F5FA;<a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>#xFE0F; Map</a>
+      <a href="../../../deals.html"><a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>#x1F3F7;<a href="../../../map.html">&#x1F5FA;&#xFE0F; Map</a>#xFE0F; Deals</a>
       <a href="../../../cities.html">&#x1F4CD; Cities</a>
       <a href="../../../search.html">&#x1F50E; Search</a>
       <a href="../../../add-listing.html">&#x2795; List Your Business</a>
@@ -38,7 +39,8 @@
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="../../../map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="../../../map.html" class="nav-tab">class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>#x1F5FA;class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>#xFE0F; Map</a>
+    <a href="../../../deals.html" class="nav-tab">class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>#x1F3F7;class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>#xFE0F; Deals</a>
     <a href="../../../cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
     <a href="../../../search.html" class="nav-tab">&#x1F50E; Search</a>
     <a href="../../../add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
@@ -54,7 +56,32 @@
 })();
 </script>
 
-<div id="pageHero"></div>
+<!-- DEALS HERO -->
+<div style="background:linear-gradient(135deg,#1a0008 0%,#0a0a0a 50%,#001a08 100%);padding:28px 16px 24px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(232,20,42,.15) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="display:inline-block;background:var(--red,#e8142a);color:#fff;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:10px;">🏷️ Live Deals</div>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:2px;line-height:1;margin-bottom:8px;color:#fff;">DEALS &amp; PROMOTIONS</div>
+  <div style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px;">Bangkok, Thailand</div>
+  <div style="font-size:12px;color:rgba(255,255,255,.5);">
+    <a href="../../../index.html" style="color:inherit;text-decoration:none;">Home</a> ›
+    <a href="../../../city-bangkok.html" style="color:inherit;text-decoration:none;">Bangkok</a> ›
+    Deals
+  </div>
+</div>
+
+<!-- HOW TO REDEEM -->
+<div style="padding:20px 16px;display:flex;justify-content:center;">
+  <div style="max-width:460px;width:100%;background:linear-gradient(135deg,#1a1200 0%,#0d0d0d 50%,#1a0d00 100%);border:1px solid rgba(212,168,71,.35);border-radius:14px;padding:20px 24px;text-align:center;box-shadow:0 4px 24px rgba(212,168,71,.12);position:relative;overflow:hidden;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;line-height:1;color:#d4a847;margin-bottom:10px;">✨ HOW TO REDEEM</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(212,168,71,.12);border:1px solid rgba(212,168,71,.25);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;color:#d4a847;">Say "SwanPass" at the shop</span>
+      <span style="font-size:11px;color:rgba(255,255,255,.4);font-weight:600;">or</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(212,168,71,.12);border:1px solid rgba(212,168,71,.25);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;color:#d4a847;">📱 Show this screen</span>
+    </div>
+    <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:10px;">No codes, no printouts, no sign-up required.</div>
+  </div>
+</div>
+
 <div id="pageContent" style="max-width:1200px;margin:0 auto;padding:16px;">
   <p style="color:rgba(255,255,255,.5);text-align:center;padding:40px 0;">Loading&hellip;</p>
 </div>
@@ -148,24 +175,7 @@
         return slugifyCity(s.city)===citySlug||(citySlug==='korat'&&slugifyCity(s.city)==='nakhon-ratchasima');
       });
 
-      var heroEl=document.getElementById('pageHero');
-      if(heroEl){
-        heroEl.innerHTML=
-          '<div class="city-hero">'+
-            '<div class="city-hero-img" style="background:linear-gradient(135deg,#1a0305,#4a000f);"></div>'+
-            '<div class="hero-overlay"></div>'+
-            '<div class="hero-content">'+
-              '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">'+
-                '<a href="'+basePath+'" style="color:inherit;text-decoration:none;">Home</a> \u203A '+
-                '<a href="'+basePath+cityPageFile+'" style="color:inherit;text-decoration:none;">'+cityName+'</a> \u203A '+
-                'Deals'+
-              '</p>'+
-              '<div style="font-size:26px;margin-bottom:4px;">'+flag+'</div>'+
-              '<h1 class="city-big">DEALS</h1>'+
-              '<div style="font-size:14px;color:rgba(255,255,255,.6);">'+cityName+', '+countryName+'</div>'+
-            '</div>'+
-          '</div>';
-      }
+      // Hero is now static HTML above
 
       var filtered=cityShops.filter(function(s){return s.deal;});
       filtered.sort(function(a,b){return b.rating-a.rating||b.reviews-a.reviews;});

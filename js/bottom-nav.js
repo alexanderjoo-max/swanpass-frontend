@@ -5,9 +5,9 @@
   var items = [
     { href: 'index.html', icon: '🏠', label: 'Home', match: ['index.html', ''] },
     { href: 'map.html', icon: '🗺️', label: 'Map', match: ['map.html'] },
-    { href: 'best-places.html', icon: '🏆', label: 'Best', match: ['best-places.html'] },
-    { href: 'listings.html', icon: '▦', label: 'Browse', match: ['listings.html', 'search.html'] },
     { href: 'deals.html', icon: '🏷️', label: 'Deals', match: ['deals.html'] },
+    { href: 'search.html', icon: '🔍', label: 'Search', match: ['search.html', 'listings.html'] },
+    { href: 'cities.html', icon: '📍', label: 'Cities', match: ['cities.html'] },
   ];
 
   // Build nav HTML
