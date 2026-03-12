@@ -6,8 +6,8 @@
     { href: 'index.html', icon: '🏠', label: 'Home', match: ['index.html', ''] },
     { href: 'map.html', icon: '🗺️', label: 'Map', match: ['map.html'] },
     { href: 'deals.html', icon: '🏷️', label: 'Deals', match: ['deals.html'] },
+    { href: 'talent.html', icon: '👩', label: 'Girls', match: ['talent.html'] },
     { href: 'search.html', icon: '🔍', label: 'Search', match: ['search.html', 'listings.html'] },
-    { href: 'cities.html', icon: '📍', label: 'Cities', match: ['cities.html'] },
   ];
 
   // Build nav HTML
