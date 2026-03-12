@@ -126,7 +126,7 @@
       city: s.city,
       rating: s.rating,
       visits: s.reviews + ' reviews',
-      pageViews: (cur && cur.visits) || null,
+      pageViews: SP_VIEWS[s.id] || null,
       deal: s.deal
     });
   }

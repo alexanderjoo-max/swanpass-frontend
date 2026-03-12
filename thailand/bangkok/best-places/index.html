@@ -133,6 +133,14 @@ a { color: inherit; text-decoration: none; }
 
 .divider { height: 1px; background: var(--border); margin: 4px 14px; }
 
+/* ─── EDITORIAL CARDS GRID (mobile = 2-col) ─── */
+.edit-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
 /* ─── SPONSORED ROW (mobile = horizontal scroll) ─── */
 .sponsored-scroll {
   display: flex; gap: 10px; overflow-x: auto;
@@ -186,14 +194,14 @@ a { color: inherit; text-decoration: none; }
 .b-nw  { background: rgba(99,102,241,.92); color: #fff; }
 
 /* ─── AWARD BANNER above card ─── */
-.award-wrap { margin-bottom: 10px; }
+.award-wrap { margin-bottom: 6px; }
 .award-label {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 4px;
   background: linear-gradient(90deg, #2a1e00, #3a2800);
   border: 1px solid rgba(212,168,71,.3);
-  border-radius: 6px; padding: 5px 12px;
-  font-size: 10px; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 1px;
+  border-radius: 6px; padding: 3px 8px;
+  font-size: 8px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .5px;
   color: var(--gold);
 }
 .award-label.silver {
@@ -212,77 +220,54 @@ a { color: inherit; text-decoration: none; }
   color: #ff6b8a;
 }
 
-/* ─── EDITORIAL CARD (best-of listing) ─── */
+/* ─── EDITORIAL CARD (shop-card style) ─── */
 .edit-card {
   background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden;
-  transition: border-color .2s; display: block; color: inherit;
-  margin-bottom: 12px;
+  border-radius: 10px; overflow: hidden;
+  transition: transform .2s, border-color .2s;
+  display: block; color: inherit; cursor: pointer; position: relative;
 }
-.edit-card:hover { border-color: rgba(212,168,71,.4); }
+.edit-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4); }
 
-/* Mobile: stacked (image top, content below) */
 .edit-card-img {
-  width: 100%; height: 190px; object-fit: cover; display: block;
-  background: linear-gradient(135deg,#2a1a1a,#1a0a0a);
-  position: relative;
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  background: linear-gradient(135deg,#2a1a1a,#1a0f0f);
 }
 .edit-card-img-wrap { position: relative; }
-.edit-rank {
-  position: absolute; top: 10px; left: 10px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px; line-height: 1;
-  color: var(--gold); text-shadow: 0 2px 8px rgba(0,0,0,.8);
-}
-.edit-card-body { padding: 12px 14px 14px; }
+.edit-rank { display: none; }
+.edit-card-body { padding: 8px 10px 10px; }
 .edit-cat {
-  font-size: 10px; font-weight: 700; color: var(--w40);
-  text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px;
+  font-size: 10px; color: var(--w40); margin-bottom: 2px;
+  font-weight: 400; text-transform: none; letter-spacing: 0;
 }
 .edit-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px; letter-spacing: 1px; line-height: 1;
-  margin-bottom: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: 1.2;
+  margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.edit-tagline {
-  font-size: 12px; color: var(--w70); line-height: 1.55;
-  margin-bottom: 10px; font-style: italic;
-  border-left: 2px solid var(--gold); padding-left: 10px;
-}
-.edit-tagline.red-line { border-left-color: var(--red); }
-.edit-info {
-  display: flex; flex-direction: column; gap: 5px;
-  margin-bottom: 10px;
-}
-.edit-info-row {
-  display: flex; align-items: flex-start; gap: 8px;
-  font-size: 11px; color: var(--w70);
-}
-.edit-info-row .ico { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+.edit-tagline { display: none; }
+.edit-info { display: none; }
+.edit-info-row { display: none; }
 .edit-foot {
-  display: flex; align-items: center; gap: 10px;
-  padding-top: 10px; border-top: 1px solid var(--border);
-  flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 0; border-top: none; flex-wrap: nowrap;
 }
 .edit-rating {
   display: flex; align-items: center; gap: 4px;
-  font-size: 12px; font-weight: 700;
+  font-size: 11px; font-weight: 600;
 }
-.edit-rev { font-size: 11px; color: var(--w40); }
-.edit-vis {
-  font-size: 11px; color: var(--w40);
-  background: var(--w10); padding: 2px 8px; border-radius: 10px;
-  margin-left: auto;
-}
+.edit-rating .stars { font-size: 11px; }
+.edit-rev { font-size: 10px; color: var(--w40); }
+.edit-vis { display: none; }
 .edit-card-badges {
-  display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px;
+  position: absolute; top: 6px; left: 6px;
+  display: flex; flex-direction: column; gap: 3px;
 }
-.btn-view-listing {
-  display: inline-block; background: var(--red); color: var(--white);
-  border-radius: 6px; padding: 6px 14px; font-size: 11px; font-weight: 700;
-  transition: background .2s;
+.edit-card-badges .badge { font-size: 7px; font-weight: 900; padding: 2px 7px; border-radius: 14px; }
+.edit-area {
+  font-size: 10px; color: var(--w40); margin-bottom: 6px;
 }
-.btn-view-listing:hover { background: var(--red-dk); }
+.btn-view-listing { display: none; }
 
 /* Bottom nav */
 .bottom-nav {
@@ -332,16 +317,12 @@ a { color: inherit; text-decoration: none; }
   .sp-card { width: auto; }
   .sp-img { height: 140px; }
 
-  /* Editorial cards: DESKTOP = 2-col grid */
-  .edit-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    align-items: start;
-  }
-  .edit-card { margin-bottom: 0; }
-  .edit-card-img { height: 220px; }
-  .edit-name { font-size: 22px; }
+  /* Editorial cards: DESKTOP tweaks */
+  .edit-cards-grid { gap: 14px; }
+  .edit-card-body { padding: 10px 12px 12px; }
+  .edit-name { font-size: 13px; }
+  .award-wrap { margin-bottom: 10px; }
+  .award-label { padding: 5px 12px; font-size: 10px; letter-spacing: 1px; gap: 6px; }
 }
 
 @media (min-width: 1024px) {
@@ -352,7 +333,6 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 479px) {
   .hero-title { font-size: 30px; }
   .hero-trophy { font-size: 40px; }
-  .edit-card-img { height: 160px; }
 }
 </style>
 <link rel="stylesheet" href="../../../css/site.css?v=3">
@@ -427,19 +407,6 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
-<!-- ══ FEATURED SHOPS ════════════════════════════════════════ -->
-<div class="section" id="sponsored">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>⭐ Featured Shops</div>
-    <a href="../../../listings.html" class="see-all">See all →</a>
-  </div>
-  <div class="sponsored-scroll" id="sponsoredGrid">
-    <!-- Injected by JS -->
-  </div>
-</div>
-
-<div class="divider"></div>
-
 <!-- ══ BEST OF BANGKOK ═══════════════════════════════════ -->
 <div class="section" id="bkk">
   <div class="city-section-header">
@@ -471,7 +438,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Premium upscale nuru experience with exceptional service and beautiful facilities in the heart of Ekkamai."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>582/25-26, Thanon Ekkamai, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66642537196" style="color:var(--red)">+66 64 253 7196</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>+66 64 253 7196</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -503,7 +470,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Super high-quality girls and service in a convenient location on Sukhumvit 18. One of the best variety soapy experiences in Bangkok."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>390/35 Soi Sukhumvit 18, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66612138000" style="color:var(--red)">+66 61 213 8000</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>+66 61 213 8000</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -532,7 +499,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"The hottest massage place in Bangkok. Beautiful girls, great rooms — one of the most visited establishments on Swanpass."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>392 Khlong Toei, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66996124363" style="color:var(--red)">+66 99 612 4363</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>+66 99 612 4363</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -561,7 +528,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Top-rated outcall massage service in the Phrom Phong area. Comes to your hotel or condo for a premium experience."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Phrom Phong Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66973482622" style="color:var(--red)">+66 97 348 2622</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>+66 97 348 2622</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
@@ -590,7 +557,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"A fast-rising newcomer in the soapy scene. Great lineup of girls, premium rooms, and strong word-of-mouth reviews."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>116/10 Soi Prasanmit, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:+66931426999" style="color:var(--red)">+66 93 142 6999</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>+66 93 142 6999</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -622,7 +589,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"These girls are trained to service Japanese clients, so you'll be getting the best service that Bangkok has to offer."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>12, 4 Soi Sukhumvit 33, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0922718989" style="color:var(--red)">092-271-8989</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>092-271-8989</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.9</div>
@@ -651,7 +618,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Super hot girls, and managers that speak Chinese, Korean, English, and Thai. Very well organized. All service includes Nuru!"</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Soi Sukhumvit 26, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0889474986" style="color:var(--red)">088-947-4986</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>088-947-4986</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
@@ -683,7 +650,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"High-quality, Japanese-style soapy with a great line-up of girls and impeccable service standards."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Sukhumvit 33 Alley, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0648070932" style="color:var(--red)">064-807-0932</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>064-807-0932</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -715,7 +682,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"All the service of a spa, with all the service of a soapy. A fan favourite on Sukhumvit."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>186/3-4 Soi Sukhumvit 16, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0836182695" style="color:var(--red)">083-618-2695</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>083-618-2695</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
@@ -747,7 +714,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"The newest soapy making a splash in Bangkok! Guaranteed to become a classic."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>12/30 Sukhumvit 33 Soi 4, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0825161958" style="color:var(--red)">082-516-1958</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>082-516-1958</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.9</div>
@@ -866,7 +833,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Wide range of prostate massages for a new experience. The best prostate specialist in Bangkok."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>12/5 Soi Sukhumvit 33, Bangkok</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0630943888" style="color:var(--red)">063-094-3888</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>063-094-3888</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
@@ -942,7 +909,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Bangkok quality soapy right in Pattaya. The best of the best girls work here — a must-visit."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Pattaya Sai Song Road, Pattaya City</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:038421666" style="color:var(--red)">038-421-666</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>038-421-666</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.6</div>
@@ -971,7 +938,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"A friendly neighbourhood bar offering a warm, safe, and relaxing atmosphere for everyone — regulars and new guests alike."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>444/48 Pattaya Sai 3, soi 14, Pattaya</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0614466300" style="color:var(--red)">061-446-6300</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>061-446-6300</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.3</div>
@@ -1019,7 +986,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Enjoy with the best attractive young local amateur girls in Chiang Mai. A unique experience you won't find in Bangkok."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Charoen Prathet Road, Chiang Mai</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0634125002" style="color:var(--red)">063-412-5002</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>063-412-5002</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.5</div>
@@ -1048,7 +1015,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"One of the oldest and most respected massage places in Chiang Mai — a long-standing local favourite with an excellent reputation."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>49/8 Road Suriyawong, Chiang Mai</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0952386661" style="color:var(--red)">095-238-6661</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>095-238-6661</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
@@ -1124,7 +1091,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"The original Suzy Wong's is still the most vibrant, most fun go-go with the hottest girls in all of Phuket."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Pa Tong, Phuket</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0872722588" style="color:var(--red)">087-272-2588</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>087-272-2588</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.8</div>
@@ -1153,7 +1120,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"Luxurious with more of a club feel, Harem is owned by the Suzy Wong Group and caters to the affluent Phuket crowd."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Soi Seadragon, Patong, Phuket</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0872722588" style="color:var(--red)">087-272-2588</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>087-272-2588</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★★</span> 4.7</div>
@@ -1182,7 +1149,7 @@ a { color: inherit; text-decoration: none; }
           <div class="edit-tagline">"The closest soapy that Phuket has to Bangkok. Decent line-up of girls, one price for all. Rooms aren't Bangkok quality, but the service is."</div>
           <div class="edit-info">
             <div class="edit-info-row"><span class="ico">📍</span>Phoonpon Road, Patong, Phuket</div>
-            <div class="edit-info-row"><span class="ico">📞</span><a href="tel:0818959677" style="color:var(--red)">081-895-9677</a></div>
+            <div class="edit-info-row"><span class="ico">📞</span><span>081-895-9677</span></div>
           </div>
           <div class="edit-foot">
             <div class="edit-rating"><span class="stars">★★★★</span> 4.4</div>
@@ -1200,54 +1167,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- ══ FOOTER ════════════════════════════════════════════ -->
 
-<script src="../../../js/shops-data.js"></script>
 <script src="../../../js/bottom-nav.js"></script>
-<script>
-/* ─── HELPERS (same as homepage) ─────────────────────────── */
-function starsHTML(r) {
-  if (!r) return '☆☆☆☆☆';
-  const full = Math.round(r);
-  return '★'.repeat(full) + '☆'.repeat(Math.max(0, 5 - full));
-}
-function badgeHTML(tags) {
-  const map = {
-    featured:  '<span class="badge b-sp">★ Featured</span>',
-    new:       '<span class="badge b-nw">🆕 New</span>',
-    verified:  '<span class="badge b-vr">✓ Verified</span>',
-  };
-  return tags.filter(t => map[t]).map(t => map[t]).join('');
-}
-function imgSrc(shop) { return shop.img || ''; }
-function imgErr() {
-  return "onerror=\"this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')\"";
-}
-function vCheck(tags) {
-  if (!tags || !tags.includes('verified')) return '';
-  return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
-}
-
-/* ─── RENDER: FEATURED GRID ──────────────────────────────── */
-(function renderSponsored() {
-  var el = document.getElementById('sponsoredGrid');
-  if (!el) return;
-  var list = SHOPS.filter(function(s) { return s.tags.includes('featured'); });
-  el.innerHTML = list.map(function(s) {
-    return '<a href="' + s.page + '" class="sp-card">' +
-      '<img class="sp-img" src="' + imgSrc(s) + '" alt="' + s.name + '" ' + imgErr() + '>' +
-      '<div class="sp-badges">' + badgeHTML(s.tags) + '</div>' +
-      '<div class="sp-body">' +
-        '<div class="sp-name">' + s.name + vCheck(s.tags) + '</div>' +
-        '<div class="sp-meta">' + s.catLabel + ' · 📍 ' + s.city + '</div>' +
-        '<div class="sp-foot">' +
-          '<div class="rating"><span class="stars">' + starsHTML(s.rating) + '</span> ' + (s.rating || 'N/A') + '</div>' +
-          '<span class="visits">' + s.visits + '</span>' +
-        '</div>' +
-        (s.deal ? '<div style="margin-top:6px;font-size:11px;color:var(--green);font-weight:600">🏷️ ' + s.deal + '</div>' : '') +
-      '</div>' +
-    '</a>';
-  }).join('');
-})();
-</script>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -1268,5 +1188,30 @@ function vCheck(tags) {
   </div>
 </footer>
 
+<script>
+// Extract area from hidden .edit-info and insert visible .edit-area after .edit-name
+(function(){
+  var cards = document.querySelectorAll('.edit-cards-grid > div > a.edit-card');
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].querySelector('.edit-area')) continue;
+    var infoRow = cards[i].querySelector('.edit-info-row');
+    if (!infoRow) continue;
+    var txt = infoRow.textContent.replace(/📍/g,'').trim();
+    // Shorten to area name (last part after comma or just the text)
+    var parts = txt.split(',');
+    var area = parts.length > 1 ? parts[parts.length-1].trim() : txt;
+    // If area is just "Bangkok" or "Pattaya", use the full address
+    if (area === 'Bangkok' || area === 'Pattaya' || area === 'Pattaya City') {
+      area = txt;
+    }
+    var nameEl = cards[i].querySelector('.edit-name');
+    if (!nameEl) continue;
+    var areaDiv = document.createElement('div');
+    areaDiv.className = 'edit-area';
+    areaDiv.textContent = '\uD83D\uDCCD ' + area;
+    nameEl.parentNode.insertBefore(areaDiv, nameEl.nextSibling);
+  }
+})();
+</script>
 </body>
 </html>
