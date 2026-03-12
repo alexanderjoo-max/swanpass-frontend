@@ -27,7 +27,7 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 .tf-count strong{color:var(--white);margin:0 3px;}
 
 /* GRID */
-.talent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:12px 16px;max-width:1200px;margin:0 auto;}
+.talent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px 16px;max-width:1200px;margin:0 auto;}
 .tcard{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;aspect-ratio:1/1;}
 .tcard img{width:100%;height:100%;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);transition:transform .3s;}
 .tcard:hover img{transform:scale(1.05);}
@@ -220,13 +220,10 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
   var shown = 0;
 
   /* ─── HELPERS ─────────────────────────────────────── */
-  function seededShuffle(arr) {
-    /* Deterministic daily shuffle so page is stable but changes each day */
-    var d = new Date();
-    var seed = d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate();
-    function rng() { seed = (seed * 16807 + 0) % 2147483647; return (seed - 1) / 2147483646; }
+  function shuffleArray(arr) {
+    /* Random shuffle on every page load */
     for (var i = arr.length - 1; i > 0; i--) {
-      var j = Math.floor(rng() * (i + 1));
+      var j = Math.floor(Math.random() * (i + 1));
       var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
     }
     return arr;
@@ -299,23 +296,34 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
       var garbageSet = new Set(Object.keys(urlCounts).filter(function(u) { return urlCounts[u] >= 20; }));
 
       /* Collect talent photos only (category === 'talent') */
+      var featuredPhotos = [];
+      var otherPhotos = [];
+
       data.forEach(function(l) {
         var slug = l.slug;
         var name = l.name || slug;
         var city = l.city || 'Unknown';
-        var photos = l.photos || [];
 
+        /* Exclude "The Lord" */
+        if (slug.indexOf('the-lord') !== -1) return;
+
+        var photos = l.photos || [];
         var talentPhotos = photos.filter(function(p) {
           return p.category === 'talent' && p.url && !garbageSet.has(p.url);
         });
 
+        var isFeatured = VERIFIED.has(slug);
+        var target = isFeatured ? featuredPhotos : otherPhotos;
+
         talentPhotos.slice(0, MAX_TALENT_PER_LISTING).forEach(function(p) {
-          allPhotos.push({ img: p.url, name: name, city: city, slug: slug });
+          target.push({ img: p.url, name: name, city: city, slug: slug });
         });
       });
 
-      /* Shuffle for discovery */
-      seededShuffle(allPhotos);
+      /* Shuffle each group, then featured first */
+      shuffleArray(featuredPhotos);
+      shuffleArray(otherPhotos);
+      allPhotos = featuredPhotos.concat(otherPhotos);
 
       /* Initial render */
       shown = PAGE_SIZE;
