@@ -338,13 +338,13 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<div style="display:flex;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">' +
-            '<a href="' + basePath + countrySlug + '/' + citySlug + '/deals/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:background .2s;border-right:1px solid var(--border);" onmouseover="this.style.background=\'rgba(232,20,42,.08)\'" onmouseout="this.style.background=\'var(--card-bg,#161616)\'">' +
-              '<span style="font-size:16px;">\uD83C\uDFF7\uFE0F</span>' +
+          '<div style="display:flex;gap:8px;padding:10px 14px;">' +
+            '<a href="' + basePath + countrySlug + '/' + citySlug + '/deals/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1a2a1a,#0d1f0d);border:1px solid rgba(34,197,94,.35);border-radius:10px;padding:14px 16px;text-decoration:none;color:#fff;font-size:14px;font-weight:700;transition:all .2s;letter-spacing:.3px;" onmouseover="this.style.borderColor=\'rgba(34,197,94,.7)\';this.style.background=\'linear-gradient(135deg,#1f3520,#122a12)\'" onmouseout="this.style.borderColor=\'rgba(34,197,94,.35)\';this.style.background=\'linear-gradient(135deg,#1a2a1a,#0d1f0d)\'">' +
+              '<span style="font-size:18px;">\uD83C\uDFF7\uFE0F</span>' +
               '<span>Deals</span>' +
             '</a>' +
-            '<a href="' + basePath + countrySlug + '/' + citySlug + '/best-places/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:background .2s;" onmouseover="this.style.background=\'rgba(232,20,42,.08)\'" onmouseout="this.style.background=\'var(--card-bg,#161616)\'">' +
-              '<span style="font-size:16px;">\uD83C\uDFC6</span>' +
+            '<a href="' + basePath + countrySlug + '/' + citySlug + '/best-places/" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#2a1e00,#1a1200);border:1px solid rgba(212,168,71,.35);border-radius:10px;padding:14px 16px;text-decoration:none;color:#fff;font-size:14px;font-weight:700;transition:all .2s;letter-spacing:.3px;" onmouseover="this.style.borderColor=\'rgba(212,168,71,.7)\';this.style.background=\'linear-gradient(135deg,#352800,#241a00)\'" onmouseout="this.style.borderColor=\'rgba(212,168,71,.35)\';this.style.background=\'linear-gradient(135deg,#2a1e00,#1a1200)\'">' +
+              '<span style="font-size:18px;">\uD83C\uDFC6</span>' +
               '<span>Best Places</span>' +
             '</a>' +
           '</div>';
