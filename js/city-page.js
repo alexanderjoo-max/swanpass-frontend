@@ -135,7 +135,7 @@
   function buildSection(title, id, contentHTML, extraStyle) {
     if (!contentHTML) return '';
     return '<div style="margin-bottom:24px;' + (extraStyle || '') + '">' +
-      '<h2 style="font-family:\'Antonio\',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;">' +
+      '<h2 style="font-family:\'Inter\',sans-serif;font-size:22px;font-weight:700;letter-spacing:0;margin-bottom:12px;display:flex;align-items:center;gap:8px;">' +
         '<span style="width:3px;height:14px;background:var(--red,#e8142a);border-radius:2px;flex-shrink:0;"></span>' + title +
       '</h2>' +
       '<div id="' + id + '">' + contentHTML + '</div>' +
@@ -234,7 +234,7 @@
               : '<div class="city-hero-img" style="background:linear-gradient(135deg,#1a0305,#4a000f);"></div>') +
             '<div class="hero-overlay"></div>' +
             '<div class="hero-content">' +
-              '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:2px;">' +
+              '<p style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">' +
                 '<a href="' + (basePath || '/') + '" style="color:inherit;text-decoration:none;">Home</a> \u203A ' +
                 '<a href="' + (basePath || '/') + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
               '</p>' +
@@ -330,7 +330,7 @@
       var seoText = CITY_SEO[citySlug] || '';
       if (seoText) {
         html += '<div style="margin-bottom:24px;padding:20px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;">' +
-          '<h2 style="font-family:\'Antonio\',sans-serif;font-size:20px;margin-bottom:10px;letter-spacing:1px;">About ' + cityName + '</h2>' +
+          '<h2 style="font-family:\'Inter\',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:0;">About ' + cityName + '</h2>' +
           '<p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;">' + seoText + '</p>' +
         '</div>';
       }

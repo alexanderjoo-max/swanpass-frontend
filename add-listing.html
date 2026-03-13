@@ -4,14 +4,14 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>List Your Business — Swanpass</title>
-<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;}
 /* HERO */
 .page-hero{background:linear-gradient(135deg,#1a0008,#0a0a0a);padding:40px 16px 32px;text-align:center;border-bottom:1px solid var(--border);}
-.hero-title{font-family:'Antonio',sans-serif;font-size:40px;letter-spacing:2px;margin-bottom:8px;}
+.hero-title{font-family:'Inter',sans-serif;font-size:32px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px;}
 .hero-title span{color:var(--red);}
 .hero-sub{font-size:14px;color:var(--white70);margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;}
 .perks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
@@ -20,13 +20,13 @@ body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;f
 /* CONTENT */
 .content-wrap{max-width:700px;margin:0 auto;padding:20px 16px 40px;}
 .section-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
-.section-title{font-family:'Antonio',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.section-title{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;letter-spacing:0;margin-bottom:14px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
 .section-text{font-size:13px;color:var(--white70);line-height:1.7;}
 .section-text + .section-text{margin-top:10px;}
 /* STATS GRID */
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
 .stat-box{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:14px 10px;text-align:center;}
-.stat-val{font-family:'Antonio',sans-serif;font-size:24px;letter-spacing:1px;color:var(--gold);margin-bottom:2px;}
+.stat-val{font-family:'Inter',sans-serif;font-size:22px;font-weight:700;letter-spacing:0;color:var(--gold);margin-bottom:2px;}
 .stat-lbl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
 /* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
@@ -34,20 +34,20 @@ body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;f
 .pkg:hover{border-color:rgba(232,20,42,.4);background:rgba(232,20,42,.04);}
 .pkg.pop{border-color:var(--red);background:rgba(232,20,42,.08);}
 .pkg-icon{font-size:28px;margin-bottom:8px;}
-.pkg-name{font-family:'Antonio',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:4px;}
+.pkg-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px;}
 .pkg.pop .pkg-name{color:var(--red);}
 .pkg-price{font-size:22px;font-weight:700;color:var(--gold);margin-bottom:4px;}
 .pkg-period{font-size:11px;color:var(--white40);margin-bottom:10px;}
 .pkg-features{list-style:none;text-align:left;}
 .pkg-features li{font-size:11px;color:var(--white70);padding:3px 0;display:flex;align-items:center;gap:5px;}
 .pkg-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
-.pkg-pop-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:6px;}
+.pkg-pop-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--red);margin-bottom:6px;}
 /* CLAIM BOX */
 .claim-box{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02));border:1px solid rgba(59,130,246,.25);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
 .claim-box .section-title{border-bottom-color:rgba(59,130,246,.15);}
 /* CTA */
 .cta-section{background:linear-gradient(135deg,rgba(232,20,42,.1),rgba(232,20,42,.03));border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);padding:24px 20px;text-align:center;margin-bottom:16px;}
-.cta-section h3{font-family:'Antonio',sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:8px;}
+.cta-section h3{font-family:'Inter',sans-serif;font-size:22px;font-weight:700;letter-spacing:0;margin-bottom:8px;}
 .cta-section p{font-size:13px;color:var(--white70);margin-bottom:16px;line-height:1.6;}
 .cta-email{display:inline-block;background:var(--red);color:var(--white);border-radius:8px;padding:14px 32px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;text-decoration:none;transition:background .2s;}
 .cta-email:hover{background:var(--red-dark);}
