@@ -48,8 +48,8 @@ var SP_VIEWS = {"suwon-man-s-spa-bangkok":"7K+","exotic-massage-bangkok-bangkok"
 /* ─── HELPER FUNCTIONS ──────────────────────────────────────────────────── */
 function starsHTML(r) {
   if (!r) return '\u2606\u2606\u2606\u2606\u2606';
-  var full = Math.round(r);
-  return '\u2605'.repeat(full) + '\u2606'.repeat(Math.max(0, 5 - full));
+  var full = Math.floor(r);
+  return '\u2605'.repeat(Math.min(full, 5)) + '\u2606'.repeat(Math.max(0, 5 - full));
 }
 
 function badgeHTML(tags) {
